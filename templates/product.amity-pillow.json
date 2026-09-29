@@ -296,6 +296,8 @@
       "type": "amity-versus",
       "settings": {
         "heading": "Imagine Waking Up Rested, Not Restless.",
+        "image_left": "shopify://shop_images/calmeden-amity-lifestyle-lap.webp",
+        "image_right": "shopify://shop_images/calmeden-amity-pdp-vs-stiff.webp",
         "badge": "VS",
         "card_title": "Shaped for Settled, Restful Sleep",
         "card_text": "Flat pillows leave your neck hanging, so you keep shifting. Amity cradles your head and supports your neck.",
@@ -338,6 +340,7 @@
         "feature_3"
       ],
       "settings": {
+        "image": "shopify://shop_images/ezgif-26de162222702730.gif",
         "heading": "3 Ways Amity Changes How You Rest",
         "background": "gray",
         "padding_top": 80,
@@ -350,6 +353,7 @@
         "card_1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-neck.webp",
             "title": "Tossing and Turning?",
             "text": "No neck support, so you shift all night."
           }
@@ -357,6 +361,7 @@
         "card_2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-heat.webp",
             "title": "Hot and Flat by 3 a.m.?",
             "text": "Loose fill packs down and traps warmth."
           }
@@ -364,6 +369,7 @@
         "card_3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-fog.webp",
             "title": "Groggy Mornings?",
             "text": "Every wake-up to readjust cuts into your rest."
           }
@@ -375,6 +381,7 @@
         "card_3"
       ],
       "settings": {
+        "image": "shopify://shop_images/calmeden-amity-lifestyle-hug.webp",
         "heading": "Why Your Pillow Matters More Than You Think",
         "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
         "background": "cream",
@@ -401,6 +408,7 @@
         "expert_1": {
           "type": "expert",
           "settings": {
+            "image": "shopify://shop_images/calmeden-expert-brown.webp",
             "quote": "Add a genuine quote from a professional who has tried Amity.",
             "name": "Expert name",
             "role": "Specialty, City"
@@ -409,6 +417,7 @@
         "expert_2": {
           "type": "expert",
           "settings": {
+            "image": "shopify://shop_images/calmeden-expert-weinstein.webp",
             "quote": "Add a genuine quote from a professional who has tried Amity.",
             "name": "Expert name",
             "role": "Specialty, City"
@@ -417,6 +426,7 @@
         "expert_3": {
           "type": "expert",
           "settings": {
+            "image": "shopify://shop_images/calmeden-expert-greeney.webp",
             "quote": "Add a genuine quote from a professional who has tried Amity.",
             "name": "Expert name",
             "role": "Specialty, City"
@@ -561,6 +571,10 @@
       "settings": {
         "heading": "Questions, Answered",
         "subheading": "Everything you need to choose with confidence.",
+        "image_1": "shopify://shop_images/calmeden-happy-1.webp",
+        "image_2": "shopify://shop_images/calmeden-happy-2.webp",
+        "image_3": "shopify://shop_images/calmeden-happy-3.webp",
+        "image_4": "shopify://shop_images/calmeden-happy-4.webp",
         "stat_rating": "4.8/5",
         "stat_number": "1,500+",
         "stat_label": "Happy Customers",
