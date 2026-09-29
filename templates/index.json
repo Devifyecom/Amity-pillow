@@ -16,12 +16,12 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "",
             "title_highlight_color": "#6d388b",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
+            "subheading": "",
             "button_label": "Button label",
-            "link": "",
+            "link": "shopify://products/amity-comfort-cervical-pillow",
             "button_style_secondary": false,
             "atc_button_label": "",
             "atc_product": "",
@@ -42,6 +42,7 @@
         },
         "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_overlay_opacity": 0,
             "heading": "Image slide",
