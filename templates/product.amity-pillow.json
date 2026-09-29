@@ -644,7 +644,7 @@
     "journal": {
       "type": "amity-journal",
       "settings": {
-        "blog": "",
+        "blog": "news",
         "eyebrow": "From the Journal",
         "heading": "The Sleep Journal",
         "subheading": "Useful guides to choosing and caring for your sleep essentials.",
