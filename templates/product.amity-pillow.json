@@ -1,34 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "amity-main-product",
-      "settings": {
-        "rating_text": "4.8 out of 5.0 stars (1317 reviews)",
-        "reviews_anchor": "reviews",
-        "title": "",
-        "subtitle": "Settle in, stop rearranging pillows, and wake up feeling rested.",
-        "show_badge": true,
-        "badge_text": "30-Day Returns · Free Shipping · ",
-        "bundle_heading": "Buy More · Save More",
-        "free_label": "FREE",
-        "add_gifts_to_cart": true,
-        "show_ship_by": true,
-        "ship_by_label": "Order Today, Ships By:",
-        "ship_by_days": 2,
-        "ship_skip_weekends": false,
-        "atc_label": "Add to cart",
-        "error_text": "Something went wrong. Please try again.",
-        "mini_reviews_heading": "Loved by Side & Back Sleepers",
-        "show_payment_icons": true,
-        "trust_1": "Free Shipping",
-        "trust_2": "30-Day Returns",
-        "covered_pill": "Sold & Shipped by [shop]",
-        "covered_title": "We've Got You Covered",
-        "covered_text": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>",
-        "covered_note": "Damaged, defective or not as described? We replace it or refund you.",
-        "padding_top": 56,
-        "padding_bottom": 36
-      },
       "blocks": {
         "benefit_1": {
           "type": "benefit",
@@ -62,9 +44,21 @@
             "badge": "",
             "badge_style": "accent",
             "preselected": true,
+            "gift_1_title": "",
+            "gift_1_subtitle": "",
             "gift_1_type": "product",
+            "gift_1_product": "",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
             "gift_2_type": "product",
-            "gift_3_type": "product"
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
         "tier_5": {
@@ -79,9 +73,20 @@
             "badge_style": "accent",
             "preselected": false,
             "gift_1_title": "+ Free Silk Pillowcase",
+            "gift_1_subtitle": "",
             "gift_1_type": "product",
+            "gift_1_product": "",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
             "gift_2_type": "product",
-            "gift_3_type": "product"
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
         "tier_6": {
@@ -96,10 +101,20 @@
             "badge_style": "dark",
             "preselected": false,
             "gift_1_title": "+ 1 Free Amity Pillow",
+            "gift_1_subtitle": "",
             "gift_1_type": "free_unit",
+            "gift_1_product": "",
+            "gift_1_value": "",
             "gift_2_title": "+ Free Silk Pillowcase",
+            "gift_2_subtitle": "",
             "gift_2_type": "product",
-            "gift_3_type": "product"
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
         "mini_review_7": {
@@ -120,40 +135,45 @@
           "type": "accordion",
           "settings": {
             "title": "Why You'll Love It",
-            "open": false,
-            "content": "<ul><li>Two heights in one pillow: a lower face for back sleeping and a higher face for side sleeping.</li><li>Curved edges cradle your head and neck, so there's no more stacking or folding pillows.</li><li>The side face leaves room for your arm and shoulder.</li></ul>"
+            "content": "<ul><li>Two heights in one pillow: a lower face for back sleeping and a higher face for side sleeping.</li><li>Curved edges cradle your head and neck, so there's no more stacking or folding pillows.</li><li>The side face leaves room for your arm and shoulder.</li></ul>",
+            "page": "",
+            "open": false
           }
         },
         "accordion_10": {
           "type": "accordion",
           "settings": {
             "title": "In the Box",
-            "open": false,
-            "content": "<ul><li>1 × Amity™ Comfort Cervical Pillow</li><li>1 × Removable zip cover (on the pillow)</li></ul>"
+            "content": "<ul><li>1 × Amity™ Comfort Cervical Pillow</li><li>1 × Removable zip cover (on the pillow)</li></ul>",
+            "page": "",
+            "open": false
           }
         },
         "accordion_11": {
           "type": "accordion",
           "settings": {
             "title": "Details That Matter",
-            "open": false,
-            "content": "<ul><li>Contoured neck edge with a cushioned center cradle</li><li>Two sleeping heights. Just flip it over.</li><li>Memory foam that holds its shape night after night</li><li>Breathable, removable zip cover</li></ul>"
+            "content": "<ul><li>Contoured neck edge with a cushioned center cradle</li><li>Two sleeping heights. Just flip it over.</li><li>Memory foam that holds its shape night after night</li><li>Breathable, removable zip cover</li></ul>",
+            "page": "",
+            "open": false
           }
         },
         "accordion_12": {
           "type": "accordion",
           "settings": {
             "title": "Best Way to Use",
-            "open": false,
-            "content": "<p><strong>Back sleepers:</strong> lay it lower side up with the raised edge under your neck and let your head settle into the center.</p><p><strong>Side sleepers:</strong> flip it higher side up so the taller edge fills the space above your shoulder.</p><p>Give it a few nights. A new shape can take a little getting used to.</p>"
+            "content": "<p><strong>Back sleepers:</strong> lay it lower side up with the raised edge under your neck and let your head settle into the center.</p><p><strong>Side sleepers:</strong> flip it higher side up so the taller edge fills the space above your shoulder.</p><p>Give it a few nights. A new shape can take a little getting used to.</p>",
+            "page": "",
+            "open": false
           }
         },
         "accordion_13": {
           "type": "accordion",
           "settings": {
             "title": "Care & Materials",
-            "open": false,
-            "content": "<p>Unzip the cover and hand wash it in cold water with a mild detergent, then air dry. Don't wash the foam core; spot clean it and let it air out.</p><p>When it first arrives, give the pillow a few hours out of the packaging to fully expand.</p>"
+            "content": "<p>Unzip the cover and hand wash it in cold water with a mild detergent, then air dry. Don't wash the foam core; spot clean it and let it air out.</p><p>When it first arrives, give the pillow a few hours out of the packaging to fully expand.</p>",
+            "page": "",
+            "open": false
           }
         }
       },
@@ -171,46 +191,75 @@
         "accordion_11",
         "accordion_12",
         "accordion_13"
-      ]
+      ],
+      "settings": {
+        "rating_text": "4.8 out of 5.0 stars (1317 reviews)",
+        "reviews_anchor": "reviews",
+        "title": "",
+        "subtitle": "Settle in, stop rearranging pillows, and wake up feeling rested.",
+        "show_badge": true,
+        "badge_text": "30-Day Returns · Free Shipping ·",
+        "bundle_heading": "Buy More · Save More",
+        "free_label": "FREE",
+        "add_gifts_to_cart": true,
+        "show_ship_by": true,
+        "ship_by_label": "Order Today, Ships By:",
+        "ship_by_days": 2,
+        "ship_skip_weekends": false,
+        "atc_label": "Add to cart",
+        "error_text": "Something went wrong. Please try again.",
+        "mini_reviews_heading": "Loved by Side & Back Sleepers",
+        "show_payment_icons": true,
+        "trust_1": "Free Shipping",
+        "trust_2": "30-Day Returns",
+        "covered_pill": "Sold & Shipped by [shop]",
+        "covered_title": "We've Got You Covered",
+        "covered_text": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>",
+        "covered_note": "Damaged, defective or not as described? We replace it or refund you.",
+        "padding_top": 56,
+        "padding_bottom": 36
+      }
     },
     "video_reels": {
       "type": "amity-video-reels",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/a0847dcf70854493b0c38c72fc71fbb9.HD-720p-1.6Mbps-95757018.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        },
+        "video_emztD3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/a0847dcf70854493b0c38c72fc71fbb9.HD-720p-1.6Mbps-95757018.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        },
+        "video_wqUXnz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/a0847dcf70854493b0c38c72fc71fbb9.HD-720p-1.6Mbps-95757018.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_emztD3",
+        "video_wqUXnz"
+      ],
       "settings": {
         "heading": "See Amity in Action",
         "subheading": "Tap a clip to watch with sound.",
         "background": "gray",
         "padding_top": 24,
         "padding_bottom": 80
-      },
-      "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_2": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_3": {
-          "type": "video",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "video_1",
-        "video_2",
-        "video_3"
-      ]
+      }
     },
     "sleep_toggle": {
       "type": "amity-sleep-toggle",
-      "settings": {
-        "heading": "Which Side Is for You?",
-        "subheading": "Tap how you sleep. Flip the pillow to that face.",
-        "background": "gray",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
       "blocks": {
         "position_1": {
           "type": "position",
@@ -232,7 +281,14 @@
       "block_order": [
         "position_1",
         "position_2"
-      ]
+      ],
+      "settings": {
+        "heading": "Which Side Is for You?",
+        "subheading": "Tap how you sleep. Flip the pillow to that face.",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     },
     "versus": {
       "type": "amity-versus",
@@ -248,12 +304,6 @@
     },
     "features": {
       "type": "amity-features",
-      "settings": {
-        "heading": "3 Ways Amity Changes How You Rest",
-        "background": "gray",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
       "blocks": {
         "feature_1": {
           "type": "feature",
@@ -284,17 +334,16 @@
         "feature_1",
         "feature_2",
         "feature_3"
-      ]
+      ],
+      "settings": {
+        "heading": "3 Ways Amity Changes How You Rest",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     },
     "problems": {
       "type": "amity-problems",
-      "settings": {
-        "heading": "Why Your Pillow Matters More Than You Think",
-        "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
-        "background": "cream",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -322,7 +371,14 @@
         "card_1",
         "card_2",
         "card_3"
-      ]
+      ],
+      "settings": {
+        "heading": "Why Your Pillow Matters More Than You Think",
+        "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     },
     "cta": {
       "type": "amity-cta-banner",
@@ -339,12 +395,6 @@
     },
     "experts": {
       "type": "amity-experts",
-      "settings": {
-        "heading": "What the Experts Say",
-        "background": "gray",
-        "padding_top": 0,
-        "padding_bottom": 80
-      },
       "blocks": {
         "expert_1": {
           "type": "expert",
@@ -375,18 +425,16 @@
         "expert_1",
         "expert_2",
         "expert_3"
-      ]
-    },
-    "comparison": {
-      "type": "amity-comparison",
+      ],
       "settings": {
-        "heading": "The Difference Is Clear",
-        "brand_label": "",
-        "other_label": "Ordinary Pillow",
+        "heading": "What the Experts Say",
         "background": "gray",
         "padding_top": 0,
         "padding_bottom": 80
-      },
+      }
+    },
+    "comparison": {
+      "type": "amity-comparison",
       "blocks": {
         "row_1": {
           "type": "row",
@@ -444,19 +492,18 @@
         "row_4",
         "row_5",
         "row_6"
-      ]
+      ],
+      "settings": {
+        "heading": "The Difference Is Clear",
+        "brand_label": "",
+        "other_label": "Ordinary Pillow",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
     },
     "faq": {
       "type": "amity-faq",
-      "settings": {
-        "heading": "Questions, Answered",
-        "subheading": "Everything you need to choose with confidence.",
-        "stat_rating": "4.8/5",
-        "stat_number": "1,500+",
-        "stat_label": "Happy Customers",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -508,21 +555,19 @@
         "question_4",
         "question_5",
         "question_6"
-      ]
+      ],
+      "settings": {
+        "heading": "Questions, Answered",
+        "subheading": "Everything you need to choose with confidence.",
+        "stat_rating": "4.8/5",
+        "stat_number": "1,500+",
+        "stat_label": "Happy Customers",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     },
     "reviews": {
       "type": "amity-reviews",
-      "settings": {
-        "anchor": "reviews",
-        "heading": "Customer Reviews",
-        "average": "4.8",
-        "count_text": "1,317 reviews",
-        "write_label": "Write a review",
-        "per_page": 5,
-        "background": "gray",
-        "padding_top": 56,
-        "padding_bottom": 40
-      },
       "blocks": {
         "review_1": {
           "type": "review",
@@ -553,12 +598,25 @@
         "review_1",
         "review_2",
         "review_3"
-      ]
+      ],
+      "settings": {
+        "anchor": "reviews",
+        "heading": "Customer Reviews",
+        "average": "4.8",
+        "count_text": "1,317 reviews",
+        "write_label": "Write a review",
+        "write_link": "",
+        "per_page": 5,
+        "background": "gray",
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
     },
     "related": {
       "type": "amity-related",
       "settings": {
         "heading": "You May Also Like",
+        "products": [],
         "limit": 4,
         "show_secondary": true,
         "sale_label": "Sale",
@@ -570,6 +628,7 @@
     "journal": {
       "type": "amity-journal",
       "settings": {
+        "blog": "",
         "eyebrow": "From the Journal",
         "heading": "The Sleep Journal",
         "subheading": "Useful guides to choosing and caring for your sleep essentials.",
