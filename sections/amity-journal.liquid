@@ -1,0 +1,79 @@
+{%- render 'amity-assets' -%}
+
+{%- assign blog = section.settings.blog -%}
+
+<section
+  class="am am-section am-journal"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-container am-container--wide">
+    <div class="am-journal__head">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="am-journal__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="am-journal__heading">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="am-journal__sub">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a class="am-journal__all" href="{{ blog.url | default: routes.root_url }}">
+          {{- section.settings.button_label -}}
+          {%- render 'amity-icon', icon: 'arrow-up-right' -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="am-journal__grid">
+      {%- if blog != blank and blog.articles_count > 0 -%}
+        {%- for article in blog.articles limit: 4 -%}
+          <a class="am-article" href="{{ article.url }}">
+            <div class="am-article__img">
+              {%- if article.image -%}
+                {{
+                  article.image
+                  | image_url: width: 700
+                  | image_tag: loading: 'lazy', widths: '320, 500, 700', sizes: '(min-width: 990px) 320px, 78vw', alt: article.title
+                }}
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'am-placeholder' }}
+              {%- endif -%}
+            </div>
+            <h3 class="am-article__title">{{ article.title }}</h3>
+            <p class="am-article__excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 30 }}</p>
+            <span class="am-article__more">{{ section.settings.read_label }}{% render 'amity-icon', icon: 'arrow-up-right' %}</span>
+          </a>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="am-article">
+            <div class="am-article__img">{{ 'lifestyle-2' | placeholder_svg_tag: 'am-placeholder' }}</div>
+            <h3 class="am-article__title">Your sleep guide title</h3>
+            <p class="am-article__excerpt">Choose a blog in the section settings to show your latest articles here.</p>
+            <span class="am-article__more">{{ section.settings.read_label }}{% render 'amity-icon', icon: 'arrow-up-right' %}</span>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Amity journal",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "From the Journal" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The Sleep Journal" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Useful guides to choosing and caring for your sleep essentials." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Explore all guides" },
+    { "type": "text", "id": "read_label", "label": "Read more label", "default": "Read the guide" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "presets": [{ "name": "Amity journal" }]
+}
+{% endschema %}

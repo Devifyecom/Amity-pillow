@@ -1,0 +1,620 @@
+{%- render 'amity-assets' -%}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign unit = current_variant.price
+  assign unit_compare = current_variant.compare_at_price | default: 0 | at_least: unit
+  assign first_image = product.featured_media
+  assign shop_name = shop.name
+
+  assign benefit_blocks = section.blocks | where: 'type', 'benefit'
+  assign tier_blocks = section.blocks | where: 'type', 'tier'
+  assign review_blocks = section.blocks | where: 'type', 'mini_review'
+  assign accordion_blocks = section.blocks | where: 'type', 'accordion'
+
+  assign preselected = 0
+  for block in tier_blocks
+    if block.settings.preselected
+      assign preselected = forloop.index0
+      break
+    endif
+  endfor
+-%}
+
+<section
+  id="AmityProduct"
+  class="am am-pdp"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-pdp__container">
+    <div class="am-pdp__grid">
+      {%- comment -%} ---------- Gallery ---------- {%- endcomment -%}
+      <am-gallery class="am-gallery">
+        <div class="am-gallery__stage">
+          <div class="am-gallery__viewport" data-viewport>
+            {%- for media in product.media -%}
+              <div class="am-gallery__slide" data-slide data-media-id="{{ media.id }}">
+                {%- case media.media_type -%}
+                  {%- when 'video' -%}
+                    {{ media | video_tag: controls: true, playsinline: true, preload: 'metadata', image_size: '1280x' }}
+                  {%- else -%}
+                    {%- liquid
+                      assign img_loading = 'lazy'
+                      assign img_priority = 'auto'
+                      if forloop.first
+                        assign img_loading = 'eager'
+                        assign img_priority = 'high'
+                      endif
+                      assign img_alt = media.alt | default: product.title
+                    -%}
+                    {{
+                      media.preview_image
+                      | image_url: width: 1400
+                      | image_tag:
+                        widths: '480, 640, 900, 1100, 1400',
+                        sizes: '(min-width: 1200px) 640px, (min-width: 990px) 50vw, 100vw',
+                        loading: img_loading,
+                        fetchpriority: img_priority,
+                        alt: img_alt
+                    }}
+                {%- endcase -%}
+              </div>
+            {%- else -%}
+              <div class="am-gallery__slide" data-slide>
+                {{ 'product-1' | placeholder_svg_tag: 'am-placeholder' }}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if section.settings.show_badge -%}
+            <div class="am-gallery__badge" aria-hidden="true">
+              <svg class="am-gallery__badge-ring" viewBox="0 0 90 90">
+                <defs>
+                  <path id="AmityBadgePath-{{ section.id }}" d="M45,45 m-33,0 a33,33 0 1,1 66,0 a33,33 0 1,1 -66,0"></path>
+                </defs>
+                <text>
+                  <textPath href="#AmityBadgePath-{{ section.id }}" textLength="205" lengthAdjust="spacing">
+                    {{- section.settings.badge_text | escape -}}
+                  </textPath>
+                </text>
+              </svg>
+              <span class="am-gallery__badge-icon">{% render 'amity-icon', icon: 'shield' %}</span>
+            </div>
+          {%- endif -%}
+
+          {%- if product.media.size > 1 -%}
+            <div class="am-gallery__dots">
+              {%- for media in product.media -%}
+                <button type="button" class="am-gallery__dot" data-dot aria-label="Show image {{ forloop.index }}"></button>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if product.media.size > 1 -%}
+          <div class="am-thumbs">
+            <button type="button" class="am-thumbs__arrow am-thumbs__arrow--prev" data-thumbs-prev aria-label="Previous image">
+              {%- render 'amity-icon', icon: 'chevron-left' -%}
+            </button>
+            <div class="am-thumbs__track" data-thumbs-track>
+              {%- for media in product.media -%}
+                <button type="button" class="am-thumbs__item" data-thumb aria-label="Show image {{ forloop.index }}">
+                  {{
+                    media.preview_image
+                    | image_url: width: 240
+                    | image_tag: loading: 'lazy', alt: '', widths: '120, 240', sizes: '120px'
+                  }}
+                </button>
+              {%- endfor -%}
+            </div>
+            <button type="button" class="am-thumbs__arrow am-thumbs__arrow--next" data-thumbs-next aria-label="Next image">
+              {%- render 'amity-icon', icon: 'chevron-right' -%}
+            </button>
+          </div>
+        {%- endif -%}
+      </am-gallery>
+
+      {%- comment -%} ---------- Info column ---------- {%- endcomment -%}
+      <div class="am-info">
+        {%- if section.settings.rating_text != blank -%}
+          <a class="am-info__rating" href="#{{ section.settings.reviews_anchor | default: 'reviews' }}">
+            {%- render 'amity-stars', label: section.settings.rating_text -%}
+            <span>{{ section.settings.rating_text }}</span>
+          </a>
+        {%- endif -%}
+
+        {%- assign display_title = section.settings.title | default: product.title | escape -%}
+        <h1 class="am-info__title">{{ display_title | replace: '™', '<sup class="am-tm">™</sup>' }}</h1>
+
+        {%- if section.settings.subtitle != blank -%}
+          <p class="am-info__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+
+        <hr class="am-info__rule">
+
+        {%- if benefit_blocks.size > 0 -%}
+          <ul class="am-benefits">
+            {%- for block in benefit_blocks -%}
+              <li class="am-benefit" {{ block.shopify_attributes }}>
+                <span class="am-benefit__check">{% render 'amity-icon', icon: 'check' %}</span>
+                <div>
+                  <p class="am-benefit__title">{{ block.settings.title }}</p>
+                  {%- if block.settings.text != blank -%}
+                    <p class="am-benefit__text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- comment -%} ---------- Bundle picker ---------- {%- endcomment -%}
+        <am-bundle
+          class="am-bundle"
+          data-variant-id="{{ current_variant.id }}"
+          data-money-format="{{ shop.money_format | escape }}"
+          data-label-add="{{ section.settings.atc_label | escape }}"
+          data-label-sold-out="{{ 'products.product.sold_out' | t | escape }}"
+          data-label-error="{{ section.settings.error_text | escape }}"
+        >
+          <script type="application/json" data-variants>
+            [
+              {%- for v in product.variants -%}
+                {"id":{{ v.id }},"price":{{ v.price }},"compare_at_price":{{ v.compare_at_price | default: 0 }},"available":{{ v.available }},"featured_media_id":{{ v.featured_media.id | default: 'null' }}}{% unless forloop.last %},{% endunless %}
+              {%- endfor -%}
+            ]
+          </script>
+
+          {%- assign form_id = 'AmityForm-' | append: section.id -%}
+          {%- form 'product', product, id: form_id, novalidate: 'novalidate' -%}
+            <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+            {%- if section.settings.bundle_heading != blank -%}
+              <div class="am-divider-label">{{ section.settings.bundle_heading }}</div>
+            {%- endif -%}
+
+            {%- unless product.has_only_default_variant -%}
+              <div class="am-variant">
+                <label class="am-variant__label" for="AmityVariant-{{ section.id }}">
+                  {{- product.options | join: ' / ' -}}
+                </label>
+                <select id="AmityVariant-{{ section.id }}" class="am-variant__select" data-variant-select>
+                  {%- for v in product.variants -%}
+                    <option value="{{ v.id }}" {% if v.id == current_variant.id %}selected{% endif %} {% unless v.available %}disabled{% endunless %}>
+                      {{ v.title }}{% unless v.available %} — {{ 'products.product.sold_out' | t }}{% endunless %}
+                    </option>
+                  {%- endfor -%}
+                </select>
+              </div>
+            {%- endunless -%}
+
+            {%- if tier_blocks.size > 0 -%}
+              <fieldset class="am-tiers">
+                <legend class="visually-hidden">{{ section.settings.bundle_heading | default: 'Choose a bundle' }}</legend>
+                {%- for block in tier_blocks -%}
+                  {%- liquid
+                    assign qty = block.settings.quantity
+                    assign free = block.settings.free_quantity | at_most: qty
+                    assign paid = qty | minus: free
+                    assign pct_left = 100 | minus: block.settings.discount_percent
+                    assign tier_price = unit | times: paid | times: pct_left | divided_by: 100
+                    assign tier_compare = unit_compare | times: qty
+                    assign tier_save = tier_compare | minus: tier_price
+                    assign tier_save_money = tier_save | money
+                    assign label = block.settings.label | replace: '[quantity]', qty
+                    assign has_gifts = false
+                    if block.settings.gift_1_title != blank or block.settings.gift_2_title != blank or block.settings.gift_3_title != blank
+                      assign has_gifts = true
+                    endif
+                  -%}
+                  <label
+                    class="am-tier{% if forloop.index0 == preselected %} is-selected{% endif %}{% unless has_gifts %} am-tier--solo{% endunless %}"
+                    data-tier
+                    data-qty="{{ qty }}"
+                    data-free="{{ free }}"
+                    data-discount="{{ block.settings.discount_percent }}"
+                    data-label="{{ label | escape }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if block.settings.badge != blank -%}
+                      <span class="am-tier__badge{% if block.settings.badge_style == 'dark' %} am-tier__badge--dark{% endif %}">
+                        {{- block.settings.badge -}}
+                      </span>
+                    {%- endif -%}
+
+                    <input
+                      class="am-tier__input"
+                      type="radio"
+                      name="amity-tier-{{ section.id }}"
+                      value="{{ forloop.index0 }}"
+                      {% if forloop.index0 == preselected %}checked{% endif %}
+                    >
+                    <span class="am-tier__head">
+                      <span class="am-tier__radio" aria-hidden="true"></span>
+                      <span>
+                        <span class="am-tier__label">{{ label }}</span>
+                        {%- if block.settings.save_text != blank -%}
+                          <span
+                            class="am-tier__save"
+                            data-tier-save
+                            data-template="{{ block.settings.save_text | escape }}"
+                            {% if tier_save <= 0 %}hidden{% endif %}
+                          >
+                            {{- block.settings.save_text | replace: '[amount]', tier_save_money -}}
+                          </span>
+                        {%- endif -%}
+                      </span>
+                      <span class="am-tier__prices">
+                        <span class="am-tier__price" data-tier-price>{{ tier_price | money }}</span>
+                        <span class="am-tier__compare" data-tier-compare>
+                          {%- if tier_compare > tier_price -%}{{ tier_compare | money }}{%- endif -%}
+                        </span>
+                      </span>
+                    </span>
+
+                    {%- if has_gifts -%}
+                      <span class="am-tier__gifts">
+                        {%- for n in (1..3) -%}
+                          {%- liquid
+                            assign g_title_key = 'gift_' | append: n | append: '_title'
+                            assign g_sub_key = 'gift_' | append: n | append: '_subtitle'
+                            assign g_type_key = 'gift_' | append: n | append: '_type'
+                            assign g_product_key = 'gift_' | append: n | append: '_product'
+                            assign g_image_key = 'gift_' | append: n | append: '_image'
+                            assign g_value_key = 'gift_' | append: n | append: '_value'
+
+                            assign g_title = block.settings[g_title_key]
+                            if g_title == blank
+                              continue
+                            endif
+                            assign g_type = block.settings[g_type_key]
+                            assign g_product = block.settings[g_product_key]
+                            assign g_image = block.settings[g_image_key]
+                            assign g_value = block.settings[g_value_key]
+                            assign g_variant = g_product.selected_or_first_available_variant
+                          -%}
+                          <span class="am-tier__gift" {% if g_type == 'product' and g_variant and section.settings.add_gifts_to_cart %}data-gift-variant="{{ g_variant.id }}"{% endif %}>
+                            <span class="am-tier__gift-img">
+                              {%- if g_image != blank -%}
+                                {{ g_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}
+                              {%- elsif g_type == 'free_unit' and first_image -%}
+                                {{ first_image.preview_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}
+                              {%- elsif g_product.featured_media -%}
+                                {{ g_product.featured_media.preview_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}
+                              {%- else -%}
+                                {{ 'product-2' | placeholder_svg_tag: 'am-placeholder' }}
+                              {%- endif -%}
+                            </span>
+                            <span>
+                              <span class="am-tier__gift-title">{{ g_title }}</span>
+                              {%- if block.settings[g_sub_key] != blank -%}
+                                <span class="am-tier__gift-sub">{{ block.settings[g_sub_key] }}</span>
+                              {%- endif -%}
+                            </span>
+                            <span class="am-tier__gift-prices">
+                              <span class="am-free">{{ section.settings.free_label }}</span>
+                              {%- if g_value != blank -%}
+                                <span class="am-tier__gift-compare">{{ g_value }}</span>
+                              {%- elsif g_type == 'free_unit' -%}
+                                <span class="am-tier__gift-compare" data-free-unit>{{ unit | money }}</span>
+                              {%- elsif g_variant -%}
+                                {%- liquid
+                                  assign g_worth = g_variant.price
+                                  if g_variant.compare_at_price > g_variant.price
+                                    assign g_worth = g_variant.compare_at_price
+                                  endif
+                                -%}
+                                {%- if g_worth > 0 -%}
+                                  <span class="am-tier__gift-compare">{{ g_worth | money }}</span>
+                                {%- endif -%}
+                              {%- endif -%}
+                            </span>
+                          </span>
+                        {%- endfor -%}
+                      </span>
+                    {%- endif -%}
+                  </label>
+                {%- endfor -%}
+              </fieldset>
+            {%- endif -%}
+
+            {%- if section.settings.show_ship_by -%}
+              <p class="am-shipby">
+                <span class="am-shipby__dot" aria-hidden="true"></span>
+                <span>
+                  <strong>{{ section.settings.ship_by_label }}</strong>
+                  <am-shipdate data-days="{{ section.settings.ship_by_days }}" data-skip-weekends="{{ section.settings.ship_skip_weekends }}"></am-shipdate>
+                </span>
+              </p>
+            {%- endif -%}
+
+            <button
+              type="submit"
+              name="add"
+              class="am-btn am-atc"
+              data-atc
+              {% unless current_variant.available %}disabled{% endunless %}
+            >
+              <span class="am-atc__spinner" aria-hidden="true"></span>
+              <span class="am-atc__text" data-atc-text>
+                {%- if current_variant.available -%}
+                  {{ section.settings.atc_label }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </span>
+            </button>
+            <p class="am-atc__error" role="alert" data-atc-error></p>
+          {%- endform -%}
+        </am-bundle>
+
+        {%- comment -%} ---------- Mini reviews ---------- {%- endcomment -%}
+        {%- if review_blocks.size > 0 -%}
+          <div class="am-minirev">
+            <div class="am-minirev__head">
+              {%- render 'amity-stars' -%}
+              <span>{{ section.settings.mini_reviews_heading }}</span>
+            </div>
+            <div class="am-minirev__grid">
+              {%- for block in review_blocks -%}
+                <figure class="am-minirev__card" style="margin: 0;" {{ block.shopify_attributes }}>
+                  <div class="am-minirev__img">
+                    {%- if block.settings.image != blank -%}
+                      {{ block.settings.image | image_url: width: 160 | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: '' }}
+                    {%- else -%}
+                      {{ 'product-3' | placeholder_svg_tag: 'am-placeholder' }}
+                    {%- endif -%}
+                  </div>
+                  <div>
+                    {%- render 'amity-stars' -%}
+                    <blockquote class="am-minirev__text" style="margin: 0;">&ldquo;{{ block.settings.text }}&rdquo;</blockquote>
+                    <figcaption class="am-minirev__name">{{ block.settings.author }}</figcaption>
+                  </div>
+                </figure>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ---------- Payments + trust ---------- {%- endcomment -%}
+        {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+          <ul class="am-payments" aria-label="Payment methods">
+            {%- for type in shop.enabled_payment_types limit: 7 -%}
+              <li>{{ type | payment_type_svg_tag }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.trust_1 != blank or section.settings.trust_2 != blank -%}
+          <div class="am-trust">
+            {%- if section.settings.trust_1 != blank -%}
+              <span class="am-trust__item">{% render 'amity-icon', icon: 'truck' %}{{ section.settings.trust_1 }}</span>
+            {%- endif -%}
+            {%- if section.settings.trust_2 != blank -%}
+              <span class="am-trust__item">{% render 'amity-icon', icon: 'shield' %}{{ section.settings.trust_2 }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ---------- Guarantee box ---------- {%- endcomment -%}
+        {%- if section.settings.covered_title != blank -%}
+          <div class="am-covered">
+            {%- if section.settings.covered_pill != blank -%}
+              <span class="am-covered__pill">
+                {%- render 'amity-icon', icon: 'badge-check' -%}
+                {{- section.settings.covered_pill | replace: '[shop]', shop_name -}}
+              </span>
+            {%- endif -%}
+            <h2 class="am-covered__title">{{ section.settings.covered_title }}</h2>
+            {%- if section.settings.covered_text != blank -%}
+              <div class="am-covered__text am-rte">{{ section.settings.covered_text | replace: '[shop]', shop_name }}</div>
+            {%- endif -%}
+            {%- if section.settings.covered_note != blank -%}
+              <p class="am-covered__note">{{ section.settings.covered_note }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ---------- Accordions ---------- {%- endcomment -%}
+        {%- if accordion_blocks.size > 0 -%}
+          <div class="am-info__accordions">
+            {%- for block in accordion_blocks -%}
+              <am-accordion {{ block.shopify_attributes }}>
+                <details class="am-acc" {% if block.settings.open %}open{% endif %}>
+                  <summary>
+                    <span>{{ block.settings.title }}</span>
+                    <span class="am-acc__icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="am-acc__body">
+                    <div class="am-acc__content am-rte">
+                      {{ block.settings.content }}
+                      {%- if block.settings.page != blank -%}
+                        {{ block.settings.page.content }}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </details>
+              </am-accordion>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Product structured data for search engines {%- endcomment -%}
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "Amity product",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "header", "content": "Heading" },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "4.8 out of 5.0 stars (1317 reviews)",
+      "info": "Keep this in sync with your real review data."
+    },
+    { "type": "text", "id": "reviews_anchor", "label": "Rating link target ID", "default": "reviews" },
+    { "type": "text", "id": "title", "label": "Title override", "info": "Leave blank to use the product title." },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Settle in, stop rearranging pillows, and wake up feeling rested." },
+
+    { "type": "header", "content": "Gallery" },
+    { "type": "checkbox", "id": "show_badge", "label": "Show rotating badge", "default": true },
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "30-Day Returns · Free Shipping · " },
+
+    { "type": "header", "content": "Bundles" },
+    { "type": "text", "id": "bundle_heading", "label": "Bundle heading", "default": "Buy More · Save More" },
+    { "type": "text", "id": "free_label", "label": "Free label", "default": "FREE" },
+    {
+      "type": "checkbox",
+      "id": "add_gifts_to_cart",
+      "label": "Add gift products to cart",
+      "default": true,
+      "info": "Gift rows with a product selected are added to the cart with the bundle. Create matching automatic discounts in Shopify admin so gifts and free units are priced at 0."
+    },
+
+    { "type": "header", "content": "Add to cart" },
+    { "type": "checkbox", "id": "show_ship_by", "label": "Show ship-by date", "default": true },
+    { "type": "text", "id": "ship_by_label", "label": "Ship-by label", "default": "Order Today, Ships By:" },
+    { "type": "range", "id": "ship_by_days", "label": "Days until shipping", "min": 0, "max": 10, "step": 1, "default": 2 },
+    { "type": "checkbox", "id": "ship_skip_weekends", "label": "Skip weekends", "default": false },
+    { "type": "text", "id": "atc_label", "label": "Button label", "default": "Add to cart" },
+    { "type": "text", "id": "error_text", "label": "Error message", "default": "Something went wrong. Please try again." },
+
+    { "type": "header", "content": "Mini reviews" },
+    { "type": "text", "id": "mini_reviews_heading", "label": "Heading", "default": "Loved by Side & Back Sleepers" },
+
+    { "type": "header", "content": "Trust" },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Show payment icons", "default": true },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1", "default": "Free Shipping" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2", "default": "30-Day Returns" },
+
+    { "type": "header", "content": "Guarantee box" },
+    { "type": "text", "id": "covered_pill", "label": "Pill text", "default": "Sold & Shipped by [shop]", "info": "[shop] is replaced with your store name." },
+    { "type": "text", "id": "covered_title", "label": "Title", "default": "We've Got You Covered" },
+    {
+      "type": "richtext",
+      "id": "covered_text",
+      "label": "Text",
+      "default": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>"
+    },
+    { "type": "text", "id": "covered_note", "label": "Note", "default": "Damaged, defective or not as described? We replace it or refund you." },
+
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Cradles Your Head" },
+        { "type": "text", "id": "text", "label": "Text", "default": "A cushioned center and contoured neck edge hold you comfortably." }
+      ]
+    },
+    {
+      "type": "tier",
+      "name": "Bundle tier",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Buy [quantity] Pillows", "info": "[quantity] is replaced with the quantity." },
+        { "type": "range", "id": "quantity", "label": "Pillows added to cart", "min": 1, "max": 10, "step": 1, "default": 1 },
+        { "type": "range", "id": "free_quantity", "label": "Of which free", "min": 0, "max": 5, "step": 1, "default": 0, "info": "For \"Buy 3, Get 1 Free\" set quantity 4 and free 1." },
+        { "type": "range", "id": "discount_percent", "label": "Extra discount shown", "min": 0, "max": 60, "step": 1, "unit": "%", "default": 0, "info": "Display only — must match an automatic discount in Shopify admin." },
+        { "type": "text", "id": "save_text", "label": "Savings text", "default": "You Save [amount]" },
+        { "type": "text", "id": "badge", "label": "Badge" },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "Badge style",
+          "options": [
+            { "value": "accent", "label": "Copper" },
+            { "value": "dark", "label": "Dark" }
+          ],
+          "default": "accent"
+        },
+        { "type": "checkbox", "id": "preselected", "label": "Selected by default", "default": false },
+
+        { "type": "header", "content": "Gift 1" },
+        { "type": "text", "id": "gift_1_title", "label": "Title" },
+        { "type": "text", "id": "gift_1_subtitle", "label": "Subtitle" },
+        {
+          "type": "select",
+          "id": "gift_1_type",
+          "label": "Gift type",
+          "options": [
+            { "value": "product", "label": "Separate product" },
+            { "value": "free_unit", "label": "Free pillow (included in quantity)" }
+          ],
+          "default": "product"
+        },
+        { "type": "product", "id": "gift_1_product", "label": "Gift product" },
+        { "type": "image_picker", "id": "gift_1_image", "label": "Image override" },
+        { "type": "text", "id": "gift_1_value", "label": "Value override", "info": "Shown struck through. Leave blank to use the product's price." },
+
+        { "type": "header", "content": "Gift 2" },
+        { "type": "text", "id": "gift_2_title", "label": "Title" },
+        { "type": "text", "id": "gift_2_subtitle", "label": "Subtitle" },
+        {
+          "type": "select",
+          "id": "gift_2_type",
+          "label": "Gift type",
+          "options": [
+            { "value": "product", "label": "Separate product" },
+            { "value": "free_unit", "label": "Free pillow (included in quantity)" }
+          ],
+          "default": "product"
+        },
+        { "type": "product", "id": "gift_2_product", "label": "Gift product" },
+        { "type": "image_picker", "id": "gift_2_image", "label": "Image override" },
+        { "type": "text", "id": "gift_2_value", "label": "Value override" },
+
+        { "type": "header", "content": "Gift 3" },
+        { "type": "text", "id": "gift_3_title", "label": "Title" },
+        { "type": "text", "id": "gift_3_subtitle", "label": "Subtitle" },
+        {
+          "type": "select",
+          "id": "gift_3_type",
+          "label": "Gift type",
+          "options": [
+            { "value": "product", "label": "Separate product" },
+            { "value": "free_unit", "label": "Free pillow (included in quantity)" }
+          ],
+          "default": "product"
+        },
+        { "type": "product", "id": "gift_3_product", "label": "Gift product" },
+        { "type": "image_picker", "id": "gift_3_image", "label": "Image override" },
+        { "type": "text", "id": "gift_3_value", "label": "Value override" }
+      ]
+    },
+    {
+      "type": "mini_review",
+      "name": "Mini review",
+      "limit": 4,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "textarea", "id": "text", "label": "Quote", "default": "I had a great first night of sleep with it." },
+        { "type": "text", "id": "author", "label": "Name", "default": "Customer name" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Why You'll Love It" },
+        { "type": "richtext", "id": "content", "label": "Content" },
+        { "type": "page", "id": "page", "label": "Page content (optional)" },
+        { "type": "checkbox", "id": "open", "label": "Open by default", "default": false }
+      ]
+    }
+  ]
+}
+{% endschema %}

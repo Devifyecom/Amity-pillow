@@ -1,0 +1,101 @@
+{%- render 'amity-assets' -%}
+
+<section
+  class="am am-section am-bg--{{ section.settings.background }}"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-container am-container--wide">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="am-rel__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- liquid
+      assign list = empty
+      if section.settings.products != blank
+        assign list = section.settings.products
+      elsif recommendations.performed? and recommendations.products_count > 0
+        assign list = recommendations.products
+      endif
+      assign rec_url = routes.product_recommendations_url | append: '?section_id=' | append: section.id | append: '&product_id=' | append: product.id | append: '&limit=' | append: section.settings.limit | append: '&intent=related'
+    -%}
+
+    <am-recommendations
+      {% if section.settings.products == blank and recommendations.performed? == false %}data-url="{{ rec_url }}"{% endif %}
+    >
+      {%- if list != empty -%}
+        <div class="am-rel__grid">
+          {%- for item in list limit: section.settings.limit -%}
+            {%- assign subtitle = item.metafields.custom.subtitle.value | default: item.metafields.custom.subtitle -%}
+            <a class="am-pcard2" href="{{ item.url }}">
+              <div class="am-pcard2__media">
+                {%- if item.featured_media -%}
+                  {{
+                    item.featured_media.preview_image
+                    | image_url: width: 700
+                    | image_tag: loading: 'lazy', widths: '330, 500, 700', sizes: '(min-width: 990px) 330px, 50vw', alt: item.title
+                  }}
+                  {%- if section.settings.show_secondary and item.media[1] -%}
+                    {{
+                      item.media[1].preview_image
+                      | image_url: width: 700
+                      | image_tag: loading: 'lazy', widths: '330, 500, 700', sizes: '(min-width: 990px) 330px, 50vw', alt: ''
+                    }}
+                  {%- endif -%}
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'am-placeholder' }}
+                {%- endif -%}
+                {%- if item.compare_at_price > item.price -%}
+                  <span class="am-pcard2__sale">{{ section.settings.sale_label }}</span>
+                {%- endif -%}
+              </div>
+              <div class="am-pcard2__info">
+                <h3 class="am-pcard2__title">{{ item.title }}</h3>
+                {%- if subtitle != blank -%}
+                  <p class="am-pcard2__sub">{{ subtitle }}</p>
+                {%- endif -%}
+                <p class="am-pcard2__price">
+                  {%- if item.compare_at_price > item.price -%}
+                    <s>{{ item.compare_at_price | money }}</s>
+                  {%- endif -%}
+                  <span>
+                    {%- if item.price_varies -%}From {% endif -%}
+                    {{- item.price | money -}}
+                  </span>
+                </p>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </am-recommendations>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Amity related products",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "You May Also Like" },
+    { "type": "product_list", "id": "products", "label": "Products", "limit": 8, "info": "Leave empty to use Shopify's automatic recommendations." },
+    { "type": "range", "id": "limit", "label": "Products to show", "min": 2, "max": 8, "step": 1, "default": 4 },
+    { "type": "checkbox", "id": "show_secondary", "label": "Show second image on hover", "default": true },
+    { "type": "text", "id": "sale_label", "label": "Sale badge", "default": "Sale" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "gray", "label": "Light gray" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "white", "label": "White" }
+      ],
+      "default": "gray"
+    },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "presets": [{ "name": "Amity related products" }]
+}
+{% endschema %}

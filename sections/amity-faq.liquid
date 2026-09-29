@@ -1,0 +1,126 @@
+{%- render 'amity-assets' -%}
+
+<section
+  class="am am-section am-faq"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-container">
+    <div class="am-faq__grid">
+      <div class="am-faq__mosaic">
+        {%- for n in (1..4) -%}
+          {%- liquid
+            assign img_key = 'image_' | append: n
+            assign vid_key = 'video_' | append: n
+            assign tile_img = section.settings[img_key]
+            assign tile_vid = section.settings[vid_key]
+          -%}
+          <div class="am-faq__tile">
+            {%- if tile_vid != blank -%}
+              {{ tile_vid | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, preload: 'metadata', image_size: '500x' }}
+            {%- elsif tile_img != blank -%}
+              {{ tile_img | image_url: width: 500 | image_tag: loading: 'lazy', widths: '250, 500', sizes: '(min-width: 990px) 244px, 50vw' }}
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'am-placeholder' }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+
+        {%- if section.settings.stat_number != blank -%}
+          <div class="am-faq__stat">
+            <div class="am-faq__stat-rating">
+              {%- render 'amity-stars', label: section.settings.stat_rating -%}
+              <span>{{ section.settings.stat_rating }}</span>
+            </div>
+            <div class="am-faq__stat-num">{{ section.settings.stat_number }}</div>
+            <div class="am-faq__stat-label">{{ section.settings.stat_label }}</div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div>
+        <h2 class="am-heading am-faq__heading">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="am-faq__sub">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+
+        <div class="am-faq__list">
+          {%- for block in section.blocks -%}
+            <am-accordion data-group="faq-{{ section.id }}" {{ block.shopify_attributes }}>
+              <details class="am-acc">
+                <summary>
+                  <span>{{ block.settings.question }}</span>
+                  <span class="am-acc__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="am-acc__body">
+                  <div class="am-acc__content am-rte">{{ block.settings.answer }}</div>
+                </div>
+              </details>
+            </am-accordion>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in section.blocks -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.question | json }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Amity FAQ",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions, Answered" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Everything you need to choose with confidence." },
+    { "type": "header", "content": "Media tiles" },
+    { "type": "image_picker", "id": "image_1", "label": "Tile 1 image" },
+    { "type": "video", "id": "video_1", "label": "Tile 1 video" },
+    { "type": "image_picker", "id": "image_2", "label": "Tile 2 image" },
+    { "type": "video", "id": "video_2", "label": "Tile 2 video" },
+    { "type": "image_picker", "id": "image_3", "label": "Tile 3 image" },
+    { "type": "video", "id": "video_3", "label": "Tile 3 video" },
+    { "type": "image_picker", "id": "image_4", "label": "Tile 4 image" },
+    { "type": "video", "id": "video_4", "label": "Tile 4 video" },
+    { "type": "header", "content": "Stat badge" },
+    { "type": "text", "id": "stat_rating", "label": "Rating", "default": "4.8/5" },
+    { "type": "text", "id": "stat_number", "label": "Number", "default": "1,500+" },
+    { "type": "text", "id": "stat_label", "label": "Label", "default": "Happy Customers" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "How Easy Is It to Set Up?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Unbox it, give it a few hours to fully expand, zip on the cover and it's ready.</p>" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Amity FAQ",
+      "blocks": [{ "type": "question" }, { "type": "question" }, { "type": "question" }]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,52 @@
+{%- render 'amity-assets' -%}
+
+<section
+  class="am am-section am-bg--{{ section.settings.background }}"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-container am-container--narrow">
+    <div class="am-cta">
+      <h2 class="am-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="am-cta__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a class="am-btn am-cta__btn" href="{{ section.settings.button_link | default: '#AmityProduct' }}">
+          {{- section.settings.button_label -}}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.note != blank -%}
+        <p class="am-cta__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Amity CTA banner",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Upgrade Your Family's Sleep" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Make the switch and retire that flat old pillow." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Try It Risk-Free" },
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Leave blank to scroll back to the buy box." },
+    { "type": "text", "id": "note", "label": "Note", "default": "Free shipping · 30-day returns on unopened pillows" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "gray", "label": "Light gray" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "white", "label": "White" }
+      ],
+      "default": "gray"
+    },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "presets": [{ "name": "Amity CTA banner" }]
+}
+{% endschema %}

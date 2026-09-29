@@ -1,0 +1,598 @@
+{
+  "sections": {
+    "main": {
+      "type": "amity-main-product",
+      "settings": {
+        "rating_text": "4.8 out of 5.0 stars (1317 reviews)",
+        "reviews_anchor": "reviews",
+        "title": "",
+        "subtitle": "Settle in, stop rearranging pillows, and wake up feeling rested.",
+        "show_badge": true,
+        "badge_text": "30-Day Returns · Free Shipping · ",
+        "bundle_heading": "Buy More · Save More",
+        "free_label": "FREE",
+        "add_gifts_to_cart": true,
+        "show_ship_by": true,
+        "ship_by_label": "Order Today, Ships By:",
+        "ship_by_days": 2,
+        "ship_skip_weekends": false,
+        "atc_label": "Add to cart",
+        "error_text": "Something went wrong. Please try again.",
+        "mini_reviews_heading": "Loved by Side & Back Sleepers",
+        "show_payment_icons": true,
+        "trust_1": "Free Shipping",
+        "trust_2": "30-Day Returns",
+        "covered_pill": "Sold & Shipped by [shop]",
+        "covered_title": "We've Got You Covered",
+        "covered_text": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>",
+        "covered_note": "Damaged, defective or not as described? We replace it or refund you.",
+        "padding_top": 56,
+        "padding_bottom": 36
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Cradles Your Head",
+            "text": "A cushioned center and contoured neck edge hold you comfortably."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Back or Side, Your Call",
+            "text": "Flip for a lower back-sleeping face or a higher side face with arm room."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Easy to Keep Fresh",
+            "text": "The cover zips off for a quick hand wash."
+          }
+        },
+        "tier_4": {
+          "type": "tier",
+          "settings": {
+            "label": "Buy 1 Pillow",
+            "quantity": 1,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "",
+            "badge_style": "accent",
+            "preselected": true,
+            "gift_1_type": "product",
+            "gift_2_type": "product",
+            "gift_3_type": "product"
+          }
+        },
+        "tier_5": {
+          "type": "tier",
+          "settings": {
+            "label": "Buy 2 Pillows",
+            "quantity": 2,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Most Popular",
+            "badge_style": "accent",
+            "preselected": false,
+            "gift_1_title": "+ Free Silk Pillowcase",
+            "gift_1_type": "product",
+            "gift_2_type": "product",
+            "gift_3_type": "product"
+          }
+        },
+        "tier_6": {
+          "type": "tier",
+          "settings": {
+            "label": "Buy 3, Get 1 Free",
+            "quantity": 4,
+            "free_quantity": 1,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Best Value",
+            "badge_style": "dark",
+            "preselected": false,
+            "gift_1_title": "+ 1 Free Amity Pillow",
+            "gift_1_type": "free_unit",
+            "gift_2_title": "+ Free Silk Pillowcase",
+            "gift_2_type": "product",
+            "gift_3_type": "product"
+          }
+        },
+        "mini_review_7": {
+          "type": "mini_review",
+          "settings": {
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers.",
+            "author": "Kami C."
+          }
+        },
+        "mini_review_8": {
+          "type": "mini_review",
+          "settings": {
+            "text": "I had a great first night of sleep with it. Great for side sleepers.",
+            "author": "Donna R."
+          }
+        },
+        "accordion_9": {
+          "type": "accordion",
+          "settings": {
+            "title": "Why You'll Love It",
+            "open": false,
+            "content": "<ul><li>Two heights in one pillow: a lower face for back sleeping and a higher face for side sleeping.</li><li>Curved edges cradle your head and neck, so there's no more stacking or folding pillows.</li><li>The side face leaves room for your arm and shoulder.</li></ul>"
+          }
+        },
+        "accordion_10": {
+          "type": "accordion",
+          "settings": {
+            "title": "In the Box",
+            "open": false,
+            "content": "<ul><li>1 × Amity™ Comfort Cervical Pillow</li><li>1 × Removable zip cover (on the pillow)</li></ul>"
+          }
+        },
+        "accordion_11": {
+          "type": "accordion",
+          "settings": {
+            "title": "Details That Matter",
+            "open": false,
+            "content": "<ul><li>Contoured neck edge with a cushioned center cradle</li><li>Two sleeping heights. Just flip it over.</li><li>Memory foam that holds its shape night after night</li><li>Breathable, removable zip cover</li></ul>"
+          }
+        },
+        "accordion_12": {
+          "type": "accordion",
+          "settings": {
+            "title": "Best Way to Use",
+            "open": false,
+            "content": "<p><strong>Back sleepers:</strong> lay it lower side up with the raised edge under your neck and let your head settle into the center.</p><p><strong>Side sleepers:</strong> flip it higher side up so the taller edge fills the space above your shoulder.</p><p>Give it a few nights. A new shape can take a little getting used to.</p>"
+          }
+        },
+        "accordion_13": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care & Materials",
+            "open": false,
+            "content": "<p>Unzip the cover and hand wash it in cold water with a mild detergent, then air dry. Don't wash the foam core; spot clean it and let it air out.</p><p>When it first arrives, give the pillow a few hours out of the packaging to fully expand.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "tier_4",
+        "tier_5",
+        "tier_6",
+        "mini_review_7",
+        "mini_review_8",
+        "accordion_9",
+        "accordion_10",
+        "accordion_11",
+        "accordion_12",
+        "accordion_13"
+      ]
+    },
+    "video_reels": {
+      "type": "amity-video-reels",
+      "settings": {
+        "heading": "See Amity in Action",
+        "subheading": "Tap a clip to watch with sound.",
+        "background": "gray",
+        "padding_top": 24,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3"
+      ]
+    },
+    "sleep_toggle": {
+      "type": "amity-sleep-toggle",
+      "settings": {
+        "heading": "Which Side Is for You?",
+        "subheading": "Tap how you sleep. Flip the pillow to that face.",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "position_1": {
+          "type": "position",
+          "settings": {
+            "tab_label": "Back Sleeper",
+            "title": "Use the Lower Face",
+            "text": "Lay it lower side up with the raised edge under your neck, and let your head settle into the center cradle."
+          }
+        },
+        "position_2": {
+          "type": "position",
+          "settings": {
+            "tab_label": "Side Sleeper",
+            "title": "Use the Higher Face",
+            "text": "Flip it higher side up so the taller edge fills the space above your shoulder, with room for your arm underneath."
+          }
+        }
+      },
+      "block_order": [
+        "position_1",
+        "position_2"
+      ]
+    },
+    "versus": {
+      "type": "amity-versus",
+      "settings": {
+        "heading": "Imagine Waking Up Rested, Not Restless.",
+        "badge": "VS",
+        "card_title": "Shaped for Settled, Restful Sleep",
+        "card_text": "Flat pillows leave your neck hanging, so you keep shifting. Amity cradles your head and supports your neck.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "features": {
+      "type": "amity-features",
+      "settings": {
+        "heading": "3 Ways Amity Changes How You Rest",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "flip",
+            "title": "Flip It to Fit How You Sleep",
+            "text": "A lower face for your back, a higher one for your side. Keep whichever feels natural."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "neck",
+            "title": "Neck Edge, Head Cradle",
+            "text": "The raised edge supports your neck while the center cradle lets your head settle."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "arm",
+            "title": "Room for Your Arm",
+            "text": "The side face leaves space for your arm and shoulder, so you can curl in comfortably."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ]
+    },
+    "problems": {
+      "type": "amity-problems",
+      "settings": {
+        "heading": "Why Your Pillow Matters More Than You Think",
+        "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "Tossing and Turning?",
+            "text": "No neck support, so you shift all night."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "Hot and Flat by 3 a.m.?",
+            "text": "Loose fill packs down and traps warmth."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Groggy Mornings?",
+            "text": "Every wake-up to readjust cuts into your rest."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ]
+    },
+    "cta": {
+      "type": "amity-cta-banner",
+      "settings": {
+        "heading": "Upgrade Your Family's Sleep",
+        "text": "Make the switch and retire that flat old pillow.",
+        "button_label": "Try It Risk-Free",
+        "button_link": "",
+        "note": "Free shipping · 30-day returns on unopened pillows",
+        "background": "gray",
+        "padding_top": 48,
+        "padding_bottom": 80
+      }
+    },
+    "experts": {
+      "type": "amity-experts",
+      "settings": {
+        "heading": "What the Experts Say",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "expert_1": {
+          "type": "expert",
+          "settings": {
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
+          }
+        },
+        "expert_2": {
+          "type": "expert",
+          "settings": {
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
+          }
+        },
+        "expert_3": {
+          "type": "expert",
+          "settings": {
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
+          }
+        }
+      },
+      "block_order": [
+        "expert_1",
+        "expert_2",
+        "expert_3"
+      ]
+    },
+    "comparison": {
+      "type": "amity-comparison",
+      "settings": {
+        "heading": "The Difference Is Clear",
+        "brand_label": "",
+        "other_label": "Ordinary Pillow",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Contoured Neck Support Edge",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Cushioned Center Head Cradle",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Two Heights: Flip for Back or Side",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Arm Room on the Side-Sleeping Face",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Memory Foam That Holds Its Shape",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Removable Zip Cover",
+            "ours": true,
+            "theirs": false
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ]
+    },
+    "faq": {
+      "type": "amity-faq",
+      "settings": {
+        "heading": "Questions, Answered",
+        "subheading": "Everything you need to choose with confidence.",
+        "stat_rating": "4.8/5",
+        "stat_number": "1,500+",
+        "stat_label": "Happy Customers",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "How Easy Is It to Set Up?",
+            "answer": "<p>Take it out of the packaging and give it a few hours to fully expand. The cover is already on, so it's ready for bed the same night.</p>"
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "Which Sleep Positions Does Amity Suit?",
+            "answer": "<p>Amity is made for back and side sleepers. Each has its own face: lower for your back, higher for your side. Many people who switch positions during the night like having both in one pillow.</p>"
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "How Do I Flip It, and Which Side Is Which?",
+            "answer": "<p>The lower face is for back sleeping and the higher face is for side sleeping. Keep the raised edge under your neck and turn the pillow over to switch heights. No stacking needed.</p>"
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "How Do I Clean the Cover?",
+            "answer": "<p>Unzip the cover, hand wash it in cold water with a mild detergent and let it air dry. Don't wash the foam core. Spot clean it if needed.</p>"
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "What If It Is Not for Me?",
+            "answer": "<p>You have 30 days to return unopened pillows. If yours arrives damaged, defective or not as described, we'll replace it or refund you. Just reach out to our support team.</p>"
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "How Long Does Shipping Take?",
+            "answer": "<p>Shipping is free. You'll see the ship-by date just above the Add to cart button, and we email a tracking link as soon as your order is on its way.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6"
+      ]
+    },
+    "reviews": {
+      "type": "amity-reviews",
+      "settings": {
+        "anchor": "reviews",
+        "heading": "Customer Reviews",
+        "average": "4.8",
+        "count_text": "1,317 reviews",
+        "write_label": "Write a review",
+        "per_page": 5,
+        "background": "gray",
+        "padding_top": 56,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Kami C.",
+            "rating": 5,
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers. The material feels high-quality, and it holds its shape well. Would definitely recommend!"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "W R.",
+            "rating": 5,
+            "text": "It took a long while for it to decompress and fill out to full size. I was pretty worried when I first opened it, but it ended up nice and full. It looks just like the photos, seems good quality. It is solid memory foam. I'm pleased to be able to try it out at a low price point. Definitely good value for money."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "A O.",
+            "rating": 5,
+            "text": "great pillow. very good support on the neck"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
+    },
+    "related": {
+      "type": "amity-related",
+      "settings": {
+        "heading": "You May Also Like",
+        "limit": 4,
+        "show_secondary": true,
+        "sale_label": "Sale",
+        "background": "gray",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "journal": {
+      "type": "amity-journal",
+      "settings": {
+        "eyebrow": "From the Journal",
+        "heading": "The Sleep Journal",
+        "subheading": "Useful guides to choosing and caring for your sleep essentials.",
+        "button_label": "Explore all guides",
+        "read_label": "Read the guide",
+        "padding_top": 72,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_reels",
+    "sleep_toggle",
+    "versus",
+    "features",
+    "problems",
+    "cta",
+    "experts",
+    "comparison",
+    "faq",
+    "reviews",
+    "related",
+    "journal"
+  ]
+}

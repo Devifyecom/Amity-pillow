@@ -1,0 +1,10 @@
+{%- comment -%}
+  Shared fonts, styles and scripts for every `amity-*` section.
+  Safe to render more than once — browsers de-duplicate the requests and the JS guards itself.
+{%- endcomment -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+{{ 'amity.css' | asset_url | stylesheet_tag }}
+<script>window.amityMoneyFormat = window.amityMoneyFormat || {{ shop.money_format | json }};</script>
+<script src="{{ 'amity.js' | asset_url }}" defer="defer"></script>

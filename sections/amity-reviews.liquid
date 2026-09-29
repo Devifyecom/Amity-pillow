@@ -1,0 +1,133 @@
+{%- render 'amity-assets' -%}
+
+{%- liquid
+  assign review_blocks = section.blocks | where: 'type', 'review'
+  assign app_blocks = section.blocks | where: 'type', '@app'
+-%}
+
+<section
+  id="{{ section.settings.anchor | default: 'reviews' }}"
+  class="am am-section am-bg--{{ section.settings.background }}"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px; scroll-margin-top: 40px;"
+>
+  <div class="am-reviews__container">
+    {%- if app_blocks.size > 0 -%}
+      {%- for block in app_blocks -%}
+        {% render block %}
+      {%- endfor -%}
+    {%- else -%}
+      <am-reviews data-per-page="{{ section.settings.per_page }}">
+        <h2 class="am-reviews__title">{{ section.settings.heading }}</h2>
+        <div class="am-reviews__bar">
+          <div class="am-reviews__score">
+            {%- render 'amity-icon', icon: 'star' -%}
+            <span class="am-reviews__avg">{{ section.settings.average }}</span>
+            <span class="am-reviews__count">{{ section.settings.count_text }}</span>
+          </div>
+          {%- if section.settings.write_label != blank -%}
+            <div class="am-reviews__actions">
+              <a class="am-btn am-reviews__write" href="{{ section.settings.write_link | default: '#' }}">{{ section.settings.write_label }}</a>
+              <button type="button" class="am-reviews__icon-btn" aria-label="Filter reviews">{% render 'amity-icon', icon: 'filter' %}</button>
+              <button type="button" class="am-reviews__icon-btn" aria-label="Sort reviews">{% render 'amity-icon', icon: 'sort' %}</button>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- assign photo_count = 0 -%}
+        {%- capture photos -%}
+          {%- for block in review_blocks -%}
+            {%- if block.settings.image != blank -%}
+              {%- assign photo_count = photo_count | plus: 1 -%}
+              <div class="am-reviews__photo">
+                {{ block.settings.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: block.settings.author }}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if photo_count > 0 -%}
+          <div class="am-reviews__photos">{{ photos }}</div>
+        {%- endif -%}
+
+        <div class="am-reviews__list">
+          {%- for block in review_blocks -%}
+            <article class="am-review" data-review {{ block.shopify_attributes }}>
+              <div class="am-review__author">
+                <span class="am-review__avatar" aria-hidden="true">{{ block.settings.author | slice: 0 | upcase }}</span>
+                <span class="am-review__name">{{ block.settings.author }}</span>
+              </div>
+              <div>
+                {%- assign rating_label = block.settings.rating | append: ' out of 5 stars' -%}
+                <span class="am-stars am-review__stars" role="img" aria-label="{{ rating_label }}">
+                  {%- for i in (1..5) -%}
+                    <svg viewBox="0 0 20 20" aria-hidden="true" {% if i > block.settings.rating %}style="opacity: 0.25"{% endif %}><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 7.8l6-.8L10 1.5z"/></svg>
+                  {%- endfor -%}
+                </span>
+                <p class="am-review__text">{{ block.settings.text }}</p>
+                {%- if block.settings.image != blank -%}
+                  <div class="am-review__img">
+                    {{ block.settings.image | image_url: width: 320 | image_tag: loading: 'lazy', alt: block.settings.image.alt }}
+                  </div>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+
+        <nav class="am-pager" data-pager aria-label="Reviews pages"></nav>
+      </am-reviews>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Amity reviews",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add your reviews app block here to show live reviews. The manual review blocks are only used when no app block is present."
+    },
+    { "type": "text", "id": "anchor", "label": "Anchor ID", "default": "reviews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Customer Reviews" },
+    { "type": "text", "id": "average", "label": "Average rating", "default": "4.8" },
+    { "type": "text", "id": "count_text", "label": "Review count text", "default": "1,317 reviews" },
+    { "type": "text", "id": "write_label", "label": "Write review label", "default": "Write a review" },
+    { "type": "url", "id": "write_link", "label": "Write review link" },
+    { "type": "range", "id": "per_page", "label": "Reviews per page", "min": 2, "max": 20, "step": 1, "default": 5 },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "gray", "label": "Light gray" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "white", "label": "White" }
+      ],
+      "default": "gray"
+    },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 60 }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "author", "label": "Name", "default": "Customer" },
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "text", "label": "Review", "default": "Share what a real customer said about Amity." },
+        { "type": "image_picker", "id": "image", "label": "Photo" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Amity reviews",
+      "blocks": [{ "type": "review" }, { "type": "review" }]
+    }
+  ]
+}
+{% endschema %}

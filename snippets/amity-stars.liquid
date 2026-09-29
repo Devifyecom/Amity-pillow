@@ -1,0 +1,9 @@
+{%- comment -%}
+  Renders a row of five star icons.
+  Accepts: class (optional extra classes), label (accessible label)
+{%- endcomment -%}
+<span class="am-stars {{ class }}" role="img" aria-label="{{ label | default: '5 out of 5 stars' | escape }}">
+  {%- for i in (1..5) -%}
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 7.8l6-.8L10 1.5z"/></svg>
+  {%- endfor -%}
+</span>

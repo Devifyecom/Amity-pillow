@@ -1,0 +1,96 @@
+{%- render 'amity-assets' -%}
+
+<section
+  class="am am-section am-bg--{{ section.settings.background }}"
+  style="--am-pt: {{ section.settings.padding_top }}px; --am-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="am-container am-container--narrow">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="am-heading am-heading--center">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="am-table" role="table" aria-label="{{ section.settings.heading | escape }}">
+      <span class="am-table__hl" aria-hidden="true"></span>
+      <div class="am-table__row am-table__row--head" role="row">
+        <span role="columnheader"><span class="visually-hidden">Feature</span></span>
+        <span class="am-table__cell" role="columnheader">
+          {%- if section.settings.logo != blank -%}
+            {{ section.settings.logo | image_url: height: 52 | image_tag: loading: 'lazy', alt: shop.name }}
+          {%- else -%}
+            <span class="am-table__brand">{{ section.settings.brand_label | default: shop.name }}</span>
+          {%- endif -%}
+        </span>
+        <span class="am-table__cell am-table__other" role="columnheader">{{ section.settings.other_label }}</span>
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div class="am-table__row{% if forloop.first %} am-table__row--first{% endif %}" role="row" {{ block.shopify_attributes }}>
+          <span class="am-table__feature" role="rowheader">{{ block.settings.feature }}</span>
+          <span class="am-table__cell" role="cell">
+            {%- if block.settings.ours -%}
+              <span class="am-table__yes">{% render 'amity-icon', icon: 'badge-check' %}</span>
+              <span class="visually-hidden">Yes</span>
+            {%- else -%}
+              <span class="am-table__no">{% render 'amity-icon', icon: 'x' %}</span>
+              <span class="visually-hidden">No</span>
+            {%- endif -%}
+          </span>
+          <span class="am-table__cell" role="cell">
+            {%- if block.settings.theirs -%}
+              <span class="am-table__yes">{% render 'amity-icon', icon: 'badge-check' %}</span>
+              <span class="visually-hidden">Yes</span>
+            {%- else -%}
+              <span class="am-table__no">{% render 'amity-icon', icon: 'x' %}</span>
+              <span class="visually-hidden">No</span>
+            {%- endif -%}
+          </span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Amity comparison table",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The Difference Is Clear" },
+    { "type": "image_picker", "id": "logo", "label": "Brand logo" },
+    { "type": "text", "id": "brand_label", "label": "Brand label", "info": "Used when no logo is set. Defaults to your store name." },
+    { "type": "text", "id": "other_label", "label": "Competitor label", "default": "Ordinary Pillow" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "gray", "label": "Light gray" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "white", "label": "White" }
+      ],
+      "default": "gray"
+    },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Feature", "default": "Contoured Neck Support Edge" },
+        { "type": "checkbox", "id": "ours", "label": "Amity has it", "default": true },
+        { "type": "checkbox", "id": "theirs", "label": "Ordinary pillow has it", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Amity comparison table",
+      "blocks": [{ "type": "row" }, { "type": "row" }, { "type": "row" }]
+    }
+  ]
+}
+{% endschema %}
