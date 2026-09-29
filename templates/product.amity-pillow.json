@@ -265,6 +265,7 @@
           "type": "position",
           "settings": {
             "tab_label": "Back Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-back.webp",
             "title": "Use the Lower Face",
             "text": "Lay it lower side up with the raised edge under your neck, and let your head settle into the center cradle."
           }
@@ -273,6 +274,7 @@
           "type": "position",
           "settings": {
             "tab_label": "Side Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-side.webp",
             "title": "Use the Higher Face",
             "text": "Flip it higher side up so the taller edge fills the space above your shoulder, with room for your arm underneath."
           }
