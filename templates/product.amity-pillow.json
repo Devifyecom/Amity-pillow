@@ -120,6 +120,7 @@
         "mini_review_7": {
           "type": "mini_review",
           "settings": {
+            "image": "shopify://shop_images/calmeden-review-ZNRPi5DHZ.avif",
             "text": "The pillow is fantastic. It provides good support, especially for back sleepers.",
             "author": "Kami C."
           }
@@ -127,6 +128,7 @@
         "mini_review_8": {
           "type": "mini_review",
           "settings": {
+            "image": "shopify://shop_images/calmeden-review-xo3eX-onn.webp",
             "text": "I had a great first night of sleep with it. Great for side sleepers.",
             "author": "Donna R."
           }
