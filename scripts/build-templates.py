@@ -69,7 +69,7 @@ selo = tmpl([
       "headline": "Take the heavy lifting off your team, all the way up to 6 metres.",
       "short_desc": P("Stop hauling material up ladders. Selo raises up to <strong>500 kg</strong> to a working height of up to <strong>6 metres</strong> at the touch of a remote, then stops automatically at the top. Your team stays on the scaffold, working, instead of carrying."),
       "tiers_heading": "Choose your package",
-      "show_buy_now": True, "show_dynamic_checkout": True, "stock_detail": "",
+      "show_buy_now": False, "show_dynamic_checkout": False, "stock_detail": "",
       "show_details": True, "shipping_text": SHIP_TEXT,
       "sticky": True, "sticky_mobile_scroll": False}, [
       B("highlight", icon="weight", text="Lifts up to 500 kg"),
@@ -215,7 +215,7 @@ abr = tmpl([
       "headline": "Heavy loads, carried for you, across grass, gravel and rough ground.",
       "short_desc": P("Firewood, stone, soil, tools: move up to <strong>450 kg</strong> in a single trip without pushing a thing. A brushless <strong>1000 W</strong> motor and two-wheel drive do the work, and a compact <strong>79 cm</strong> body gets through the gates and paths where bigger vehicles can't."),
       "tiers_heading": "Choose your package",
-      "show_buy_now": True, "show_dynamic_checkout": True, "stock_detail": "",
+      "show_buy_now": False, "show_dynamic_checkout": False, "stock_detail": "",
       "show_details": True, "shipping_text": SHIP_TEXT,
       "sticky": True, "sticky_mobile_scroll": False}, [
       B("highlight", icon="motor", text="Brushless 1000 W motor"),
