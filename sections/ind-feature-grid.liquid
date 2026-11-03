@@ -1,0 +1,57 @@
+{%- render 'ind-assets' -%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section{% if section.settings.tight %} ind-section--tight{% endif %}" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    {%- if section.settings.heading != blank or section.settings.eyebrow != blank -%}
+      <div class="ind-head{% if section.settings.center %} ind-head--center{% endif %}">
+        {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="ind-h2">{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.text != blank -%}<div class="ind-head__text">{{ section.settings.text }}</div>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <ul class="ind-features ind-features--{{ section.settings.style }}{% if section.settings.row_mobile %} ind-features--row-mobile{% endif %}" style="--cols: {{ section.settings.columns }}" role="list">
+      {%- for block in section.blocks -%}
+        <li class="ind-feature ind-reveal" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="ind-feature__media">{%- render 'ind-image', image: block.settings.image, sizes: '(min-width: 990px) 33vw, 100vw' -%}</div>
+          {%- elsif block.settings.icon != 'none' -%}
+            <span class="ind-icon-tile">{%- render 'ind-icon', name: block.settings.icon -%}</span>
+          {%- endif -%}
+          <div>
+            <h3 class="ind-feature__title">{{ block.settings.title }}</h3>
+            {%- if block.settings.text != blank -%}<div class="ind-feature__text ind-rte" style="margin-top:8px">{{ block.settings.text }}</div>{%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.note != blank -%}<p class="ind-note">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND feature grid",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "stone", "label": "Stone" }, { "value": "dark", "label": "Graphite" }, { "value": "ink", "label": "Ink" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "select", "id": "style", "label": "Card style", "options": [ { "value": "cards", "label": "Cards" }, { "value": "minimal", "label": "Minimal" }, { "value": "numbered", "label": "Numbered cards" } ], "default": "cards" },
+    { "type": "range", "id": "columns", "label": "Columns (desktop)", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "checkbox", "id": "row_mobile", "label": "Icon beside text on mobile", "default": true },
+    { "type": "checkbox", "id": "center", "label": "Centre heading", "default": false },
+    { "type": "checkbox", "id": "tight", "label": "Reduced spacing", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built for demanding work" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "note", "label": "Footnote" }
+  ],
+  "blocks": [
+    { "type": "feature", "name": "Feature", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "none", "label": "None"}, {"value": "check-circle", "label": "Check"}, {"value": "weight", "label": "Weight / load"}, {"value": "height", "label": "Height"}, {"value": "remote", "label": "Remote control"}, {"value": "shield", "label": "Safety shield"}, {"value": "layers", "label": "Steel / layers"}, {"value": "wheel", "label": "Castor wheel"}, {"value": "rotate", "label": "360\u00b0 rotation"}, {"value": "bolt", "label": "Power"}, {"value": "motor", "label": "Motor"}, {"value": "battery", "label": "Battery"}, {"value": "plug", "label": "Charger / plug"}, {"value": "clock", "label": "Clock / time"}, {"value": "truck", "label": "Delivery"}, {"value": "return", "label": "Returns"}, {"value": "box", "label": "Package"}, {"value": "ruler", "label": "Ruler"}, {"value": "width", "label": "Width"}, {"value": "gauge", "label": "Gauge"}, {"value": "speed", "label": "Speed"}, {"value": "route", "label": "Range / route"}, {"value": "terrain", "label": "Terrain"}, {"value": "tools", "label": "Tools"}, {"value": "wrench", "label": "Maintenance"}, {"value": "brick", "label": "Bricks / materials"}, {"value": "wood", "label": "Firewood"}, {"value": "leaf", "label": "Garden"}, {"value": "stairs", "label": "Stairs / height access"}, {"value": "grip", "label": "Non-slip platform"}, {"value": "cable", "label": "Steel cable"}, {"value": "brake", "label": "Brake"}, {"value": "light", "label": "LED light"}, {"value": "horn", "label": "Horn"}, {"value": "warning", "label": "Warning"}, {"value": "award", "label": "Warranty / quality"}, {"value": "support", "label": "Support"}, {"value": "lock", "label": "Secure checkout"}, {"value": "tag", "label": "Price tag"}, {"value": "percent", "label": "Discount"}, {"value": "calendar", "label": "Calendar"}, {"value": "globe", "label": "Worldwide"}], "default": "check-circle" },
+      { "type": "image_picker", "id": "image", "label": "Image (replaces icon)" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Feature" },
+      { "type": "richtext", "id": "text", "label": "Text" }
+    ] }
+  ],
+  "presets": [ { "name": "IND feature grid", "blocks": [ { "type": "feature" }, { "type": "feature" }, { "type": "feature" } ] } ]
+}
+{% endschema %}

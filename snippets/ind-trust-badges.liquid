@@ -1,0 +1,17 @@
+{%- comment -%}
+  Trust messages. Each line renders only if the merchant filled it in, so no promise
+  is shown that the store has not made. Params: items (array of 'icon|title|text'), layout ('grid'|'row')
+{%- endcomment -%}
+{%- if items.size > 0 -%}
+  <ul class="ind-trust{% if layout == 'row' %} ind-trust--row{% endif %}" role="list">
+    {%- for raw in items -%}
+      {%- assign parts = raw | split: '|' -%}
+      {%- if parts[1] != blank -%}
+        <li class="ind-trust__item">
+          {%- render 'ind-icon', name: parts[0] -%}
+          <div><strong>{{ parts[1] }}</strong>{% if parts[2] != blank %}<span>{{ parts[2] }}</span>{% endif %}</div>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

@@ -1,0 +1,39 @@
+{%- render 'ind-assets' -%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section ind-section--tight" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    {%- if section.settings.heading != blank -%}<h2 class="ind-eyebrow" style="margin-bottom:24px">{{ section.settings.heading }}</h2>{%- endif -%}
+    <dl class="ind-stats" style="--cols: {{ section.blocks.size | at_most: 4 | at_least: 1 }}">
+      {%- for block in section.blocks -%}
+        <div class="ind-stat ind-reveal" {{ block.shopify_attributes }}>
+          <dt class="ind-visually-hidden">{{ block.settings.label }}</dt>
+          <dd>
+            <div class="ind-stat__value">{{ block.settings.value }}{% if block.settings.unit != blank %}<small>{{ block.settings.unit }}</small>{% endif %}</div>
+            <div class="ind-stat__label">{{ block.settings.label }}</div>
+          </dd>
+        </div>
+      {%- endfor -%}
+    </dl>
+    {%- if section.settings.note != blank -%}<p class="ind-note">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND key figures",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "dark", "label": "Graphite" }, { "value": "ink", "label": "Ink" }, { "value": "accent", "label": "Accent" } ], "default": "ink" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "text", "id": "heading", "label": "Label" },
+    { "type": "text", "id": "note", "label": "Footnote" }
+  ],
+  "blocks": [
+    { "type": "stat", "name": "Figure", "settings": [
+      { "type": "text", "id": "value", "label": "Value", "default": "500" },
+      { "type": "text", "id": "unit", "label": "Unit", "default": "kg" },
+      { "type": "text", "id": "label", "label": "Label", "default": "Load capacity" }
+    ] }
+  ],
+  "presets": [ { "name": "IND key figures", "blocks": [ { "type": "stat" }, { "type": "stat" }, { "type": "stat" } ] } ]
+}
+{% endschema %}

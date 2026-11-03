@@ -1,0 +1,14 @@
+{%- comment -%} Params: rating (number 0–5){%- endcomment -%}
+{%- liquid
+  assign r = rating | plus: 0
+  assign full = r | round
+-%}
+<span class="ind-stars" aria-hidden="true">
+  {%- for i in (1..5) -%}
+    {%- if i <= full -%}
+      {%- render 'ind-icon', name: 'star' -%}
+    {%- else -%}
+      {%- render 'ind-icon', name: 'star', class: 'ind-icon is-empty' -%}
+    {%- endif -%}
+  {%- endfor -%}
+</span>

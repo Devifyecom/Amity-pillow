@@ -1,0 +1,16 @@
+{%- comment -%}
+  Live countdown to the Black Friday campaign end (or start, when target: 'start').
+  It hides itself when the target has passed. Params: style ('inline'|'boxes'), target ('end'|'start')
+{%- endcomment -%}
+{%- liquid
+  assign sep = '<span class="ind-countdown__sep" aria-hidden="true">:</span>'
+  if style == 'boxes'
+    assign sep = ''
+  endif
+-%}
+<ind-countdown class="ind-countdown ind-countdown--{{ style | default: 'inline' }}" data-target="{{ target | default: 'end' }}" role="timer" aria-live="off" hidden>
+  <span class="ind-countdown__unit"><span data-cd="days">00</span><small>{{ 'ind.countdown.days_short' | t }}</small></span>{{ sep }}
+  <span class="ind-countdown__unit"><span data-cd="hours">00</span><small>{{ 'ind.countdown.hours_short' | t }}</small></span>{{ sep }}
+  <span class="ind-countdown__unit"><span data-cd="minutes">00</span><small>{{ 'ind.countdown.minutes_short' | t }}</small></span>{{ sep }}
+  <span class="ind-countdown__unit"><span data-cd="seconds">00</span><small>{{ 'ind.countdown.seconds_short' | t }}</small></span>
+</ind-countdown>

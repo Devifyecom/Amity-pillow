@@ -1,0 +1,85 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign checks = section.settings.checks | newline_to_br | split: '<br />'
+  assign ratio = section.settings.ratio
+-%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}{% if section.settings.anchor != blank %} id="{{ section.settings.anchor | handle }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-split{% if section.settings.reverse %} ind-split--reverse{% endif %}{% if section.settings.wide_media %} ind-split--wide-media{% endif %}">
+      <div class="ind-split__media ind-reveal">
+        <div class="ind-media ind-media--{{ ratio }}">
+          {%- if section.settings.diagram != 'none' -%}
+            {%- render 'ind-diagram', type: section.settings.diagram, uid: section.id,
+              v1: section.settings.d_v1, l1: section.settings.d_l1, v2: section.settings.d_v2, l2: section.settings.d_l2,
+              v3: section.settings.d_v3, l3: section.settings.d_l3, v4: section.settings.d_v4, l4: section.settings.d_l4,
+              caption: section.settings.d_caption -%}
+          {%- elsif section.settings.video != blank -%}
+            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, image_size: '1200x' }}
+          {%- else -%}
+            {%- render 'ind-image', image: section.settings.image, sizes: '(min-width: 750px) 55vw, 100vw', label: section.settings.placeholder_label -%}
+          {%- endif -%}
+          {%- if section.settings.badge_value != blank -%}
+            <div class="ind-split__badge"><strong>{{ section.settings.badge_value }}</strong><span>{{ section.settings.badge_label }}</span></div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="ind-split__text ind-reveal">
+        {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}<div class="ind-rte">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.settings.checks != blank -%}
+          <ul class="ind-checks" role="list">
+            {%- for c in checks -%}
+              {%- assign c = c | strip -%}
+              {%- if c != blank -%}<li>{% render 'ind-icon', name: 'check-circle' %}<span>{{ c }}</span></li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        {%- if section.settings.btn_label != blank -%}
+          <div class="ind-actions"><a class="ind-btn ind-btn--{{ section.settings.btn_style }}" href="{{ section.settings.btn_link | default: '#' }}">{{ section.settings.btn_label }} {% render 'ind-icon', name: 'arrow-right' %}</a></div>
+        {%- endif -%}
+        {%- if section.settings.note != blank -%}<p class="ind-note">{{ section.settings.note }}</p>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND image with text",
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "stone", "label": "Stone" }, { "value": "dark", "label": "Graphite" }, { "value": "ink", "label": "Ink" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "text", "id": "anchor", "label": "Anchor id" },
+    { "type": "checkbox", "id": "reverse", "label": "Media on the right", "default": false },
+    { "type": "checkbox", "id": "wide_media", "label": "Wider media column", "default": false },
+    { "type": "select", "id": "ratio", "label": "Media shape", "options": [ { "value": "square", "label": "Square" }, { "value": "portrait", "label": "Portrait" }, { "value": "landscape", "label": "Landscape" }, { "value": "wide", "label": "Wide" } ], "default": "square" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "video", "id": "video", "label": "Video (replaces image)" },
+    { "type": "text", "id": "placeholder_label", "label": "Placeholder hint (editor)", "default": "Add real product photography" },
+    { "type": "text", "id": "badge_value", "label": "Image badge value" },
+    { "type": "text", "id": "badge_label", "label": "Image badge label" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Image with text" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "textarea", "id": "checks", "label": "Checklist (one item per line)" },
+    { "type": "text", "id": "btn_label", "label": "Button label" },
+    { "type": "url", "id": "btn_link", "label": "Button link" },
+    { "type": "select", "id": "btn_style", "label": "Button style", "options": [ { "value": "accent", "label": "Accent" }, { "value": "dark", "label": "Dark" }, { "value": "outline", "label": "Outline" } ], "default": "dark" },
+    { "type": "text", "id": "note", "label": "Footnote" },
+    { "type": "header", "content": "Infographic (replaces image)" },
+    { "type": "paragraph", "content": "A schematic drawn in code, with text taken from the fields below, so it translates and stays sharp on mobile." },
+    { "type": "select", "id": "diagram", "label": "Infographic", "options": [ { "value": "none", "label": "None — use image" }, { "value": "lift", "label": "Lift: height and load" }, { "value": "transporter", "label": "Transporter: dimensions" }, { "value": "gate", "label": "Width vs. passage" } ], "default": "none" },
+    { "type": "text", "id": "d_v1", "label": "Value 1" },
+    { "type": "text", "id": "d_l1", "label": "Label 1" },
+    { "type": "text", "id": "d_v2", "label": "Value 2" },
+    { "type": "text", "id": "d_l2", "label": "Label 2" },
+    { "type": "text", "id": "d_v3", "label": "Value 3" },
+    { "type": "text", "id": "d_l3", "label": "Label 3" },
+    { "type": "text", "id": "d_v4", "label": "Value 4" },
+    { "type": "text", "id": "d_l4", "label": "Label 4" },
+    { "type": "text", "id": "d_caption", "label": "Caption" }
+  ],
+  "presets": [ { "name": "IND image with text" } ]
+}
+{% endschema %}

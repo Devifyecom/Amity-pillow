@@ -1,0 +1,87 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign mode = section.settings.mode
+  assign pa = section.settings.product_a
+  assign pb = section.settings.product_b
+  if mode == 'products'
+    if pa == blank
+      assign pa = all_products['selo']
+    endif
+    if pb == blank
+      assign pb = all_products['abrelune']
+    endif
+  endif
+-%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container{% if mode == 'versus' %} ind-container--narrow{% endif %}">
+    <div class="ind-head ind-head--center">
+      {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<div class="ind-head__text">{{ section.settings.text }}</div>{%- endif -%}
+    </div>
+    <div class="ind-compare ind-compare--{{ mode }} ind-reveal" role="table" aria-label="{{ section.settings.heading | escape }}">
+      <div class="ind-compare__row ind-compare__head" role="row">
+        <div class="ind-compare__cell ind-compare__cell--label" role="columnheader">{{ section.settings.label_col }}</div>
+        {%- if mode == 'products' -%}
+          {%- for p in (1..2) -%}
+            {%- if forloop.first -%}{%- assign prod = pa -%}{%- assign cls = 'a' -%}{%- else -%}{%- assign prod = pb -%}{%- assign cls = 'b' -%}{%- endif -%}
+            <div class="ind-compare__cell ind-compare__cell--{{ cls }}" role="columnheader">
+              {%- if prod != blank -%}
+                {%- if prod.featured_media -%}{{ prod.featured_media.preview_image | image_url: width: 120 | image_tag: class: 'ind-compare__thumb', alt: '', loading: 'lazy' }}{%- endif -%}
+                <a href="{{ prod.url }}" style="text-decoration:none">{{ prod.title }}</a>
+              {%- else -%}—{%- endif -%}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="ind-compare__cell ind-compare__cell--a" role="columnheader">{{ section.settings.col_a }}</div>
+          <div class="ind-compare__cell ind-compare__cell--b" role="columnheader">{{ section.settings.col_b }}</div>
+        {%- endif -%}
+      </div>
+      {%- for block in section.blocks -%}
+        <div class="ind-compare__row" role="row" {{ block.shopify_attributes }}>
+          <div class="ind-compare__cell ind-compare__cell--label" role="rowheader">{{ block.settings.label }}</div>
+          {%- for side in (1..2) -%}
+            {%- if forloop.first -%}{%- assign mark = block.settings.a_mark -%}{%- assign txt = block.settings.a -%}{%- assign cls = 'a' -%}{%- else -%}{%- assign mark = block.settings.b_mark -%}{%- assign txt = block.settings.b -%}{%- assign cls = 'b' -%}{%- endif -%}
+            <div class="ind-compare__cell ind-compare__cell--{{ cls }}" role="cell">
+              {%- if mark == 'yes' -%}{%- render 'ind-icon', name: 'check-circle', class: 'ind-compare__mark ind-compare__mark--yes' -%}<span class="ind-visually-hidden">Yes</span>
+              {%- elsif mark == 'no' -%}{%- render 'ind-icon', name: 'x-circle', class: 'ind-compare__mark ind-compare__mark--no' -%}<span class="ind-visually-hidden">No</span>{%- endif -%}
+              <span>{{ txt }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.note != blank -%}<p class="ind-note ind-center">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND comparison",
+  "max_blocks": 14,
+  "settings": [
+    { "type": "select", "id": "mode", "label": "Type", "options": [ { "value": "versus", "label": "Traditional method vs. product" }, { "value": "products", "label": "Product vs. product" } ], "default": "versus" },
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "stone", "label": "Stone" }, { "value": "dark", "label": "Graphite" } ], "default": "sand" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The practical difference" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "label_col", "label": "First column heading", "default": "" },
+    { "type": "text", "id": "col_a", "label": "Column A heading (versus)", "default": "Manual method" },
+    { "type": "text", "id": "col_b", "label": "Column B heading (versus)", "default": "With our equipment" },
+    { "type": "product", "id": "product_a", "label": "Product A (product vs. product)" },
+    { "type": "product", "id": "product_b", "label": "Product B (product vs. product)" },
+    { "type": "text", "id": "note", "label": "Footnote" }
+  ],
+  "blocks": [
+    { "type": "row", "name": "Row", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Feature" },
+      { "type": "select", "id": "a_mark", "label": "Column A mark", "options": [ { "value": "none", "label": "None" }, { "value": "yes", "label": "Check" }, { "value": "no", "label": "Cross" } ], "default": "none" },
+      { "type": "text", "id": "a", "label": "Column A text" },
+      { "type": "select", "id": "b_mark", "label": "Column B mark", "options": [ { "value": "none", "label": "None" }, { "value": "yes", "label": "Check" }, { "value": "no", "label": "Cross" } ], "default": "none" },
+      { "type": "text", "id": "b", "label": "Column B text" }
+    ] }
+  ],
+  "presets": [ { "name": "IND comparison", "blocks": [ { "type": "row" }, { "type": "row" }, { "type": "row" } ] } ]
+}
+{% endschema %}

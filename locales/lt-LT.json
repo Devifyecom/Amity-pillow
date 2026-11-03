@@ -474,5 +474,67 @@
       "copy_code_success": "Kodą pavyko nukopijuoti",
       "print_gift_card": "Spausdinti"
     }
+  },
+  "ind": {
+    "countdown": {
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds",
+      "days_short": "d",
+      "hours_short": "h",
+      "minutes_short": "m",
+      "seconds_short": "s",
+      "ends_in": "Ends in",
+      "starts_in": "Starts in"
+    },
+    "product": {
+      "add_to_cart": "Add to cart",
+      "buy_now": "Buy it now",
+      "sold_out": "Sold out",
+      "added": "Added to cart",
+      "error": "Something went wrong. Please try again.",
+      "save": "Save",
+      "each": "each",
+      "quantity": "Quantity",
+      "decrease": "Decrease quantity",
+      "increase": "Increase quantity",
+      "in_stock": "In stock",
+      "out_of_stock": "Currently unavailable",
+      "choose_package": "Choose your package",
+      "total": "Total",
+      "discount_note": "Multi-unit savings are applied automatically at checkout.",
+      "bf_note": "Black Friday prices are applied automatically at checkout.",
+      "units": "units",
+      "unit": "unit",
+      "gallery": "Product images",
+      "open_zoom": "Open image {{ index }} in zoom view",
+      "previous": "Previous image",
+      "next": "Next image",
+      "close": "Close",
+      "home": "Home",
+      "rating_html": "{{ rating }} out of 5 · {{ count }} reviews",
+      "details": "Details",
+      "specifications": "Specifications",
+      "shipping_returns": "Shipping & returns",
+      "view_product": "View product",
+      "most_popular": "Most popular",
+      "best_value": "Best value"
+    },
+    "general": {
+      "menu": "Menu",
+      "search": "Search",
+      "search_placeholder": "Search products",
+      "account": "Account",
+      "cart": "Cart",
+      "skip": "Skip to content",
+      "newsletter_success": "Thanks for subscribing.",
+      "email": "Email address",
+      "subscribe": "Subscribe",
+      "recently_viewed": "Recently viewed",
+      "related": "You may also need",
+      "show_all": "Show all specifications",
+      "show_less": "Show fewer"
+    }
   }
 }

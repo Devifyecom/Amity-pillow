@@ -1,0 +1,40 @@
+{%- render 'ind-assets' -%}
+{%- comment -%}
+  "Related" comes from Shopify's product recommendations API. "Recently viewed" comes from this
+  browser's history (localStorage) and is rendered from /products/<handle>.js.
+{%- endcomment -%}
+{%- capture bf_state -%}{%- render 'ind-bf-state' -%}{%- endcapture -%}
+{%- assign bf_state = bf_state | strip -%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}">
+  <ind-recommendations class="ind-container" style="display:block"
+    {% if section.settings.show_related and product %}data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.limit }}&intent=related"{% endif %}
+    data-recent="{{ section.settings.show_recent }}" data-current="{{ product.handle }}">
+    <div class="ind-recs" data-related hidden>
+      <div class="ind-recs__head"><h2 class="ind-h3">{{ section.settings.heading_related | default: 'You may also need' }}</h2></div>
+      <div class="ind-cards" style="--cols: {{ section.settings.limit }}" data-related-target>
+        {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+          {%- for rec in recommendations.products -%}{%- render 'ind-product-card', product: rec, bf_state: bf_state -%}{%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="ind-recs" data-recent hidden style="margin-top:56px">
+      <div class="ind-recs__head"><h2 class="ind-h3">{{ section.settings.heading_recent | default: 'Recently viewed' }}</h2></div>
+      <div class="ind-cards" style="--cols: 4" data-recent-target></div>
+    </div>
+  </ind-recommendations>
+</section>
+
+{% schema %}
+{
+  "name": "IND related & recent",
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" } ], "default": "paper" },
+    { "type": "checkbox", "id": "show_related", "label": "Show related products", "default": true },
+    { "type": "text", "id": "heading_related", "label": "Related heading", "default": "You may also need" },
+    { "type": "range", "id": "limit", "label": "Related products", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "checkbox", "id": "show_recent", "label": "Show recently viewed", "default": true },
+    { "type": "text", "id": "heading_recent", "label": "Recently viewed heading", "default": "Recently viewed" }
+  ],
+  "presets": [ { "name": "IND related & recent" } ]
+}
+{% endschema %}

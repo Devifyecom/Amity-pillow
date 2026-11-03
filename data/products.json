@@ -1,0 +1,82 @@
+{
+  "_note": "Source of truth for Selo and Abrelune. Facts come from the supplier listings researched 2026-11-03 (see docs/PRODUCT-DATA.md). Prices are deliberately NOT included: pass your real prices to scripts/shopify-setup.mjs. Compare-at prices are optional and should only be set if you have genuinely sold at that price.",
+  "products": [
+    {
+      "handle": "selo",
+      "title": "Selo",
+      "vendor": "[Your brand]",
+      "productType": "Material Lift",
+      "tags": ["lifting", "scaffold", "construction", "black-friday"],
+      "templateSuffix": "selo",
+      "seo": {
+        "title": "Selo Scaffold Material Lift: 500 kg, 6 m, Remote Control",
+        "description": "Selo electric scaffold material lift: up to 500 kg to a height of up to 6 m, remote control, automatic top and bottom limit stop, 360° castors. For materials only."
+      },
+      "descriptionHtml": "<p><strong>Move materials up safely and with less effort, right at the scaffold.</strong> The Selo scaffold lift raises up to 500 kg to a height of up to 6 metres and is controlled by remote. It is ideal for construction sites, technical installations and maintenance work at height, and it saves your team heavy carrying and valuable working time.</p><h3>At a glance</h3><ul><li>Up to 500 kg load capacity for building material, tools and equipment</li><li>Up to 6 m lifting height, suitable for common scaffold heights</li><li>High-torque electric drive for smooth, controlled lifting</li><li>Automatic limit stop at the top and bottom</li><li>Ergonomic remote control for operation from a safe distance</li><li>360° swivel castors for easy positioning on site</li></ul><h3>Powerful electric lifting drive</h3><p>The powerful electric motor raises and lowers loads smoothly and precisely. That reduces physical strain, avoids unnecessary trips up ladders and stairs, and keeps the work on site moving.</p><h3>Safety you can rely on</h3><ul><li>Precise braking system that holds the load securely</li><li>Automatic limit stop at the upper and lower positions</li><li>Reinforced guard rails that keep the load in place</li><li>Non-slip platform that helps stop the load from sliding</li></ul><h3>Built tough for daily site work</h3><p>A reinforced steel frame and a high-strength galvanised steel cable give stability and a long service life, even in daily use.</p><h3>Ideal for</h3><ul><li>Painting and renovation work</li><li>Technical installations</li><li>Industrial maintenance and servicing</li><li>Assembly and construction work</li><li>Work on electrical and mechanical systems</li></ul><p><em>Selo is intended only for transporting materials and is not approved for carrying people. Always observe the maximum load capacity and the safety instructions in the operating manual.</em></p>",
+      "specifications": [
+        { "label": "Model", "value": "Selo" },
+        { "label": "Type", "value": "Scaffold material lift" },
+        { "label": "Load capacity", "value": "Up to 500 kg" },
+        { "label": "Maximum lifting height", "value": "Up to 6 m" },
+        { "label": "Motor", "value": "Professional high-torque electric motor" },
+        { "label": "Lifting cable", "value": "High-strength galvanised steel cable" },
+        { "label": "Frame", "value": "Reinforced steel construction" },
+        { "label": "Control", "value": "Ergonomic remote control" },
+        { "label": "Mobility", "value": "360° swivel castors" },
+        { "label": "Safety", "value": "Braking system; automatic limit stop at top and bottom; reinforced guard rails; non-slip platform" },
+        { "label": "Intended use", "value": "Materials only. Not approved for carrying people." }
+      ],
+      "unverified": ["motor power (W/kW)", "supply voltage", "dimensions", "unit weight", "lifting speed", "platform size", "package contents", "warranty terms for your store"]
+    },
+    {
+      "handle": "abrelune",
+      "title": "Abrelune",
+      "vendor": "[Your brand]",
+      "productType": "Electric Transporter",
+      "tags": ["transport", "garden", "property", "black-friday"],
+      "templateSuffix": "abrelune",
+      "seo": {
+        "title": "Abrelune Electric Transporter: 1000 W, 450 kg, 79 cm Wide",
+        "description": "Abrelune electric compact transporter: brushless 1000 W motor, up to 450 kg load, approx. 24–27 km range, 79 cm wide, folding side walls. For property, garden and site work."
+      },
+      "descriptionHtml": "<p><strong>Move firewood, tools and building materials without straining.</strong> Abrelune is a compact electric transporter for property maintenance, garden and outdoor work. It carries up to 450 kg on a spacious cargo platform, is driven by a brushless 1000 W electric motor and handles grass, gravel and uneven ground, even where larger vehicles can't reach.</p><h3>In brief</h3><ul><li>Up to 450 kg load capacity on a 150 × 80 cm cargo platform</li><li>Brushless 1000 W electric motor with two-wheel drive</li><li>Approx. 24–27 km range per charge*</li><li>Fully charged in 4–5 hours</li><li>Two speed modes, plus forward and reverse</li><li>Folding and removable side walls for easy loading and unloading</li><li>Compact 79 cm width, fits through passages from 84 cm</li><li>Sturdy steel construction with LED headlight and horn</li></ul><h3>Power and range for the whole working day</h3><p>The brushless 1000 W motor is powered by a sealed 48 V lead-acid battery system. One charge gives about 24–27 km, depending on load and surface. A full charge takes about 4–5 hours, and the battery indicator always shows the charge left.</p><h3>Full control on every surface</h3><p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. With the stepless twist throttle, two speed modes and reverse, you can drive slowly and precisely in tight spaces, or faster, up to about 24 km/h, on open stretches.</p><h3>Compact where it counts</h3><p>At about 165 cm long and 79 cm wide, Abrelune fits through gates, between flower beds and along narrow paths. We recommend a passage at least 84 cm wide.</p><h3>Ideal for</h3><ul><li>Firewood, soil, stone and garden waste</li><li>Property maintenance and upkeep</li><li>Construction and renovation projects</li><li>Farms, stables and larger plots</li></ul><p><em>* Range, speed and load capacity depend on surface, gradient, battery condition and conditions of use. Never exceed the stated maximum load. Intended for use on private land.</em></p>",
+      "specifications": [
+        { "label": "Model", "value": "Abrelune" },
+        { "label": "Motor", "value": "Brushless electric motor, 1000 W" },
+        { "label": "Drive", "value": "Two-wheel drive" },
+        { "label": "Battery", "value": "Sealed 48 V lead-acid battery" },
+        { "label": "Range", "value": "Approx. 24–27 km*" },
+        { "label": "Charging time", "value": "Approx. 4–5 hours" },
+        { "label": "Top speed", "value": "Approx. 24 km/h" },
+        { "label": "Maximum load", "value": "Up to 450 kg" },
+        { "label": "Cargo platform", "value": "150 × 80 cm" },
+        { "label": "Platform height", "value": "Approx. 50 cm" },
+        { "label": "Length × width", "value": "Approx. 165 × 79 cm" },
+        { "label": "Recommended passage width", "value": "At least 84 cm" },
+        { "label": "Weight", "value": "Approx. 150 kg" },
+        { "label": "Controls", "value": "Stepless twist-grip throttle, 2 speed modes, forward/reverse" },
+        { "label": "Equipment", "value": "Battery indicator, LED headlight, horn" },
+        { "label": "Side walls", "value": "Folding and removable" },
+        { "label": "Construction", "value": "Steel" }
+      ],
+      "weightKg": 150,
+      "unverified": ["battery capacity (Ah)", "tyre size", "brake type", "charger voltage for your market (supplier lists 110 V)", "warranty terms for your store"]
+    }
+  ],
+  "discounts": {
+    "_note": "Each product gets its own quantity tiers, so mixing products never unlocks a tier. None of these combine with each other; when several qualify, Shopify applies the one with the biggest saving. Percentages must match the theme (tier blocks + Theme settings > Black Friday campaign).",
+    "standard": [
+      { "minQty": 2, "percent": 10 },
+      { "minQty": 3, "percent": 15 }
+    ],
+    "blackFriday": {
+      "startsAt": "2026-11-23T00:00:00+01:00",
+      "endsAt": "2026-12-01T23:59:00+01:00",
+      "tiers": [
+        { "minQty": 1, "percent": 10 },
+        { "minQty": 2, "percent": 15 },
+        { "minQty": 3, "percent": 20 }
+      ]
+    }
+  }
+}

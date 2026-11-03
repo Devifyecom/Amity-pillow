@@ -1,0 +1,97 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign p = product | default: section.settings.product
+  assign rating = p.metafields.reviews.rating.value
+  assign rating_count = p.metafields.reviews.rating_count.value
+  assign manual = 0
+  assign apps = 0
+  for block in section.blocks
+    if block.type == 'review'
+      assign manual = manual | plus: 1
+    elsif block.type == '@app'
+      assign apps = apps | plus: 1
+    endif
+  endfor
+  assign has_content = false
+  if manual > 0 or apps > 0 or rating != blank
+    assign has_content = true
+  endif
+-%}
+{%- if has_content or request.design_mode -%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}" id="reviews"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+    </div>
+
+    {%- if rating != blank -%}
+      {%- comment -%} Standard reviews metafields, written by your reviews app (Judge.me, Shopify Product Reviews, etc.) {%- endcomment -%}
+      <div class="ind-reviews__summary">
+        <span class="ind-reviews__score">{{ rating.rating | round: 1 }}</span>
+        <div>
+          {%- render 'ind-stars', rating: rating.rating -%}
+          <p class="ind-small">{{ 'ind.product.rating_html' | t: rating: rating.rating | round: 1, count: rating_count }}</p>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if manual > 0 -%}
+      <ul class="ind-reviews__grid" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'review' -%}
+            <li class="ind-review" {{ block.shopify_attributes }}>
+              {%- render 'ind-stars', rating: block.settings.rating -%}
+              <span class="ind-visually-hidden">{{ block.settings.rating }} / 5</span>
+              {%- if block.settings.title != blank -%}<h3 class="ind-review__title">{{ block.settings.title }}</h3>{%- endif -%}
+              <div class="ind-review__text ind-rte">{{ block.settings.text }}</div>
+              <div class="ind-review__meta">
+                <span class="ind-review__author">{{ block.settings.author }}{% if block.settings.verified %} <span class="ind-badge ind-badge--success" style="margin-left:6px">Verified buyer</span>{% endif %}</span>
+                <span class="ind-review__source">{{ block.settings.source }}{% if block.settings.date != blank %} · {{ block.settings.date }}{% endif %}</span>
+              </div>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == '@app' -%}<div {{ block.shopify_attributes }}>{%- render block -%}</div>{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_content == false -%}
+      <div class="ind-reviews__empty">
+        <p><strong>Shown in the theme editor only.</strong> Add a reviews app block or enter genuine customer reviews as blocks. This section stays hidden from shoppers until there is real review content.</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "IND reviews",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "paragraph", "content": "Only publish genuine reviews from real customers. Ratings come from the standard reviews metafields that review apps write." },
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "dark", "label": "Graphite" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "product", "id": "product", "label": "Product (outside product pages)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Customer reviews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What customers say" }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    { "type": "review", "name": "Customer review", "settings": [
+      { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "richtext", "id": "text", "label": "Review text (verbatim)" },
+      { "type": "text", "id": "author", "label": "Customer name or initials" },
+      { "type": "checkbox", "id": "verified", "label": "Verified buyer (matched to an order)", "default": false },
+      { "type": "text", "id": "source", "label": "Source", "info": "Where the review was collected, e.g. Order follow-up email." },
+      { "type": "text", "id": "date", "label": "Date" }
+    ] }
+  ],
+  "presets": [ { "name": "IND reviews" } ]
+}
+{% endschema %}

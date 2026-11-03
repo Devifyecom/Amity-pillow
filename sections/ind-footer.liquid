@@ -1,0 +1,164 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign link_cols = 0
+  for block in section.blocks
+    if block.type == 'menu' or block.type == 'contact'
+      assign link_cols = link_cols | plus: 1
+    endif
+  endfor
+  if link_cols == 0
+    assign link_cols = 1
+  endif
+-%}
+<footer class="ind ind-footer" data-section-id="{{ section.id }}">
+  <div class="ind-container">
+    <div class="ind-footer__top" style="--cols: {{ link_cols }}">
+      <div class="ind-footer__brand">
+        <a href="{{ routes.root_url }}" class="ind-header__logo">{{ section.settings.brand_name | default: shop.name }}</a>
+        {%- if section.settings.brand_text != blank -%}<div class="ind-rte" style="margin-top:16px;color:var(--ind-muted);max-width:38ch">{{ section.settings.brand_text }}</div>{%- endif -%}
+
+        {%- if section.settings.show_newsletter -%}
+          {%- form 'customer', id: 'IndFooterNews', class: 'ind-news__form', style: 'margin-top:24px' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <label class="ind-visually-hidden" for="IndFooterEmail">{{ 'ind.general.email' | t }}</label>
+            <input id="IndFooterEmail" class="ind-news__input" type="email" name="contact[email]" required autocomplete="email" placeholder="{{ 'ind.general.email' | t }}">
+            <button class="ind-btn ind-btn--accent" type="submit">{{ 'ind.general.subscribe' | t }}</button>
+            {%- if form.posted_successfully? -%}<p class="ind-news__msg ind-news__msg--ok" role="status">{{ 'ind.general.newsletter_success' | t }}</p>{%- endif -%}
+            {%- if form.errors -%}<p class="ind-news__msg" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+          {%- endform -%}
+        {%- endif -%}
+
+        {%- liquid
+          assign socials = 'facebook,instagram,youtube,linkedin' | split: ','
+          assign has_social = false
+          for s in socials
+            assign key = 'social_' | append: s | append: '_link'
+            if settings[key] != blank
+              assign has_social = true
+            endif
+          endfor
+        -%}
+        {%- if has_social -%}
+          <ul class="ind-footer__social" role="list">
+            {%- for s in socials -%}
+              {%- assign key = 'social_' | append: s | append: '_link' -%}
+              {%- if settings[key] != blank -%}
+                <li><a href="{{ settings[key] }}" target="_blank" rel="noopener" aria-label="{{ s | capitalize }}">{% render 'ind-icon', name: s %}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'menu' -%}
+              {%- if block.settings.title != blank -%}<h2 class="ind-footer__title">{{ block.settings.title }}</h2>{%- endif -%}
+              {%- if block.settings.menu != blank -%}
+                <ul class="ind-footer__links" role="list">
+                  {%- for link in block.settings.menu.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
+                </ul>
+              {%- endif -%}
+            {%- when 'contact' -%}
+              {%- if block.settings.title != blank -%}<h2 class="ind-footer__title">{{ block.settings.title }}</h2>{%- endif -%}
+              <ul class="ind-footer__contact" role="list">
+                {%- if block.settings.email != blank -%}<li>{% render 'ind-icon', name: 'mail' %}<a href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a></li>{%- endif -%}
+                {%- if block.settings.phone != blank -%}<li>{% render 'ind-icon', name: 'phone' %}<a href="tel:{{ block.settings.phone | remove: ' ' }}">{{ block.settings.phone }}</a></li>{%- endif -%}
+                {%- if block.settings.hours != blank -%}<li>{% render 'ind-icon', name: 'clock' %}<span>{{ block.settings.hours }}</span></li>{%- endif -%}
+                {%- if block.settings.address != blank -%}<li>{% render 'ind-icon', name: 'pin' %}<span>{{ block.settings.address | newline_to_br }}</span></li>{%- endif -%}
+                {%- if block.settings.contact_page != blank -%}<li>{% render 'ind-icon', name: 'support' %}<a href="{{ block.settings.contact_page }}">{{ block.settings.contact_label }}</a></li>{%- endif -%}
+              </ul>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="ind-footer__bottom">
+      <div style="display:grid;gap:10px">
+        <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</span>
+        {%- comment -%} Only the policies actually published in Shopify admin → Settings → Policies {%- endcomment -%}
+        {%- if shop.policies.size > 0 -%}
+          <ul class="ind-footer__policies" role="list">
+            {%- for policy in shop.policies -%}
+              {%- if policy != blank -%}<li><a href="{{ policy.url }}">{{ policy.title }}</a></li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.show_localization -%}
+        {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+          {%- form 'localization', class: 'ind-footer__localization' -%}
+            {%- if localization.available_countries.size > 1 -%}
+              <label class="ind-visually-hidden" for="IndCountry">Country</label>
+              <select id="IndCountry" name="country_code" onchange="this.form.submit()">
+                {%- for c in localization.available_countries -%}
+                  <option value="{{ c.iso_code }}"{% if c.iso_code == localization.country.iso_code %} selected{% endif %}>{{ c.name }} ({{ c.currency.iso_code }} {{ c.currency.symbol }})</option>
+                {%- endfor -%}
+              </select>
+            {%- endif -%}
+            {%- if localization.available_languages.size > 1 -%}
+              <label class="ind-visually-hidden" for="IndLanguage">Language</label>
+              <select id="IndLanguage" name="language_code" onchange="this.form.submit()">
+                {%- for l in localization.available_languages -%}
+                  <option value="{{ l.iso_code }}" lang="{{ l.iso_code }}"{% if l.iso_code == localization.language.iso_code %} selected{% endif %}>{{ l.endonym_name | capitalize }}</option>
+                {%- endfor -%}
+              </select>
+            {%- endif -%}
+          {%- endform -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if section.settings.show_payment and shop.enabled_payment_types.size > 0 -%}
+        <ul class="ind-pay-icons" role="list" aria-label="Payment methods">
+          {%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag: class: 'ind-pay-icon' }}</li>{%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "IND footer",
+  "class": "ind-footer-section",
+  "max_blocks": 5,
+  "settings": [
+    { "type": "text", "id": "brand_name", "label": "Brand name", "info": "Leave empty to use the store name." },
+    { "type": "richtext", "id": "brand_text", "label": "Short brand statement" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "Show newsletter sign-up", "default": true },
+    { "type": "checkbox", "id": "show_localization", "label": "Show country / language selector", "default": true },
+    { "type": "checkbox", "id": "show_payment", "label": "Show payment icons", "info": "Shows only the payment methods enabled in your store.", "default": true },
+    { "type": "paragraph", "content": "Social links come from Theme settings → Social media. Policy links come from Shopify admin → Settings → Policies." }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Heading", "default": "Products" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Customer support",
+      "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "Enter only your store's real contact details. Empty fields are hidden." },
+        { "type": "text", "id": "title", "label": "Heading", "default": "Customer support" },
+        { "type": "text", "id": "email", "label": "Email" },
+        { "type": "text", "id": "phone", "label": "Phone" },
+        { "type": "text", "id": "hours", "label": "Opening hours" },
+        { "type": "textarea", "id": "address", "label": "Address" },
+        { "type": "url", "id": "contact_page", "label": "Contact page link" },
+        { "type": "text", "id": "contact_label", "label": "Contact link label", "default": "Contact us" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "IND footer", "blocks": [ { "type": "menu" }, { "type": "contact" } ] }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,58 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign p = product | default: section.settings.product
+  assign v = p.selected_or_first_available_variant
+  assign img = section.settings.image | default: p.featured_media.preview_image
+  assign checks = section.settings.checks | newline_to_br | split: '<br />'
+-%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-cta">
+      <div class="ind-cta__media ind-reveal">
+        <div class="ind-media">{%- render 'ind-image', image: img, alt: p.title, sizes: '(min-width: 750px) 50vw, 100vw', label: 'Product image' -%}</div>
+      </div>
+      <div class="ind-reveal">
+        {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}<div class="ind-rte ind-lead" style="margin-top:16px">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.settings.checks != blank -%}
+          <ul class="ind-checks" role="list">
+            {%- for c in checks -%}{%- assign c = c | strip -%}{%- if c != blank -%}<li>{% render 'ind-icon', name: 'check-circle' %}<span>{{ c }}</span></li>{%- endif -%}{%- endfor -%}
+          </ul>
+        {%- endif -%}
+        {%- if p != blank -%}
+          <div class="ind-cta__buy">
+            <div class="ind-cta__price">{%- render 'ind-price', product: p, size: 'lg' -%}</div>
+            {%- if section.settings.mode == 'scroll' -%}
+              <a class="ind-btn ind-btn--accent ind-btn--lg ind-btn--block" href="#buy">{{ section.settings.btn_label | default: 'Choose your package' }} {% render 'ind-icon', name: 'arrow-right' %}</a>
+            {%- else -%}
+              <button type="button" class="ind-btn ind-btn--accent ind-btn--lg ind-btn--block" data-ind-add="{{ v.id }}" data-qty="1"{% unless v.available %} disabled{% endunless %}>{% if v.available %}{{ section.settings.btn_label | default: 'Add to cart' }}{% else %}{{ 'ind.product.sold_out' | t }}{% endif %}</button>
+            {%- endif -%}
+            <p class="ind-buy__error" data-error role="alert"></p>
+            {%- if section.settings.small != blank -%}<p class="ind-small">{{ section.settings.small }}</p>{%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND final call to action",
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "dark", "label": "Graphite" }, { "value": "ink", "label": "Ink" } ], "default": "dark" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "product", "id": "product", "label": "Product (outside product pages)" },
+    { "type": "image_picker", "id": "image", "label": "Image override" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ready to work smarter?" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "textarea", "id": "checks", "label": "Benefits (one per line)" },
+    { "type": "select", "id": "mode", "label": "Button action", "options": [ { "value": "scroll", "label": "Scroll to package selector" }, { "value": "add", "label": "Add one unit to cart" } ], "default": "scroll" },
+    { "type": "text", "id": "btn_label", "label": "Button label", "default": "Choose your package" },
+    { "type": "text", "id": "small", "label": "Small print" }
+  ],
+  "presets": [ { "name": "IND final call to action" } ]
+}
+{% endschema %}

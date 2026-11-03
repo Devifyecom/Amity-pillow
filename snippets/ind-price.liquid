@@ -1,0 +1,31 @@
+{%- comment -%}
+  Product price from the real Shopify variant. A compare-at price is shown only when the
+  merchant has set one in Shopify admin; nothing is invented here.
+  Params: product, variant (optional), size ('lg'), show_save (bool)
+{%- endcomment -%}
+{%- liquid
+  assign v = variant | default: product.selected_or_first_available_variant
+  assign on_sale = false
+  if v.compare_at_price > v.price
+    assign on_sale = true
+  endif
+-%}
+<div class="ind-price{% if size == 'lg' %} ind-price--lg{% endif %}" data-price-wrap>
+  <span class="ind-price__now" data-price>{{ v.price | money }}</span>
+  {%- if on_sale -%}
+    <s class="ind-price__was" data-compare>{{ v.compare_at_price | money }}</s>
+    {%- if show_save -%}
+      <span class="ind-badge ind-badge--soft ind-price__save" data-save>{{ 'ind.product.save' | t }} {{ v.compare_at_price | minus: v.price | money }}</span>
+    {%- endif -%}
+  {%- else -%}
+    <s class="ind-price__was" data-compare hidden></s>
+  {%- endif -%}
+  {%- if size == 'lg' -%}
+    <span class="ind-price__tax">
+      {%- if cart.taxes_included -%}{{ 'products.product.include_taxes' | t }}{%- endif -%}
+      {%- if shop.shipping_policy.body != blank -%}
+        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+      {%- endif -%}
+    </span>
+  {%- endif -%}
+</div>

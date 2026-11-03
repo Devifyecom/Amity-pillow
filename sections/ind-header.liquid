@@ -1,0 +1,164 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign menu = section.settings.menu
+  assign cart_count = cart.item_count
+  for item in cart.items
+    if item.product.tags contains 'cart-hidden'
+      assign cart_count = cart_count | minus: item.quantity
+    endif
+  endfor
+-%}
+<style>
+  .ind-header__menu details { position: relative; }
+  .ind-header__menu summary { list-style: none; display: inline-flex; align-items: center; gap: 4px; padding-block: 8px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; }
+  .ind-header__menu summary::-webkit-details-marker { display: none; }
+  .ind-header__menu summary svg { width: 16px; height: 16px; }
+  .ind-header__dropdown { position: absolute; top: calc(100% + 10px); left: -16px; min-width: 220px; padding: 10px; border-radius: 10px; background: #fff; color: var(--ind-ink); box-shadow: var(--ind-shadow-lg); border: 1px solid var(--ind-line); }
+  .ind-header__dropdown a { display: block; padding: 10px 12px; border-radius: 6px; }
+  .ind-header__dropdown a:hover { background: var(--ind-sand); }
+  .ind-header__dropdown a::after { display: none; }
+  #shopify-section-{{ section.id }} { position: {% if section.settings.sticky %}sticky{% else %}relative{% endif %}; top: 0; z-index: 30; }
+</style>
+<div class="ind ind-header-wrap" data-section-id="{{ section.id }}">
+  <a class="ind-visually-hidden" href="#MainContent">{{ 'ind.general.skip' | t }}</a>
+  <ind-header class="ind-header{% if section.settings.style == 'dark' %} ind-header--dark{% endif %}" style="display:block">
+    <div class="ind-container ind-header__bar">
+      <button type="button" class="ind-header__icon ind-header__burger" data-open-dialog="IndMenu-{{ section.id }}" aria-controls="IndMenu-{{ section.id }}" aria-expanded="false" aria-label="{{ 'ind.general.menu' | t }}">
+        {%- render 'ind-icon', name: 'menu' -%}
+      </button>
+
+      {%- capture logo -%}
+        {%- if section.settings.logo != blank -%}
+          {%- assign logo_h = section.settings.logo_height -%}
+          {%- assign logo_w = logo_h | times: section.settings.logo.aspect_ratio | round -%}
+          {{ section.settings.logo | image_url: height: 160 | image_tag: height: logo_h, width: logo_w, alt: shop.name, loading: 'eager', style: 'height:var(--logo-h);width:auto' }}
+        {%- else -%}
+          {{ section.settings.logo_text | default: shop.name }}
+        {%- endif -%}
+      {%- endcapture -%}
+      <a href="{{ routes.root_url }}" class="ind-header__logo" style="--logo-h: {{ section.settings.logo_height }}px">{{ logo }}</a>
+
+      <nav class="ind-header__nav" aria-label="{{ 'ind.general.menu' | t }}">
+        {%- if menu != blank -%}
+          <ul class="ind-header__menu" role="list">
+            {%- for link in menu.links -%}
+              <li>
+                {%- if link.links != blank -%}
+                  <details>
+                    <summary>{{ link.title }}{% render 'ind-icon', name: 'chevron-down' %}</summary>
+                    <div class="ind-header__dropdown">
+                      {%- for child in link.links -%}
+                        <a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>{{ child.title }}</a>
+                      {%- endfor -%}
+                    </div>
+                  </details>
+                {%- else -%}
+                  <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </nav>
+
+      <div class="ind-header__tools">
+        {%- if section.settings.show_search -%}
+          <button type="button" class="ind-header__icon" data-open-dialog="IndSearch-{{ section.id }}" aria-controls="IndSearch-{{ section.id }}" aria-expanded="false" aria-label="{{ 'ind.general.search' | t }}">
+            {%- render 'ind-icon', name: 'search' -%}
+          </button>
+        {%- endif -%}
+        {%- if shop.customer_accounts_enabled and section.settings.show_account -%}
+          <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="ind-header__icon ind-header__account" aria-label="{{ 'ind.general.account' | t }}">
+            {%- render 'ind-icon', name: 'user' -%}
+          </a>
+        {%- endif -%}
+        {%- comment -%} id="cart-icon-bubble" lets the theme's cart drawer open from this icon and refresh the count. {%- endcomment -%}
+        <a href="{{ routes.cart_url }}" class="ind-header__icon" id="cart-icon-bubble" aria-label="{{ 'ind.general.cart' | t }}">
+          {%- if cart_count > 0 -%}{%- render 'icon-cart-empty' -%}{%- else -%}{%- render 'icon-cart' -%}{%- endif -%}
+          <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+          {%- if cart_count > 0 -%}
+            <div class="cart-count-bubble">
+              {%- if cart_count < 100 -%}<span aria-hidden="true">{{ cart_count }}</span>{%- endif -%}
+              <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart_count }}</span>
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+
+    {%- comment -%} Mobile navigation drawer {%- endcomment -%}
+    <dialog id="IndMenu-{{ section.id }}" class="ind ind-dialog ind-drawer" aria-label="{{ 'ind.general.menu' | t }}">
+      <div class="ind-drawer__inner">
+        <div class="ind-drawer__top">
+          <span class="ind-header__logo" style="font-size:1.1rem">{{ section.settings.logo_text | default: shop.name }}</span>
+          <button type="button" class="ind-header__icon" data-close-dialog aria-label="{{ 'ind.product.close' | t }}">{%- render 'ind-icon', name: 'x' -%}</button>
+        </div>
+        <ul class="ind-drawer__menu" role="list">
+          {%- if menu != blank -%}
+            {%- for link in menu.links -%}
+              <li>
+                {%- if link.links != blank -%}
+                  <details>
+                    <summary>{{ link.title }}{% render 'ind-icon', name: 'chevron-down' %}</summary>
+                    <ul role="list">
+                      {%- for child in link.links -%}<li><a href="{{ child.url }}">{{ child.title }}</a></li>{%- endfor -%}
+                    </ul>
+                  </details>
+                {%- else -%}
+                  <a href="{{ link.url }}">{{ link.title }}{% render 'ind-icon', name: 'chevron-right' %}</a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          {%- endif -%}
+        </ul>
+        <div class="ind-drawer__foot">
+          {%- if section.settings.drawer_product_1 != blank -%}
+            <a class="ind-btn ind-btn--accent ind-btn--block" href="{{ section.settings.drawer_product_1.url }}">{{ section.settings.drawer_product_1.title }}</a>
+          {%- endif -%}
+          {%- if section.settings.drawer_product_2 != blank -%}
+            <a class="ind-btn ind-btn--dark ind-btn--block" href="{{ section.settings.drawer_product_2.url }}">{{ section.settings.drawer_product_2.title }}</a>
+          {%- endif -%}
+          {%- if shop.customer_accounts_enabled and section.settings.show_account -%}
+            <a class="ind-link" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">{{ 'ind.general.account' | t }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </dialog>
+
+    {%- comment -%} Search {%- endcomment -%}
+    {%- if section.settings.show_search -%}
+      <dialog id="IndSearch-{{ section.id }}" class="ind ind-dialog ind-search" aria-label="{{ 'ind.general.search' | t }}">
+        <div class="ind-container">
+          <form action="{{ routes.search_url }}" method="get" role="search" class="ind-search__form">
+            <label class="ind-visually-hidden" for="IndSearchInput-{{ section.id }}">{{ 'ind.general.search' | t }}</label>
+            <input id="IndSearchInput-{{ section.id }}" class="ind-search__input" type="search" name="q" placeholder="{{ 'ind.general.search_placeholder' | t }}" autocomplete="off" data-search-input>
+            <input type="hidden" name="options[prefix]" value="last">
+            <button type="submit" class="ind-btn ind-btn--dark" aria-label="{{ 'ind.general.search' | t }}">{%- render 'ind-icon', name: 'search' -%}</button>
+            <button type="button" class="ind-header__icon" data-close-dialog aria-label="{{ 'ind.product.close' | t }}">{%- render 'ind-icon', name: 'x' -%}</button>
+          </form>
+          <div class="ind-search__results" data-search-results aria-live="polite"></div>
+        </div>
+      </dialog>
+    {%- endif -%}
+  </ind-header>
+</div>
+
+{% schema %}
+{
+  "name": "IND header",
+  "class": "ind-header-section",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo image" },
+    { "type": "text", "id": "logo_text", "label": "Text logo (used when no image)", "info": "Leave empty to use the store name." },
+    { "type": "range", "id": "logo_height", "label": "Logo height", "min": 20, "max": 64, "step": 2, "unit": "px", "default": 32 },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "select", "id": "style", "label": "Style", "options": [ { "value": "light", "label": "Light" }, { "value": "dark", "label": "Dark" } ], "default": "light" },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky header", "default": true },
+    { "type": "checkbox", "id": "show_search", "label": "Show search", "default": true },
+    { "type": "checkbox", "id": "show_account", "label": "Show account icon", "info": "Only shown when customer accounts are enabled.", "default": true },
+    { "type": "header", "content": "Mobile menu shortcuts" },
+    { "type": "product", "id": "drawer_product_1", "label": "Primary product button" },
+    { "type": "product", "id": "drawer_product_2", "label": "Secondary product button" }
+  ]
+}
+{% endschema %}

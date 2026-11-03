@@ -1,0 +1,22 @@
+{%- comment -%}
+  Sticky purchase bar. ind.js shows it once the main Add to cart button scrolls out of view
+  and wires it to the main product form, so it shares quantity, tier and price.
+  Params: product, mobile_scroll (bool: on mobile, scroll back to the package picker instead of adding)
+{%- endcomment -%}
+{%- assign v = product.selected_or_first_available_variant -%}
+<div class="ind ind-sticky" data-sticky-for="{{ product.id }}" data-mobile-scroll="{{ mobile_scroll }}" aria-hidden="true">
+  <div class="ind-container ind-sticky__inner">
+    <div class="ind-sticky__product">
+      {%- if product.featured_media -%}
+        {{ product.featured_media.preview_image | image_url: width: 120 | image_tag: alt: '', loading: 'lazy', width: 52, height: 52 }}
+      {%- endif -%}
+      <div style="min-width:0">
+        <div class="ind-sticky__title">{{ product.title }}</div>
+        <div class="ind-sticky__meta"><span data-summary-qty>1</span> × · <strong data-summary-total>{{ v.price | money }}</strong> <s data-summary-was hidden></s></div>
+      </div>
+    </div>
+    <button type="button" class="ind-btn ind-btn--accent" data-sticky-atc tabindex="-1"{% unless v.available %} disabled{% endunless %}>
+      {%- if v.available -%}{{ 'ind.product.add_to_cart' | t }}{%- else -%}{{ 'ind.product.sold_out' | t }}{%- endif -%}
+    </button>
+  </div>
+</div>

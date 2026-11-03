@@ -1,0 +1,112 @@
+{%- render 'ind-assets' -%}
+{%- liquid
+  assign p = product | default: section.settings.product
+  assign rows_source = 'blocks'
+  assign mf = p.metafields.ind.specifications.value
+  if mf != blank and section.settings.use_metafield
+    assign rows_source = 'metafield'
+  endif
+  assign visible = section.settings.visible_rows
+-%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}" id="specifications"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-specs{% if section.settings.media == 'none' %} ind-specs--single{% endif %}">
+      <div>
+        <div class="ind-head">
+          {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+          <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+          {%- if section.settings.text != blank -%}<div class="ind-head__text">{{ section.settings.text }}</div>{%- endif -%}
+        </div>
+
+        {%- liquid
+          if rows_source == 'metafield'
+            assign total = mf.size
+          else
+            assign total = section.blocks.size
+          endif
+        -%}
+        {%- capture row_html -%}
+          {%- comment -%} Metafield ind.specifications (JSON): [{"label":"…","value":"…"}, …] {%- endcomment -%}
+          {%- if rows_source == 'metafield' -%}
+            {%- for row in mf limit: visible -%}<tr><th scope="row">{{ row.label }}</th><td>{{ row.value }}</td></tr>{%- endfor -%}
+          {%- else -%}
+            {%- for block in section.blocks limit: visible -%}<tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.label }}</th><td>{{ block.settings.value }}</td></tr>{%- endfor -%}
+          {%- endif -%}
+        {%- endcapture -%}
+        {%- capture more_html -%}
+          {%- if rows_source == 'metafield' -%}
+            {%- for row in mf offset: visible -%}<tr><th scope="row">{{ row.label }}</th><td>{{ row.value }}</td></tr>{%- endfor -%}
+          {%- else -%}
+            {%- for block in section.blocks offset: visible -%}<tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.label }}</th><td>{{ block.settings.value }}</td></tr>{%- endfor -%}
+          {%- endif -%}
+        {%- endcapture -%}
+
+        <table class="ind-spec-table">
+          <caption class="ind-visually-hidden">{{ section.settings.heading }}</caption>
+          <tbody>{{ row_html }}</tbody>
+        </table>
+        {%- if total > visible -%}
+          <details class="ind-specs__more">
+            <summary>
+              <span class="when-closed">{{ 'ind.general.show_all' | t }}</span><span class="when-open">{{ 'ind.general.show_less' | t }}</span>
+              {%- render 'ind-icon', name: 'chevron-down' -%}
+            </summary>
+            <table class="ind-spec-table" style="margin-top:8px"><tbody>{{ more_html }}</tbody></table>
+          </details>
+        {%- endif -%}
+        {%- if section.settings.note != blank -%}<p class="ind-note">{{ section.settings.note }}</p>{%- endif -%}
+      </div>
+
+      {%- if section.settings.media != 'none' -%}
+        <div class="ind-specs__media ind-reveal">
+          <div class="ind-media ind-media--square">
+            {%- if section.settings.media == 'image' -%}
+              {%- render 'ind-image', image: section.settings.image, sizes: '(min-width: 990px) 50vw, 100vw', label: 'Technical image' -%}
+            {%- else -%}
+              {%- render 'ind-diagram', type: section.settings.media, uid: section.id,
+                v1: section.settings.d_v1, l1: section.settings.d_l1, v2: section.settings.d_v2, l2: section.settings.d_l2,
+                v3: section.settings.d_v3, l3: section.settings.d_l3, v4: section.settings.d_v4, l4: section.settings.d_l4,
+                caption: section.settings.d_caption -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND specifications",
+  "max_blocks": 30,
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "dark", "label": "Graphite" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "product", "id": "product", "label": "Product (outside product pages)" },
+    { "type": "checkbox", "id": "use_metafield", "label": "Use the product metafield ind.specifications when it is set", "info": "JSON list of {\"label\",\"value\"}. When the metafield is empty, the rows below are shown.", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Technical data" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Specifications" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "range", "id": "visible_rows", "label": "Rows shown before \"Show all\"", "min": 3, "max": 30, "step": 1, "default": 8 },
+    { "type": "text", "id": "note", "label": "Footnote" },
+    { "type": "select", "id": "media", "label": "Side media", "options": [ { "value": "none", "label": "None" }, { "value": "image", "label": "Image" }, { "value": "lift", "label": "Lift infographic" }, { "value": "transporter", "label": "Transporter infographic" }, { "value": "gate", "label": "Width infographic" } ], "default": "image" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "d_v1", "label": "Infographic value 1" },
+    { "type": "text", "id": "d_l1", "label": "Infographic label 1" },
+    { "type": "text", "id": "d_v2", "label": "Infographic value 2" },
+    { "type": "text", "id": "d_l2", "label": "Infographic label 2" },
+    { "type": "text", "id": "d_v3", "label": "Infographic value 3" },
+    { "type": "text", "id": "d_l3", "label": "Infographic label 3" },
+    { "type": "text", "id": "d_v4", "label": "Infographic value 4" },
+    { "type": "text", "id": "d_l4", "label": "Infographic label 4" },
+    { "type": "text", "id": "d_caption", "label": "Infographic caption" }
+  ],
+  "blocks": [
+    { "type": "row", "name": "Specification", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Label" },
+      { "type": "text", "id": "value", "label": "Value", "default": "Value" }
+    ] }
+  ],
+  "presets": [ { "name": "IND specifications" } ]
+}
+{% endschema %}

@@ -1,0 +1,56 @@
+{%- comment -%}
+  Shared fonts, styles, script and campaign config for every `ind-*` section.
+  Safe to render more than once: browsers de-duplicate the requests and the JS guards itself.
+{%- endcomment -%}
+{%- liquid
+  assign bf_state = ''
+  capture bf_state
+    render 'ind-bf-state'
+  endcapture
+  assign bf_state = bf_state | strip
+  assign tz = settings.ind_bf_timezone | default: '+00:00' | strip
+  assign bf_start_iso = settings.ind_bf_start | strip | replace: ' ', 'T' | append: ':00' | append: tz
+  assign bf_end_iso = settings.ind_bf_end | strip | replace: ' ', 'T' | append: ':00' | append: tz
+-%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+{{ 'ind.css' | asset_url | stylesheet_tag }}
+<style>
+  .ind {
+    --ind-accent: {{ settings.ind_accent | default: '#d9531e' }};
+    --ind-ink: {{ settings.ind_ink | default: '#15171a' }};
+    --ind-sand: {{ settings.ind_sand | default: '#f5f2ec' }};
+    --ind-promo: {{ settings.ind_bf_bg | default: '#0d0d0e' }};
+    --ind-promo-ink: {{ settings.ind_bf_fg | default: '#ffffff' }};
+  }
+</style>
+<script>
+  window.IND = window.IND || {
+    moneyFormat: {{ shop.money_format | json }},
+    cartUrl: {{ routes.cart_url | json }},
+    cartAddUrl: {{ routes.cart_add_url | json }},
+    root: {{ routes.root_url | json }},
+    bf: {
+      state: {{ bf_state | json }},
+      enabled: {{ settings.ind_bf_enabled | json }},
+      preview: {{ settings.ind_bf_preview | json }},
+      designMode: {{ request.design_mode | json }},
+      start: {{ bf_start_iso | json }},
+      end: {{ bf_end_iso | json }}
+    },
+    strings: {
+      days: {{ 'ind.countdown.days' | t | json }},
+      hours: {{ 'ind.countdown.hours' | t | json }},
+      minutes: {{ 'ind.countdown.minutes' | t | json }},
+      seconds: {{ 'ind.countdown.seconds' | t | json }},
+      added: {{ 'ind.product.added' | t | json }},
+      error: {{ 'ind.product.error' | t | json }},
+      soldOut: {{ 'ind.product.sold_out' | t | json }},
+      addToCart: {{ 'ind.product.add_to_cart' | t | json }},
+      save: {{ 'ind.product.save' | t | json }},
+      each: {{ 'ind.product.each' | t | json }}
+    }
+  };
+</script>
+<script src="{{ 'ind.js' | asset_url }}" defer="defer"></script>

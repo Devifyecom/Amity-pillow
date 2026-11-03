@@ -1,0 +1,24 @@
+{%- comment -%} Product card bound to a real Shopify product. Params: product, sub (subtitle), bf_state {%- endcomment -%}
+{%- liquid
+  assign bf_handles = settings.ind_bf_products | map: 'handle'
+  assign bf_on = false
+  if bf_state == 'active'
+    if settings.ind_bf_products == blank or bf_handles contains product.handle
+      assign bf_on = true
+    endif
+  endif
+-%}
+<div class="ind-card">
+  <div class="ind-card__media">
+    <div class="ind-card__badges">
+      {%- if bf_on -%}<span class="ind-badge ind-badge--promo">{{ settings.ind_bf_badge | default: 'Black Friday' }}</span>{%- endif -%}
+      {%- unless product.available -%}<span class="ind-badge">{{ 'ind.product.sold_out' | t }}</span>{%- endunless -%}
+    </div>
+    {%- render 'ind-image', image: product.featured_media.preview_image, alt: product.title, sizes: '(min-width: 990px) 33vw, 70vw', label: product.title -%}
+  </div>
+  <div>
+    <h3 class="ind-card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    {%- if sub != blank -%}<p class="ind-card__sub">{{ sub }}</p>{%- endif -%}
+  </div>
+  {%- render 'ind-price', product: product -%}
+</div>

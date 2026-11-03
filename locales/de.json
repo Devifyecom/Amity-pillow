@@ -454,5 +454,67 @@
       "copy_code_success": "Code erfolgreich kopiert",
       "print_gift_card": "Drucken"
     }
+  },
+  "ind": {
+    "countdown": {
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden",
+      "days_short": "T",
+      "hours_short": "Std",
+      "minutes_short": "Min",
+      "seconds_short": "Sek",
+      "ends_in": "Endet in",
+      "starts_in": "Beginnt in"
+    },
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "buy_now": "Jetzt kaufen",
+      "sold_out": "Ausverkauft",
+      "added": "Zum Warenkorb hinzugefügt",
+      "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+      "save": "Spare",
+      "each": "pro Stück",
+      "quantity": "Menge",
+      "decrease": "Menge verringern",
+      "increase": "Menge erhöhen",
+      "in_stock": "Auf Lager",
+      "out_of_stock": "Derzeit nicht verfügbar",
+      "choose_package": "Paket wählen",
+      "total": "Gesamt",
+      "discount_note": "Mengenrabatte werden an der Kasse automatisch abgezogen.",
+      "bf_note": "Black-Friday-Preise werden an der Kasse automatisch abgezogen.",
+      "units": "Stück",
+      "unit": "Stück",
+      "gallery": "Produktbilder",
+      "open_zoom": "Bild {{ index }} vergrößert öffnen",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "close": "Schließen",
+      "home": "Startseite",
+      "rating_html": "{{ rating }} von 5 · {{ count }} Bewertungen",
+      "details": "Details",
+      "specifications": "Technische Daten",
+      "shipping_returns": "Versand & Rückgabe",
+      "view_product": "Produkt ansehen",
+      "most_popular": "Beliebteste Wahl",
+      "best_value": "Bester Preis"
+    },
+    "general": {
+      "menu": "Menü",
+      "search": "Suche",
+      "search_placeholder": "Produkte suchen",
+      "account": "Konto",
+      "cart": "Warenkorb",
+      "skip": "Zum Inhalt springen",
+      "newsletter_success": "Danke für deine Anmeldung.",
+      "email": "E-Mail-Adresse",
+      "subscribe": "Abonnieren",
+      "recently_viewed": "Zuletzt angesehen",
+      "related": "Das könntest du auch brauchen",
+      "show_all": "Alle technischen Daten anzeigen",
+      "show_less": "Weniger anzeigen"
+    }
   }
 }

@@ -1,0 +1,73 @@
+{%- render 'ind-assets' -%}
+{%- capture bf_state -%}{%- render 'ind-bf-state' -%}{%- endcapture -%}
+{%- liquid
+  assign bf_state = bf_state | strip
+  assign show_states = 'active'
+  if section.settings.show_upcoming
+    assign show_states = 'active upcoming'
+  endif
+  assign visible = false
+  if show_states contains bf_state and bf_state != ''
+    assign visible = true
+  endif
+-%}
+<section class="ind ind-bf ind-section" data-section-id="{{ section.id }}" data-bf-show="{{ show_states }}"{% unless visible %} hidden{% endunless %} aria-labelledby="BfTitle-{{ section.id }}">
+  <span class="ind-bf__stripe" aria-hidden="true"></span>
+  <div class="ind-container">
+    <div class="ind-bf__grid">
+      <div>
+        {%- if section.settings.kicker != blank -%}<span class="ind-bf__kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+        <h2 class="ind-h1" id="BfTitle-{{ section.id }}">{{ section.settings.heading }}<span>{{ section.settings.heading_2 }}</span></h2>
+        {%- if section.settings.text != blank -%}<div class="ind-bf__text">{{ section.settings.text }}</div>{%- endif -%}
+        <div class="ind-actions">
+          {%- if section.settings.btn1_label != blank -%}<a class="ind-btn ind-btn--accent ind-btn--lg" href="{{ section.settings.btn1_link | default: '#' }}">{{ section.settings.btn1_label }}</a>{%- endif -%}
+          {%- if section.settings.btn2_label != blank -%}<a class="ind-btn ind-btn--outline ind-btn--lg" style="--btn-fg:#fff;--btn-bd:rgba(255,255,255,.5)" href="{{ section.settings.btn2_link | default: '#' }}">{{ section.settings.btn2_label }}</a>{%- endif -%}
+        </div>
+      </div>
+
+      <div class="ind-bf__panel">
+        <div data-bf-show="active"{% if bf_state != 'active' %} hidden{% endif %}>
+          <p class="ind-bf__panel-label">{{ 'ind.countdown.ends_in' | t }}</p>
+          {%- render 'ind-countdown', style: 'boxes', target: 'end' -%}
+        </div>
+        <div data-bf-show="upcoming"{% if bf_state != 'upcoming' %} hidden{% endif %}>
+          <p class="ind-bf__panel-label">{{ 'ind.countdown.starts_in' | t }}</p>
+          {%- render 'ind-countdown', style: 'boxes', target: 'start' -%}
+        </div>
+        {%- if section.settings.show_tiers -%}
+          <div class="ind-bf__tiers">
+            <div class="ind-bf__tier"><strong>−{{ settings.ind_bf_pct_1 }}%</strong><span>1 {{ 'ind.product.unit' | t }}</span></div>
+            <div class="ind-bf__tier"><strong>−{{ settings.ind_bf_pct_2 }}%</strong><span>2 {{ 'ind.product.units' | t }}</span></div>
+            <div class="ind-bf__tier"><strong>−{{ settings.ind_bf_pct_3 }}%</strong><span>3+ {{ 'ind.product.units' | t }}</span></div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.terms != blank -%}<p class="ind-note" style="color:rgba(255,255,255,.65)">{{ section.settings.terms }}</p>{%- endif -%}
+      </div>
+    </div>
+    {%- if section.settings.image != blank -%}
+      <div class="ind-bf__media" style="margin-top:48px">{%- render 'ind-image', image: section.settings.image, sizes: '100vw' -%}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND Black Friday banner",
+  "settings": [
+    { "type": "paragraph", "content": "Dates, discount values and on/off switch live in Theme settings → Black Friday campaign. This banner is visible only while the campaign is active, or before it starts if you allow that below." },
+    { "type": "checkbox", "id": "show_upcoming", "label": "Show before the campaign starts (countdown to start)", "default": false },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Limited-time campaign" },
+    { "type": "text", "id": "heading", "label": "Heading line 1", "default": "BLACK FRIDAY —" },
+    { "type": "text", "id": "heading_2", "label": "Heading line 2 (accent)", "default": "BIGGER SAVINGS, SMARTER WORK" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Discover powerful equipment at exclusive Black Friday prices. Upgrade the way you work and save more when you purchase multiple units.</p>" },
+    { "type": "checkbox", "id": "show_tiers", "label": "Show discount tiers", "default": true },
+    { "type": "text", "id": "terms", "label": "Campaign terms line", "default": "Discounts apply automatically at checkout while the campaign runs. Not combinable with other offers." },
+    { "type": "text", "id": "btn1_label", "label": "Primary button", "default": "Shop Selo" },
+    { "type": "url", "id": "btn1_link", "label": "Primary link" },
+    { "type": "text", "id": "btn2_label", "label": "Secondary button", "default": "Shop Abrelune" },
+    { "type": "url", "id": "btn2_link", "label": "Secondary link" },
+    { "type": "image_picker", "id": "image", "label": "Wide campaign image (optional)" }
+  ],
+  "presets": [ { "name": "IND Black Friday banner" } ]
+}
+{% endschema %}

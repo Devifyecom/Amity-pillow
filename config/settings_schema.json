@@ -2830,5 +2830,125 @@
         "info": "If empty, a link to all products will be applied."
       }
     ]
+  },
+  {
+    "name": "Industrial brand style",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Applies to all IND sections (homepage, Selo, Abrelune, header, footer). Each product template can override the accent colour."
+      },
+      {
+        "type": "color",
+        "id": "ind_accent",
+        "label": "Brand accent colour",
+        "default": "#d9531e"
+      },
+      {
+        "type": "color",
+        "id": "ind_ink",
+        "label": "Ink (text and dark surfaces)",
+        "default": "#15171a"
+      },
+      {
+        "type": "color",
+        "id": "ind_sand",
+        "label": "Warm neutral background",
+        "default": "#f5f2ec"
+      }
+    ]
+  },
+  {
+    "name": "Black Friday campaign",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Every price shown here must match a real automatic discount in Shopify admin (Discounts). The theme only displays the discount; Shopify applies it at checkout. Run scripts/shopify-setup.mjs or follow docs/SHOPIFY-ADMIN-SETUP.md."
+      },
+      {
+        "type": "checkbox",
+        "id": "ind_bf_enabled",
+        "label": "Enable Black Friday campaign",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "ind_bf_preview",
+        "label": "Preview as active in the theme editor only",
+        "info": "Shoppers never see this preview. They see the campaign only between the dates below.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "ind_bf_start",
+        "label": "Start (YYYY-MM-DD HH:MM)",
+        "default": "2026-11-23 00:00"
+      },
+      {
+        "type": "text",
+        "id": "ind_bf_end",
+        "label": "End (YYYY-MM-DD HH:MM)",
+        "default": "2026-12-01 23:59"
+      },
+      {
+        "type": "text",
+        "id": "ind_bf_timezone",
+        "label": "UTC offset of these times",
+        "info": "Example: +01:00 for CET, +00:00 for UTC, -05:00 for EST. Use the same time zone you set on the Shopify discounts.",
+        "default": "+01:00"
+      },
+      {
+        "type": "product_list",
+        "id": "ind_bf_products",
+        "label": "Products in the campaign",
+        "info": "Leave empty to include every product.",
+        "limit": 20
+      },
+      {
+        "type": "range",
+        "id": "ind_bf_pct_1",
+        "label": "Black Friday discount: 1 unit (%)",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "ind_bf_pct_2",
+        "label": "Black Friday discount: 2 units (%)",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "ind_bf_pct_3",
+        "label": "Black Friday discount: 3+ units (%)",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "type": "text",
+        "id": "ind_bf_badge",
+        "label": "Product badge text",
+        "default": "Black Friday"
+      },
+      {
+        "type": "color",
+        "id": "ind_bf_bg",
+        "label": "Campaign background",
+        "default": "#0d0d0e"
+      },
+      {
+        "type": "color",
+        "id": "ind_bf_fg",
+        "label": "Campaign text",
+        "default": "#ffffff"
+      }
+    ]
   }
 ]

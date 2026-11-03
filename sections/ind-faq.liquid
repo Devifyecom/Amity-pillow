@@ -1,0 +1,67 @@
+{%- render 'ind-assets' -%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}" id="faq"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-faq{% if section.settings.layout == 'stacked' %} ind-faq--stacked{% endif %}">
+      <div class="ind-faq__aside">
+        {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="ind-h2">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}<div class="ind-head__text">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.settings.btn_label != blank -%}<div class="ind-actions"><a class="ind-btn ind-btn--outline" href="{{ section.settings.btn_link | default: '#' }}">{{ section.settings.btn_label }}</a></div>{%- endif -%}
+      </div>
+      <ind-accordion class="ind-acc"{% if section.settings.single %} data-single{% endif %}>
+        {%- for block in section.blocks -%}
+          <div class="ind-acc__item" {{ block.shopify_attributes }}>
+            <h3 style="margin:0">
+              <button type="button" class="ind-acc__q" aria-expanded="{% if forloop.first and section.settings.open_first %}true{% else %}false{% endif %}" aria-controls="Faq-{{ section.id }}-{{ forloop.index }}" id="FaqQ-{{ section.id }}-{{ forloop.index }}">
+                <span>{{ block.settings.q }}</span><span class="ind-acc__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="ind-acc__a{% if forloop.first and section.settings.open_first %} is-open{% endif %}" id="Faq-{{ section.id }}-{{ forloop.index }}" role="region" aria-labelledby="FaqQ-{{ section.id }}-{{ forloop.index }}">
+              <div><div class="ind-rte">{{ block.settings.a }}</div></div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </ind-accordion>
+    </div>
+  </div>
+  {%- if section.settings.schema and section.blocks.size > 0 -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- for block in section.blocks -%}
+            { "@type": "Question", "name": {{ block.settings.q | json }}, "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.a | strip_html | json }} } }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      }
+    </script>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "IND FAQ",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "stone", "label": "Stone" }, { "value": "dark", "label": "Graphite" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Accent colour override" },
+    { "type": "select", "id": "layout", "label": "Layout", "options": [ { "value": "aside", "label": "Heading beside questions" }, { "value": "stacked", "label": "Stacked, centred" } ], "default": "aside" },
+    { "type": "checkbox", "id": "single", "label": "Keep only one answer open", "default": true },
+    { "type": "checkbox", "id": "open_first", "label": "Open first answer", "default": false },
+    { "type": "checkbox", "id": "schema", "label": "Add FAQ structured data", "info": "Use on one section per page only.", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions & answers" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "btn_label", "label": "Button label" },
+    { "type": "url", "id": "btn_link", "label": "Button link" }
+  ],
+  "blocks": [
+    { "type": "qa", "name": "Question", "settings": [
+      { "type": "text", "id": "q", "label": "Question", "default": "Question" },
+      { "type": "richtext", "id": "a", "label": "Answer", "default": "<p>Answer</p>" }
+    ] }
+  ],
+  "presets": [ { "name": "IND FAQ", "blocks": [ { "type": "qa" }, { "type": "qa" }, { "type": "qa" } ] } ]
+}
+{% endschema %}

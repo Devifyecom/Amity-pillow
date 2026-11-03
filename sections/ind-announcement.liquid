@@ -1,0 +1,96 @@
+{%- render 'ind-assets' -%}
+{%- capture bf_state -%}{%- render 'ind-bf-state' -%}{%- endcapture -%}
+{%- assign bf_state = bf_state | strip -%}
+<div class="ind ind-announce{% if section.settings.promo_style %} ind-announce--promo-when-active{% endif %}" data-section-id="{{ section.id }}" style="--ann-bg: {{ section.settings.bg }}; --ann-fg: {{ section.settings.fg }};">
+  <style>
+    #shopify-section-{{ section.id }} .ind-announce { background: var(--ann-bg); color: var(--ann-fg); }
+    html[data-ind-bf='active'] #shopify-section-{{ section.id }} .ind-announce--promo-when-active { background: var(--ind-promo); color: var(--ind-promo-ink); }
+  </style>
+  <ind-announce class="ind-container ind-announce__inner" data-speed="{{ section.settings.speed }}">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign show = block.settings.show
+        assign initially_hidden = false
+        case show
+          when 'active'
+            assign show_attr = 'active'
+            if bf_state != 'active'
+              assign initially_hidden = true
+            endif
+          when 'upcoming'
+            assign show_attr = 'upcoming'
+            if bf_state != 'upcoming'
+              assign initially_hidden = true
+            endif
+          when 'outside'
+            assign show_attr = 'off upcoming ended'
+            if bf_state == 'active'
+              assign initially_hidden = true
+            endif
+          else
+            assign show_attr = ''
+        endcase
+      -%}
+      <div class="ind-announce__msg" {{ block.shopify_attributes }}{% if show_attr != '' %} data-bf-show="{{ show_attr }}"{% endif %}{% if initially_hidden %} hidden{% endif %}>
+        <span style="display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center">
+          {%- if block.settings.tag != blank -%}<span class="ind-announce__tag">{{ block.settings.tag }}</span>{%- endif -%}
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+          {%- else -%}
+            <span>{{ block.settings.text }}</span>
+          {%- endif -%}
+          {%- if block.settings.countdown and show == 'active' -%}
+            {%- render 'ind-countdown', style: 'inline', target: 'end' -%}
+          {%- elsif block.settings.countdown and show == 'upcoming' -%}
+            {%- render 'ind-countdown', style: 'inline', target: 'start' -%}
+          {%- endif -%}
+        </span>
+      </div>
+    {%- endfor -%}
+  </ind-announce>
+</div>
+
+{% schema %}
+{
+  "name": "IND announcement bar",
+  "class": "ind-announcement-section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Background", "default": "#15171a" },
+    { "type": "color", "id": "fg", "label": "Text", "default": "#ffffff" },
+    { "type": "checkbox", "id": "promo_style", "label": "Use the campaign colours while Black Friday is active", "default": true },
+    { "type": "range", "id": "speed", "label": "Seconds per message", "min": 3, "max": 10, "step": 1, "default": 5 }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag (optional)" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Professional lifting and transport equipment" },
+        { "type": "url", "id": "link", "label": "Link" },
+        {
+          "type": "select", "id": "show", "label": "Show",
+          "options": [
+            { "value": "always", "label": "Always" },
+            { "value": "active", "label": "Only while Black Friday is active" },
+            { "value": "upcoming", "label": "Only before Black Friday starts" },
+            { "value": "outside", "label": "Only outside the Black Friday campaign" }
+          ],
+          "default": "always"
+        },
+        { "type": "checkbox", "id": "countdown", "label": "Show countdown", "info": "Counts down to the campaign end (active) or the campaign start (before it starts). Uses the dates in Theme settings.", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "IND announcement bar",
+      "blocks": [
+        { "type": "message", "settings": { "tag": "Black Friday", "text": "Bigger savings, smarter work. Save more when you buy multiple units.", "show": "active", "countdown": true } },
+        { "type": "message", "settings": { "text": "Professional lifting and transport equipment", "show": "outside" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

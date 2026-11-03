@@ -1,436 +1,574 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "cfca4268-6358-426c-98ab-d292aeef11e5": {
-      "type": "slideshow",
+    "hero": {
+      "type": "ind-hero",
+      "settings": {
+        "shade": 70,
+        "height": 85,
+        "height_mobile": 85,
+        "eyebrow": "Professional lifting & transport equipment",
+        "heading": "Lift higher. <em>Carry more.</em> Work smarter.",
+        "text": "<p>Two electric machines that take the heavy lifting out of everyday work: Selo for raising material to height, Abrelune for moving heavy loads across the ground.</p>",
+        "btn1_label": "Shop Selo",
+        "btn1_link": "shopify://products/selo",
+        "btn2_label": "Shop Abrelune",
+        "btn2_link": "shopify://products/abrelune"
+      },
       "blocks": {
-        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1": {
-          "type": "slide",
+        "stat_128": {
+          "type": "stat",
           "settings": {
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "title_highlight_color": "#6d388b",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "Button label",
-            "link": "shopify://products/amity-comfort-cervical-pillow",
-            "button_style_secondary": false,
-            "atc_button_label": "",
-            "atc_product": "",
-            "atc_skip_cart": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "color_scheme": "background-1",
-            "transparent_container_color": "white",
-            "text_alignment_mobile": "center",
-            "custom_colors_background": "#ffffff",
-            "custom_gradient_background": "",
-            "custom_colors_text": "#2e2a39",
-            "custom_colors_solid_button_background": "#dd1d1d",
-            "custom_colors_solid_button_text": "#ffffff",
-            "custom_colors_outline_button": "#dd1d1d"
+            "value": "500 kg",
+            "label": "Selo lifting capacity"
           }
         },
-        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2": {
-          "type": "slide",
-          "disabled": true,
+        "stat_129": {
+          "type": "stat",
           "settings": {
-            "image_overlay_opacity": 0,
-            "heading": "Image slide",
-            "title_highlight_color": "#6d388b",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "atc_button_label": "",
-            "atc_product": "",
-            "atc_skip_cart": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "color_scheme": "background-1",
-            "transparent_container_color": "white",
-            "text_alignment_mobile": "center",
-            "custom_colors_background": "#ffffff",
-            "custom_gradient_background": "",
-            "custom_colors_text": "#2e2a39",
-            "custom_colors_solid_button_background": "#dd1d1d",
-            "custom_colors_solid_button_text": "#ffffff",
-            "custom_colors_outline_button": "#dd1d1d"
+            "value": "6 m",
+            "label": "Selo lifting height"
+          }
+        },
+        "stat_130": {
+          "type": "stat",
+          "settings": {
+            "value": "450 kg",
+            "label": "Abrelune load capacity"
           }
         }
       },
       "block_order": [
-        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1",
-        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2"
-      ],
+        "stat_128",
+        "stat_129",
+        "stat_130"
+      ]
+    },
+    "bf": {
+      "type": "ind-bf-banner",
       "settings": {
-        "visibility": "always-display",
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "dots",
-        "desktop_pagination_position": "over",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "show_text_below": true,
-        "mobile_pagination_position": "under",
-        "accessibility_info": "Slideshow about our brand"
+        "show_upcoming": true,
+        "kicker": "Limited-time campaign",
+        "heading": "BLACK FRIDAY —",
+        "heading_2": "BIGGER SAVINGS, SMARTER WORK",
+        "text": "<p>Discover powerful equipment at exclusive Black Friday prices. Upgrade the way you work and save more when you purchase multiple units.</p>",
+        "show_tiers": true,
+        "terms": "Discounts are applied automatically at checkout during the campaign and cannot be combined with other offers.",
+        "btn1_label": "Shop Selo",
+        "btn1_link": "shopify://products/selo",
+        "btn2_label": "Shop Abrelune",
+        "btn2_link": "shopify://products/abrelune"
       }
     },
-    "d2d3417b-e92f-428c-b221-5bceffb552be": {
-      "type": "comparison-table",
+    "intro": {
+      "type": "ind-feature-grid",
+      "settings": {
+        "scheme": "paper",
+        "style": "minimal",
+        "columns": 3,
+        "row_mobile": true,
+        "center": false,
+        "tight": false,
+        "eyebrow": "Our range",
+        "heading": "Two machines. One goal: less strain, more work done.",
+        "text": "<p>We focus on equipment that takes heavy loads off people: vertical lifting at the scaffold and powered transport around the property.</p>",
+        "note": ""
+      },
       "blocks": {
-        "row_frqit4": {
-          "type": "row",
+        "feature_131": {
+          "type": "feature",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
-            "us": true,
-            "others": false,
-            "others_2": false,
-            "others_3": false
+            "icon": "height",
+            "title": "Vertical lifting",
+            "text": "<p>Selo raises up to 500 kg to as high as 6 m, by remote control.</p>"
           }
         },
-        "row_a9Qa8J": {
-          "type": "row",
+        "feature_132": {
+          "type": "feature",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
-            "us": true,
-            "others": false,
-            "others_2": false,
-            "others_3": false
+            "icon": "truck",
+            "title": "Ground transport",
+            "text": "<p>Abrelune carries up to 450 kg on grass, gravel and uneven ground.</p>"
           }
         },
-        "row_NAEbjV": {
-          "type": "row",
+        "feature_133": {
+          "type": "feature",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
-            "us": true,
-            "others": false,
-            "others_2": false,
-            "others_3": false
+            "icon": "shield",
+            "title": "Built for daily use",
+            "text": "<p>Steel construction and practical safety features on both machines.</p>"
           }
         }
       },
       "block_order": [
-        "row_frqit4",
-        "row_a9Qa8J",
-        "row_NAEbjV"
-      ],
-      "disabled": true,
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "Comparison table",
-        "title_highlight_color": "#6d388b",
-        "heading_size": "h1",
-        "text": "<p>Talk about how and why is your brand better than the others.</p>",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "atc_button_label": "",
-        "atc_product": "",
-        "atc_skip_cart": false,
-        "desktop_alignment": "center",
-        "mobile_alignment": "center",
-        "color_scheme": "background-1",
-        "layout": "table_second",
-        "style": "centered",
-        "corner_radius": 20,
-        "number_of_competitors": 1,
-        "us_label": "[shop_name]",
-        "us_label_size": 18,
-        "logo_width": 90,
-        "mobile_logo_width": 60,
-        "others_label": "Others",
-        "others_label_size": 18,
-        "others_logo_width": 90,
-        "others_mobile_logo_width": 60,
-        "others_2_label": "Competitor 2",
-        "others_2_label_size": 18,
-        "others_2_logo_width": 90,
-        "others_2_mobile_logo_width": 60,
-        "others_3_label": "Competitor 3",
-        "others_3_label_size": 18,
-        "others_3_logo_width": 90,
-        "others_3_mobile_logo_width": 60,
-        "checkmark_style": "regular",
-        "checkmark_color": "#ffffff",
-        "checkmark_bg_color": "#53af01",
-        "x_style": "regular",
-        "x_color": "#121212",
-        "x_bg_color": "#dbdbdb",
-        "opposite_icon_colors": "original",
-        "highlighted_color_scheme": "accent-1",
-        "highlighted_separator_opacity": 0,
-        "highlighted_overlay_opacity": 0,
-        "other_cells_color_scheme": "background-1",
-        "regular_separator_opacity": 10,
-        "regular_overlay_opacity": 0,
-        "minimalistic_border_opacity": 16,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#ffffff",
-        "custom_colors_outline_button": "#dd1d1d",
-        "custom_colors_highlighted_background": "#2e2a39",
-        "custom_colors_highlighted_text": "#ffffff",
-        "custom_colors_others_background": "#ffffff",
-        "custom_colors_others_text": "#2e2a39"
-      }
+        "feature_131",
+        "feature_132",
+        "feature_133"
+      ]
     },
-    "6aa09428-a417-429d-9159-a4e8afd49590": {
-      "type": "icon-bar",
+    "selo": {
+      "type": "ind-featured-product",
+      "settings": {
+        "fallback_handle": "selo",
+        "anchor": "selo",
+        "scheme": "dark",
+        "accent": "#d9531e",
+        "reverse": false,
+        "eyebrow": "Scaffold material lift",
+        "heading": "Selo",
+        "text": "<p>Professional lifting power for the job site. Move materials up safely and with less effort, right at the scaffold, controlled by remote.</p>",
+        "badge": "",
+        "btn_label": "Discover Selo",
+        "show_atc": true
+      },
       "blocks": {
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1": {
-          "type": "column",
+        "spec_134": {
+          "type": "spec",
           "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
+            "value": "500 kg",
+            "label": "Load capacity"
           }
         },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2": {
-          "type": "column",
+        "spec_135": {
+          "type": "spec",
           "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
+            "value": "6 m",
+            "label": "Lifting height"
           }
         },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3": {
-          "type": "column",
+        "spec_136": {
+          "type": "spec",
           "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
+            "value": "Remote",
+            "label": "Control"
           }
         },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4": {
-          "type": "column",
+        "spec_137": {
+          "type": "spec",
           "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
+            "value": "360°",
+            "label": "Swivel castors"
           }
         }
       },
       "block_order": [
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4"
-      ],
-      "disabled": true,
+        "spec_134",
+        "spec_135",
+        "spec_136",
+        "spec_137"
+      ]
+    },
+    "abrelune": {
+      "type": "ind-featured-product",
       "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "Icon bar",
-        "title_highlight_color": "#6d388b",
-        "heading_size": "h1",
+        "fallback_handle": "abrelune",
+        "anchor": "abrelune",
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "reverse": true,
+        "eyebrow": "Electric compact transporter",
+        "heading": "Abrelune",
+        "text": "<p>Powerful transport, high carrying capacity and the manoeuvrability to go where larger vehicles can't.</p>",
+        "badge": "",
+        "btn_label": "Discover Abrelune",
+        "show_atc": true
+      },
+      "blocks": {
+        "spec_138": {
+          "type": "spec",
+          "settings": {
+            "value": "1000 W",
+            "label": "Brushless motor"
+          }
+        },
+        "spec_139": {
+          "type": "spec",
+          "settings": {
+            "value": "450 kg",
+            "label": "Max. load"
+          }
+        },
+        "spec_140": {
+          "type": "spec",
+          "settings": {
+            "value": "24–27 km",
+            "label": "Range*"
+          }
+        },
+        "spec_141": {
+          "type": "spec",
+          "settings": {
+            "value": "79 cm",
+            "label": "Width"
+          }
+        }
+      },
+      "block_order": [
+        "spec_138",
+        "spec_139",
+        "spec_140",
+        "spec_141"
+      ]
+    },
+    "benefits": {
+      "type": "ind-stat-band",
+      "settings": {
+        "scheme": "ink",
+        "heading": "Main benefits",
+        "note": "* Abrelune range depends on load, surface, gradient and battery condition."
+      },
+      "blocks": {
+        "stat_142": {
+          "type": "stat",
+          "settings": {
+            "value": "500",
+            "unit": "kg",
+            "label": "Lifted to height with Selo"
+          }
+        },
+        "stat_143": {
+          "type": "stat",
+          "settings": {
+            "value": "6",
+            "unit": "m",
+            "label": "Maximum Selo lifting height"
+          }
+        },
+        "stat_144": {
+          "type": "stat",
+          "settings": {
+            "value": "450",
+            "unit": "kg",
+            "label": "Carried per trip with Abrelune"
+          }
+        },
+        "stat_145": {
+          "type": "stat",
+          "settings": {
+            "value": "24–27",
+            "unit": "km",
+            "label": "Abrelune range per charge*"
+          }
+        }
+      },
+      "block_order": [
+        "stat_142",
+        "stat_143",
+        "stat_144",
+        "stat_145"
+      ]
+    },
+    "compare": {
+      "type": "ind-comparison",
+      "settings": {
+        "mode": "products",
+        "scheme": "paper",
+        "eyebrow": "Product comparison",
+        "heading": "Which machine fits your work?",
+        "text": "<p>Selo moves material up. Abrelune moves material along.</p>",
+        "label_col": "",
+        "col_a": "",
+        "col_b": "",
+        "note": ""
+      },
+      "blocks": {
+        "row_146": {
+          "type": "row",
+          "settings": {
+            "label": "Main task",
+            "a": "Lifting material to height",
+            "b": "Transporting loads on the ground"
+          }
+        },
+        "row_147": {
+          "type": "row",
+          "settings": {
+            "label": "Capacity",
+            "a": "Up to 500 kg",
+            "b": "Up to 450 kg"
+          }
+        },
+        "row_148": {
+          "type": "row",
+          "settings": {
+            "label": "Reach",
+            "a": "Up to 6 m lifting height",
+            "b": "Approx. 24–27 km per charge"
+          }
+        },
+        "row_149": {
+          "type": "row",
+          "settings": {
+            "label": "Drive",
+            "a": "High-torque electric motor",
+            "b": "Brushless 1000 W, two-wheel drive"
+          }
+        },
+        "row_150": {
+          "type": "row",
+          "settings": {
+            "label": "Control",
+            "a": "Ergonomic remote control",
+            "b": "Twist throttle, 2 speeds, reverse"
+          }
+        },
+        "row_151": {
+          "type": "row",
+          "settings": {
+            "label": "Mobility",
+            "a": "360° swivel castors",
+            "b": "79 cm wide, passages from 84 cm"
+          }
+        },
+        "row_152": {
+          "type": "row",
+          "settings": {
+            "label": "Ideal for",
+            "a": "Scaffolds, renovation, installations",
+            "b": "Firewood, stone, garden, construction"
+          }
+        }
+      },
+      "block_order": [
+        "row_146",
+        "row_147",
+        "row_148",
+        "row_149",
+        "row_150",
+        "row_151",
+        "row_152"
+      ]
+    },
+    "why": {
+      "type": "ind-feature-grid",
+      "settings": {
+        "scheme": "sand",
+        "style": "numbered",
+        "columns": 4,
+        "row_mobile": false,
+        "center": true,
+        "tight": false,
+        "eyebrow": "Why choose our equipment",
+        "heading": "Made to take the load",
         "text": "",
-        "color_scheme": "background-1",
-        "icon_layout": "vertical",
-        "icon_size": "medium",
-        "icon_color": "accent-1",
-        "cards_color_scheme": "background-1",
-        "type": "slide",
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "arrows_color_scheme": "inverse",
-        "transparent_arrows": true,
-        "dots_color_scheme": "inverse",
-        "desktop_full_page": false,
-        "columns_desktop": 4,
-        "slider_desktop": false,
-        "per_move_desktop": 1,
-        "desktop_spacing": 40,
-        "desktop_side_padding": 0,
-        "desktop_padding_calc": true,
-        "desktop_adaptive_height": false,
-        "desktop_dots_position": "under",
-        "desktop_arrows_position": "sides",
-        "columns_mobile": "1",
-        "slider_mobile": true,
-        "enable_mobile_preview": false,
-        "mobile_adaptive_height": false,
-        "mobile_dots_position": "under",
-        "mobile_arrows_position": "under",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_cards_colors_background": "#f3f3f3",
-        "custom_cards_gradient_background": "",
-        "custom_cards_colors_text": "#2e2a39"
-      }
-    },
-    "0f1fc9e4-bc4c-4052-9747-62d1f8472caa": {
-      "type": "results",
+        "note": ""
+      },
       "blocks": {
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-1": {
-          "type": "row",
+        "feature_153": {
+          "type": "feature",
           "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+            "icon": "layers",
+            "title": "Steel construction",
+            "text": "<p>Reinforced steel frames for stability in daily use.</p>"
           }
         },
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-2": {
-          "type": "row",
+        "feature_154": {
+          "type": "feature",
           "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+            "icon": "shield",
+            "title": "Safety features",
+            "text": "<p>Limit stops, brakes and guard rails on Selo; a battery indicator, LED headlight and horn on Abrelune.</p>"
           }
         },
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-3": {
-          "type": "row",
+        "feature_155": {
+          "type": "feature",
           "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+            "icon": "remote",
+            "title": "Easy control",
+            "text": "<p>Remote-controlled lifting and stepless twist-throttle driving.</p>"
+          }
+        },
+        "feature_156": {
+          "type": "feature",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure checkout",
+            "text": "<p>Encrypted payment through Shopify Checkout.</p>"
           }
         }
       },
       "block_order": [
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-1",
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-2",
-        "template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "Results",
-        "title_highlight_color": "#6d388b",
-        "heading_size": "h1",
-        "text": "<p>Talk about results of your customers and how your product improved their life.</p>",
-        "video_muted_autoplay": true,
-        "color_scheme": "background-1",
-        "layout": "results_second",
-        "results_headline": "Results heading",
-        "results_title_highlight_color": "#6d388b",
-        "results_headline_size": "h2",
-        "results_text": "",
-        "results_headline_alignment": "left",
-        "caption": "<p>Caption about the results and/or link for their proof.</p>",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "atc_button_label": "",
-        "atc_product": "",
-        "atc_skip_cart": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_colors_accent": "#dd1d1d",
-        "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#ffffff",
-        "custom_colors_outline_button": "#dd1d1d"
-      }
+        "feature_153",
+        "feature_154",
+        "feature_155",
+        "feature_156"
+      ]
     },
-    "contact_form_WHP8G7": {
-      "type": "contact-form",
+    "applications": {
+      "type": "ind-tiles",
+      "settings": {
+        "scheme": "paper",
+        "columns": 4,
+        "wide": false,
+        "center": false,
+        "eyebrow": "Real-world applications",
+        "heading": "Where our machines work",
+        "text": ""
+      },
       "blocks": {
-        "field_row_fNxBGi": {
-          "type": "field_row",
+        "tile_157": {
+          "type": "tile",
           "settings": {
-            "input_1_enabled": true,
-            "input_1_type": "name",
-            "input_1_required": false,
-            "input_1_error_message": "This field is required",
-            "input_1_custom_name": "Custom input name",
-            "input_2_enabled": true,
-            "input_2_type": "email",
-            "input_2_required": false,
-            "input_2_error_message": "This field is required",
-            "input_2_custom_name": "Custom input name"
+            "icon": "brick",
+            "title": "Construction & renovation",
+            "text": "Selo lifts material to the scaffold",
+            "link": "shopify://products/selo"
           }
         },
-        "field_row_f84rat": {
-          "type": "field_row",
+        "tile_158": {
+          "type": "tile",
           "settings": {
-            "input_1_enabled": true,
-            "input_1_type": "phone",
-            "input_1_required": false,
-            "input_1_error_message": "This field is required",
-            "input_1_custom_name": "Custom input name",
-            "input_2_enabled": false,
-            "input_2_type": "custom",
-            "input_2_required": false,
-            "input_2_error_message": "This field is required",
-            "input_2_custom_name": "Custom input name"
+            "icon": "wrench",
+            "title": "Installation & maintenance",
+            "text": "Selo for technical and industrial work at height",
+            "link": "shopify://products/selo"
           }
         },
-        "textarea_NbxXax": {
-          "type": "textarea",
+        "tile_159": {
+          "type": "tile",
           "settings": {
-            "input_type": "comment",
-            "input_required": false,
-            "input_error_message": "This field is required",
-            "input_custom_name": "Custom name"
+            "icon": "wood",
+            "title": "Firewood & stone",
+            "text": "Abrelune moves heavy loads in one trip",
+            "link": "shopify://products/abrelune"
+          }
+        },
+        "tile_160": {
+          "type": "tile",
+          "settings": {
+            "icon": "leaf",
+            "title": "Property & garden",
+            "text": "Abrelune on grass, gravel and narrow paths",
+            "link": "shopify://products/abrelune"
           }
         }
       },
       "block_order": [
-        "field_row_fNxBGi",
-        "field_row_f84rat",
-        "textarea_NbxXax"
-      ],
+        "tile_157",
+        "tile_158",
+        "tile_159",
+        "tile_160"
+      ]
+    },
+    "quality": {
+      "type": "ind-image-text",
       "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "Contact form",
-        "title_highlight_color": "#6d388b",
-        "heading_size": "h1",
-        "button_full_width": true,
-        "color_scheme": "background-1",
-        "success_icon": "check_circle",
-        "success_icon_filled": false,
-        "success_text_color": "#28c100",
-        "success_bg_color": "#f2ffed",
-        "success_border_radius": 8,
-        "success_border_width": 1,
-        "success_border_color": "#28c100",
-        "errors_icon": "error",
-        "errors_icon_filled": false,
-        "errors_text_color": "#ff0000",
-        "errors_bg_color": "#fff5f5",
-        "errors_border_radius": 8,
-        "errors_border_width": 1,
-        "errors_border_color": "#ff0000",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#ffffff"
+        "scheme": "dark",
+        "reverse": true,
+        "wide_media": true,
+        "ratio": "landscape",
+        "placeholder_label": "Workshop or detail photography",
+        "badge_value": "",
+        "badge_label": "",
+        "eyebrow": "Quality & reliability",
+        "heading": "Robust where it matters",
+        "text": "<p>Selo uses a reinforced steel frame and a high-strength galvanised steel cable for long service life. Abrelune is built from steel, with folding and removable side walls.</p>",
+        "checks": "Reinforced steel construction\nGalvanised steel lifting cable (Selo)\nSealed 48 V battery system (Abrelune)",
+        "btn_label": "",
+        "btn_link": "",
+        "btn_style": "accent",
+        "note": "",
+        "diagram": "none"
+      }
+    },
+    "reviews": {
+      "type": "ind-reviews",
+      "settings": {
+        "scheme": "paper",
+        "eyebrow": "Customer reviews",
+        "heading": "What customers say"
+      }
+    },
+    "faq": {
+      "type": "ind-faq",
+      "settings": {
+        "scheme": "sand",
+        "layout": "aside",
+        "single": true,
+        "open_first": false,
+        "schema": true,
+        "eyebrow": "FAQ",
+        "heading": "Frequently asked questions",
+        "text": "",
+        "btn_label": "",
+        "btn_link": ""
+      },
+      "blocks": {
+        "qa_161": {
+          "type": "qa",
+          "settings": {
+            "q": "Which product do I need?",
+            "a": "<p>Choose Selo to raise materials to height, up to 500 kg and up to 6 m. Choose Abrelune to move heavy loads across the ground, up to 450 kg.</p>"
+          }
+        },
+        "qa_162": {
+          "type": "qa",
+          "settings": {
+            "q": "Can Selo carry people?",
+            "a": "<p>No. Selo is for transporting materials only and is not approved for carrying people.</p>"
+          }
+        },
+        "qa_163": {
+          "type": "qa",
+          "settings": {
+            "q": "How do multi-unit savings work?",
+            "a": "<p>Choose a Double or Triple pack on the product page. The discount is applied automatically at checkout, and your cart shows the final price before you pay.</p>"
+          }
+        },
+        "qa_164": {
+          "type": "qa",
+          "settings": {
+            "q": "How long does delivery take?",
+            "a": "<p>[Add your confirmed delivery times.]</p>"
+          }
+        },
+        "qa_165": {
+          "type": "qa",
+          "settings": {
+            "q": "What is your return policy?",
+            "a": "<p>[Summarise your refund policy. The full policy is linked in the footer.]</p>"
+          }
+        },
+        "qa_166": {
+          "type": "qa",
+          "settings": {
+            "q": "Which payment methods can I use?",
+            "a": "<p>All payment methods enabled in our checkout are shown in the footer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_161",
+        "qa_162",
+        "qa_163",
+        "qa_164",
+        "qa_165",
+        "qa_166"
+      ]
+    },
+    "newsletter": {
+      "type": "ind-newsletter",
+      "settings": {
+        "scheme": "dark",
+        "eyebrow": "Newsletter",
+        "heading": "Product news and campaign alerts",
+        "text": "<p>Be the first to hear about new equipment and seasonal offers.</p>",
+        "disclaimer": "You can unsubscribe at any time."
       }
     }
   },
   "order": [
-    "cfca4268-6358-426c-98ab-d292aeef11e5",
-    "d2d3417b-e92f-428c-b221-5bceffb552be",
-    "6aa09428-a417-429d-9159-a4e8afd49590",
-    "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",
-    "contact_form_WHP8G7"
+    "hero",
+    "bf",
+    "intro",
+    "selo",
+    "abrelune",
+    "benefits",
+    "compare",
+    "why",
+    "applications",
+    "quality",
+    "reviews",
+    "faq",
+    "newsletter"
   ]
 }

@@ -1,0 +1,26 @@
+{%- comment -%}
+  Responsive image, or a clearly labelled placeholder when no image is set.
+  Params: image, alt, sizes, loading ('lazy'|'eager'), class, label (placeholder text), icon, widths
+{%- endcomment -%}
+{%- liquid
+  assign img_sizes = sizes | default: '(min-width: 990px) 50vw, 100vw'
+  assign img_loading = loading | default: 'lazy'
+  assign img_widths = widths | default: '360, 540, 720, 900, 1080, 1296, 1512, 1800, 2048'
+-%}
+{%- if image != blank -%}
+  {%- liquid
+    assign img_alt = alt | default: image.alt | escape
+    if img_loading == 'eager'
+      echo image | image_url: width: 2048 | image_tag: widths: img_widths, sizes: img_sizes, alt: img_alt, class: class, loading: 'eager', fetchpriority: 'high'
+    else
+      echo image | image_url: width: 2048 | image_tag: widths: img_widths, sizes: img_sizes, alt: img_alt, class: class, loading: 'lazy'
+    endif
+  -%}
+{%- else -%}
+  <div class="ind-placeholder {{ class }}" role="img" aria-label="{{ label | default: 'Image placeholder' | escape }}">
+    <div>
+      {%- render 'ind-icon', name: icon | default: 'image' -%}
+      <span class="ind-placeholder__label">{{ label | default: 'Add image in theme editor' }}</span>
+    </div>
+  </div>
+{%- endif -%}

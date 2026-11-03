@@ -1,0 +1,374 @@
+{%- render 'ind-assets' -%}
+{%- capture bf_state -%}{%- render 'ind-bf-state' -%}{%- endcapture -%}
+{%- liquid
+  assign bf_handles = settings.ind_bf_products | map: 'handle'
+  assign bf_state = bf_state | strip
+  assign v = product.selected_or_first_available_variant
+  assign bf_eligible = false
+  if settings.ind_bf_products == blank or bf_handles contains product.handle
+    assign bf_eligible = true
+  endif
+  assign bf_live = false
+  if bf_eligible and bf_state == 'active'
+    assign bf_live = true
+  endif
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value
+  assign media_count = product.media.size
+
+  assign tier_count = 0
+  assign has_preselect = false
+  for block in section.blocks
+    if block.type == 'tier'
+      assign tier_count = tier_count | plus: 1
+      if block.settings.preselect
+        assign has_preselect = true
+      endif
+    endif
+  endfor
+-%}
+<section class="ind ind--paper" data-section-id="{{ section.id }}" style="{% if section.settings.accent != blank %}--ind-accent: {{ section.settings.accent }};{% endif %}">
+  <div class="ind-container">
+    {%- if section.settings.show_breadcrumbs -%}
+      <nav class="ind-crumbs" aria-label="Breadcrumb">
+        <ol role="list">
+          <li><a href="{{ routes.root_url }}">{{ 'ind.product.home' | t }}</a></li>
+          {%- if collection -%}<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>{%- endif -%}
+          <li aria-current="page">{{ product.title }}</li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": {{ 'ind.product.home' | t | json }}, "item": {{ request.origin | append: routes.root_url | json }} },
+            {%- if collection -%}
+            { "@type": "ListItem", "position": 2, "name": {{ collection.title | json }}, "item": {{ request.origin | append: collection.url | json }} },
+            { "@type": "ListItem", "position": 3, "name": {{ product.title | json }}, "item": {{ request.origin | append: product.url | json }} }
+            {%- else -%}
+            { "@type": "ListItem", "position": 2, "name": {{ product.title | json }}, "item": {{ request.origin | append: product.url | json }} }
+            {%- endif -%}
+          ]
+        }
+      </script>
+    {%- endif -%}
+
+    <div class="ind-pdp">
+      {%- comment -%} ================= GALLERY ================= {%- endcomment -%}
+      <div class="ind-pdp__gallery">
+        <ind-gallery class="ind-gallery{% if media_count < 2 %} ind-gallery--single{% endif %}" aria-label="{{ 'ind.product.gallery' | t }}" style="display:grid">
+          <div class="ind-gallery__stage">
+            <div class="ind-gallery__badges">
+              {%- if bf_eligible -%}<span class="ind-badge ind-badge--promo" data-bf-show="active"{% unless bf_live %} hidden{% endunless %}>{{ settings.ind_bf_badge }}</span>{%- endif -%}
+              {%- if section.settings.media_badge != blank -%}<span class="ind-badge ind-badge--accent">{{ section.settings.media_badge }}</span>{%- endif -%}
+            </div>
+            <div class="ind-gallery__viewport" data-viewport tabindex="0" aria-roledescription="carousel">
+              {%- if media_count == 0 -%}
+                <div class="ind-gallery__slide" data-slide>
+                  {%- render 'ind-image', label: 'Add product photos in Shopify admin', icon: 'image' -%}
+                </div>
+              {%- endif -%}
+              {%- for media in product.media -%}
+                <div class="ind-gallery__slide" data-slide data-media-id="{{ media.id }}" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ media_count }}">
+                  {%- case media.media_type -%}
+                    {%- when 'image' -%}
+                      <button type="button" class="ind-gallery__zoom" data-index="{{ forloop.index0 }}" data-full="{{ media | image_url: width: 2400 }}" data-alt="{{ media.alt | default: product.title | escape }}" aria-label="{{ 'ind.product.open_zoom' | t: index: forloop.index }}">
+                        {%- if forloop.first -%}
+                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: media.alt | default: product.title, loading: 'eager', fetchpriority: 'high' }}
+                        {%- else -%}
+                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: media.alt | default: product.title, loading: 'lazy' }}
+                        {%- endif -%}
+                      </button>
+                    {%- when 'video' -%}
+                      {{ media | video_tag: controls: true, playsinline: true, preload: 'metadata', image_size: '1200x' }}
+                    {%- when 'external_video' -%}
+                      {{ media | external_video_tag: loading: 'lazy' }}
+                    {%- when 'model' -%}
+                      {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}
+                  {%- endcase -%}
+                </div>
+              {%- endfor -%}
+            </div>
+            {%- if media_count > 1 -%}
+              <button type="button" class="ind-gallery__arrow ind-gallery__arrow--prev" data-prev aria-label="{{ 'ind.product.previous' | t }}">{% render 'ind-icon', name: 'chevron-left' %}</button>
+              <button type="button" class="ind-gallery__arrow ind-gallery__arrow--next" data-next aria-label="{{ 'ind.product.next' | t }}">{% render 'ind-icon', name: 'chevron-right' %}</button>
+              <span class="ind-gallery__count" data-counter aria-hidden="true">1 / {{ media_count }}</span>
+            {%- endif -%}
+          </div>
+          {%- if media_count > 1 -%}
+            <div class="ind-gallery__thumbs">
+              {%- for media in product.media -%}
+                <button type="button" class="ind-gallery__thumb" data-thumb aria-label="{{ forloop.index }} / {{ media_count }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
+                  {{ media.preview_image | image_url: width: 180 | image_tag: alt: '', loading: 'lazy', width: 84, height: 84 }}
+                </button>
+              {%- endfor -%}
+            </div>
+            <div class="ind-gallery__dots" aria-hidden="true">
+              {%- for media in product.media -%}<button type="button" class="ind-gallery__dot" data-dot tabindex="-1" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"></button>{%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          <dialog class="ind ind-dialog ind-lightbox" data-lightbox aria-label="{{ 'ind.product.gallery' | t }}">
+            <button type="button" class="ind-round-btn ind-lightbox__close" data-lb-close aria-label="{{ 'ind.product.close' | t }}">{% render 'ind-icon', name: 'x' %}</button>
+            <button type="button" class="ind-round-btn ind-lightbox__nav ind-lightbox__nav--prev" data-lb-prev aria-label="{{ 'ind.product.previous' | t }}">{% render 'ind-icon', name: 'chevron-left' %}</button>
+            <div class="ind-lightbox__stage" data-lb-stage><img alt="" width="1600" height="1600" draggable="false"></div>
+            <button type="button" class="ind-round-btn ind-lightbox__nav ind-lightbox__nav--next" data-lb-next aria-label="{{ 'ind.product.next' | t }}">{% render 'ind-icon', name: 'chevron-right' %}</button>
+          </dialog>
+        </ind-gallery>
+      </div>
+
+      {%- comment -%} ================= BUY BOX ================= {%- endcomment -%}
+      <div class="ind-pdp__info" id="buy">
+        <ind-product class="ind-buy" data-bf-eligible="{{ bf_eligible }}" style="display:flex">
+          <script type="application/json" data-product-json>{{ product | json }}</script>
+
+          <div class="ind-buy__top">
+            <div class="ind-buy__badges">
+              {%- if bf_eligible -%}<span class="ind-badge ind-badge--promo" data-bf-show="active"{% unless bf_live %} hidden{% endunless %}>{{ settings.ind_bf_badge }}</span>{%- endif -%}
+              {%- if section.settings.eyebrow != blank -%}<span class="ind-badge ind-badge--soft">{{ section.settings.eyebrow }}</span>{%- endif -%}
+            </div>
+            <h1 class="ind-buy__title">{{ product.title }}</h1>
+            {%- if section.settings.headline != blank -%}<p class="ind-buy__headline">{{ section.settings.headline }}</p>{%- endif -%}
+            {%- if rating != blank -%}
+              <a href="#reviews" class="ind-rating" style="text-decoration:none">
+                {%- render 'ind-stars', rating: rating.rating -%}
+                <span>{{ 'ind.product.rating_html' | t: rating: rating.rating | round: 1, count: rating_count }}</span>
+              </a>
+            {%- endif -%}
+            <div class="ind-buy__desc ind-rte">
+              {%- if section.settings.short_desc != blank -%}{{ section.settings.short_desc }}{%- else -%}<p>{{ product.description | strip_html | truncatewords: 40 }}</p>{%- endif -%}
+            </div>
+          </div>
+
+          {%- render 'ind-price', product: product, variant: v, size: 'lg', show_save: true -%}
+
+          {%- if bf_eligible -%}
+            <div class="ind-buy__bf" data-bf-show="active"{% unless bf_live %} hidden{% endunless %}>
+              <strong>{{ settings.ind_bf_badge }}</strong>
+              <span style="display:inline-flex;align-items:center;gap:8px">{{ 'ind.countdown.ends_in' | t }} {% render 'ind-countdown', style: 'inline', target: 'end' %}</span>
+            </div>
+          {%- endif -%}
+
+          {%- liquid
+            assign hl_count = 0
+            for block in section.blocks
+              if block.type == 'highlight'
+                assign hl_count = hl_count | plus: 1
+              endif
+            endfor
+          -%}
+          {%- if hl_count > 0 -%}
+            <ul class="ind-buy__highlights" role="list">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'highlight' -%}
+                  <li class="ind-buy__hl" {{ block.shopify_attributes }}>{% render 'ind-icon', name: block.settings.icon %}<span>{{ block.settings.text }}</span></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+          {%- comment -%} Variant options (hidden when the product has a single default variant) {%- endcomment -%}
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="ind-variant" data-option-group>
+                <legend>{{ option.name }}: <span style="font-weight:400">{{ option.selected_value }}</span></legend>
+                <div class="ind-variant__opts">
+                  {%- for value in option.values -%}
+                    {%- assign oid = section.id | append: '-' | append: forloop.parentloop.index | append: '-' | append: forloop.index -%}
+                    <input type="radio" id="Opt-{{ oid }}" name="option-{{ forloop.parentloop.index }}" value="{{ value | escape }}" data-option-input{% if option.selected_value == value %} checked{% endif %}{% unless value.available %} class="is-unavailable"{% endunless %}>
+                    <label for="Opt-{{ oid }}">{{ value }}</label>
+                  {%- endfor -%}
+                </div>
+              </fieldset>
+            {%- endfor -%}
+          {%- endunless -%}
+
+          {%- comment -%}
+            Quantity / bundle tiers. Percentages must mirror real Shopify automatic discounts
+            (Admin → Discounts). Normal % per tier lives here; Black Friday % lives in Theme settings.
+          {%- endcomment -%}
+          {%- if tier_count > 0 -%}
+            <fieldset class="ind-tiers">
+              <legend class="ind-tiers__legend">
+                <span>{{ section.settings.tiers_heading | default: 'Choose your package' }}</span>
+              </legend>
+              {%- assign tier_i = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'tier' -%}
+                  {%- liquid
+                    assign tier_i = tier_i | plus: 1
+                    assign tq = block.settings.qty
+                    assign pct = block.settings.pct
+                    case tier_i
+                      when 1
+                        assign bfpct = settings.ind_bf_pct_1
+                      when 2
+                        assign bfpct = settings.ind_bf_pct_2
+                      else
+                        assign bfpct = settings.ind_bf_pct_3
+                    endcase
+                    assign shown_pct = pct
+                    if bf_live
+                      assign shown_pct = bfpct
+                    endif
+                    assign original = v.price | times: tq
+                    assign total = 100 | minus: shown_pct | times: original | divided_by: 100.0 | round
+                    assign saved = original | minus: total
+                    assign checked = false
+                    if block.settings.preselect
+                      assign checked = true
+                    elsif has_preselect == false and tier_i == 1
+                      assign checked = true
+                    endif
+                  -%}
+                  <label class="ind-tier" data-tier data-qty="{{ tq }}" data-pct="{{ pct }}" data-bf-pct="{{ bfpct }}" {{ block.shopify_attributes }}>
+                    <input type="radio" name="ind-tier-{{ section.id }}" value="{{ tq }}"{% if checked %} checked{% endif %}>
+                    <span class="ind-tier__card">
+                      <span class="ind-tier__radio" aria-hidden="true"></span>
+                      <span>
+                        <span class="ind-tier__name">{{ block.settings.label }}{% if block.settings.badge != blank %} <span class="ind-badge ind-badge--accent">{{ block.settings.badge }}</span>{% endif %}</span>
+                        <span class="ind-tier__meta">
+                          {{ tq }} × <span data-tier-each>{{ total | divided_by: tq | money }} {{ 'ind.product.each' | t }}</span>
+                          <span data-tier-save{% if shown_pct == 0 %} hidden{% endif %}>· <strong>{{ 'ind.product.save' | t }} {{ saved | money }} (−{{ shown_pct }}%)</strong></span>
+                        </span>
+                      </span>
+                      <span class="ind-tier__prices">
+                        <span class="ind-tier__total" data-tier-total>{{ total | money }}</span>
+                        <s class="ind-tier__was" data-tier-was>{% if shown_pct > 0 %}{{ original | money }}{% endif %}</s>
+                      </span>
+                    </span>
+                  </label>
+                {%- endif -%}
+              {%- endfor -%}
+              <p class="ind-tiers__note">
+                <span data-bf-show="off upcoming ended"{% if bf_live %} hidden{% endif %}>{{ 'ind.product.discount_note' | t }}</span>
+                {%- if bf_eligible -%}<span data-bf-show="active"{% unless bf_live %} hidden{% endunless %}>{{ 'ind.product.bf_note' | t }}</span>{%- endif -%}
+              </p>
+            </fieldset>
+          {%- endif -%}
+
+          {%- assign form_id = 'IndProductForm-' | append: section.id -%}
+          {%- form 'product', product, id: form_id, data-product-form: '', novalidate: 'novalidate' -%}
+            <input type="hidden" name="id" value="{{ v.id }}">
+            <div class="ind-buy__row">
+              <div class="ind-qty">
+                <button type="button" data-qty-step="-1" aria-label="{{ 'ind.product.decrease' | t }}">{% render 'ind-icon', name: 'minus' %}</button>
+                <label class="ind-visually-hidden" for="Qty-{{ section.id }}">{{ 'ind.product.quantity' | t }}</label>
+                <input id="Qty-{{ section.id }}" type="number" name="quantity" value="1" min="1" max="99" inputmode="numeric" data-qty-input>
+                <button type="button" data-qty-step="1" aria-label="{{ 'ind.product.increase' | t }}">{% render 'ind-icon', name: 'plus' %}</button>
+              </div>
+              <button type="submit" name="add" class="ind-btn ind-btn--accent ind-btn--lg ind-btn--block" data-atc{% unless v.available %} disabled{% endunless %}>
+                <span data-atc-label data-default="{{ 'ind.product.add_to_cart' | t }}">{% if v.available %}{{ 'ind.product.add_to_cart' | t }}{% else %}{{ 'ind.product.sold_out' | t }}{% endif %}</span>
+              </button>
+            </div>
+
+            <div class="ind-buy__summary" style="margin-top:12px" aria-live="polite">
+              <span>{{ 'ind.product.total' | t }} (<span data-summary-qty>1</span>×)</span>
+              <span style="display:inline-flex;gap:10px;align-items:baseline;flex-wrap:wrap">
+                <s class="ind-price__was" data-summary-was hidden></s>
+                <strong data-summary-total>{{ v.price | money }}</strong>
+              </span>
+              <span class="ind-buy__summary-save" data-summary-save style="width:100%"></span>
+            </div>
+
+            {%- if section.settings.show_buy_now -%}
+              <button type="button" class="ind-btn ind-btn--dark ind-btn--block" style="margin-top:12px" data-buy-now{% unless v.available %} disabled{% endunless %}>{{ 'ind.product.buy_now' | t }}</button>
+            {%- endif -%}
+            {%- if section.settings.show_dynamic_checkout -%}
+              <div style="margin-top:12px">{{ form | payment_button }}</div>
+            {%- endif -%}
+            <p class="ind-buy__error" data-error role="alert" style="margin-top:8px"></p>
+          {%- endform -%}
+
+          <p class="ind-buy__stock{% unless v.available %} ind-buy__stock--out{% endunless %}" data-stock data-in="{{ 'ind.product.in_stock' | t }}" data-out="{{ 'ind.product.out_of_stock' | t }}">{% if v.available %}{{ 'ind.product.in_stock' | t }}{% else %}{{ 'ind.product.out_of_stock' | t }}{% endif %}{% if section.settings.stock_detail != blank and v.available %} <span>· {{ section.settings.stock_detail }}</span>{% endif %}</p>
+
+          {%- liquid
+            assign trust_items = ''
+            for block in section.blocks
+              if block.type == 'trust'
+                assign line = block.settings.icon | append: '|' | append: block.settings.title | append: '|' | append: block.settings.text
+                assign trust_items = trust_items | append: line | append: '§'
+              endif
+            endfor
+            assign trust_list = trust_items | split: '§'
+          -%}
+          {%- if trust_list.size > 0 -%}
+            <div class="ind-buy__divider"></div>
+            {%- render 'ind-trust-badges', items: trust_list -%}
+          {%- endif -%}
+
+          {%- if section.settings.show_details -%}
+            <div class="ind-buy__details">
+              <ind-accordion class="ind-acc">
+                {%- if product.description != blank -%}
+                  <div class="ind-acc__item">
+                    <h2 style="margin:0"><button type="button" class="ind-acc__q" aria-expanded="false" aria-controls="Desc-{{ section.id }}" id="DescQ-{{ section.id }}"><span>{{ 'ind.product.details' | t }}</span><span class="ind-acc__icon" aria-hidden="true"></span></button></h2>
+                    <div class="ind-acc__a" id="Desc-{{ section.id }}" role="region" aria-labelledby="DescQ-{{ section.id }}"><div><div class="ind-rte">{{ product.description }}</div></div></div>
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.shipping_text != blank -%}
+                  <div class="ind-acc__item">
+                    <h2 style="margin:0"><button type="button" class="ind-acc__q" aria-expanded="false" aria-controls="Ship-{{ section.id }}" id="ShipQ-{{ section.id }}"><span>{{ 'ind.product.shipping_returns' | t }}</span><span class="ind-acc__icon" aria-hidden="true"></span></button></h2>
+                    <div class="ind-acc__a" id="Ship-{{ section.id }}" role="region" aria-labelledby="ShipQ-{{ section.id }}"><div><div class="ind-rte">{{ section.settings.shipping_text }}</div></div></div>
+                  </div>
+                {%- endif -%}
+              </ind-accordion>
+            </div>
+          {%- endif -%}
+        </ind-product>
+      </div>
+    </div>
+  </div>
+
+  {%- if section.settings.sticky -%}
+    {%- render 'ind-sticky-atc', product: product, mobile_scroll: section.settings.sticky_mobile_scroll -%}
+  {%- endif -%}
+
+  {%- comment -%} Shopify's own Product JSON-LD (prices, availability, images from the real product). {%- endcomment -%}
+  <script type="application/ld+json">{{ product | structured_data }}</script>
+</section>
+
+{% schema %}
+{
+  "name": "IND product (main)",
+  "class": "ind-main-product-section",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "color", "id": "accent", "label": "Product accent colour" },
+    { "type": "checkbox", "id": "show_breadcrumbs", "label": "Show breadcrumbs", "default": true },
+    { "type": "text", "id": "media_badge", "label": "Image badge" },
+    { "type": "text", "id": "eyebrow", "label": "Category badge", "default": "Professional equipment" },
+    { "type": "text", "id": "headline", "label": "Headline under the title" },
+    { "type": "richtext", "id": "short_desc", "label": "Short description", "info": "Defaults to the first 40 words of the product description." },
+    { "type": "text", "id": "tiers_heading", "label": "Package selector heading", "default": "Choose your package" },
+    { "type": "checkbox", "id": "show_buy_now", "label": "Show Buy it now (direct to checkout)", "default": true },
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show express checkout buttons", "info": "Shop Pay, Apple Pay, etc., when enabled in your store.", "default": true },
+    { "type": "text", "id": "stock_detail", "label": "Availability detail", "info": "e.g. your confirmed dispatch time. Leave empty if not confirmed." },
+    { "type": "checkbox", "id": "show_details", "label": "Show description and shipping accordions", "default": true },
+    { "type": "richtext", "id": "shipping_text", "label": "Shipping & returns text", "info": "Summarise your published shipping and refund policies." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky add to cart bar", "default": true },
+    { "type": "checkbox", "id": "sticky_mobile_scroll", "label": "On mobile, sticky button scrolls to the package picker", "default": false }
+  ],
+  "blocks": [
+    { "type": "highlight", "name": "Highlight", "limit": 6, "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "none", "label": "None"}, {"value": "check-circle", "label": "Check"}, {"value": "weight", "label": "Weight / load"}, {"value": "height", "label": "Height"}, {"value": "remote", "label": "Remote control"}, {"value": "shield", "label": "Safety shield"}, {"value": "layers", "label": "Steel / layers"}, {"value": "wheel", "label": "Castor wheel"}, {"value": "rotate", "label": "360\u00b0 rotation"}, {"value": "bolt", "label": "Power"}, {"value": "motor", "label": "Motor"}, {"value": "battery", "label": "Battery"}, {"value": "plug", "label": "Charger / plug"}, {"value": "clock", "label": "Clock / time"}, {"value": "truck", "label": "Delivery"}, {"value": "return", "label": "Returns"}, {"value": "box", "label": "Package"}, {"value": "ruler", "label": "Ruler"}, {"value": "width", "label": "Width"}, {"value": "gauge", "label": "Gauge"}, {"value": "speed", "label": "Speed"}, {"value": "route", "label": "Range / route"}, {"value": "terrain", "label": "Terrain"}, {"value": "tools", "label": "Tools"}, {"value": "wrench", "label": "Maintenance"}, {"value": "brick", "label": "Bricks / materials"}, {"value": "wood", "label": "Firewood"}, {"value": "leaf", "label": "Garden"}, {"value": "stairs", "label": "Stairs / height access"}, {"value": "grip", "label": "Non-slip platform"}, {"value": "cable", "label": "Steel cable"}, {"value": "brake", "label": "Brake"}, {"value": "light", "label": "LED light"}, {"value": "horn", "label": "Horn"}, {"value": "warning", "label": "Warning"}, {"value": "award", "label": "Warranty / quality"}, {"value": "support", "label": "Support"}, {"value": "lock", "label": "Secure checkout"}, {"value": "tag", "label": "Price tag"}, {"value": "percent", "label": "Discount"}, {"value": "calendar", "label": "Calendar"}, {"value": "globe", "label": "Worldwide"}], "default": "check-circle" },
+      { "type": "text", "id": "text", "label": "Text", "default": "Key benefit" }
+    ] },
+    { "type": "tier", "name": "Package tier", "limit": 3, "settings": [
+      { "type": "paragraph", "content": "Tiers are matched in order to the Black Friday 1 / 2 / 3+ unit percentages in Theme settings." },
+      { "type": "text", "id": "label", "label": "Name", "default": "Single unit" },
+      { "type": "range", "id": "qty", "label": "Quantity", "min": 1, "max": 10, "step": 1, "default": 1 },
+      { "type": "range", "id": "pct", "label": "Discount % (outside campaigns)", "info": "Must equal the automatic discount set up in Shopify admin for this quantity.", "min": 0, "max": 50, "step": 1, "default": 0 },
+      { "type": "text", "id": "badge", "label": "Badge" },
+      { "type": "checkbox", "id": "preselect", "label": "Selected by default", "default": false }
+    ] },
+    { "type": "trust", "name": "Trust message", "limit": 6, "settings": [
+      { "type": "paragraph", "content": "Only state what your store actually offers." },
+      { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "none", "label": "None"}, {"value": "check-circle", "label": "Check"}, {"value": "weight", "label": "Weight / load"}, {"value": "height", "label": "Height"}, {"value": "remote", "label": "Remote control"}, {"value": "shield", "label": "Safety shield"}, {"value": "layers", "label": "Steel / layers"}, {"value": "wheel", "label": "Castor wheel"}, {"value": "rotate", "label": "360\u00b0 rotation"}, {"value": "bolt", "label": "Power"}, {"value": "motor", "label": "Motor"}, {"value": "battery", "label": "Battery"}, {"value": "plug", "label": "Charger / plug"}, {"value": "clock", "label": "Clock / time"}, {"value": "truck", "label": "Delivery"}, {"value": "return", "label": "Returns"}, {"value": "box", "label": "Package"}, {"value": "ruler", "label": "Ruler"}, {"value": "width", "label": "Width"}, {"value": "gauge", "label": "Gauge"}, {"value": "speed", "label": "Speed"}, {"value": "route", "label": "Range / route"}, {"value": "terrain", "label": "Terrain"}, {"value": "tools", "label": "Tools"}, {"value": "wrench", "label": "Maintenance"}, {"value": "brick", "label": "Bricks / materials"}, {"value": "wood", "label": "Firewood"}, {"value": "leaf", "label": "Garden"}, {"value": "stairs", "label": "Stairs / height access"}, {"value": "grip", "label": "Non-slip platform"}, {"value": "cable", "label": "Steel cable"}, {"value": "brake", "label": "Brake"}, {"value": "light", "label": "LED light"}, {"value": "horn", "label": "Horn"}, {"value": "warning", "label": "Warning"}, {"value": "award", "label": "Warranty / quality"}, {"value": "support", "label": "Support"}, {"value": "lock", "label": "Secure checkout"}, {"value": "tag", "label": "Price tag"}, {"value": "percent", "label": "Discount"}, {"value": "calendar", "label": "Calendar"}, {"value": "globe", "label": "Worldwide"}], "default": "truck" },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "text", "id": "text", "label": "Text" }
+    ] }
+  ]
+}
+{% endschema %}

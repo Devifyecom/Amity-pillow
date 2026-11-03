@@ -1,0 +1,84 @@
+{%- render 'ind-assets' -%}
+{%- capture bf_state -%}{%- render 'ind-bf-state' -%}{%- endcapture -%}
+{%- liquid
+  assign bf_handles = settings.ind_bf_products | map: 'handle'
+  assign bf_state = bf_state | strip
+  assign p = section.settings.product
+  if p == blank and section.settings.fallback_handle != blank
+    assign p = all_products[section.settings.fallback_handle]
+  endif
+  assign v = p.selected_or_first_available_variant
+  assign media_img = section.settings.image | default: p.featured_media.preview_image
+  assign bf_on = false
+  if p != blank and settings.ind_bf_products == blank
+    assign bf_on = true
+  elsif p != blank and bf_handles contains p.handle
+    assign bf_on = true
+  endif
+-%}
+<section class="ind ind--{{ section.settings.scheme }} ind-section" data-section-id="{{ section.id }}"{% if section.settings.accent != blank %} style="--ind-accent: {{ section.settings.accent }}"{% endif %}{% if section.settings.anchor != blank %} id="{{ section.settings.anchor | handle }}"{% endif %}>
+  <div class="ind-container">
+    <div class="ind-fp{% if section.settings.reverse %} ind-fp--reverse{% endif %}">
+      <div class="ind-fp__media ind-reveal">
+        <div class="ind-fp__badges">
+          {%- if bf_on -%}<span class="ind-badge ind-badge--promo" data-bf-show="active"{% if bf_state != 'active' %} hidden{% endif %}>{{ settings.ind_bf_badge }}</span>{%- endif -%}
+          {%- if section.settings.badge != blank -%}<span class="ind-badge ind-badge--accent">{{ section.settings.badge }}</span>{%- endif -%}
+        </div>
+        <a href="{{ p.url | default: '#' }}" class="ind-media" tabindex="-1" aria-hidden="true">
+          {%- render 'ind-image', image: media_img, alt: p.title, sizes: '(min-width: 750px) 55vw, 100vw', label: 'Product image' -%}
+        </a>
+      </div>
+      <div class="ind-fp__text ind-reveal">
+        {%- if section.settings.eyebrow != blank -%}<p class="ind-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="ind-h2">{{ section.settings.heading | default: p.title | default: 'Select a product' }}</h2>
+        {%- if section.settings.text != blank -%}<div class="ind-rte ind-lead" style="margin-top:16px">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <dl class="ind-fp__specs">
+            {%- for block in section.blocks -%}
+              <div class="ind-fp__spec" {{ block.shopify_attributes }}><dt class="ind-visually-hidden">{{ block.settings.label }}</dt><dd><strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></dd></div>
+            {%- endfor -%}
+          </dl>
+        {%- endif -%}
+        {%- if p != blank -%}
+          <div class="ind-fp__price">{%- render 'ind-price', product: p -%}</div>
+          <div class="ind-actions" style="margin-top:20px">
+            <a class="ind-btn ind-btn--accent ind-btn--lg" href="{{ p.url }}">{{ section.settings.btn_label | default: 'View product' }} {% render 'ind-icon', name: 'arrow-right' %}</a>
+            {%- if section.settings.show_atc and v.available -%}
+              <button type="button" class="ind-btn ind-btn--outline ind-btn--lg" data-ind-add="{{ v.id }}" data-qty="1">{{ 'ind.product.add_to_cart' | t }}</button>
+            {%- endif -%}
+          </div>
+          <p class="ind-buy__error" data-error role="alert"></p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "IND featured product",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "fallback_handle", "label": "Fallback product handle", "info": "Used when no product is picked (e.g. selo or abrelune).", "default": "selo" },
+    { "type": "image_picker", "id": "image", "label": "Image override", "info": "Defaults to the product's featured image." },
+    { "type": "text", "id": "anchor", "label": "Anchor id (for links like #selo)" },
+    { "type": "select", "id": "scheme", "label": "Colour scheme", "options": [ { "value": "paper", "label": "White" }, { "value": "sand", "label": "Warm neutral" }, { "value": "stone", "label": "Stone" }, { "value": "dark", "label": "Graphite" } ], "default": "paper" },
+    { "type": "color", "id": "accent", "label": "Product accent colour" },
+    { "type": "checkbox", "id": "reverse", "label": "Image on the right", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Featured" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Defaults to the product title." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "badge", "label": "Badge" },
+    { "type": "text", "id": "btn_label", "label": "Button label", "default": "View product" },
+    { "type": "checkbox", "id": "show_atc", "label": "Show add to cart button", "default": true }
+  ],
+  "blocks": [
+    { "type": "spec", "name": "Key figure", "settings": [
+      { "type": "text", "id": "value", "label": "Value", "default": "500 kg" },
+      { "type": "text", "id": "label", "label": "Label", "default": "Load capacity" }
+    ] }
+  ],
+  "presets": [ { "name": "IND featured product", "blocks": [ { "type": "spec" }, { "type": "spec" } ] } ]
+}
+{% endschema %}

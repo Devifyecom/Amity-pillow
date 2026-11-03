@@ -1,0 +1,29 @@
+{%- comment -%}
+  Outputs the Black Friday campaign state: active | upcoming | ended | off.
+  Dates come from Theme settings → Black Friday campaign. The theme editor preview
+  switch forces "active" only inside the editor (request.design_mode), never for shoppers.
+  Pages can be cached, so ind.js re-checks the window on the client.
+{%- endcomment -%}
+{%- liquid
+  if settings.ind_bf_enabled != true
+    echo 'off'
+  elsif settings.ind_bf_preview and request.design_mode
+    echo 'active'
+  else
+    assign tz = settings.ind_bf_timezone | default: '+00:00' | strip
+    assign start_iso = settings.ind_bf_start | strip | replace: ' ', 'T' | append: ':00' | append: tz
+    assign end_iso = settings.ind_bf_end | strip | replace: ' ', 'T' | append: ':00' | append: tz
+    assign now_s = 'now' | date: '%s' | plus: 0
+    assign start_s = start_iso | date: '%s' | plus: 0
+    assign end_s = end_iso | date: '%s' | plus: 0
+    if start_s == 0 or end_s == 0
+      echo 'off'
+    elsif now_s < start_s
+      echo 'upcoming'
+    elsif now_s > end_s
+      echo 'ended'
+    else
+      echo 'active'
+    endif
+  endif
+-%}
