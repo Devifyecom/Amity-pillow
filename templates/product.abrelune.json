@@ -375,6 +375,7 @@
         "tile_84": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "wood",
             "title": "Firewood",
             "text": "Logs and kindling in bulk",
@@ -384,6 +385,7 @@
         "tile_85": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "brick",
             "title": "Stone",
             "text": "Paving, rocks and gravel",
@@ -393,6 +395,7 @@
         "tile_86": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "layers",
             "title": "Building materials",
             "text": "Bags, boards and supplies",
@@ -402,6 +405,7 @@
         "tile_87": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "leaf",
             "title": "Garden supplies",
             "text": "Soil, compost and garden waste",
@@ -411,6 +415,7 @@
         "tile_88": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "tools",
             "title": "Tools & equipment",
             "text": "Everything for the job, in one load",
