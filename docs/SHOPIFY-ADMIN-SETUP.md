@@ -48,7 +48,7 @@ the package prices on the product page. Repeat with the campaign preview dates.
 ## 3. Theme settings to review
 - Theme settings → **Black Friday campaign**: enabled, start/end, UTC offset (must equal the discount time zone).
   "Preview in editor" shows the campaign only inside the theme editor.
-- Product templates: replace every `[bracketed placeholder]` (delivery, warranty, returns, set-up, maintenance).
+- Product templates: copy points delivery to checkout and returns/warranty to your published policies (`/policies/refund-policy`, `/policies/terms-of-service`) and to `/pages/contact`. Make sure those pages exist. If you offer a specific warranty or delivery time, add it in the FAQ and trust blocks.
 - Footer → Customer support: enter your real email, phone and address (blank fields stay hidden).
 - Settings → **Policies**: publish Shipping, Refund, Privacy and Terms. The footer lists whatever is published.
 - Navigation: `main-menu` (e.g. Selo, Abrelune, FAQ, Contact) and `footer`.

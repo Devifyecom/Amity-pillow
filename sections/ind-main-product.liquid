@@ -133,7 +133,7 @@
             {%- if rating != blank -%}
               <a href="#reviews" class="ind-rating" style="text-decoration:none">
                 {%- render 'ind-stars', rating: rating.rating -%}
-                <span>{{ 'ind.product.rating_html' | t: rating: rating.rating | round: 1, count: rating_count }}</span>
+                <span>{%- assign rating_rounded = rating.rating | round: 1 -%}{{ 'ind.product.rating_html' | t: rating: rating_rounded, count: rating_count }}</span>
               </a>
             {%- endif -%}
             <div class="ind-buy__desc ind-rte">

@@ -5,49 +5,49 @@
       "settings": {
         "accent": "#4f6b2a",
         "show_breadcrumbs": true,
-        "media_badge": "",
+        "media_badge": "450 kg capacity",
         "eyebrow": "Electric compact transporter",
-        "headline": "Move firewood, tools and building materials without straining.",
-        "short_desc": "<p>Abrelune is a compact electric transporter for property maintenance, garden and outdoor work. It carries up to 450 kg on a spacious platform, is driven by a brushless 1000 W electric motor and handles grass, gravel and uneven ground.</p>",
+        "headline": "Heavy loads, carried for you, across grass, gravel and rough ground.",
+        "short_desc": "<p>Firewood, stone, soil, tools: move up to <strong>450 kg</strong> in a single trip without pushing a thing. A brushless <strong>1000 W</strong> motor and two-wheel drive do the work, and a compact <strong>79 cm</strong> body gets through the gates and paths where bigger vehicles can't.</p>",
         "tiers_heading": "Choose your package",
         "show_buy_now": true,
         "show_dynamic_checkout": true,
         "stock_detail": "",
         "show_details": true,
-        "shipping_text": "<p>[Add your confirmed dispatch and delivery times.]</p><p>[Summarise your published refund policy and link to it.]</p>",
+        "shipping_text": "<p>Delivery options, costs and estimated delivery times are shown at checkout before you pay.</p><p>Returns are handled under our <a href=\"/policies/refund-policy\">refund policy</a>. Need help with an order? <a href=\"/pages/contact\">Contact our team</a>.</p>",
         "sticky": true,
         "sticky_mobile_scroll": false
       },
       "blocks": {
-        "highlight_63": {
+        "highlight_60": {
           "type": "highlight",
           "settings": {
             "icon": "motor",
             "text": "Brushless 1000 W motor"
           }
         },
-        "highlight_64": {
+        "highlight_61": {
           "type": "highlight",
           "settings": {
             "icon": "weight",
-            "text": "Up to 450 kg load"
+            "text": "Carries up to 450 kg"
           }
         },
-        "highlight_65": {
+        "highlight_62": {
           "type": "highlight",
           "settings": {
             "icon": "route",
             "text": "Approx. 24–27 km range*"
           }
         },
-        "highlight_66": {
+        "highlight_63": {
           "type": "highlight",
           "settings": {
             "icon": "width",
-            "text": "79 cm wide"
+            "text": "Just 79 cm wide"
           }
         },
-        "tier_67": {
+        "tier_64": {
           "type": "tier",
           "settings": {
             "label": "Single unit",
@@ -57,7 +57,7 @@
             "preselect": false
           }
         },
-        "tier_68": {
+        "tier_65": {
           "type": "tier",
           "settings": {
             "label": "Double pack",
@@ -67,7 +67,7 @@
             "preselect": true
           }
         },
-        "tier_69": {
+        "tier_66": {
           "type": "tier",
           "settings": {
             "label": "Triple pack",
@@ -77,51 +77,51 @@
             "preselect": false
           }
         },
-        "trust_70": {
+        "trust_67": {
           "type": "trust",
           "settings": {
             "icon": "lock",
             "title": "Secure checkout",
-            "text": "Encrypted payment through Shopify Checkout"
+            "text": "Encrypted payment via Shopify"
           }
         },
-        "trust_71": {
+        "trust_68": {
           "type": "trust",
           "settings": {
             "icon": "truck",
             "title": "Delivery",
-            "text": "[Add your confirmed delivery time]"
+            "text": "Options and costs shown at checkout"
           }
         },
-        "trust_72": {
-          "type": "trust",
-          "settings": {
-            "icon": "award",
-            "title": "Warranty",
-            "text": "[Confirm warranty terms with your supplier]"
-          }
-        },
-        "trust_73": {
+        "trust_69": {
           "type": "trust",
           "settings": {
             "icon": "return",
             "title": "Returns",
-            "text": "[Summarise your refund policy]"
+            "text": "Under our published refund policy"
+          }
+        },
+        "trust_70": {
+          "type": "trust",
+          "settings": {
+            "icon": "support",
+            "title": "Real support",
+            "text": "Questions before or after you buy"
           }
         }
       },
       "block_order": [
+        "highlight_60",
+        "highlight_61",
+        "highlight_62",
         "highlight_63",
-        "highlight_64",
-        "highlight_65",
-        "highlight_66",
-        "tier_67",
-        "tier_68",
-        "tier_69",
-        "trust_70",
-        "trust_71",
-        "trust_72",
-        "trust_73"
+        "tier_64",
+        "tier_65",
+        "tier_66",
+        "trust_67",
+        "trust_68",
+        "trust_69",
+        "trust_70"
       ]
     },
     "figures": {
@@ -129,11 +129,10 @@
       "settings": {
         "scheme": "accent",
         "accent": "#4f6b2a",
-        "heading": "",
         "note": "* Range depends on load, surface, gradient and battery condition."
       },
       "blocks": {
-        "stat_74": {
+        "stat_71": {
           "type": "stat",
           "settings": {
             "value": "1000",
@@ -141,7 +140,7 @@
             "label": "Brushless electric motor"
           }
         },
-        "stat_75": {
+        "stat_72": {
           "type": "stat",
           "settings": {
             "value": "450",
@@ -149,7 +148,7 @@
             "label": "Maximum load"
           }
         },
-        "stat_76": {
+        "stat_73": {
           "type": "stat",
           "settings": {
             "value": "24–27",
@@ -157,7 +156,7 @@
             "label": "Range per charge*"
           }
         },
-        "stat_77": {
+        "stat_74": {
           "type": "stat",
           "settings": {
             "value": "79",
@@ -167,10 +166,10 @@
         }
       },
       "block_order": [
-        "stat_74",
-        "stat_75",
-        "stat_76",
-        "stat_77"
+        "stat_71",
+        "stat_72",
+        "stat_73",
+        "stat_74"
       ]
     },
     "benefits": {
@@ -182,66 +181,108 @@
         "columns": 3,
         "row_mobile": true,
         "center": true,
-        "tight": false,
-        "eyebrow": "Main benefits",
+        "eyebrow": "Why Abrelune",
         "heading": "Load more. Carry less.",
-        "text": "",
-        "note": ""
+        "text": "<p>Everything a wheelbarrow does, without the pushing, and with up to 450 kg on board.</p>"
       },
       "blocks": {
-        "feature_78": {
+        "feature_75": {
           "type": "feature",
           "settings": {
             "icon": "bolt",
-            "title": "Powered transportation",
-            "text": "<p>Electric drive does the pushing for you, round the property and the work site.</p>"
+            "title": "Powered transport",
+            "text": "<p>The electric drive does the pushing, all the way across the property and back.</p>"
+          }
+        },
+        "feature_76": {
+          "type": "feature",
+          "settings": {
+            "icon": "weight",
+            "title": "High carrying capacity",
+            "text": "<p>Up to 450 kg per trip: firewood, stone, soil and tools in one go.</p>"
+          }
+        },
+        "feature_77": {
+          "type": "feature",
+          "settings": {
+            "icon": "motor",
+            "title": "Brushless motor",
+            "text": "<p>1000 W of brushless power with two-wheel drive for real traction.</p>"
+          }
+        },
+        "feature_78": {
+          "type": "feature",
+          "settings": {
+            "icon": "battery",
+            "title": "Battery-powered",
+            "text": "<p>Sealed 48 V battery system, with an indicator that always shows the charge left.</p>"
           }
         },
         "feature_79": {
           "type": "feature",
           "settings": {
-            "icon": "weight",
-            "title": "High carrying capacity",
-            "text": "<p>A stated maximum load of 450 kg, so firewood, stone, soil and tools can go in one trip.</p>"
+            "icon": "gauge",
+            "title": "Precise manoeuvring",
+            "text": "<p>Stepless twist throttle, two speed modes and reverse for tight spaces.</p>"
           }
         },
         "feature_80": {
           "type": "feature",
           "settings": {
-            "icon": "motor",
-            "title": "Brushless motor",
-            "text": "<p>A 1000 W brushless electric motor with two-wheel drive.</p>"
+            "icon": "box",
+            "title": "Fold-down side walls",
+            "text": "<p>Fold them down, or take them off completely, to load and unload from any side.</p>"
           }
-        },
+        }
+      },
+      "block_order": [
+        "feature_75",
+        "feature_76",
+        "feature_77",
+        "feature_78",
+        "feature_79",
+        "feature_80"
+      ]
+    },
+    "how": {
+      "type": "ind-feature-grid",
+      "settings": {
+        "scheme": "paper",
+        "accent": "#4f6b2a",
+        "style": "numbered",
+        "columns": 3,
+        "row_mobile": false,
+        "center": true,
+        "eyebrow": "How it works",
+        "heading": "Load it. Drive it. Drop it off."
+      },
+      "blocks": {
         "feature_81": {
           "type": "feature",
           "settings": {
-            "icon": "battery",
-            "title": "Battery-powered convenience",
-            "text": "<p>A sealed 48 V battery system with a battery indicator that always shows the charge left.</p>"
+            "icon": "box",
+            "title": "Load the platform",
+            "text": "<p>A spacious 150 × 80 cm cargo platform at a comfortable height of about 50 cm.</p>"
           }
         },
         "feature_82": {
           "type": "feature",
           "settings": {
             "icon": "gauge",
-            "title": "Manoeuvrability",
-            "text": "<p>Stepless twist throttle, two speed modes and reverse for precise driving in tight spaces.</p>"
+            "title": "Drive with the throttle",
+            "text": "<p>Twist to go, choose your speed mode, and reverse when you need to.</p>"
           }
         },
         "feature_83": {
           "type": "feature",
           "settings": {
-            "icon": "box",
-            "title": "Fold-down side walls",
-            "text": "<p>Fold the side walls down or remove them completely to load from any side.</p>"
+            "icon": "layers",
+            "title": "Unload from any side",
+            "text": "<p>Fold down or remove the side walls and unload exactly where you need it.</p>"
           }
         }
       },
       "block_order": [
-        "feature_78",
-        "feature_79",
-        "feature_80",
         "feature_81",
         "feature_82",
         "feature_83"
@@ -255,17 +296,14 @@
         "reverse": false,
         "wide_media": true,
         "ratio": "landscape",
-        "placeholder_label": "Motor and drive close-up",
+        "placeholder_label": "Photo: Abrelune driving across grass or gravel, loaded",
         "badge_value": "1000 W",
-        "badge_label": "Brushless",
+        "badge_label": "Brushless motor",
         "eyebrow": "Motor performance",
-        "heading": "Full control on every surface",
-        "text": "<p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. With the stepless twist throttle, two speed modes and reverse, you can drive slowly and precisely in tight spaces, or faster, up to about 24 km/h, on open stretches.</p>",
-        "checks": "Brushless 1000 W electric motor\nTwo-wheel drive\nStepless twist-grip throttle\nTwo speed modes, forward and reverse\nLED headlight and horn",
-        "btn_label": "",
-        "btn_link": "",
+        "heading": "Real power on every surface",
+        "text": "<p>Two-wheel drive delivers traction on grass, gravel, paths and uneven ground. Drive slowly and precisely with the stepless twist throttle in tight spots, or switch speed modes and travel at up to about 24 km/h on open stretches.</p>",
+        "checks": "Brushless 1000 W electric motor\nTwo-wheel drive for traction\nStepless twist-grip throttle\nTwo speed modes, forward and reverse\nLED headlight and horn",
         "btn_style": "accent",
-        "note": "",
         "diagram": "none"
       }
     },
@@ -277,15 +315,13 @@
         "reverse": true,
         "wide_media": false,
         "ratio": "square",
-        "placeholder_label": "Battery compartment opened for charging",
+        "placeholder_label": "Photo: battery compartment opened for charging",
         "badge_value": "4–5 h",
         "badge_label": "Full charge",
         "eyebrow": "Battery technology",
-        "heading": "Power and range for the whole working day",
-        "text": "<p>The brushless motor is powered by a sealed 48 V lead-acid battery system. One charge gives about 24–27 km, depending on load and surface, enough for many work sessions around the property. A full charge takes about 4–5 hours.</p>",
-        "checks": "Sealed 48 V lead-acid battery system\nApprox. 24–27 km per charge*\nApprox. 4–5 hours charging time\nBattery indicator shows remaining charge\nBattery compartment for charging and maintenance",
-        "btn_label": "",
-        "btn_link": "",
+        "heading": "Power for the whole working day",
+        "text": "<p>A sealed 48 V lead-acid battery system powers the motor. On one charge you'll cover about 24–27 km, depending on load and surface, which is enough for many work sessions around the property. Plug in overnight, or between jobs, and it's fully charged in about 4–5 hours.</p>",
+        "checks": "Sealed 48 V battery system\nApprox. 24–27 km per charge*\nApprox. 4–5 hours to full charge\nBattery indicator shows remaining charge\nAccessible battery compartment",
         "btn_style": "dark",
         "note": "* Depends on load, surface, gradient and battery condition.",
         "diagram": "none"
@@ -297,11 +333,10 @@
         "scheme": "paper",
         "accent": "#4f6b2a",
         "columns": 5,
-        "wide": false,
         "center": true,
         "eyebrow": "Carrying capacity",
-        "heading": "Up to 450 kg, one trip",
-        "text": "<p>The cargo platform sits at about 50 cm, a comfortable working height for loading.</p>"
+        "heading": "Up to 450 kg. One trip.",
+        "text": "<p>The cargo platform sits at about 50 cm, a comfortable height to load without bending.</p>"
       },
       "blocks": {
         "tile_84": {
@@ -309,7 +344,7 @@
           "settings": {
             "icon": "wood",
             "title": "Firewood",
-            "text": ""
+            "text": "Logs and kindling in bulk"
           }
         },
         "tile_85": {
@@ -317,7 +352,7 @@
           "settings": {
             "icon": "brick",
             "title": "Stone",
-            "text": ""
+            "text": "Paving, rocks and gravel"
           }
         },
         "tile_86": {
@@ -325,15 +360,15 @@
           "settings": {
             "icon": "layers",
             "title": "Building materials",
-            "text": ""
+            "text": "Bags, boards and supplies"
           }
         },
         "tile_87": {
           "type": "tile",
           "settings": {
             "icon": "leaf",
-            "title": "Garden supplies & waste",
-            "text": ""
+            "title": "Garden supplies",
+            "text": "Soil, compost and garden waste"
           }
         },
         "tile_88": {
@@ -341,7 +376,7 @@
           "settings": {
             "icon": "tools",
             "title": "Tools & equipment",
-            "text": ""
+            "text": "Everything for the job, in one load"
           }
         }
       },
@@ -361,34 +396,112 @@
         "reverse": false,
         "wide_media": false,
         "ratio": "square",
-        "placeholder_label": "",
-        "badge_value": "",
-        "badge_label": "",
         "eyebrow": "Manoeuvrability",
-        "heading": "Compact where it counts",
-        "text": "<p>At about 165 cm long and 79 cm wide, Abrelune fits through gates, between flower beds and along narrow paths where a tractor or larger work vehicle won't fit. We recommend a passage at least 84 cm wide.</p>",
-        "checks": "79 cm overall width\nFits through passages from 84 cm\nApprox. 165 cm long",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "dark",
+        "heading": "Goes where bigger vehicles can't",
+        "text": "<p>At about 165 cm long and just 79 cm wide, Abrelune slips through garden gates, between flower beds and along narrow paths where a tractor or a larger work vehicle simply won't fit.</p>",
+        "checks": "79 cm overall width\nFits through passages from 84 cm\nApprox. 165 cm long\nReverse gear for tight turns",
+        "btn_label": "Choose your package",
+        "btn_link": "#buy",
+        "btn_style": "accent",
         "note": "Schematic illustration. Not to scale.",
         "diagram": "gate",
         "d_v1": "79 cm",
         "d_l1": "vehicle width",
         "d_v2": "84 cm",
-        "d_l2": "min. passage",
-        "d_caption": ""
+        "d_l2": "min. passage"
       }
+    },
+    "compare": {
+      "type": "ind-comparison",
+      "settings": {
+        "mode": "versus",
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "eyebrow": "Comparison",
+        "heading": "Abrelune vs. the wheelbarrow",
+        "text": "<p>Compare manual transport with Abrelune.</p>",
+        "col_a": "Wheelbarrow / hand cart",
+        "col_b": "Abrelune"
+      },
+      "blocks": {
+        "row_89": {
+          "type": "row",
+          "settings": {
+            "label": "Load per trip",
+            "a_mark": "no",
+            "a": "Only what you can push",
+            "b_mark": "yes",
+            "b": "Up to 450 kg"
+          }
+        },
+        "row_90": {
+          "type": "row",
+          "settings": {
+            "label": "Power",
+            "a_mark": "no",
+            "a": "Your own muscle",
+            "b_mark": "yes",
+            "b": "1000 W brushless electric motor"
+          }
+        },
+        "row_91": {
+          "type": "row",
+          "settings": {
+            "label": "Grass, gravel, uneven ground",
+            "a_mark": "no",
+            "a": "Hard going under load",
+            "b_mark": "yes",
+            "b": "Two-wheel drive for traction"
+          }
+        },
+        "row_92": {
+          "type": "row",
+          "settings": {
+            "label": "Loading and unloading",
+            "a_mark": "none",
+            "a": "Lift or tip by hand",
+            "b_mark": "yes",
+            "b": "Fold-down, removable side walls"
+          }
+        },
+        "row_93": {
+          "type": "row",
+          "settings": {
+            "label": "Reversing",
+            "a_mark": "none",
+            "a": "Pull it back yourself",
+            "b_mark": "yes",
+            "b": "Built-in reverse gear"
+          }
+        },
+        "row_94": {
+          "type": "row",
+          "settings": {
+            "label": "Narrow passages",
+            "a_mark": "yes",
+            "a": "Yes",
+            "b_mark": "yes",
+            "b": "Yes: 79 cm wide"
+          }
+        }
+      },
+      "block_order": [
+        "row_89",
+        "row_90",
+        "row_91",
+        "row_92",
+        "row_93",
+        "row_94"
+      ]
     },
     "specs": {
       "type": "ind-specs",
       "settings": {
-        "scheme": "sand",
+        "scheme": "paper",
         "accent": "#4f6b2a",
         "use_metafield": true,
         "eyebrow": "Technical data",
         "heading": "Abrelune specifications",
-        "text": "",
         "visible_rows": 9,
         "note": "* Depends on load, surface, gradient and conditions of use.",
         "media": "transporter",
@@ -403,119 +516,119 @@
         "d_caption": "Schematic illustration. Not to scale."
       },
       "blocks": {
-        "row_89": {
+        "row_95": {
           "type": "row",
           "settings": {
             "label": "Model",
             "value": "Abrelune"
           }
         },
-        "row_90": {
+        "row_96": {
           "type": "row",
           "settings": {
             "label": "Motor",
             "value": "Brushless electric motor, 1000 W"
           }
         },
-        "row_91": {
+        "row_97": {
           "type": "row",
           "settings": {
             "label": "Drive",
             "value": "Two-wheel drive"
           }
         },
-        "row_92": {
+        "row_98": {
           "type": "row",
           "settings": {
             "label": "Battery",
             "value": "Sealed 48 V lead-acid battery"
           }
         },
-        "row_93": {
+        "row_99": {
           "type": "row",
           "settings": {
             "label": "Range",
             "value": "Approx. 24–27 km*"
           }
         },
-        "row_94": {
+        "row_100": {
           "type": "row",
           "settings": {
             "label": "Charging time",
             "value": "Approx. 4–5 hours"
           }
         },
-        "row_95": {
+        "row_101": {
           "type": "row",
           "settings": {
             "label": "Top speed",
             "value": "Approx. 24 km/h"
           }
         },
-        "row_96": {
+        "row_102": {
           "type": "row",
           "settings": {
             "label": "Maximum load",
             "value": "Up to 450 kg"
           }
         },
-        "row_97": {
+        "row_103": {
           "type": "row",
           "settings": {
             "label": "Cargo platform",
             "value": "150 × 80 cm"
           }
         },
-        "row_98": {
+        "row_104": {
           "type": "row",
           "settings": {
             "label": "Platform height",
             "value": "Approx. 50 cm"
           }
         },
-        "row_99": {
+        "row_105": {
           "type": "row",
           "settings": {
             "label": "Length × width",
             "value": "Approx. 165 × 79 cm"
           }
         },
-        "row_100": {
+        "row_106": {
           "type": "row",
           "settings": {
             "label": "Recommended passage width",
             "value": "At least 84 cm"
           }
         },
-        "row_101": {
+        "row_107": {
           "type": "row",
           "settings": {
             "label": "Weight",
             "value": "Approx. 150 kg"
           }
         },
-        "row_102": {
+        "row_108": {
           "type": "row",
           "settings": {
             "label": "Controls",
             "value": "Stepless twist-grip throttle, 2 speed modes, forward/reverse"
           }
         },
-        "row_103": {
+        "row_109": {
           "type": "row",
           "settings": {
             "label": "Equipment",
             "value": "Battery indicator, LED headlight, horn"
           }
         },
-        "row_104": {
+        "row_110": {
           "type": "row",
           "settings": {
             "label": "Side walls",
             "value": "Folding and removable"
           }
         },
-        "row_105": {
+        "row_111": {
           "type": "row",
           "settings": {
             "label": "Construction",
@@ -524,12 +637,6 @@
         }
       },
       "block_order": [
-        "row_89",
-        "row_90",
-        "row_91",
-        "row_92",
-        "row_93",
-        "row_94",
         "row_95",
         "row_96",
         "row_97",
@@ -540,48 +647,53 @@
         "row_102",
         "row_103",
         "row_104",
-        "row_105"
+        "row_105",
+        "row_106",
+        "row_107",
+        "row_108",
+        "row_109",
+        "row_110",
+        "row_111"
       ]
     },
     "included": {
       "type": "ind-included",
       "settings": {
-        "scheme": "paper",
+        "scheme": "sand",
         "accent": "#4f6b2a",
         "eyebrow": "In the box",
         "heading": "What's included",
-        "text": "",
-        "note": "The supplier lists a 110 V charger. [Confirm the charger voltage and plug type for your market before selling.]"
+        "text": "<p>Ready to charge and go.</p>"
       },
       "blocks": {
-        "item_106": {
+        "item_112": {
           "type": "item",
           "settings": {
             "icon": "truck",
             "qty": "1×",
-            "title": "Abrelune electric transporter",
-            "text": ""
+            "title": "Abrelune transporter",
+            "text": "Electric compact transporter"
           }
         },
-        "item_107": {
+        "item_113": {
           "type": "item",
           "settings": {
             "icon": "battery",
             "qty": "1×",
             "title": "48 V battery system",
-            "text": ""
+            "text": "Sealed lead-acid"
           }
         },
-        "item_108": {
+        "item_114": {
           "type": "item",
           "settings": {
             "icon": "plug",
             "qty": "1×",
             "title": "Charger",
-            "text": "110 V per supplier listing"
+            "text": "For the 48 V battery system"
           }
         },
-        "item_109": {
+        "item_115": {
           "type": "item",
           "settings": {
             "icon": "box",
@@ -592,95 +704,10 @@
         }
       },
       "block_order": [
-        "item_106",
-        "item_107",
-        "item_108",
-        "item_109"
-      ]
-    },
-    "compare": {
-      "type": "ind-comparison",
-      "settings": {
-        "mode": "versus",
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "eyebrow": "Comparison",
-        "heading": "Abrelune vs. manual transport",
-        "text": "",
-        "label_col": "",
-        "col_a": "Wheelbarrow / hand cart",
-        "col_b": "Abrelune",
-        "note": ""
-      },
-      "blocks": {
-        "row_110": {
-          "type": "row",
-          "settings": {
-            "label": "Load per trip",
-            "a_mark": "none",
-            "a": "What you can push",
-            "b_mark": "yes",
-            "b": "Up to 450 kg"
-          }
-        },
-        "row_111": {
-          "type": "row",
-          "settings": {
-            "label": "Drive",
-            "a_mark": "no",
-            "a": "Muscle power",
-            "b_mark": "yes",
-            "b": "1000 W brushless electric motor"
-          }
-        },
-        "row_112": {
-          "type": "row",
-          "settings": {
-            "label": "Grass, gravel, uneven ground",
-            "a_mark": "none",
-            "a": "Hard going under load",
-            "b_mark": "yes",
-            "b": "Two-wheel drive for traction"
-          }
-        },
-        "row_113": {
-          "type": "row",
-          "settings": {
-            "label": "Loading and unloading",
-            "a_mark": "none",
-            "a": "Lift or tip by hand",
-            "b_mark": "yes",
-            "b": "Fold-down, removable side walls"
-          }
-        },
-        "row_114": {
-          "type": "row",
-          "settings": {
-            "label": "Reversing",
-            "a_mark": "none",
-            "a": "By hand",
-            "b_mark": "yes",
-            "b": "Forward and reverse gear"
-          }
-        },
-        "row_115": {
-          "type": "row",
-          "settings": {
-            "label": "Narrow passages",
-            "a_mark": "yes",
-            "a": "Yes",
-            "b_mark": "yes",
-            "b": "79 cm wide; passages from 84 cm"
-          }
-        }
-      },
-      "block_order": [
-        "row_110",
-        "row_111",
-        "row_112",
-        "row_113",
-        "row_114",
-        "row_115"
+        "item_112",
+        "item_113",
+        "item_114",
+        "item_115"
       ]
     },
     "reviews": {
@@ -689,7 +716,7 @@
         "scheme": "paper",
         "accent": "#4f6b2a",
         "eyebrow": "Customer reviews",
-        "heading": "What customers say"
+        "heading": "What owners say"
       }
     },
     "faq": {
@@ -703,9 +730,9 @@
         "schema": true,
         "eyebrow": "FAQ",
         "heading": "Questions about Abrelune",
-        "text": "",
-        "btn_label": "",
-        "btn_link": ""
+        "text": "<p>Everything you need to know before you order.</p>",
+        "btn_label": "Contact us",
+        "btn_link": "shopify://pages/contact"
       },
       "blocks": {
         "qa_116": {
@@ -726,7 +753,7 @@
           "type": "qa",
           "settings": {
             "q": "What battery does it use?",
-            "a": "<p>A sealed 48 V lead-acid battery system with a battery indicator.</p>"
+            "a": "<p>A sealed 48 V lead-acid battery system, with a battery indicator that always shows the charge left.</p>"
           }
         },
         "qa_119": {
@@ -747,49 +774,56 @@
           "type": "qa",
           "settings": {
             "q": "What terrain can it handle?",
-            "a": "<p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. Reduce the load on steep slopes and soft ground.</p>"
+            "a": "<p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. Reduce the load on steep slopes and soft surfaces.</p>"
           }
         },
         "qa_122": {
           "type": "qa",
           "settings": {
             "q": "Will it fit through my gate?",
-            "a": "<p>Abrelune is about 79 cm wide. We recommend a passage at least 84 cm wide.</p>"
+            "a": "<p>Abrelune is about 79 cm wide. We recommend a passage of at least 84 cm.</p>"
           }
         },
         "qa_123": {
           "type": "qa",
           "settings": {
             "q": "Can I drive it on public roads?",
-            "a": "<p>Abrelune is intended for private land such as plots, farms and work areas. With a top speed of about 24 km/h, vehicle classification rules may apply. Always check local rules before driving outside private property.</p>"
+            "a": "<p>Abrelune is intended for private land such as plots, farms and work areas. With a top speed of about 24 km/h, vehicle classification rules may apply. Always check local regulations before driving outside private property.</p>"
           }
         },
         "qa_124": {
           "type": "qa",
           "settings": {
             "q": "What maintenance does it need?",
-            "a": "<p>Follow the user manual and safety instructions. [Add battery care and tyre and brake check guidance from the manual.]</p>"
+            "a": "<p>Keep the battery charged between uses, check the tyres and controls regularly, and follow the user manual supplied with Abrelune.</p>"
           }
         },
         "qa_125": {
           "type": "qa",
           "settings": {
-            "q": "What accessories are included?",
-            "a": "<p>The transporter, a 48 V battery system, a charger and the user manual with safety instructions.</p>"
+            "q": "What's included?",
+            "a": "<p>The Abrelune transporter, a 48 V battery system, a charger, and the user manual with safety instructions.</p>"
           }
         },
         "qa_126": {
           "type": "qa",
           "settings": {
             "q": "How long does delivery take?",
-            "a": "<p>[Add your confirmed delivery times. This is a bulky item of approx. 150 kg.]</p>"
+            "a": "<p>Available delivery options, costs and estimated delivery times are shown at checkout before you pay. You'll get a confirmation email as soon as your order ships.</p>"
           }
         },
         "qa_127": {
           "type": "qa",
           "settings": {
-            "q": "Is there a warranty?",
-            "a": "<p>[Confirm warranty terms with your supplier.]</p>"
+            "q": "Is Abrelune covered if something goes wrong?",
+            "a": "<p>If anything isn't right, contact our support team with your order number and we'll help. The terms that apply to your purchase are set out in our <a href=\"/policies/terms-of-service\">terms of service</a>.</p>"
+          }
+        },
+        "qa_128": {
+          "type": "qa",
+          "settings": {
+            "q": "Can I return Abrelune?",
+            "a": "<p>Returns follow our <a href=\"/policies/refund-policy\">refund policy</a>. Contact our team first and we'll guide you through the process.</p>"
           }
         }
       },
@@ -805,7 +839,8 @@
         "qa_124",
         "qa_125",
         "qa_126",
-        "qa_127"
+        "qa_127",
+        "qa_128"
       ]
     },
     "cta": {
@@ -813,13 +848,13 @@
       "settings": {
         "scheme": "sand",
         "accent": "#4f6b2a",
-        "eyebrow": "Abrelune",
-        "heading": "Heavy becomes light",
-        "text": "<p>1000 W brushless power, up to 450 kg per trip, and a compact 79 cm body that goes where larger vehicles can't.</p>",
-        "checks": "Up to 450 kg load capacity\nApprox. 24–27 km per charge*\nFolding and removable side walls",
+        "eyebrow": "Abrelune electric transporter",
+        "heading": "Heavy work. Made light.",
+        "text": "<p>1000 W of brushless power, up to 450 kg per trip, and a compact 79 cm body that goes where larger vehicles can't. Save more when you order two or three.</p>",
+        "checks": "Up to 450 kg load capacity\nApprox. 24–27 km per charge*\nFolding, removable side walls\nForward and reverse, two speed modes",
         "mode": "scroll",
         "btn_label": "Choose your package",
-        "small": "* Depends on load, surface, gradient and battery condition."
+        "small": "* Depends on load, surface, gradient and battery condition. Multi-unit savings are applied automatically at checkout."
       }
     },
     "related": {
@@ -838,13 +873,14 @@
     "main",
     "figures",
     "benefits",
+    "how",
     "motor",
     "battery",
     "capacity",
     "manoeuvre",
+    "compare",
     "specs",
     "included",
-    "compare",
     "reviews",
     "faq",
     "cta",

@@ -5,16 +5,16 @@
       "settings": {
         "accent": "#d9531e",
         "show_breadcrumbs": true,
-        "media_badge": "",
+        "media_badge": "Up to 6 m",
         "eyebrow": "Scaffold material lift",
-        "headline": "Professional lifting power: up to 500 kg to 6 metres, by remote control.",
-        "short_desc": "<p>Move materials up safely and with less effort, right at the scaffold. Selo raises up to 500 kg to a height of up to 6 metres and is controlled by remote, saving your team heavy carrying and valuable working time.</p>",
+        "headline": "Take the heavy lifting off your team, all the way up to 6 metres.",
+        "short_desc": "<p>Stop hauling material up ladders. Selo raises up to <strong>500 kg</strong> to a working height of up to <strong>6 metres</strong> at the touch of a remote, then stops automatically at the top. Your team stays on the scaffold, working, instead of carrying.</p>",
         "tiers_heading": "Choose your package",
         "show_buy_now": true,
         "show_dynamic_checkout": true,
         "stock_detail": "",
         "show_details": true,
-        "shipping_text": "<p>[Add your confirmed dispatch and delivery times.]</p><p>[Summarise your published refund policy and link to it.]</p>",
+        "shipping_text": "<p>Delivery options, costs and estimated delivery times are shown at checkout before you pay.</p><p>Returns are handled under our <a href=\"/policies/refund-policy\">refund policy</a>. Need help with an order? <a href=\"/pages/contact\">Contact our team</a>.</p>",
         "sticky": true,
         "sticky_mobile_scroll": false
       },
@@ -23,7 +23,7 @@
           "type": "highlight",
           "settings": {
             "icon": "weight",
-            "text": "Up to 500 kg load capacity"
+            "text": "Lifts up to 500 kg"
           }
         },
         "highlight_2": {
@@ -44,7 +44,7 @@
           "type": "highlight",
           "settings": {
             "icon": "shield",
-            "text": "Automatic top and bottom limit stop"
+            "text": "Auto stop at top and bottom"
           }
         },
         "tier_5": {
@@ -82,7 +82,7 @@
           "settings": {
             "icon": "lock",
             "title": "Secure checkout",
-            "text": "Encrypted payment through Shopify Checkout"
+            "text": "Encrypted payment via Shopify"
           }
         },
         "trust_9": {
@@ -90,23 +90,23 @@
           "settings": {
             "icon": "truck",
             "title": "Delivery",
-            "text": "[Add your confirmed delivery time]"
+            "text": "Options and costs shown at checkout"
           }
         },
         "trust_10": {
           "type": "trust",
           "settings": {
-            "icon": "award",
-            "title": "Warranty",
-            "text": "[Confirm warranty terms with your supplier]"
+            "icon": "return",
+            "title": "Returns",
+            "text": "Under our published refund policy"
           }
         },
         "trust_11": {
           "type": "trust",
           "settings": {
-            "icon": "return",
-            "title": "Returns",
-            "text": "[Summarise your refund policy]"
+            "icon": "support",
+            "title": "Real support",
+            "text": "Questions before or after you buy"
           }
         }
       },
@@ -129,8 +129,7 @@
       "settings": {
         "scheme": "ink",
         "accent": "#d9531e",
-        "heading": "Selo at a glance",
-        "note": ""
+        "heading": "Built to lift"
       },
       "blocks": {
         "stat_12": {
@@ -138,7 +137,7 @@
           "settings": {
             "value": "500",
             "unit": "kg",
-            "label": "Maximum load capacity"
+            "label": "Load capacity per lift"
           }
         },
         "stat_13": {
@@ -154,7 +153,7 @@
           "settings": {
             "value": "360",
             "unit": "°",
-            "label": "Swivel castors for positioning"
+            "label": "Swivel castors"
           }
         },
         "stat_15": {
@@ -162,7 +161,7 @@
           "settings": {
             "value": "2",
             "unit": "×",
-            "label": "Automatic limit stops: top and bottom"
+            "label": "Automatic limit stops"
           }
         }
       },
@@ -173,97 +172,83 @@
         "stat_15"
       ]
     },
-    "benefits": {
-      "type": "ind-feature-grid",
+    "problem": {
+      "type": "ind-image-text",
       "settings": {
         "scheme": "paper",
+        "accent": "#d9531e",
+        "reverse": false,
+        "wide_media": true,
+        "ratio": "landscape",
+        "placeholder_label": "Photo: Selo next to a scaffold, loaded with material",
+        "badge_value": "500 kg",
+        "badge_label": "In one lift",
+        "eyebrow": "The problem with height",
+        "heading": "Every trip up the ladder costs time and energy",
+        "text": "<p>Plaster, tiles, tools, paint: on most sites, it all goes up by hand, one load and one climb at a time. It's slow, it's exhausting, and it pulls skilled people away from the work they're there to do.</p><p>Selo changes the routine. Load the platform on the ground, press a button, and the material arrives at working height, up to 500 kg in a single lift.</p>",
+        "checks": "No more carrying material up ladders and stairs\nFewer trips, less strain on backs and shoulders\nYour team stays productive at height",
+        "btn_label": "Choose your package",
+        "btn_link": "#buy",
+        "btn_style": "accent",
+        "diagram": "none"
+      }
+    },
+    "how": {
+      "type": "ind-feature-grid",
+      "settings": {
+        "scheme": "sand",
         "accent": "#d9531e",
         "style": "numbered",
         "columns": 3,
         "row_mobile": false,
-        "center": false,
-        "tight": false,
-        "eyebrow": "Why Selo",
-        "heading": "Less carrying. More working.",
-        "text": "<p>Selo takes material up to the scaffold so your team doesn't have to carry it up ladders and stairs.</p>",
-        "note": ""
+        "center": true,
+        "eyebrow": "How it works",
+        "heading": "Load. Lift. Get to work."
       },
       "blocks": {
         "feature_16": {
           "type": "feature",
           "settings": {
-            "icon": "weight",
-            "title": "Lift heavy materials with less manual effort",
-            "text": "<p>Raise up to 500 kg of building material, tools and equipment on the platform instead of carrying it by hand.</p>"
+            "icon": "box",
+            "title": "Load at ground level",
+            "text": "<p>Place material on the non-slip platform and spread the load evenly, up to 500 kg.</p>"
           }
         },
         "feature_17": {
           "type": "feature",
           "settings": {
-            "icon": "height",
-            "title": "Reach elevated working areas",
-            "text": "<p>Up to 6 m lifting height, suitable for common scaffold heights.</p>"
+            "icon": "remote",
+            "title": "Lift by remote",
+            "text": "<p>Raise the platform smoothly from a safe distance using the ergonomic remote control.</p>"
           }
         },
         "feature_18": {
           "type": "feature",
           "settings": {
-            "icon": "remote",
-            "title": "Operate by remote control",
-            "text": "<p>The ergonomic remote lets you control lifting and lowering from a safe distance.</p>"
-          }
-        },
-        "feature_19": {
-          "type": "feature",
-          "settings": {
-            "icon": "stairs",
-            "title": "Improve material handling",
-            "text": "<p>Fewer trips up and down ladders and stairs keeps the work on site moving.</p>"
-          }
-        },
-        "feature_20": {
-          "type": "feature",
-          "settings": {
             "icon": "shield",
-            "title": "Safety-oriented features",
-            "text": "<p>A braking system, automatic limit stops at the top and bottom, reinforced guard rails and a non-slip platform.</p>"
-          }
-        },
-        "feature_21": {
-          "type": "feature",
-          "settings": {
-            "icon": "rotate",
-            "title": "Easy to position",
-            "text": "<p>360° swivel castors let you move Selo quickly to where it's needed on site.</p>"
+            "title": "Automatic stop",
+            "text": "<p>The limit stop halts the lift by itself at the top and bottom positions. Unload and carry on working.</p>"
           }
         }
       },
       "block_order": [
         "feature_16",
         "feature_17",
-        "feature_18",
-        "feature_19",
-        "feature_20",
-        "feature_21"
+        "feature_18"
       ]
     },
     "lift": {
       "type": "ind-image-text",
       "settings": {
-        "scheme": "sand",
+        "scheme": "paper",
         "accent": "#d9531e",
-        "reverse": false,
+        "reverse": true,
         "wide_media": false,
         "ratio": "square",
-        "placeholder_label": "",
-        "badge_value": "",
-        "badge_label": "",
         "eyebrow": "Powerful electric lifting drive",
-        "heading": "Raise and lower loads smoothly and precisely",
-        "text": "<p>The powerful electric motor raises and lowers loads smoothly and precisely. That reduces physical strain, avoids unnecessary trips up ladders and stairs, and keeps the work on site moving.</p>",
-        "checks": "High-torque electric motor\nHigh-strength galvanised steel lifting cable\nControlled lifting and lowering by remote",
-        "btn_label": "",
-        "btn_link": "",
+        "heading": "Smooth, controlled lifting, every time",
+        "text": "<p>A high-torque electric motor raises and lowers the platform evenly and precisely, with no jerking and no guesswork. A high-strength galvanised steel cable carries the load, and a precise braking system holds it securely in position.</p>",
+        "checks": "High-torque electric motor\nHigh-strength galvanised steel cable\nPrecise braking system holds the load",
         "btn_style": "dark",
         "note": "Schematic illustration. Not to scale.",
         "diagram": "lift",
@@ -274,8 +259,7 @@
         "d_v3": "360°",
         "d_l3": "castors",
         "d_v4": "Remote",
-        "d_l4": "control",
-        "d_caption": ""
+        "d_l4": "control"
       }
     },
     "features": {
@@ -287,87 +271,85 @@
         "columns": 4,
         "row_mobile": true,
         "center": true,
-        "tight": false,
         "eyebrow": "Feature highlights",
         "heading": "Engineered for the job site",
-        "text": "",
-        "note": ""
+        "text": "<p>Every detail of Selo is designed for daily professional use.</p>"
       },
       "blocks": {
-        "feature_22": {
+        "feature_19": {
           "type": "feature",
           "settings": {
             "icon": "motor",
             "title": "Electric lifting drive",
-            "text": "<p>High-torque motor for even, controlled lifting.</p>"
+            "text": "<p>High torque for even, controlled lifting and lowering.</p>"
+          }
+        },
+        "feature_20": {
+          "type": "feature",
+          "settings": {
+            "icon": "remote",
+            "title": "Ergonomic remote",
+            "text": "<p>Control every lift from a safe distance.</p>"
+          }
+        },
+        "feature_21": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Automatic limit stop",
+            "text": "<p>Stops by itself at the upper and lower end positions.</p>"
+          }
+        },
+        "feature_22": {
+          "type": "feature",
+          "settings": {
+            "icon": "brake",
+            "title": "Precise brake",
+            "text": "<p>Holds the load securely at any height.</p>"
           }
         },
         "feature_23": {
           "type": "feature",
           "settings": {
-            "icon": "remote",
-            "title": "Ergonomic remote control",
-            "text": "<p>Operate the lift from a safe distance.</p>"
+            "icon": "cable",
+            "title": "Galvanised steel cable",
+            "text": "<p>High-strength cable built for a long service life.</p>"
           }
         },
         "feature_24": {
           "type": "feature",
           "settings": {
-            "icon": "shield",
-            "title": "Automatic limit stop",
-            "text": "<p>Stops on its own at the upper and lower end positions.</p>"
+            "icon": "layers",
+            "title": "Reinforced steel frame",
+            "text": "<p>Stable and rigid, day after day.</p>"
           }
         },
         "feature_25": {
           "type": "feature",
           "settings": {
-            "icon": "brake",
-            "title": "Precise braking system",
-            "text": "<p>Holds the load securely.</p>"
+            "icon": "grip",
+            "title": "Non-slip platform",
+            "text": "<p>Helps keep the load in place while lifting.</p>"
           }
         },
         "feature_26": {
           "type": "feature",
           "settings": {
-            "icon": "cable",
-            "title": "Galvanised steel cable",
-            "text": "<p>High-strength lifting cable for long service life.</p>"
-          }
-        },
-        "feature_27": {
-          "type": "feature",
-          "settings": {
-            "icon": "layers",
-            "title": "Reinforced steel frame",
-            "text": "<p>Built for stability in daily use.</p>"
-          }
-        },
-        "feature_28": {
-          "type": "feature",
-          "settings": {
-            "icon": "grip",
-            "title": "Non-slip platform",
-            "text": "<p>Helps stop the load from sliding.</p>"
-          }
-        },
-        "feature_29": {
-          "type": "feature",
-          "settings": {
             "icon": "rotate",
             "title": "360° swivel castors",
-            "text": "<p>Fast positioning on site.</p>"
+            "text": "<p>Roll it into position quickly on site.</p>"
           }
         }
       },
       "block_order": [
+        "feature_19",
+        "feature_20",
+        "feature_21",
         "feature_22",
         "feature_23",
         "feature_24",
         "feature_25",
-        "feature_26",
-        "feature_27",
-        "feature_28",
-        "feature_29"
+        "feature_26"
       ]
     },
     "action": {
@@ -376,51 +358,49 @@
         "scheme": "dark",
         "accent": "#d9531e",
         "columns": 4,
-        "wide": false,
-        "center": false,
         "eyebrow": "Selo in action",
-        "heading": "Ideal for work at height",
-        "text": "<p>Selo is for moving materials only and is not approved for carrying people. Use photography that shows material, never people, on the platform.</p>"
+        "heading": "Wherever work happens at height",
+        "text": "<p>From renovation to industrial maintenance, Selo gets the material where it's needed.</p>"
       },
       "blocks": {
-        "tile_30": {
+        "tile_27": {
           "type": "tile",
           "settings": {
             "icon": "brick",
             "title": "Construction sites",
-            "text": "Assembly and construction work"
+            "text": "Assembly and construction work at scaffold height"
           }
         },
-        "tile_31": {
+        "tile_28": {
           "type": "tile",
           "settings": {
             "icon": "tools",
             "title": "Painting & renovation",
-            "text": "Material to the scaffold, where it's needed"
+            "text": "Paint, plaster and tools delivered to the scaffold"
           }
         },
-        "tile_32": {
+        "tile_29": {
           "type": "tile",
           "settings": {
             "icon": "bolt",
             "title": "Technical installations",
-            "text": "Electrical and mechanical systems"
+            "text": "Electrical and mechanical systems at height"
           }
         },
-        "tile_33": {
+        "tile_30": {
           "type": "tile",
           "settings": {
             "icon": "wrench",
             "title": "Industrial maintenance",
-            "text": "Maintenance and servicing at height"
+            "text": "Servicing and repair work above ground"
           }
         }
       },
       "block_order": [
-        "tile_30",
-        "tile_31",
-        "tile_32",
-        "tile_33"
+        "tile_27",
+        "tile_28",
+        "tile_29",
+        "tile_30"
       ]
     },
     "safety": {
@@ -428,20 +408,18 @@
       "settings": {
         "scheme": "ink",
         "accent": "#d9531e",
-        "reverse": true,
+        "reverse": false,
         "wide_media": true,
         "ratio": "landscape",
         "placeholder_label": "Close-up: platform, guard rails, limit switch, remote",
-        "badge_value": "500 kg",
-        "badge_label": "Max. load",
+        "badge_value": "2×",
+        "badge_label": "Auto limit stops",
         "eyebrow": "Construction & safety",
-        "heading": "Safety you can rely on",
-        "text": "<p>Selo is built for professional use, with several safety features for a controlled lift. A reinforced steel frame and a high-strength galvanised steel cable give stability and a long service life, even in daily use.</p>",
-        "checks": "Precise braking system holds the load securely\nAutomatic limit stop at the upper and lower positions\nReinforced guard rails keep the load in place\nNon-slip platform helps stop the load sliding",
-        "btn_label": "",
-        "btn_link": "",
+        "heading": "Safety built into every lift",
+        "text": "<p>Selo is engineered for professional use, with several safety features working together for a controlled lift. Its reinforced steel frame and galvanised steel cable stay stable and dependable, even under daily use.</p>",
+        "checks": "Precise braking system holds the load securely\nAutomatic limit stop at the upper and lower positions\nReinforced guard rails keep the load in place\nNon-slip platform helps prevent sliding",
         "btn_style": "accent",
-        "note": "Selo is for transporting materials only and is not approved for carrying people. Always observe the maximum load capacity and the safety instructions in the operating manual.",
+        "note": "Selo is designed for lifting materials only and is not approved for carrying people. Always observe the maximum load and the safety instructions in the operating manual.",
         "diagram": "none"
       }
     },
@@ -452,58 +430,56 @@
         "scheme": "sand",
         "accent": "#d9531e",
         "eyebrow": "Traditional method vs. Selo",
-        "heading": "Stop carrying material up ladders",
-        "text": "",
-        "label_col": "",
+        "heading": "The smarter way up",
+        "text": "<p>Compare carrying material by hand with lifting it on Selo.</p>",
         "col_a": "Carrying by hand",
-        "col_b": "With Selo",
-        "note": ""
+        "col_b": "With Selo"
       },
       "blocks": {
-        "row_34": {
+        "row_31": {
           "type": "row",
           "settings": {
             "label": "Getting material to height",
             "a_mark": "no",
-            "a": "Carried up ladders or stairs",
+            "a": "Up ladders or stairs",
             "b_mark": "yes",
             "b": "Lifted electrically, up to 6 m"
           }
         },
-        "row_35": {
+        "row_32": {
           "type": "row",
           "settings": {
-            "label": "Load per lift",
-            "a_mark": "none",
+            "label": "Load per trip",
+            "a_mark": "no",
             "a": "What one person can carry",
             "b_mark": "yes",
             "b": "Up to 500 kg"
           }
         },
-        "row_36": {
+        "row_33": {
           "type": "row",
           "settings": {
-            "label": "Control",
-            "a_mark": "none",
-            "a": "Physical effort on every trip",
+            "label": "Effort",
+            "a_mark": "no",
+            "a": "Physical strain on every trip",
             "b_mark": "yes",
-            "b": "Remote control from a safe distance"
+            "b": "One button on the remote"
           }
         },
-        "row_37": {
+        "row_34": {
           "type": "row",
           "settings": {
-            "label": "End positions",
+            "label": "Stopping at height",
             "a_mark": "none",
             "a": "—",
             "b_mark": "yes",
-            "b": "Automatic limit stop at top and bottom"
+            "b": "Automatic limit stop, top and bottom"
           }
         },
-        "row_38": {
+        "row_35": {
           "type": "row",
           "settings": {
-            "label": "Positioning",
+            "label": "Moving between spots",
             "a_mark": "none",
             "a": "—",
             "b_mark": "yes",
@@ -512,11 +488,11 @@
         }
       },
       "block_order": [
+        "row_31",
+        "row_32",
+        "row_33",
         "row_34",
-        "row_35",
-        "row_36",
-        "row_37",
-        "row_38"
+        "row_35"
       ]
     },
     "specs": {
@@ -527,92 +503,87 @@
         "use_metafield": true,
         "eyebrow": "Technical data",
         "heading": "Selo specifications",
-        "text": "",
         "visible_rows": 8,
-        "note": "Selo is for transporting materials only, not people.",
+        "note": "For lifting materials only. Not approved for carrying people.",
         "media": "lift",
         "d_v1": "6 m",
         "d_l1": "max. lifting height",
         "d_v2": "500 kg",
         "d_l2": "max. load",
-        "d_v3": "",
-        "d_l3": "",
-        "d_v4": "",
-        "d_l4": "",
         "d_caption": "Schematic illustration. Not to scale."
       },
       "blocks": {
-        "row_39": {
+        "row_36": {
           "type": "row",
           "settings": {
             "label": "Model",
             "value": "Selo"
           }
         },
-        "row_40": {
+        "row_37": {
           "type": "row",
           "settings": {
             "label": "Type",
             "value": "Scaffold material lift"
           }
         },
-        "row_41": {
+        "row_38": {
           "type": "row",
           "settings": {
             "label": "Load capacity",
             "value": "Up to 500 kg"
           }
         },
-        "row_42": {
+        "row_39": {
           "type": "row",
           "settings": {
             "label": "Maximum lifting height",
             "value": "Up to 6 m"
           }
         },
-        "row_43": {
+        "row_40": {
           "type": "row",
           "settings": {
             "label": "Motor",
             "value": "Professional high-torque electric motor"
           }
         },
-        "row_44": {
+        "row_41": {
           "type": "row",
           "settings": {
             "label": "Lifting cable",
             "value": "High-strength galvanised steel cable"
           }
         },
-        "row_45": {
+        "row_42": {
           "type": "row",
           "settings": {
             "label": "Frame",
             "value": "Reinforced steel construction"
           }
         },
-        "row_46": {
+        "row_43": {
           "type": "row",
           "settings": {
             "label": "Control",
             "value": "Ergonomic remote control"
           }
         },
-        "row_47": {
+        "row_44": {
           "type": "row",
           "settings": {
             "label": "Mobility",
             "value": "360° swivel castors"
           }
         },
-        "row_48": {
+        "row_45": {
           "type": "row",
           "settings": {
             "label": "Safety",
-            "value": "Braking system; automatic limit stop at top and bottom; reinforced guard rails; non-slip platform"
+            "value": "Braking system, automatic limit stop at top and bottom, reinforced guard rails, non-slip platform"
           }
         },
-        "row_49": {
+        "row_46": {
           "type": "row",
           "settings": {
             "label": "Intended use",
@@ -621,6 +592,9 @@
         }
       },
       "block_order": [
+        "row_36",
+        "row_37",
+        "row_38",
         "row_39",
         "row_40",
         "row_41",
@@ -628,10 +602,7 @@
         "row_43",
         "row_44",
         "row_45",
-        "row_46",
-        "row_47",
-        "row_48",
-        "row_49"
+        "row_46"
       ]
     },
     "included": {
@@ -641,11 +612,10 @@
         "accent": "#d9531e",
         "eyebrow": "In the box",
         "heading": "What's included",
-        "text": "",
-        "note": "[Confirm the full package contents with your supplier before publishing.]"
+        "text": "<p>Everything you need to start lifting.</p>"
       },
       "blocks": {
-        "item_50": {
+        "item_47": {
           "type": "item",
           "settings": {
             "icon": "layers",
@@ -654,7 +624,7 @@
             "text": "With electric lifting drive"
           }
         },
-        "item_51": {
+        "item_48": {
           "type": "item",
           "settings": {
             "icon": "remote",
@@ -663,7 +633,7 @@
             "text": "Ergonomic hand-held control"
           }
         },
-        "item_52": {
+        "item_49": {
           "type": "item",
           "settings": {
             "icon": "box",
@@ -674,9 +644,9 @@
         }
       },
       "block_order": [
-        "item_50",
-        "item_51",
-        "item_52"
+        "item_47",
+        "item_48",
+        "item_49"
       ]
     },
     "reviews": {
@@ -685,7 +655,7 @@
         "scheme": "paper",
         "accent": "#d9531e",
         "eyebrow": "Customer reviews",
-        "heading": "What customers say"
+        "heading": "What professionals say"
       }
     },
     "faq": {
@@ -699,93 +669,93 @@
         "schema": true,
         "eyebrow": "FAQ",
         "heading": "Questions about Selo",
-        "text": "<p>Can't find your answer? Contact our support team.</p>",
-        "btn_label": "",
-        "btn_link": ""
+        "text": "<p>Can't find what you're looking for? Our team is happy to help.</p>",
+        "btn_label": "Contact us",
+        "btn_link": "shopify://pages/contact"
       },
       "blocks": {
-        "qa_53": {
+        "qa_50": {
           "type": "qa",
           "settings": {
             "q": "How much weight can Selo lift?",
-            "a": "<p>Up to 500 kg. Spread the load evenly across the platform.</p>"
+            "a": "<p>Up to 500 kg per lift. Spread the load evenly across the platform for a stable, controlled lift.</p>"
           }
         },
-        "qa_54": {
+        "qa_51": {
           "type": "qa",
           "settings": {
             "q": "How high can Selo lift?",
             "a": "<p>Up to 6 metres, which suits common scaffold heights.</p>"
           }
         },
-        "qa_55": {
+        "qa_52": {
           "type": "qa",
           "settings": {
             "q": "How is the lift operated?",
-            "a": "<p>With an ergonomic remote control, so you can control lifting from a safe distance.</p>"
+            "a": "<p>With an ergonomic remote control, so you can raise and lower the platform from a safe distance.</p>"
+          }
+        },
+        "qa_53": {
+          "type": "qa",
+          "settings": {
+            "q": "What happens when it reaches the top?",
+            "a": "<p>The automatic limit stop halts the lift by itself at the upper and lower end positions, so there's no over-travel.</p>"
+          }
+        },
+        "qa_54": {
+          "type": "qa",
+          "settings": {
+            "q": "Which safety features does Selo have?",
+            "a": "<p>A precise braking system, automatic limit stops at the top and bottom, reinforced guard rails and a non-slip platform. Selo is for lifting materials only and is not approved for carrying people.</p>"
+          }
+        },
+        "qa_55": {
+          "type": "qa",
+          "settings": {
+            "q": "How do I set Selo up?",
+            "a": "<p>Follow the set-up steps and safety instructions in the operating manual supplied with Selo. Always position the lift on firm, level ground before lifting.</p>"
           }
         },
         "qa_56": {
           "type": "qa",
           "settings": {
-            "q": "What happens when the maximum height is reached?",
-            "a": "<p>The automatic limit stop stops the lift by itself at the upper and lower end positions.</p>"
+            "q": "What maintenance does Selo need?",
+            "a": "<p>Inspect the steel cable, brake and limit stops regularly as described in the operating manual, and keep the platform clean and free of debris.</p>"
           }
         },
         "qa_57": {
           "type": "qa",
           "settings": {
-            "q": "Which safety features does Selo have?",
-            "a": "<p>A precise braking system, automatic limit stops at the top and bottom, reinforced guard rails and a non-slip platform. Selo is for materials only and is not approved for carrying people.</p>"
+            "q": "How long does delivery take?",
+            "a": "<p>Available delivery options, costs and estimated delivery times are shown at checkout before you pay. You'll get a confirmation email as soon as your order ships.</p>"
           }
         },
         "qa_58": {
           "type": "qa",
           "settings": {
-            "q": "How is Selo installed and set up?",
-            "a": "<p>[Add set-up steps from the operating manual. Assembly, power supply and positioning.]</p>"
+            "q": "Is Selo covered if something goes wrong?",
+            "a": "<p>If anything isn't right, contact our support team with your order number and we'll help. The terms that apply to your purchase are set out in our <a href=\"/policies/terms-of-service\">terms of service</a>.</p>"
           }
         },
         "qa_59": {
           "type": "qa",
           "settings": {
-            "q": "What maintenance does Selo need?",
-            "a": "<p>Follow the maintenance and safety instructions in the operating manual. [Add inspection intervals for the cable, brake and limit switches from the manual.]</p>"
-          }
-        },
-        "qa_60": {
-          "type": "qa",
-          "settings": {
-            "q": "How long does delivery take?",
-            "a": "<p>[Add your confirmed delivery times and carrier.]</p>"
-          }
-        },
-        "qa_61": {
-          "type": "qa",
-          "settings": {
-            "q": "Is there a warranty?",
-            "a": "<p>[Confirm warranty terms with your supplier. The supplier listing states 2 years on electrical and load-bearing components.]</p>"
-          }
-        },
-        "qa_62": {
-          "type": "qa",
-          "settings": {
             "q": "Can I return Selo?",
-            "a": "<p>[Summarise your refund policy. The full policy is linked in the footer.]</p>"
+            "a": "<p>Returns follow our <a href=\"/policies/refund-policy\">refund policy</a>. Contact our team first and we'll guide you through the process.</p>"
           }
         }
       },
       "block_order": [
+        "qa_50",
+        "qa_51",
+        "qa_52",
         "qa_53",
         "qa_54",
         "qa_55",
         "qa_56",
         "qa_57",
         "qa_58",
-        "qa_59",
-        "qa_60",
-        "qa_61",
-        "qa_62"
+        "qa_59"
       ]
     },
     "cta": {
@@ -793,13 +763,13 @@
       "settings": {
         "scheme": "ink",
         "accent": "#d9531e",
-        "eyebrow": "Selo",
+        "eyebrow": "Selo scaffold material lift",
         "heading": "Lift higher. Work smarter.",
-        "text": "<p>Up to 500 kg to 6 metres, by remote control, with safety features built in.</p>",
-        "checks": "Up to 500 kg load capacity\nUp to 6 m lifting height\nAutomatic top and bottom limit stop",
+        "text": "<p>Up to 500 kg to 6 metres at the push of a button, with safety built into every lift. Save more when you equip your team with two or three units.</p>",
+        "checks": "Up to 500 kg load capacity\nUp to 6 m lifting height\nAutomatic top and bottom limit stop\nRemote-control operation",
         "mode": "scroll",
         "btn_label": "Choose your package",
-        "small": ""
+        "small": "Multi-unit savings are applied automatically at checkout."
       }
     },
     "related": {
@@ -817,7 +787,8 @@
   "order": [
     "main",
     "figures",
-    "benefits",
+    "problem",
+    "how",
     "lift",
     "features",
     "action",

@@ -31,7 +31,7 @@
         <span class="ind-reviews__score">{{ rating.rating | round: 1 }}</span>
         <div>
           {%- render 'ind-stars', rating: rating.rating -%}
-          <p class="ind-small">{{ 'ind.product.rating_html' | t: rating: rating.rating | round: 1, count: rating_count }}</p>
+          <p class="ind-small">{%- assign rating_rounded = rating.rating | round: 1 -%}{{ 'ind.product.rating_html' | t: rating: rating_rounded, count: rating_count }}</p>
         </div>
       </div>
     {%- endif -%}
