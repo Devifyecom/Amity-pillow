@@ -431,6 +431,7 @@
         "tile_158": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/IndustriellerMaterialliftmit6-Meter-Hubhohe.png",
             "icon": "brick",
             "title": "Construction & renovation",
             "text": "Selo lifts material to the scaffold",
@@ -440,6 +441,7 @@
         "tile_159": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Sicherundstabil_HebeplattformimEinsatz.png",
             "icon": "wrench",
             "title": "Installation & maintenance",
             "text": "Selo for technical work at height",
@@ -449,6 +451,7 @@
         "tile_160": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Easy-AccessBatteryCompartment.png",
             "icon": "wood",
             "title": "Firewood & stone",
             "text": "Abrelune moves heavy loads in one trip",
@@ -458,6 +461,7 @@
         "tile_161": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
             "icon": "leaf",
             "title": "Property & garden",
             "text": "Abrelune on grass, gravel and narrow paths",
