@@ -448,7 +448,7 @@
         "scheme": "dark",
         "reverse": true,
         "wide_media": true,
-        "ratio": "landscape",
+        "ratio": "adapt",
         "placeholder_label": "Photo: detail of steel frame or workshop",
         "eyebrow": "Quality & reliability",
         "heading": "Robust where it matters",

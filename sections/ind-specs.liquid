@@ -59,8 +59,8 @@
 
       {%- if section.settings.media != 'none' -%}
         <div class="ind-specs__media ind-reveal">
-          <div class="ind-media ind-media--square">
-            {%- if section.settings.media == 'image' -%}
+          <div class="ind-media{% if section.settings.image == blank %} ind-media--square{% else %} ind-media--adapt{% endif %}">
+            {%- if section.settings.image != blank or section.settings.media == 'image' -%}
               {%- render 'ind-image', image: section.settings.image, sizes: '(min-width: 990px) 50vw, 100vw', label: 'Technical image' -%}
             {%- else -%}
               {%- render 'ind-diagram', type: section.settings.media, uid: section.id,
@@ -90,7 +90,7 @@
     { "type": "range", "id": "visible_rows", "label": "Rows shown before \"Show all\"", "min": 3, "max": 30, "step": 1, "default": 8 },
     { "type": "text", "id": "note", "label": "Footnote" },
     { "type": "select", "id": "media", "label": "Side media", "options": [ { "value": "none", "label": "None" }, { "value": "image", "label": "Image" }, { "value": "lift", "label": "Lift infographic" }, { "value": "transporter", "label": "Transporter infographic" }, { "value": "gate", "label": "Width infographic" } ], "default": "image" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "When set, replaces the infographic." },
     { "type": "text", "id": "d_v1", "label": "Infographic value 1" },
     { "type": "text", "id": "d_l1", "label": "Infographic label 1" },
     { "type": "text", "id": "d_v2", "label": "Infographic value 2" },

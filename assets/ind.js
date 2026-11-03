@@ -657,6 +657,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const reveal = () => {
+    if (IND.bf && IND.bf.designMode) document.documentElement.classList.add('ind-design-mode');
     const els = qsa(document, '.ind-reveal:not(.is-in)');
     if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('is-in')); return; }
     const io = new IntersectionObserver((entries) => {

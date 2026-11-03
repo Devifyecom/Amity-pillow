@@ -10,7 +10,7 @@
 -%}
 <style>
   .ind-header__menu details { position: relative; }
-  .ind-header__menu summary { list-style: none; display: inline-flex; align-items: center; gap: 4px; padding-block: 8px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; }
+  .ind-header__menu summary { list-style: none; display: inline-flex; align-items: center; gap: 4px; padding-block: 8px; font-weight: 600; font-size: 16px; cursor: pointer; }
   .ind-header__menu summary::-webkit-details-marker { display: none; }
   .ind-header__menu summary svg { width: 16px; height: 16px; }
   .ind-header__dropdown { position: absolute; top: calc(100% + 10px); left: -16px; min-width: 220px; padding: 10px; border-radius: 10px; background: #fff; color: var(--ind-ink); box-shadow: var(--ind-shadow-lg); border: 1px solid var(--ind-line); }
@@ -90,7 +90,7 @@
     <dialog id="IndMenu-{{ section.id }}" class="ind ind-dialog ind-drawer" aria-label="{{ 'ind.general.menu' | t }}">
       <div class="ind-drawer__inner">
         <div class="ind-drawer__top">
-          <span class="ind-header__logo" style="font-size:1.1rem">{{ section.settings.logo_text | default: shop.name }}</span>
+          <span class="ind-header__logo" style="font-size:18px">{{ section.settings.logo_text | default: shop.name }}</span>
           <button type="button" class="ind-header__icon" data-close-dialog aria-label="{{ 'ind.product.close' | t }}">{%- render 'ind-icon', name: 'x' -%}</button>
         </div>
         <ul class="ind-drawer__menu" role="list">

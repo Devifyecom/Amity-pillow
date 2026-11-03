@@ -190,7 +190,7 @@
         "anchor": "",
         "reverse": false,
         "wide_media": true,
-        "ratio": "landscape",
+        "ratio": "adapt",
         "image": "shopify://shop_images/Hoherheben_besserarbeiten.png",
         "placeholder_label": "Photo: Selo next to a scaffold, loaded with material",
         "badge_value": "500 kg",
@@ -270,7 +270,7 @@
         "anchor": "",
         "reverse": true,
         "wide_media": false,
-        "ratio": "square",
+        "ratio": "adapt",
         "placeholder_label": "Add real product photography",
         "badge_value": "",
         "badge_label": "",
@@ -442,7 +442,8 @@
         "center": false,
         "eyebrow": "Selo in action",
         "heading": "Wherever work happens at height",
-        "text": "<p>From renovation to industrial maintenance, Selo gets the material where it's needed.</p>"
+        "text": "<p>From renovation to industrial maintenance, Selo gets the material where it's needed.</p>",
+        "square": true
       }
     },
     "safety": {
@@ -453,7 +454,7 @@
         "anchor": "",
         "reverse": false,
         "wide_media": true,
-        "ratio": "landscape",
+        "ratio": "adapt",
         "placeholder_label": "Close-up: platform, guard rails, limit switch, remote",
         "badge_value": "2×",
         "badge_label": "Auto limit stops",

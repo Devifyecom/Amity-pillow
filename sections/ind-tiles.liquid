@@ -6,7 +6,7 @@
       <h2 class="ind-h2">{{ section.settings.heading }}</h2>
       {%- if section.settings.text != blank -%}<div class="ind-head__text">{{ section.settings.text }}</div>{%- endif -%}
     </div>
-    <ul class="ind-tiles{% if section.settings.wide %} ind-tiles--wide{% endif %}" style="--cols: {{ section.settings.columns }}" role="list">
+    <ul class="ind-tiles{% if section.settings.wide %} ind-tiles--wide{% elsif section.settings.square %} ind-tiles--square{% endif %}" style="--cols: {{ section.settings.columns }}" role="list">
       {%- for block in section.blocks -%}
         <li class="ind-tile ind-reveal" {{ block.shopify_attributes }}>
           {%- render 'ind-image', image: block.settings.image, sizes: '(min-width: 990px) 25vw, 80vw', label: block.settings.title, icon: block.settings.icon -%}
@@ -30,6 +30,7 @@
     { "type": "color", "id": "accent", "label": "Accent colour override" },
     { "type": "range", "id": "columns", "label": "Columns (desktop)", "min": 2, "max": 5, "step": 1, "default": 4 },
     { "type": "checkbox", "id": "wide", "label": "Landscape tiles", "default": false },
+    { "type": "checkbox", "id": "square", "label": "Square tiles", "default": false },
     { "type": "checkbox", "id": "center", "label": "Centre heading", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Made for real work" },

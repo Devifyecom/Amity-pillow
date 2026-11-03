@@ -8,15 +8,17 @@
     <div class="ind-split{% if section.settings.reverse %} ind-split--reverse{% endif %}{% if section.settings.wide_media %} ind-split--wide-media{% endif %}">
       <div class="ind-split__media ind-reveal">
         <div class="ind-media ind-media--{{ ratio }}">
-          {%- if section.settings.diagram != 'none' -%}
+          {%- if section.settings.image != blank -%}
+            {%- render 'ind-image', image: section.settings.image, sizes: '(min-width: 750px) 55vw, 100vw' -%}
+          {%- elsif section.settings.video != blank -%}
+            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, image_size: '1200x' }}
+          {%- elsif section.settings.diagram != 'none' -%}
             {%- render 'ind-diagram', type: section.settings.diagram, uid: section.id,
               v1: section.settings.d_v1, l1: section.settings.d_l1, v2: section.settings.d_v2, l2: section.settings.d_l2,
               v3: section.settings.d_v3, l3: section.settings.d_l3, v4: section.settings.d_v4, l4: section.settings.d_l4,
               caption: section.settings.d_caption -%}
-          {%- elsif section.settings.video != blank -%}
-            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, image_size: '1200x' }}
           {%- else -%}
-            {%- render 'ind-image', image: section.settings.image, sizes: '(min-width: 750px) 55vw, 100vw', label: section.settings.placeholder_label -%}
+            {%- render 'ind-image', image: blank, label: section.settings.placeholder_label -%}
           {%- endif -%}
           {%- if section.settings.badge_value != blank -%}
             <div class="ind-split__badge"><strong>{{ section.settings.badge_value }}</strong><span>{{ section.settings.badge_label }}</span></div>
@@ -53,8 +55,8 @@
     { "type": "text", "id": "anchor", "label": "Anchor id" },
     { "type": "checkbox", "id": "reverse", "label": "Media on the right", "default": false },
     { "type": "checkbox", "id": "wide_media", "label": "Wider media column", "default": false },
-    { "type": "select", "id": "ratio", "label": "Media shape", "options": [ { "value": "square", "label": "Square" }, { "value": "portrait", "label": "Portrait" }, { "value": "landscape", "label": "Landscape" }, { "value": "wide", "label": "Wide" } ], "default": "square" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "select", "id": "ratio", "label": "Media shape", "info": "\"Adapt to image\" shows the whole picture without cropping.", "options": [ { "value": "adapt", "label": "Adapt to image" }, { "value": "square", "label": "Square" }, { "value": "portrait", "label": "Portrait" }, { "value": "landscape", "label": "Landscape" }, { "value": "wide", "label": "Wide" } ], "default": "adapt" },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "An image replaces the infographic below." },
     { "type": "video", "id": "video", "label": "Video (replaces image)" },
     { "type": "text", "id": "placeholder_label", "label": "Placeholder hint (editor)", "default": "Add real product photography" },
     { "type": "text", "id": "badge_value", "label": "Image badge value" },
@@ -67,9 +69,9 @@
     { "type": "url", "id": "btn_link", "label": "Button link" },
     { "type": "select", "id": "btn_style", "label": "Button style", "options": [ { "value": "accent", "label": "Accent" }, { "value": "dark", "label": "Dark" }, { "value": "outline", "label": "Outline" } ], "default": "dark" },
     { "type": "text", "id": "note", "label": "Footnote" },
-    { "type": "header", "content": "Infographic (replaces image)" },
+    { "type": "header", "content": "Infographic (shown when no image is set)" },
     { "type": "paragraph", "content": "A schematic drawn in code, with text taken from the fields below, so it translates and stays sharp on mobile." },
-    { "type": "select", "id": "diagram", "label": "Infographic", "options": [ { "value": "none", "label": "None — use image" }, { "value": "lift", "label": "Lift: height and load" }, { "value": "transporter", "label": "Transporter: dimensions" }, { "value": "gate", "label": "Width vs. passage" } ], "default": "none" },
+    { "type": "select", "id": "diagram", "label": "Infographic", "options": [ { "value": "none", "label": "None" }, { "value": "lift", "label": "Lift: height and load" }, { "value": "transporter", "label": "Transporter: dimensions" }, { "value": "gate", "label": "Width vs. passage" } ], "default": "none" },
     { "type": "text", "id": "d_v1", "label": "Value 1" },
     { "type": "text", "id": "d_l1", "label": "Label 1" },
     { "type": "text", "id": "d_v2", "label": "Value 2" },

@@ -85,7 +85,7 @@ selo = tmpl([
       B("stat", value="2", unit="×", label="Automatic limit stops"),
   ])),
 
-  ("problem", sec("ind-image-text", {"scheme": "paper", "accent": SELO, "reverse": False, "wide_media": True, "ratio": "landscape",
+  ("problem", sec("ind-image-text", {"scheme": "paper", "accent": SELO, "reverse": False, "wide_media": True, "ratio": "adapt",
       "placeholder_label": "Photo: Selo next to a scaffold, loaded with material",
       "badge_value": "500 kg", "badge_label": "In one lift",
       "eyebrow": "The problem with height",
@@ -102,7 +102,7 @@ selo = tmpl([
       B("feature", icon="shield", title="Automatic stop", text=P("The limit stop halts the lift by itself at the top and bottom positions. Unload and carry on working.")),
   ])),
 
-  ("lift", sec("ind-image-text", {"scheme": "paper", "accent": SELO, "reverse": True, "wide_media": False, "ratio": "square",
+  ("lift", sec("ind-image-text", {"scheme": "paper", "accent": SELO, "reverse": True, "wide_media": False, "ratio": "adapt",
       "eyebrow": "Powerful electric lifting drive",
       "heading": "Smooth, controlled lifting, every time",
       "text": P("A high-torque electric motor raises and lowers the platform evenly and precisely, with no jerking and no guesswork. A high-strength galvanised steel cable carries the load, and a precise braking system holds it securely in position."),
@@ -124,7 +124,7 @@ selo = tmpl([
       B("feature", icon="rotate", title="360° swivel castors", text=P("Roll it into position quickly on site.")),
   ])),
 
-  ("action", sec("ind-tiles", {"scheme": "dark", "accent": SELO, "columns": 4,
+  ("action", sec("ind-tiles", {"scheme": "dark", "accent": SELO, "columns": 4, "square": True,
       "eyebrow": "Selo in action", "heading": "Wherever work happens at height",
       "text": P("From renovation to industrial maintenance, Selo gets the material where it's needed.")}, [
       B("tile", icon="brick", title="Construction sites", text="Assembly and construction work at scaffold height"),
@@ -133,7 +133,7 @@ selo = tmpl([
       B("tile", icon="wrench", title="Industrial maintenance", text="Servicing and repair work above ground"),
   ])),
 
-  ("safety", sec("ind-image-text", {"scheme": "ink", "accent": SELO, "reverse": False, "wide_media": True, "ratio": "landscape",
+  ("safety", sec("ind-image-text", {"scheme": "ink", "accent": SELO, "reverse": False, "wide_media": True, "ratio": "adapt",
       "placeholder_label": "Close-up: platform, guard rails, limit switch, remote",
       "badge_value": "2×", "badge_label": "Auto limit stops",
       "eyebrow": "Construction & safety",
@@ -250,7 +250,7 @@ abr = tmpl([
       B("feature", icon="layers", title="Unload from any side", text=P("Fold down or remove the side walls and unload exactly where you need it.")),
   ])),
 
-  ("motor", sec("ind-image-text", {"scheme": "dark", "accent": ABR_LIGHT, "reverse": False, "wide_media": True, "ratio": "landscape",
+  ("motor", sec("ind-image-text", {"scheme": "dark", "accent": ABR_LIGHT, "reverse": False, "wide_media": True, "ratio": "adapt",
       "placeholder_label": "Photo: Abrelune driving across grass or gravel, loaded",
       "badge_value": "1000 W", "badge_label": "Brushless motor",
       "eyebrow": "Motor performance",
@@ -259,7 +259,7 @@ abr = tmpl([
       "checks": "Brushless 1000 W electric motor\nTwo-wheel drive for traction\nStepless twist-grip throttle\nTwo speed modes, forward and reverse\nLED headlight and horn",
       "btn_style": "accent", "diagram": "none"})),
 
-  ("battery", sec("ind-image-text", {"scheme": "sand", "accent": ABR, "reverse": True, "wide_media": False, "ratio": "square",
+  ("battery", sec("ind-image-text", {"scheme": "sand", "accent": ABR, "reverse": True, "wide_media": False, "ratio": "adapt",
       "placeholder_label": "Photo: battery compartment opened for charging",
       "badge_value": "4–5 h", "badge_label": "Full charge",
       "eyebrow": "Battery technology",
@@ -278,7 +278,7 @@ abr = tmpl([
       B("tile", icon="tools", title="Tools & equipment", text="Everything for the job, in one load"),
   ])),
 
-  ("manoeuvre", sec("ind-image-text", {"scheme": "paper", "accent": ABR, "reverse": False, "wide_media": False, "ratio": "square",
+  ("manoeuvre", sec("ind-image-text", {"scheme": "paper", "accent": ABR, "reverse": False, "wide_media": False, "ratio": "adapt",
       "eyebrow": "Manoeuvrability", "heading": "Goes where bigger vehicles can't",
       "text": P("At about 165 cm long and just 79 cm wide, Abrelune slips through garden gates, between flower beds and along narrow paths where a tractor or a larger work vehicle simply won't fit."),
       "checks": "79 cm overall width\nFits through passages from 84 cm\nApprox. 165 cm long\nReverse gear for tight turns",
@@ -446,7 +446,7 @@ home = tmpl([
       B("tile", icon="leaf", title="Property & garden", text="Abrelune on grass, gravel and narrow paths", link="shopify://products/abrelune"),
   ])),
 
-  ("quality", sec("ind-image-text", {"scheme": "dark", "reverse": True, "wide_media": True, "ratio": "landscape",
+  ("quality", sec("ind-image-text", {"scheme": "dark", "reverse": True, "wide_media": True, "ratio": "adapt",
       "placeholder_label": "Photo: detail of steel frame or workshop",
       "eyebrow": "Quality & reliability", "heading": "Robust where it matters",
       "text": P("Selo uses a reinforced steel frame and a high-strength galvanised steel cable for a long service life. Abrelune is built from steel, with folding, removable side walls and a sealed 48 V battery system."),
