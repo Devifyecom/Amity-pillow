@@ -77,7 +77,16 @@
 .ind :where(ul, ol) { padding: 0; list-style: none; }
 .ind img, .ind svg, .ind video { display: block; max-width: 100%; }
 .ind :where(a) { color: inherit; }
-.ind button { font: inherit; color: inherit; cursor: pointer; }
+.ind :where(button) { font: inherit; color: inherit; cursor: pointer; }
+/* Neutralise the base theme's global heading rule (fixed dark colour, letter-spacing) inside IND sections.
+   Specificity (0,1,0) beats the base `h2` rule and loses to any IND component class declared later. */
+.ind :where(h1, h2, h3, h4, h5, h6) {
+  color: inherit;
+  font-family: var(--ind-font-display);
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.25;
+}
 .ind :where(button, a, input, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--ind-accent);
   outline-offset: 2px;
