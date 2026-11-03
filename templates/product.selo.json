@@ -412,6 +412,7 @@
         "tile_29": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Sicherundstabil_HebeplattformimEinsatz.png",
             "icon": "bolt",
             "title": "Technical installations",
             "text": "Electrical and mechanical systems at height",
@@ -421,6 +422,7 @@
         "tile_30": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Materials_Einfachnachoben.png",
             "icon": "wrench",
             "title": "Industrial maintenance",
             "text": "Servicing and repair work above ground",
