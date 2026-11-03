@@ -1,833 +1,675 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "ind-main-product",
-      "settings": {
-        "accent": "#d9531e",
-        "show_breadcrumbs": true,
-        "media_badge": "",
-        "eyebrow": "Scaffold material lift",
-        "headline": "Professional lifting power: up to 500 kg to 6 metres, by remote control.",
-        "short_desc": "<p>Move materials up safely and with less effort, right at the scaffold. Selo raises up to 500 kg to a height of up to 6 metres and is controlled by remote, saving your team heavy carrying and valuable working time.</p>",
-        "tiers_heading": "Choose your package",
-        "show_buy_now": true,
-        "show_dynamic_checkout": true,
-        "stock_detail": "",
-        "show_details": true,
-        "shipping_text": "<p>[Add your confirmed dispatch and delivery times.]</p><p>[Summarise your published refund policy and link to it.]</p>",
-        "sticky": true,
-        "sticky_mobile_scroll": false
-      },
+      "type": "amity-main-product",
       "blocks": {
-        "highlight_1": {
-          "type": "highlight",
+        "benefit_1": {
+          "type": "benefit",
           "settings": {
-            "icon": "weight",
-            "text": "Up to 500 kg load capacity"
+            "title": "Cradles Your Head",
+            "text": "A cushioned center and contoured neck edge hold you comfortably."
           }
         },
-        "highlight_2": {
-          "type": "highlight",
+        "benefit_2": {
+          "type": "benefit",
           "settings": {
-            "icon": "height",
-            "text": "Up to 6 m lifting height"
+            "title": "Back or Side, Your Call",
+            "text": "Flip for a lower back-sleeping face or a higher side face with arm room."
           }
         },
-        "highlight_3": {
-          "type": "highlight",
+        "benefit_3": {
+          "type": "benefit",
           "settings": {
-            "icon": "remote",
-            "text": "Remote-control operation"
+            "title": "Easy to Keep Fresh",
+            "text": "The cover zips off for a quick hand wash."
           }
         },
-        "highlight_4": {
-          "type": "highlight",
+        "tier_4": {
+          "type": "tier",
           "settings": {
-            "icon": "shield",
-            "text": "Automatic top and bottom limit stop"
+            "label": "Buy 1 Pillow",
+            "quantity": 1,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "",
+            "badge_style": "accent",
+            "preselected": true,
+            "gift_1_title": "",
+            "gift_1_subtitle": "",
+            "gift_1_type": "product",
+            "gift_1_product": "",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
         "tier_5": {
           "type": "tier",
           "settings": {
-            "label": "Single unit",
-            "qty": 1,
-            "pct": 0,
-            "badge": "",
-            "preselect": false
+            "label": "Buy 2 Pillows",
+            "quantity": 2,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Most Popular",
+            "badge_style": "accent",
+            "preselected": false,
+            "gift_1_title": "+ Free Silk Pillowcase",
+            "gift_1_subtitle": "",
+            "gift_1_type": "product",
+            "gift_1_product": "amity-comfort-cervical-pillow",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
         "tier_6": {
           "type": "tier",
           "settings": {
-            "label": "Double pack",
-            "qty": 2,
-            "pct": 10,
-            "badge": "Most popular",
-            "preselect": true
+            "label": "Buy 3, Get 1 Free",
+            "quantity": 4,
+            "free_quantity": 1,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Best Value",
+            "badge_style": "dark",
+            "preselected": false,
+            "gift_1_title": "+ 1 Free Amity Pillow",
+            "gift_1_subtitle": "",
+            "gift_1_type": "free_unit",
+            "gift_1_product": "amity-comfort-cervical-pillow",
+            "gift_1_value": "",
+            "gift_2_title": "+ Free Silk Pillowcase",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "amity-comfort-cervical-pillow",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
-        "tier_7": {
-          "type": "tier",
+        "mini_review_7": {
+          "type": "mini_review",
           "settings": {
-            "label": "Triple pack",
-            "qty": 3,
-            "pct": 15,
-            "badge": "Best value",
-            "preselect": false
+            "image": "shopify://shop_images/calmeden-review-ZNRPi5DHZ.avif",
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers.",
+            "author": "Kami C."
           }
         },
-        "trust_8": {
-          "type": "trust",
+        "mini_review_8": {
+          "type": "mini_review",
           "settings": {
-            "icon": "lock",
-            "title": "Secure checkout",
-            "text": "Encrypted payment through Shopify Checkout"
+            "image": "shopify://shop_images/calmeden-review-xo3eX-onn.webp",
+            "text": "I had a great first night of sleep with it. Great for side sleepers.",
+            "author": "Donna R."
           }
         },
-        "trust_9": {
-          "type": "trust",
+        "accordion_9": {
+          "type": "accordion",
           "settings": {
-            "icon": "truck",
-            "title": "Delivery",
-            "text": "[Add your confirmed delivery time]"
+            "title": "Why You'll Love It",
+            "content": "<ul><li>Two heights in one pillow: a lower face for back sleeping and a higher face for side sleeping.</li><li>Curved edges cradle your head and neck, so there's no more stacking or folding pillows.</li><li>The side face leaves room for your arm and shoulder.</li></ul>",
+            "page": "",
+            "open": false
           }
         },
-        "trust_10": {
-          "type": "trust",
+        "accordion_10": {
+          "type": "accordion",
           "settings": {
-            "icon": "award",
-            "title": "Warranty",
-            "text": "[Confirm warranty terms with your supplier]"
+            "title": "In the Box",
+            "content": "<ul><li>1 × Amity™ Comfort Cervical Pillow</li><li>1 × Removable zip cover (on the pillow)</li></ul>",
+            "page": "",
+            "open": false
           }
         },
-        "trust_11": {
-          "type": "trust",
+        "accordion_11": {
+          "type": "accordion",
           "settings": {
-            "icon": "return",
-            "title": "Returns",
-            "text": "[Summarise your refund policy]"
+            "title": "Details That Matter",
+            "content": "<ul><li>Contoured neck edge with a cushioned center cradle</li><li>Two sleeping heights. Just flip it over.</li><li>Memory foam that holds its shape night after night</li><li>Breathable, removable zip cover</li></ul>",
+            "page": "",
+            "open": false
+          }
+        },
+        "accordion_12": {
+          "type": "accordion",
+          "settings": {
+            "title": "Best Way to Use",
+            "content": "<p><strong>Back sleepers:</strong> lay it lower side up with the raised edge under your neck and let your head settle into the center.</p><p><strong>Side sleepers:</strong> flip it higher side up so the taller edge fills the space above your shoulder.</p><p>Give it a few nights. A new shape can take a little getting used to.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "accordion_13": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care & Materials",
+            "content": "<p>Unzip the cover and hand wash it in cold water with a mild detergent, then air dry. Don't wash the foam core; spot clean it and let it air out.</p><p>When it first arrives, give the pillow a few hours out of the packaging to fully expand.</p>",
+            "page": "",
+            "open": false
           }
         }
       },
       "block_order": [
-        "highlight_1",
-        "highlight_2",
-        "highlight_3",
-        "highlight_4",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "tier_4",
         "tier_5",
         "tier_6",
-        "tier_7",
-        "trust_8",
-        "trust_9",
-        "trust_10",
-        "trust_11"
-      ]
-    },
-    "figures": {
-      "type": "ind-stat-band",
+        "mini_review_7",
+        "mini_review_8",
+        "accordion_9",
+        "accordion_10",
+        "accordion_11",
+        "accordion_12",
+        "accordion_13"
+      ],
       "settings": {
-        "scheme": "ink",
-        "accent": "#d9531e",
-        "heading": "Selo at a glance",
-        "note": ""
-      },
+        "rating_text": "4.8 out of 5.0 stars (1317 reviews)",
+        "reviews_anchor": "reviews",
+        "title": "",
+        "subtitle": "Settle in, stop rearranging pillows, and wake up feeling rested.",
+        "show_badge": true,
+        "badge_text": "30-Day Returns · Free Shipping ·",
+        "bundle_heading": "Buy More · Save More",
+        "free_label": "FREE",
+        "add_gifts_to_cart": true,
+        "show_ship_by": true,
+        "ship_by_label": "Order Today, Ships By:",
+        "ship_by_days": 2,
+        "ship_skip_weekends": false,
+        "atc_label": "Add to cart",
+        "error_text": "Something went wrong. Please try again.",
+        "mini_reviews_heading": "Loved by Side & Back Sleepers",
+        "show_payment_icons": true,
+        "trust_1": "Free Shipping",
+        "trust_2": "30-Day Returns",
+        "covered_pill": "Sold & Shipped by [shop]",
+        "covered_title": "We've Got You Covered",
+        "covered_text": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>",
+        "covered_note": "Damaged, defective or not as described? We replace it or refund you.",
+        "padding_top": 56,
+        "padding_bottom": 36
+      }
+    },
+    "video_reels": {
+      "type": "amity-video-reels",
       "blocks": {
-        "stat_12": {
-          "type": "stat",
+        "video_1": {
+          "type": "video",
           "settings": {
-            "value": "500",
-            "unit": "kg",
-            "label": "Maximum load capacity"
+            "video": "shopify://files/videos/a0847dcf70854493b0c38c72fc71fbb9.HD-720p-1.6Mbps-95757018.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
           }
         },
-        "stat_13": {
-          "type": "stat",
+        "video_emztD3": {
+          "type": "video",
           "settings": {
-            "value": "6",
-            "unit": "m",
-            "label": "Maximum lifting height"
+            "video": "shopify://files/videos/248c00ba8c234d0d825a89e1c4531f93.HD-720p-1.6Mbps-95757022.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
           }
         },
-        "stat_14": {
-          "type": "stat",
+        "video_wqUXnz": {
+          "type": "video",
           "settings": {
-            "value": "360",
-            "unit": "°",
-            "label": "Swivel castors for positioning"
-          }
-        },
-        "stat_15": {
-          "type": "stat",
-          "settings": {
-            "value": "2",
-            "unit": "×",
-            "label": "Automatic limit stops: top and bottom"
+            "video": "shopify://files/videos/2f0e9fddb2f24d209b092f02ec26c0be.HD-720p-1.6Mbps-95757028.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
           }
         }
       },
       "block_order": [
-        "stat_12",
-        "stat_13",
-        "stat_14",
-        "stat_15"
-      ]
-    },
-    "benefits": {
-      "type": "ind-feature-grid",
+        "video_1",
+        "video_emztD3",
+        "video_wqUXnz"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#d9531e",
-        "style": "numbered",
-        "columns": 3,
-        "row_mobile": false,
-        "center": false,
-        "tight": false,
-        "eyebrow": "Why Selo",
-        "heading": "Less carrying. More working.",
-        "text": "<p>Selo takes material up to the scaffold so your team doesn't have to carry it up ladders and stairs.</p>",
-        "note": ""
-      },
+        "heading": "See Amity in Action",
+        "subheading": "Tap a clip to watch with sound.",
+        "background": "gray",
+        "padding_top": 24,
+        "padding_bottom": 80
+      }
+    },
+    "sleep_toggle": {
+      "type": "amity-sleep-toggle",
       "blocks": {
-        "feature_16": {
-          "type": "feature",
+        "position_1": {
+          "type": "position",
           "settings": {
-            "icon": "weight",
-            "title": "Lift heavy materials with less manual effort",
-            "text": "<p>Raise up to 500 kg of building material, tools and equipment on the platform instead of carrying it by hand.</p>"
+            "tab_label": "Back Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-back.webp",
+            "title": "Use the Lower Face",
+            "text": "Lay it lower side up with the raised edge under your neck, and let your head settle into the center cradle."
           }
         },
-        "feature_17": {
-          "type": "feature",
+        "position_2": {
+          "type": "position",
           "settings": {
-            "icon": "height",
-            "title": "Reach elevated working areas",
-            "text": "<p>Up to 6 m lifting height, suitable for common scaffold heights.</p>"
-          }
-        },
-        "feature_18": {
-          "type": "feature",
-          "settings": {
-            "icon": "remote",
-            "title": "Operate by remote control",
-            "text": "<p>The ergonomic remote lets you control lifting and lowering from a safe distance.</p>"
-          }
-        },
-        "feature_19": {
-          "type": "feature",
-          "settings": {
-            "icon": "stairs",
-            "title": "Improve material handling",
-            "text": "<p>Fewer trips up and down ladders and stairs keeps the work on site moving.</p>"
-          }
-        },
-        "feature_20": {
-          "type": "feature",
-          "settings": {
-            "icon": "shield",
-            "title": "Safety-oriented features",
-            "text": "<p>A braking system, automatic limit stops at the top and bottom, reinforced guard rails and a non-slip platform.</p>"
-          }
-        },
-        "feature_21": {
-          "type": "feature",
-          "settings": {
-            "icon": "rotate",
-            "title": "Easy to position",
-            "text": "<p>360° swivel castors let you move Selo quickly to where it's needed on site.</p>"
+            "tab_label": "Side Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-side.webp",
+            "title": "Use the Higher Face",
+            "text": "Flip it higher side up so the taller edge fills the space above your shoulder, with room for your arm underneath."
           }
         }
       },
       "block_order": [
-        "feature_16",
-        "feature_17",
-        "feature_18",
-        "feature_19",
-        "feature_20",
-        "feature_21"
-      ]
-    },
-    "lift": {
-      "type": "ind-image-text",
+        "position_1",
+        "position_2"
+      ],
       "settings": {
-        "scheme": "sand",
-        "accent": "#d9531e",
-        "reverse": false,
-        "wide_media": false,
-        "ratio": "square",
-        "placeholder_label": "",
-        "badge_value": "",
-        "badge_label": "",
-        "eyebrow": "Powerful electric lifting drive",
-        "heading": "Raise and lower loads smoothly and precisely",
-        "text": "<p>The powerful electric motor raises and lowers loads smoothly and precisely. That reduces physical strain, avoids unnecessary trips up ladders and stairs, and keeps the work on site moving.</p>",
-        "checks": "High-torque electric motor\nHigh-strength galvanised steel lifting cable\nControlled lifting and lowering by remote",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "dark",
-        "note": "Schematic illustration. Not to scale.",
-        "diagram": "lift",
-        "d_v1": "6 m",
-        "d_l1": "max. lifting height",
-        "d_v2": "500 kg",
-        "d_l2": "max. load",
-        "d_v3": "360°",
-        "d_l3": "castors",
-        "d_v4": "Remote",
-        "d_l4": "control",
-        "d_caption": ""
+        "heading": "Which Side Is for You?",
+        "subheading": "Tap how you sleep. Flip the pillow to that face.",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "versus": {
+      "type": "amity-versus",
+      "settings": {
+        "heading": "Imagine Waking Up Rested, Not Restless.",
+        "image_left": "shopify://shop_images/calmeden-amity-lifestyle-lap.webp",
+        "image_right": "shopify://shop_images/calmeden-amity-pdp-vs-stiff.webp",
+        "badge": "VS",
+        "card_title": "Shaped for Settled, Restful Sleep",
+        "card_text": "Flat pillows leave your neck hanging, so you keep shifting. Amity cradles your head and supports your neck.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "features": {
-      "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#d9531e",
-        "style": "cards",
-        "columns": 4,
-        "row_mobile": true,
-        "center": true,
-        "tight": false,
-        "eyebrow": "Feature highlights",
-        "heading": "Engineered for the job site",
-        "text": "",
-        "note": ""
-      },
+      "type": "amity-features",
       "blocks": {
-        "feature_22": {
+        "feature_1": {
           "type": "feature",
           "settings": {
-            "icon": "motor",
-            "title": "Electric lifting drive",
-            "text": "<p>High-torque motor for even, controlled lifting.</p>"
+            "icon": "flip",
+            "title": "Flip It to Fit How You Sleep",
+            "text": "A lower face for your back, a higher one for your side. Keep whichever feels natural."
           }
         },
-        "feature_23": {
+        "feature_2": {
           "type": "feature",
           "settings": {
-            "icon": "remote",
-            "title": "Ergonomic remote control",
-            "text": "<p>Operate the lift from a safe distance.</p>"
+            "icon": "neck",
+            "title": "Neck Edge, Head Cradle",
+            "text": "The raised edge supports your neck while the center cradle lets your head settle."
           }
         },
-        "feature_24": {
+        "feature_3": {
           "type": "feature",
           "settings": {
-            "icon": "shield",
-            "title": "Automatic limit stop",
-            "text": "<p>Stops on its own at the upper and lower end positions.</p>"
-          }
-        },
-        "feature_25": {
-          "type": "feature",
-          "settings": {
-            "icon": "brake",
-            "title": "Precise braking system",
-            "text": "<p>Holds the load securely.</p>"
-          }
-        },
-        "feature_26": {
-          "type": "feature",
-          "settings": {
-            "icon": "cable",
-            "title": "Galvanised steel cable",
-            "text": "<p>High-strength lifting cable for long service life.</p>"
-          }
-        },
-        "feature_27": {
-          "type": "feature",
-          "settings": {
-            "icon": "layers",
-            "title": "Reinforced steel frame",
-            "text": "<p>Built for stability in daily use.</p>"
-          }
-        },
-        "feature_28": {
-          "type": "feature",
-          "settings": {
-            "icon": "grip",
-            "title": "Non-slip platform",
-            "text": "<p>Helps stop the load from sliding.</p>"
-          }
-        },
-        "feature_29": {
-          "type": "feature",
-          "settings": {
-            "icon": "rotate",
-            "title": "360° swivel castors",
-            "text": "<p>Fast positioning on site.</p>"
+            "icon": "arm",
+            "title": "Room for Your Arm",
+            "text": "The side face leaves space for your arm and shoulder, so you can curl in comfortably."
           }
         }
       },
       "block_order": [
-        "feature_22",
-        "feature_23",
-        "feature_24",
-        "feature_25",
-        "feature_26",
-        "feature_27",
-        "feature_28",
-        "feature_29"
-      ]
-    },
-    "action": {
-      "type": "ind-tiles",
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
       "settings": {
-        "scheme": "dark",
-        "accent": "#d9531e",
-        "columns": 4,
-        "wide": false,
-        "center": false,
-        "eyebrow": "Selo in action",
-        "heading": "Ideal for work at height",
-        "text": "<p>Selo is for moving materials only and is not approved for carrying people. Use photography that shows material, never people, on the platform.</p>"
-      },
-      "blocks": {
-        "tile_30": {
-          "type": "tile",
-          "settings": {
-            "icon": "brick",
-            "title": "Construction sites",
-            "text": "Assembly and construction work"
-          }
-        },
-        "tile_31": {
-          "type": "tile",
-          "settings": {
-            "icon": "tools",
-            "title": "Painting & renovation",
-            "text": "Material to the scaffold, where it's needed"
-          }
-        },
-        "tile_32": {
-          "type": "tile",
-          "settings": {
-            "icon": "bolt",
-            "title": "Technical installations",
-            "text": "Electrical and mechanical systems"
-          }
-        },
-        "tile_33": {
-          "type": "tile",
-          "settings": {
-            "icon": "wrench",
-            "title": "Industrial maintenance",
-            "text": "Maintenance and servicing at height"
-          }
-        }
-      },
-      "block_order": [
-        "tile_30",
-        "tile_31",
-        "tile_32",
-        "tile_33"
-      ]
-    },
-    "safety": {
-      "type": "ind-image-text",
-      "settings": {
-        "scheme": "ink",
-        "accent": "#d9531e",
-        "reverse": true,
-        "wide_media": true,
-        "ratio": "landscape",
-        "placeholder_label": "Close-up: platform, guard rails, limit switch, remote",
-        "badge_value": "500 kg",
-        "badge_label": "Max. load",
-        "eyebrow": "Construction & safety",
-        "heading": "Safety you can rely on",
-        "text": "<p>Selo is built for professional use, with several safety features for a controlled lift. A reinforced steel frame and a high-strength galvanised steel cable give stability and a long service life, even in daily use.</p>",
-        "checks": "Precise braking system holds the load securely\nAutomatic limit stop at the upper and lower positions\nReinforced guard rails keep the load in place\nNon-slip platform helps stop the load sliding",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "accent",
-        "note": "Selo is for transporting materials only and is not approved for carrying people. Always observe the maximum load capacity and the safety instructions in the operating manual.",
-        "diagram": "none"
+        "image": "shopify://shop_images/ezgif-26de162222702730.gif",
+        "heading": "3 Ways Amity Changes How You Rest",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "compare": {
-      "type": "ind-comparison",
-      "settings": {
-        "mode": "versus",
-        "scheme": "sand",
-        "accent": "#d9531e",
-        "eyebrow": "Traditional method vs. Selo",
-        "heading": "Stop carrying material up ladders",
-        "text": "",
-        "label_col": "",
-        "col_a": "Carrying by hand",
-        "col_b": "With Selo",
-        "note": ""
-      },
+    "problems": {
+      "type": "amity-problems",
       "blocks": {
-        "row_34": {
-          "type": "row",
+        "card_1": {
+          "type": "card",
           "settings": {
-            "label": "Getting material to height",
-            "a_mark": "no",
-            "a": "Carried up ladders or stairs",
-            "b_mark": "yes",
-            "b": "Lifted electrically, up to 6 m"
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-neck.webp",
+            "title": "Tossing and Turning?",
+            "text": "No neck support, so you shift all night."
           }
         },
-        "row_35": {
-          "type": "row",
+        "card_2": {
+          "type": "card",
           "settings": {
-            "label": "Load per lift",
-            "a_mark": "none",
-            "a": "What one person can carry",
-            "b_mark": "yes",
-            "b": "Up to 500 kg"
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-heat.webp",
+            "title": "Hot and Flat by 3 a.m.?",
+            "text": "Loose fill packs down and traps warmth."
           }
         },
-        "row_36": {
-          "type": "row",
+        "card_3": {
+          "type": "card",
           "settings": {
-            "label": "Control",
-            "a_mark": "none",
-            "a": "Physical effort on every trip",
-            "b_mark": "yes",
-            "b": "Remote control from a safe distance"
-          }
-        },
-        "row_37": {
-          "type": "row",
-          "settings": {
-            "label": "End positions",
-            "a_mark": "none",
-            "a": "—",
-            "b_mark": "yes",
-            "b": "Automatic limit stop at top and bottom"
-          }
-        },
-        "row_38": {
-          "type": "row",
-          "settings": {
-            "label": "Positioning",
-            "a_mark": "none",
-            "a": "—",
-            "b_mark": "yes",
-            "b": "360° swivel castors"
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-fog.webp",
+            "title": "Groggy Mornings?",
+            "text": "Every wake-up to readjust cuts into your rest."
           }
         }
       },
       "block_order": [
-        "row_34",
-        "row_35",
-        "row_36",
-        "row_37",
-        "row_38"
-      ]
-    },
-    "specs": {
-      "type": "ind-specs",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#d9531e",
-        "use_metafield": true,
-        "eyebrow": "Technical data",
-        "heading": "Selo specifications",
-        "text": "",
-        "visible_rows": 8,
-        "note": "Selo is for transporting materials only, not people.",
-        "media": "lift",
-        "d_v1": "6 m",
-        "d_l1": "max. lifting height",
-        "d_v2": "500 kg",
-        "d_l2": "max. load",
-        "d_v3": "",
-        "d_l3": "",
-        "d_v4": "",
-        "d_l4": "",
-        "d_caption": "Schematic illustration. Not to scale."
-      },
+        "image": "shopify://shop_images/calmeden-amity-lifestyle-hug.webp",
+        "heading": "Why Your Pillow Matters More Than You Think",
+        "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cta": {
+      "type": "amity-cta-banner",
+      "settings": {
+        "heading": "Upgrade Your Family's Sleep",
+        "text": "Make the switch and retire that flat old pillow.",
+        "button_label": "Try It Risk-Free",
+        "button_link": "",
+        "note": "Free shipping · 30-day returns on unopened pillows",
+        "background": "gray",
+        "padding_top": 48,
+        "padding_bottom": 80
+      }
+    },
+    "experts": {
+      "type": "amity-experts",
       "blocks": {
-        "row_39": {
-          "type": "row",
+        "expert_1": {
+          "type": "expert",
           "settings": {
-            "label": "Model",
-            "value": "Selo"
+            "image": "shopify://shop_images/calmeden-expert-brown.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         },
-        "row_40": {
-          "type": "row",
+        "expert_2": {
+          "type": "expert",
           "settings": {
-            "label": "Type",
-            "value": "Scaffold material lift"
+            "image": "shopify://shop_images/calmeden-expert-weinstein.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         },
-        "row_41": {
-          "type": "row",
+        "expert_3": {
+          "type": "expert",
           "settings": {
-            "label": "Load capacity",
-            "value": "Up to 500 kg"
-          }
-        },
-        "row_42": {
-          "type": "row",
-          "settings": {
-            "label": "Maximum lifting height",
-            "value": "Up to 6 m"
-          }
-        },
-        "row_43": {
-          "type": "row",
-          "settings": {
-            "label": "Motor",
-            "value": "Professional high-torque electric motor"
-          }
-        },
-        "row_44": {
-          "type": "row",
-          "settings": {
-            "label": "Lifting cable",
-            "value": "High-strength galvanised steel cable"
-          }
-        },
-        "row_45": {
-          "type": "row",
-          "settings": {
-            "label": "Frame",
-            "value": "Reinforced steel construction"
-          }
-        },
-        "row_46": {
-          "type": "row",
-          "settings": {
-            "label": "Control",
-            "value": "Ergonomic remote control"
-          }
-        },
-        "row_47": {
-          "type": "row",
-          "settings": {
-            "label": "Mobility",
-            "value": "360° swivel castors"
-          }
-        },
-        "row_48": {
-          "type": "row",
-          "settings": {
-            "label": "Safety",
-            "value": "Braking system; automatic limit stop at top and bottom; reinforced guard rails; non-slip platform"
-          }
-        },
-        "row_49": {
-          "type": "row",
-          "settings": {
-            "label": "Intended use",
-            "value": "Materials only. Not approved for carrying people."
+            "image": "shopify://shop_images/calmeden-expert-greeney.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         }
       },
       "block_order": [
-        "row_39",
-        "row_40",
-        "row_41",
-        "row_42",
-        "row_43",
-        "row_44",
-        "row_45",
-        "row_46",
-        "row_47",
-        "row_48",
-        "row_49"
-      ]
-    },
-    "included": {
-      "type": "ind-included",
+        "expert_1",
+        "expert_2",
+        "expert_3"
+      ],
       "settings": {
-        "scheme": "sand",
-        "accent": "#d9531e",
-        "eyebrow": "In the box",
-        "heading": "What's included",
-        "text": "",
-        "note": "[Confirm the full package contents with your supplier before publishing.]"
-      },
+        "heading": "What the Experts Say",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "comparison": {
+      "type": "amity-comparison",
       "blocks": {
-        "item_50": {
-          "type": "item",
+        "row_1": {
+          "type": "row",
           "settings": {
-            "icon": "layers",
-            "qty": "1×",
-            "title": "Selo material lift",
-            "text": "With electric lifting drive"
+            "feature": "Contoured Neck Support Edge",
+            "ours": true,
+            "theirs": false
           }
         },
-        "item_51": {
-          "type": "item",
+        "row_2": {
+          "type": "row",
           "settings": {
-            "icon": "remote",
-            "qty": "1×",
-            "title": "Remote control",
-            "text": "Ergonomic hand-held control"
+            "feature": "Cushioned Center Head Cradle",
+            "ours": true,
+            "theirs": false
           }
         },
-        "item_52": {
-          "type": "item",
+        "row_3": {
+          "type": "row",
           "settings": {
-            "icon": "box",
-            "qty": "1×",
-            "title": "Operating manual",
-            "text": "Including safety instructions"
+            "feature": "Two Heights: Flip for Back or Side",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Arm Room on the Side-Sleeping Face",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Memory Foam That Holds Its Shape",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Removable Zip Cover",
+            "ours": true,
+            "theirs": false
           }
         }
       },
       "block_order": [
-        "item_50",
-        "item_51",
-        "item_52"
-      ]
-    },
-    "reviews": {
-      "type": "ind-reviews",
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#d9531e",
-        "eyebrow": "Customer reviews",
-        "heading": "What customers say"
+        "heading": "The Difference Is Clear",
+        "brand_label": "",
+        "other_label": "Ordinary Pillow",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "faq": {
-      "type": "ind-faq",
-      "settings": {
-        "scheme": "sand",
-        "accent": "#d9531e",
-        "layout": "aside",
-        "single": true,
-        "open_first": true,
-        "schema": true,
-        "eyebrow": "FAQ",
-        "heading": "Questions about Selo",
-        "text": "<p>Can't find your answer? Contact our support team.</p>",
-        "btn_label": "",
-        "btn_link": ""
-      },
+      "type": "amity-faq",
       "blocks": {
-        "qa_53": {
-          "type": "qa",
+        "question_1": {
+          "type": "question",
           "settings": {
-            "q": "How much weight can Selo lift?",
-            "a": "<p>Up to 500 kg. Spread the load evenly across the platform.</p>"
+            "question": "How Easy Is It to Set Up?",
+            "answer": "<p>Take it out of the packaging and give it a few hours to fully expand. The cover is already on, so it's ready for bed the same night.</p>"
           }
         },
-        "qa_54": {
-          "type": "qa",
+        "question_2": {
+          "type": "question",
           "settings": {
-            "q": "How high can Selo lift?",
-            "a": "<p>Up to 6 metres, which suits common scaffold heights.</p>"
+            "question": "Which Sleep Positions Does Amity Suit?",
+            "answer": "<p>Amity is made for back and side sleepers. Each has its own face: lower for your back, higher for your side. Many people who switch positions during the night like having both in one pillow.</p>"
           }
         },
-        "qa_55": {
-          "type": "qa",
+        "question_3": {
+          "type": "question",
           "settings": {
-            "q": "How is the lift operated?",
-            "a": "<p>With an ergonomic remote control, so you can control lifting from a safe distance.</p>"
+            "question": "How Do I Flip It, and Which Side Is Which?",
+            "answer": "<p>The lower face is for back sleeping and the higher face is for side sleeping. Keep the raised edge under your neck and turn the pillow over to switch heights. No stacking needed.</p>"
           }
         },
-        "qa_56": {
-          "type": "qa",
+        "question_4": {
+          "type": "question",
           "settings": {
-            "q": "What happens when the maximum height is reached?",
-            "a": "<p>The automatic limit stop stops the lift by itself at the upper and lower end positions.</p>"
+            "question": "How Do I Clean the Cover?",
+            "answer": "<p>Unzip the cover, hand wash it in cold water with a mild detergent and let it air dry. Don't wash the foam core. Spot clean it if needed.</p>"
           }
         },
-        "qa_57": {
-          "type": "qa",
+        "question_5": {
+          "type": "question",
           "settings": {
-            "q": "Which safety features does Selo have?",
-            "a": "<p>A precise braking system, automatic limit stops at the top and bottom, reinforced guard rails and a non-slip platform. Selo is for materials only and is not approved for carrying people.</p>"
+            "question": "What If It Is Not for Me?",
+            "answer": "<p>You have 30 days to return unopened pillows. If yours arrives damaged, defective or not as described, we'll replace it or refund you. Just reach out to our support team.</p>"
           }
         },
-        "qa_58": {
-          "type": "qa",
+        "question_6": {
+          "type": "question",
           "settings": {
-            "q": "How is Selo installed and set up?",
-            "a": "<p>[Add set-up steps from the operating manual. Assembly, power supply and positioning.]</p>"
-          }
-        },
-        "qa_59": {
-          "type": "qa",
-          "settings": {
-            "q": "What maintenance does Selo need?",
-            "a": "<p>Follow the maintenance and safety instructions in the operating manual. [Add inspection intervals for the cable, brake and limit switches from the manual.]</p>"
-          }
-        },
-        "qa_60": {
-          "type": "qa",
-          "settings": {
-            "q": "How long does delivery take?",
-            "a": "<p>[Add your confirmed delivery times and carrier.]</p>"
-          }
-        },
-        "qa_61": {
-          "type": "qa",
-          "settings": {
-            "q": "Is there a warranty?",
-            "a": "<p>[Confirm warranty terms with your supplier. The supplier listing states 2 years on electrical and load-bearing components.]</p>"
-          }
-        },
-        "qa_62": {
-          "type": "qa",
-          "settings": {
-            "q": "Can I return Selo?",
-            "a": "<p>[Summarise your refund policy. The full policy is linked in the footer.]</p>"
+            "question": "How Long Does Shipping Take?",
+            "answer": "<p>Shipping is free. You'll see the ship-by date just above the Add to cart button, and we email a tracking link as soon as your order is on its way.</p>"
           }
         }
       },
       "block_order": [
-        "qa_53",
-        "qa_54",
-        "qa_55",
-        "qa_56",
-        "qa_57",
-        "qa_58",
-        "qa_59",
-        "qa_60",
-        "qa_61",
-        "qa_62"
-      ]
-    },
-    "cta": {
-      "type": "ind-final-cta",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6"
+      ],
       "settings": {
-        "scheme": "ink",
-        "accent": "#d9531e",
-        "eyebrow": "Selo",
-        "heading": "Lift higher. Work smarter.",
-        "text": "<p>Up to 500 kg to 6 metres, by remote control, with safety features built in.</p>",
-        "checks": "Up to 500 kg load capacity\nUp to 6 m lifting height\nAutomatic top and bottom limit stop",
-        "mode": "scroll",
-        "btn_label": "Choose your package",
-        "small": ""
+        "heading": "Questions, Answered",
+        "subheading": "Everything you need to choose with confidence.",
+        "image_1": "shopify://shop_images/calmeden-happy-1.webp",
+        "image_2": "shopify://shop_images/calmeden-happy-2.webp",
+        "image_3": "shopify://shop_images/calmeden-happy-3.webp",
+        "image_4": "shopify://shop_images/calmeden-happy-4.webp",
+        "stat_rating": "4.8/5",
+        "stat_number": "1,500+",
+        "stat_label": "Happy Customers",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reviews": {
+      "type": "amity-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Kami C.",
+            "rating": 5,
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers. The material feels high-quality, and it holds its shape well. Would definitely recommend!"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "W R.",
+            "rating": 5,
+            "text": "It took a long while for it to decompress and fill out to full size. I was pretty worried when I first opened it, but it ended up nice and full. It looks just like the photos, seems good quality. It is solid memory foam. I'm pleased to be able to try it out at a low price point. Definitely good value for money."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "A O.",
+            "rating": 5,
+            "text": "great pillow. very good support on the neck"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "anchor": "reviews",
+        "heading": "Customer Reviews",
+        "average": "4.8",
+        "count_text": "1,317 reviews",
+        "write_label": "Write a review",
+        "write_link": "",
+        "per_page": 5,
+        "background": "gray",
+        "padding_top": 56,
+        "padding_bottom": 40
       }
     },
     "related": {
-      "type": "ind-recommendations",
+      "type": "amity-related",
       "settings": {
-        "scheme": "paper",
-        "show_related": true,
-        "heading_related": "Complete your equipment",
-        "limit": 3,
-        "show_recent": true,
-        "heading_recent": "Recently viewed"
+        "heading": "You May Also Like",
+        "products": [],
+        "limit": 4,
+        "show_secondary": true,
+        "sale_label": "Sale",
+        "background": "gray",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "journal": {
+      "type": "amity-journal",
+      "settings": {
+        "blog": "news",
+        "eyebrow": "From the Journal",
+        "heading": "The Sleep Journal",
+        "subheading": "Useful guides to choosing and caring for your sleep essentials.",
+        "button_label": "Explore all guides",
+        "read_label": "Read the guide",
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "main",
-    "figures",
-    "benefits",
-    "lift",
+    "video_reels",
+    "sleep_toggle",
+    "versus",
     "features",
-    "action",
-    "safety",
-    "compare",
-    "specs",
-    "included",
-    "reviews",
-    "faq",
+    "problems",
     "cta",
-    "related"
+    "experts",
+    "comparison",
+    "faq",
+    "reviews",
+    "related",
+    "journal"
   ]
 }
