@@ -11,22 +11,6 @@
   "sections": {
     "main": {
       "type": "ind-main-product",
-      "settings": {
-        "accent": "#4f6b2a",
-        "show_breadcrumbs": true,
-        "media_badge": "450 kg capacity",
-        "eyebrow": "Electric compact transporter",
-        "headline": "Heavy loads, carried for you, across grass, gravel and rough ground.",
-        "short_desc": "<p>Firewood, stone, soil, tools: move up to <strong>450 kg</strong> in a single trip without pushing a thing. A brushless <strong>1000 W</strong> motor and two-wheel drive do the work, and a compact <strong>79 cm</strong> body gets through the gates and paths where bigger vehicles can't.</p>",
-        "tiers_heading": "Choose your package",
-        "show_buy_now": true,
-        "show_dynamic_checkout": true,
-        "stock_detail": "",
-        "show_details": true,
-        "shipping_text": "<p>Delivery options, costs and estimated delivery times are shown at checkout before you pay.</p><p>Returns are handled under our <a href=\"/policies/refund-policy\">refund policy</a>. Need help with an order? <a href=\"/pages/contact\">Contact our team</a>.</p>",
-        "sticky": true,
-        "sticky_mobile_scroll": false
-      },
       "blocks": {
         "highlight_60": {
           "type": "highlight",
@@ -131,15 +115,26 @@
         "trust_68",
         "trust_69",
         "trust_70"
-      ]
+      ],
+      "settings": {
+        "accent": "#4f6b2a",
+        "show_breadcrumbs": true,
+        "media_badge": "450 kg capacity",
+        "eyebrow": "Electric compact transporter",
+        "headline": "Heavy loads, carried for you, across grass, gravel and rough ground.",
+        "short_desc": "<p>Firewood, stone, soil, tools: move up to <strong>450 kg</strong> in a single trip without pushing a thing. A brushless <strong>1000 W</strong> motor and two-wheel drive do the work, and a compact <strong>79 cm</strong> body gets through the gates and paths where bigger vehicles can't.</p>",
+        "tiers_heading": "Choose your package",
+        "show_buy_now": true,
+        "show_dynamic_checkout": true,
+        "stock_detail": "",
+        "show_details": true,
+        "shipping_text": "<p>Delivery options, costs and estimated delivery times are shown at checkout before you pay.</p><p>Returns are handled under our <a href=\"/policies/refund-policy\">refund policy</a>. Need help with an order? <a href=\"/pages/contact\">Contact our team</a>.</p>",
+        "sticky": true,
+        "sticky_mobile_scroll": false
+      }
     },
     "figures": {
       "type": "ind-stat-band",
-      "settings": {
-        "scheme": "accent",
-        "accent": "#4f6b2a",
-        "note": "* Range depends on load, surface, gradient and battery condition."
-      },
       "blocks": {
         "stat_71": {
           "type": "stat",
@@ -179,21 +174,16 @@
         "stat_72",
         "stat_73",
         "stat_74"
-      ]
+      ],
+      "settings": {
+        "scheme": "accent",
+        "accent": "#4f6b2a",
+        "heading": "",
+        "note": "* Range depends on load, surface, gradient and battery condition."
+      }
     },
     "benefits": {
       "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "style": "minimal",
-        "columns": 3,
-        "row_mobile": true,
-        "center": true,
-        "eyebrow": "Why Abrelune",
-        "heading": "Load more. Carry less.",
-        "text": "<p>Everything a wheelbarrow does, without the pushing, and with up to 450 kg on board.</p>"
-      },
       "blocks": {
         "feature_75": {
           "type": "feature",
@@ -251,20 +241,23 @@
         "feature_78",
         "feature_79",
         "feature_80"
-      ]
+      ],
+      "settings": {
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "style": "minimal",
+        "columns": 3,
+        "row_mobile": true,
+        "center": true,
+        "tight": false,
+        "eyebrow": "Why Abrelune",
+        "heading": "Load more. Carry less.",
+        "text": "<p>Everything a wheelbarrow does, without the pushing, and with up to 450 kg on board.</p>",
+        "note": ""
+      }
     },
     "how": {
       "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "style": "numbered",
-        "columns": 3,
-        "row_mobile": false,
-        "center": true,
-        "eyebrow": "How it works",
-        "heading": "Load it. Drive it. Drop it off."
-      },
       "blocks": {
         "feature_81": {
           "type": "feature",
@@ -295,16 +288,31 @@
         "feature_81",
         "feature_82",
         "feature_83"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "#4f6b2a",
+        "style": "numbered",
+        "columns": 3,
+        "row_mobile": false,
+        "center": true,
+        "tight": false,
+        "eyebrow": "How it works",
+        "heading": "Load it. Drive it. Drop it off.",
+        "text": "",
+        "note": ""
+      }
     },
     "motor": {
       "type": "ind-image-text",
       "settings": {
         "scheme": "dark",
         "accent": "#9cc25a",
+        "anchor": "",
         "reverse": false,
         "wide_media": true,
         "ratio": "adapt",
+        "image": "shopify://shop_images/Easy-AccessBatteryCompartment.png",
         "placeholder_label": "Photo: Abrelune driving across grass or gravel, loaded",
         "badge_value": "1000 W",
         "badge_label": "Brushless motor",
@@ -312,8 +320,20 @@
         "heading": "Real power on every surface",
         "text": "<p>Two-wheel drive delivers traction on grass, gravel, paths and uneven ground. Drive slowly and precisely with the stepless twist throttle in tight spots, or switch speed modes and travel at up to about 24 km/h on open stretches.</p>",
         "checks": "Brushless 1000 W electric motor\nTwo-wheel drive for traction\nStepless twist-grip throttle\nTwo speed modes, forward and reverse\nLED headlight and horn",
+        "btn_label": "",
+        "btn_link": "",
         "btn_style": "accent",
-        "diagram": "none"
+        "note": "",
+        "diagram": "none",
+        "d_v1": "",
+        "d_l1": "",
+        "d_v2": "",
+        "d_l2": "",
+        "d_v3": "",
+        "d_l3": "",
+        "d_v4": "",
+        "d_l4": "",
+        "d_caption": ""
       }
     },
     "battery": {
@@ -321,9 +341,11 @@
       "settings": {
         "scheme": "sand",
         "accent": "#4f6b2a",
+        "anchor": "",
         "reverse": true,
         "wide_media": false,
         "ratio": "adapt",
+        "image": "shopify://shop_images/PickupTruckandGreenCargoCartIcons.png",
         "placeholder_label": "Photo: battery compartment opened for charging",
         "badge_value": "4–5 h",
         "badge_label": "Full charge",
@@ -331,29 +353,32 @@
         "heading": "Power for the whole working day",
         "text": "<p>A sealed 48 V lead-acid battery system powers the motor. On one charge you'll cover about 24–27 km, depending on load and surface, which is enough for many work sessions around the property. Plug in overnight, or between jobs, and it's fully charged in about 4–5 hours.</p>",
         "checks": "Sealed 48 V battery system\nApprox. 24–27 km per charge*\nApprox. 4–5 hours to full charge\nBattery indicator shows remaining charge\nAccessible battery compartment",
+        "btn_label": "",
+        "btn_link": "",
         "btn_style": "dark",
         "note": "* Depends on load, surface, gradient and battery condition.",
-        "diagram": "none"
+        "diagram": "none",
+        "d_v1": "",
+        "d_l1": "",
+        "d_v2": "",
+        "d_l2": "",
+        "d_v3": "",
+        "d_l3": "",
+        "d_v4": "",
+        "d_l4": "",
+        "d_caption": ""
       }
     },
     "capacity": {
       "type": "ind-tiles",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "columns": 5,
-        "center": true,
-        "eyebrow": "Carrying capacity",
-        "heading": "Up to 450 kg. One trip.",
-        "text": "<p>The cargo platform sits at about 50 cm, a comfortable height to load without bending.</p>"
-      },
       "blocks": {
         "tile_84": {
           "type": "tile",
           "settings": {
             "icon": "wood",
             "title": "Firewood",
-            "text": "Logs and kindling in bulk"
+            "text": "Logs and kindling in bulk",
+            "link": ""
           }
         },
         "tile_85": {
@@ -361,7 +386,8 @@
           "settings": {
             "icon": "brick",
             "title": "Stone",
-            "text": "Paving, rocks and gravel"
+            "text": "Paving, rocks and gravel",
+            "link": ""
           }
         },
         "tile_86": {
@@ -369,7 +395,8 @@
           "settings": {
             "icon": "layers",
             "title": "Building materials",
-            "text": "Bags, boards and supplies"
+            "text": "Bags, boards and supplies",
+            "link": ""
           }
         },
         "tile_87": {
@@ -377,7 +404,8 @@
           "settings": {
             "icon": "leaf",
             "title": "Garden supplies",
-            "text": "Soil, compost and garden waste"
+            "text": "Soil, compost and garden waste",
+            "link": ""
           }
         },
         "tile_88": {
@@ -385,7 +413,8 @@
           "settings": {
             "icon": "tools",
             "title": "Tools & equipment",
-            "text": "Everything for the job, in one load"
+            "text": "Everything for the job, in one load",
+            "link": ""
           }
         }
       },
@@ -395,16 +424,31 @@
         "tile_86",
         "tile_87",
         "tile_88"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "#4f6b2a",
+        "columns": 5,
+        "wide": false,
+        "square": false,
+        "center": true,
+        "eyebrow": "Carrying capacity",
+        "heading": "Up to 450 kg. One trip.",
+        "text": "<p>The cargo platform sits at about 50 cm, a comfortable height to load without bending.</p>"
+      }
     },
     "manoeuvre": {
       "type": "ind-image-text",
       "settings": {
         "scheme": "paper",
         "accent": "#4f6b2a",
+        "anchor": "",
         "reverse": false,
         "wide_media": false,
         "ratio": "adapt",
+        "placeholder_label": "Add real product photography",
+        "badge_value": "",
+        "badge_label": "",
         "eyebrow": "Manoeuvrability",
         "heading": "Goes where bigger vehicles can't",
         "text": "<p>At about 165 cm long and just 79 cm wide, Abrelune slips through garden gates, between flower beds and along narrow paths where a tractor or a larger work vehicle simply won't fit.</p>",
@@ -417,21 +461,16 @@
         "d_v1": "79 cm",
         "d_l1": "vehicle width",
         "d_v2": "84 cm",
-        "d_l2": "min. passage"
+        "d_l2": "min. passage",
+        "d_v3": "",
+        "d_l3": "",
+        "d_v4": "",
+        "d_l4": "",
+        "d_caption": ""
       }
     },
     "compare": {
       "type": "ind-comparison",
-      "settings": {
-        "mode": "versus",
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "eyebrow": "Comparison",
-        "heading": "Abrelune vs. the wheelbarrow",
-        "text": "<p>Compare manual transport with Abrelune.</p>",
-        "col_a": "Wheelbarrow / hand cart",
-        "col_b": "Abrelune"
-      },
       "blocks": {
         "row_89": {
           "type": "row",
@@ -501,29 +540,24 @@
         "row_92",
         "row_93",
         "row_94"
-      ]
+      ],
+      "settings": {
+        "mode": "versus",
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "eyebrow": "Comparison",
+        "heading": "Abrelune vs. the wheelbarrow",
+        "text": "<p>Compare manual transport with Abrelune.</p>",
+        "label_col": "",
+        "col_a": "Wheelbarrow / hand cart",
+        "col_b": "Abrelune",
+        "product_a": "",
+        "product_b": "",
+        "note": ""
+      }
     },
     "specs": {
       "type": "ind-specs",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "use_metafield": true,
-        "eyebrow": "Technical data",
-        "heading": "Abrelune specifications",
-        "visible_rows": 9,
-        "note": "* Depends on load, surface, gradient and conditions of use.",
-        "media": "transporter",
-        "d_v1": "≈ 165 cm",
-        "d_l1": "length",
-        "d_v2": "≈ 50 cm",
-        "d_l2": "platform height",
-        "d_v3": "450 kg",
-        "d_l3": "max. load",
-        "d_v4": "150 × 80 cm",
-        "d_l4": "Cargo platform",
-        "d_caption": "Schematic illustration. Not to scale."
-      },
       "blocks": {
         "row_95": {
           "type": "row",
@@ -663,17 +697,31 @@
         "row_109",
         "row_110",
         "row_111"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "#4f6b2a",
+        "product": "",
+        "use_metafield": true,
+        "eyebrow": "Technical data",
+        "heading": "Abrelune specifications",
+        "text": "",
+        "visible_rows": 9,
+        "note": "* Depends on load, surface, gradient and conditions of use.",
+        "media": "transporter",
+        "d_v1": "≈ 165 cm",
+        "d_l1": "length",
+        "d_v2": "≈ 50 cm",
+        "d_l2": "platform height",
+        "d_v3": "450 kg",
+        "d_l3": "max. load",
+        "d_v4": "150 × 80 cm",
+        "d_l4": "Cargo platform",
+        "d_caption": "Schematic illustration. Not to scale."
+      }
     },
     "included": {
       "type": "ind-included",
-      "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "eyebrow": "In the box",
-        "heading": "What's included",
-        "text": "<p>Ready to charge and go.</p>"
-      },
       "blocks": {
         "item_112": {
           "type": "item",
@@ -717,32 +765,28 @@
         "item_113",
         "item_114",
         "item_115"
-      ]
+      ],
+      "settings": {
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "eyebrow": "In the box",
+        "heading": "What's included",
+        "text": "<p>Ready to charge and go.</p>",
+        "note": ""
+      }
     },
     "reviews": {
       "type": "ind-reviews",
       "settings": {
         "scheme": "paper",
         "accent": "#4f6b2a",
+        "product": "",
         "eyebrow": "Customer reviews",
         "heading": "What owners say"
       }
     },
     "faq": {
       "type": "ind-faq",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "layout": "stacked",
-        "single": true,
-        "open_first": true,
-        "schema": true,
-        "eyebrow": "FAQ",
-        "heading": "Questions about Abrelune",
-        "text": "<p>Everything you need to know before you order.</p>",
-        "btn_label": "Contact us",
-        "btn_link": "shopify://pages/contact"
-      },
       "blocks": {
         "qa_116": {
           "type": "qa",
@@ -850,13 +894,27 @@
         "qa_126",
         "qa_127",
         "qa_128"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "#4f6b2a",
+        "layout": "stacked",
+        "single": true,
+        "open_first": true,
+        "schema": true,
+        "eyebrow": "FAQ",
+        "heading": "Questions about Abrelune",
+        "text": "<p>Everything you need to know before you order.</p>",
+        "btn_label": "Contact us",
+        "btn_link": "shopify://pages/contact"
+      }
     },
     "cta": {
       "type": "ind-final-cta",
       "settings": {
         "scheme": "sand",
         "accent": "#4f6b2a",
+        "product": "",
         "eyebrow": "Abrelune electric transporter",
         "heading": "Heavy work. Made light.",
         "text": "<p>1000 W of brushless power, up to 450 kg per trip, and a compact 79 cm body that goes where larger vehicles can't. Save more when you order two or three.</p>",
