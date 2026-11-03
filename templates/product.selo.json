@@ -439,11 +439,11 @@
         "accent": "#d9531e",
         "columns": 4,
         "wide": false,
+        "square": true,
         "center": false,
         "eyebrow": "Selo in action",
         "heading": "Wherever work happens at height",
-        "text": "<p>From renovation to industrial maintenance, Selo gets the material where it's needed.</p>",
-        "square": true
+        "text": "<p>From renovation to industrial maintenance, Selo gets the material where it's needed.</p>"
       }
     },
     "safety": {
