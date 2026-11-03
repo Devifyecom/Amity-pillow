@@ -28,6 +28,8 @@
 <script>
   window.IND = window.IND || {
     moneyFormat: {{ shop.money_format | json }},
+    moneySample: {{ 123456789 | money | json }},
+    currency: {{ cart.currency.iso_code | json }},
     cartUrl: {{ routes.cart_url | json }},
     cartAddUrl: {{ routes.cart_add_url | json }},
     root: {{ routes.root_url | json }},

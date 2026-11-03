@@ -8,9 +8,28 @@
   const qs = (el, s) => el.querySelector(s);
   const qsa = (el, s) => Array.from(el.querySelectorAll(s));
 
-  /* ---------- Money ---------- */
+  /* ---------- Money ----------
+     Prices are formatted exactly like Shopify's `money` filter for the visitor's currency
+     (USD, EUR, … via Markets): ind-assets renders a sample of 1,234,567.89 in that currency
+     and we reuse its symbol, position and separators. Falls back to shop.money_format. */
+  const fromSample = (cents) => {
+    const sample = IND.moneySample;
+    if (!sample) return null;
+    const m = sample.match(/1(\D?)234\1567(?:(\D)89)?/);
+    if (!m) return null;
+    const thou = m[1] || '';
+    const dec = m[2];
+    const value = (Number(cents) || 0) / 100;
+    const parts = value.toFixed(dec ? 2 : 0).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thou);
+    return sample.replace(m[0], dec ? parts.join(dec) : parts[0]);
+  };
   const formatMoney = (cents, format) => {
-    const fmt = format || IND.moneyFormat || '€{{amount}}';
+    if (!format) {
+      const s = fromSample(cents);
+      if (s !== null) return s;
+    }
+    const fmt = format || IND.moneyFormat || '${{amount}}';
     const value = (Number(cents) || 0) / 100;
     const delim = (num, dec, thou, decSep) => {
       const parts = num.toFixed(dec).split('.');
@@ -474,7 +493,7 @@
     refresh() {
       const v = this.variant;
       const q = this.qty();
-      const fmt = IND.moneyFormat;
+      const fmt = undefined;
       const unavailable = !v || !v.available;
 
       // tier cards
