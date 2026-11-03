@@ -169,9 +169,13 @@
           {%- endif -%}
 
           {%- comment -%} Variant options (hidden when the product has a single default variant) {%- endcomment -%}
-          {%- unless product.has_only_default_variant -%}
+          {%- comment -%}
+            Hidden when the product has a single variant (whatever the option is called, e.g. "Title" or "Titel").
+            Options with only one value stay in the DOM, hidden, so variant matching still works.
+          {%- endcomment -%}
+          {%- if product.variants.size > 1 -%}
             {%- for option in product.options_with_values -%}
-              <fieldset class="ind-variant" data-option-group>
+              <fieldset class="ind-variant" data-option-group{% if option.values.size < 2 %} hidden{% endif %}>
                 <legend>{{ option.name }}: <span style="font-weight:400">{{ option.selected_value }}</span></legend>
                 <div class="ind-variant__opts">
                   {%- for value in option.values -%}
@@ -182,7 +186,7 @@
                 </div>
               </fieldset>
             {%- endfor -%}
-          {%- endunless -%}
+          {%- endif -%}
 
           {%- comment -%}
             Quantity / bundle tiers. Percentages must mirror real Shopify automatic discounts
