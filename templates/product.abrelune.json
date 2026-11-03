@@ -731,6 +731,7 @@
         "item_112": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Heavy-DutyCargoCapacityVehicle.png",
             "icon": "truck",
             "qty": "1×",
             "title": "Abrelune transporter",
@@ -740,8 +741,9 @@
         "item_113": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Heavy-DutyCargoCapacityVehicle.png",
             "icon": "battery",
-            "qty": "1×",
+            "qty": "2×",
             "title": "48 V battery system",
             "text": "Sealed lead-acid"
           }
@@ -749,8 +751,9 @@
         "item_114": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Heavy-DutyCargoCapacityVehicle.png",
             "icon": "plug",
-            "qty": "1×",
+            "qty": "3×",
             "title": "Charger",
             "text": "For the 48 V battery system"
           }
@@ -758,8 +761,9 @@
         "item_115": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Heavy-DutyCargoCapacityVehicle.png",
             "icon": "box",
-            "qty": "1×",
+            "qty": "4×",
             "title": "User manual",
             "text": "Including safety instructions"
           }
