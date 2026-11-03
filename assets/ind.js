@@ -107,20 +107,30 @@
   define('ind-announce', class extends HTMLElement {
     connectedCallback() {
       this.items = qsa(this, '.ind-announce__msg');
-      if (this.items.length < 2) { this.items.forEach((i) => i.classList.add('is-active')); return; }
-      this.i = 0;
-      this.items[0].classList.add('is-active');
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      this.reset = this.reset.bind(this);
+      this.reset();
+      document.addEventListener('ind:bf-state', this.reset);
+      if (this.items.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       this.timer = setInterval(() => this.next(), (Number(this.dataset.speed) || 5) * 1000);
       this.addEventListener('mouseenter', () => clearInterval(this.timer));
     }
-    disconnectedCallback() { clearInterval(this.timer); }
+    disconnectedCallback() {
+      clearInterval(this.timer);
+      document.removeEventListener('ind:bf-state', this.reset);
+    }
+    visible() { return this.items.filter((el) => !el.hidden); }
+    reset() {
+      // exactly one active message: the first one allowed by the current campaign state
+      this.items.forEach((el) => el.classList.remove('is-active'));
+      const v = this.visible();
+      if (v.length) v[0].classList.add('is-active');
+    }
     next() {
-      const visible = this.items.filter((el) => !el.hidden);
-      if (visible.length < 2) return;
-      const cur = visible.findIndex((el) => el.classList.contains('is-active'));
-      visible.forEach((el) => el.classList.remove('is-active'));
-      visible[(cur + 1) % visible.length].classList.add('is-active');
+      const v = this.visible();
+      if (v.length < 2) return;
+      const cur = v.findIndex((el) => el.classList.contains('is-active'));
+      this.items.forEach((el) => el.classList.remove('is-active'));
+      v[(cur + 1) % v.length].classList.add('is-active');
     }
   });
 

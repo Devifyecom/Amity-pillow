@@ -329,6 +329,7 @@
 }
 .ind-announce__msg { display: none; }
 .ind-announce__msg.is-active { display: block; }
+.ind-announce__msg[hidden] { display: none !important; }
 .ind-announce a { text-underline-offset: 3px; }
 .ind-announce__tag {
   font-family: var(--ind-font-display);
