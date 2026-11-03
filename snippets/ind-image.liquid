@@ -17,9 +17,10 @@
     endif
   -%}
 {%- else -%}
+  {%- assign ph_icon = icon | default: 'image' -%}
   <div class="ind-placeholder {{ class }}" role="img" aria-label="{{ label | default: 'Image placeholder' | escape }}">
     <div>
-      {%- render 'ind-icon', name: icon | default: 'image' -%}
+      {%- render 'ind-icon', name: ph_icon -%}
       <span class="ind-placeholder__label">{{ label | default: 'Add image in theme editor' }}</span>
     </div>
   </div>
