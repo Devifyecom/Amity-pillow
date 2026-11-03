@@ -1,853 +1,675 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "ind-main-product",
-      "settings": {
-        "accent": "#4f6b2a",
-        "show_breadcrumbs": true,
-        "media_badge": "",
-        "eyebrow": "Electric compact transporter",
-        "headline": "Move firewood, tools and building materials without straining.",
-        "short_desc": "<p>Abrelune is a compact electric transporter for property maintenance, garden and outdoor work. It carries up to 450 kg on a spacious platform, is driven by a brushless 1000 W electric motor and handles grass, gravel and uneven ground.</p>",
-        "tiers_heading": "Choose your package",
-        "show_buy_now": true,
-        "show_dynamic_checkout": true,
-        "stock_detail": "",
-        "show_details": true,
-        "shipping_text": "<p>[Add your confirmed dispatch and delivery times.]</p><p>[Summarise your published refund policy and link to it.]</p>",
-        "sticky": true,
-        "sticky_mobile_scroll": false
-      },
+      "type": "amity-main-product",
       "blocks": {
-        "highlight_63": {
-          "type": "highlight",
+        "benefit_1": {
+          "type": "benefit",
           "settings": {
-            "icon": "motor",
-            "text": "Brushless 1000 W motor"
+            "title": "Cradles Your Head",
+            "text": "A cushioned center and contoured neck edge hold you comfortably."
           }
         },
-        "highlight_64": {
-          "type": "highlight",
+        "benefit_2": {
+          "type": "benefit",
           "settings": {
-            "icon": "weight",
-            "text": "Up to 450 kg load"
+            "title": "Back or Side, Your Call",
+            "text": "Flip for a lower back-sleeping face or a higher side face with arm room."
           }
         },
-        "highlight_65": {
-          "type": "highlight",
+        "benefit_3": {
+          "type": "benefit",
           "settings": {
-            "icon": "route",
-            "text": "Approx. 24–27 km range*"
+            "title": "Easy to Keep Fresh",
+            "text": "The cover zips off for a quick hand wash."
           }
         },
-        "highlight_66": {
-          "type": "highlight",
-          "settings": {
-            "icon": "width",
-            "text": "79 cm wide"
-          }
-        },
-        "tier_67": {
+        "tier_4": {
           "type": "tier",
           "settings": {
-            "label": "Single unit",
-            "qty": 1,
-            "pct": 0,
+            "label": "Buy 1 Pillow",
+            "quantity": 1,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
             "badge": "",
-            "preselect": false
+            "badge_style": "accent",
+            "preselected": true,
+            "gift_1_title": "",
+            "gift_1_subtitle": "",
+            "gift_1_type": "product",
+            "gift_1_product": "",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
-        "tier_68": {
+        "tier_5": {
           "type": "tier",
           "settings": {
-            "label": "Double pack",
-            "qty": 2,
-            "pct": 10,
-            "badge": "Most popular",
-            "preselect": true
+            "label": "Buy 2 Pillows",
+            "quantity": 2,
+            "free_quantity": 0,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Most Popular",
+            "badge_style": "accent",
+            "preselected": false,
+            "gift_1_title": "+ Free Silk Pillowcase",
+            "gift_1_subtitle": "",
+            "gift_1_type": "product",
+            "gift_1_product": "amity-comfort-cervical-pillow",
+            "gift_1_value": "",
+            "gift_2_title": "",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
-        "tier_69": {
+        "tier_6": {
           "type": "tier",
           "settings": {
-            "label": "Triple pack",
-            "qty": 3,
-            "pct": 15,
-            "badge": "Best value",
-            "preselect": false
+            "label": "Buy 3, Get 1 Free",
+            "quantity": 4,
+            "free_quantity": 1,
+            "discount_percent": 0,
+            "save_text": "You Save [amount]",
+            "badge": "Best Value",
+            "badge_style": "dark",
+            "preselected": false,
+            "gift_1_title": "+ 1 Free Amity Pillow",
+            "gift_1_subtitle": "",
+            "gift_1_type": "free_unit",
+            "gift_1_product": "amity-comfort-cervical-pillow",
+            "gift_1_value": "",
+            "gift_2_title": "+ Free Silk Pillowcase",
+            "gift_2_subtitle": "",
+            "gift_2_type": "product",
+            "gift_2_product": "amity-comfort-cervical-pillow",
+            "gift_2_value": "",
+            "gift_3_title": "",
+            "gift_3_subtitle": "",
+            "gift_3_type": "product",
+            "gift_3_product": "",
+            "gift_3_value": ""
           }
         },
-        "trust_70": {
-          "type": "trust",
+        "mini_review_7": {
+          "type": "mini_review",
           "settings": {
-            "icon": "lock",
-            "title": "Secure checkout",
-            "text": "Encrypted payment through Shopify Checkout"
+            "image": "shopify://shop_images/calmeden-review-ZNRPi5DHZ.avif",
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers.",
+            "author": "Kami C."
           }
         },
-        "trust_71": {
-          "type": "trust",
+        "mini_review_8": {
+          "type": "mini_review",
           "settings": {
-            "icon": "truck",
-            "title": "Delivery",
-            "text": "[Add your confirmed delivery time]"
+            "image": "shopify://shop_images/calmeden-review-xo3eX-onn.webp",
+            "text": "I had a great first night of sleep with it. Great for side sleepers.",
+            "author": "Donna R."
           }
         },
-        "trust_72": {
-          "type": "trust",
+        "accordion_9": {
+          "type": "accordion",
           "settings": {
-            "icon": "award",
-            "title": "Warranty",
-            "text": "[Confirm warranty terms with your supplier]"
+            "title": "Why You'll Love It",
+            "content": "<ul><li>Two heights in one pillow: a lower face for back sleeping and a higher face for side sleeping.</li><li>Curved edges cradle your head and neck, so there's no more stacking or folding pillows.</li><li>The side face leaves room for your arm and shoulder.</li></ul>",
+            "page": "",
+            "open": false
           }
         },
-        "trust_73": {
-          "type": "trust",
+        "accordion_10": {
+          "type": "accordion",
           "settings": {
-            "icon": "return",
-            "title": "Returns",
-            "text": "[Summarise your refund policy]"
+            "title": "In the Box",
+            "content": "<ul><li>1 × Amity™ Comfort Cervical Pillow</li><li>1 × Removable zip cover (on the pillow)</li></ul>",
+            "page": "",
+            "open": false
+          }
+        },
+        "accordion_11": {
+          "type": "accordion",
+          "settings": {
+            "title": "Details That Matter",
+            "content": "<ul><li>Contoured neck edge with a cushioned center cradle</li><li>Two sleeping heights. Just flip it over.</li><li>Memory foam that holds its shape night after night</li><li>Breathable, removable zip cover</li></ul>",
+            "page": "",
+            "open": false
+          }
+        },
+        "accordion_12": {
+          "type": "accordion",
+          "settings": {
+            "title": "Best Way to Use",
+            "content": "<p><strong>Back sleepers:</strong> lay it lower side up with the raised edge under your neck and let your head settle into the center.</p><p><strong>Side sleepers:</strong> flip it higher side up so the taller edge fills the space above your shoulder.</p><p>Give it a few nights. A new shape can take a little getting used to.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "accordion_13": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care & Materials",
+            "content": "<p>Unzip the cover and hand wash it in cold water with a mild detergent, then air dry. Don't wash the foam core; spot clean it and let it air out.</p><p>When it first arrives, give the pillow a few hours out of the packaging to fully expand.</p>",
+            "page": "",
+            "open": false
           }
         }
       },
       "block_order": [
-        "highlight_63",
-        "highlight_64",
-        "highlight_65",
-        "highlight_66",
-        "tier_67",
-        "tier_68",
-        "tier_69",
-        "trust_70",
-        "trust_71",
-        "trust_72",
-        "trust_73"
-      ]
-    },
-    "figures": {
-      "type": "ind-stat-band",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "tier_4",
+        "tier_5",
+        "tier_6",
+        "mini_review_7",
+        "mini_review_8",
+        "accordion_9",
+        "accordion_10",
+        "accordion_11",
+        "accordion_12",
+        "accordion_13"
+      ],
       "settings": {
-        "scheme": "accent",
-        "accent": "#4f6b2a",
-        "heading": "",
-        "note": "* Range depends on load, surface, gradient and battery condition."
-      },
-      "blocks": {
-        "stat_74": {
-          "type": "stat",
-          "settings": {
-            "value": "1000",
-            "unit": "W",
-            "label": "Brushless electric motor"
-          }
-        },
-        "stat_75": {
-          "type": "stat",
-          "settings": {
-            "value": "450",
-            "unit": "kg",
-            "label": "Maximum load"
-          }
-        },
-        "stat_76": {
-          "type": "stat",
-          "settings": {
-            "value": "24–27",
-            "unit": "km",
-            "label": "Range per charge*"
-          }
-        },
-        "stat_77": {
-          "type": "stat",
-          "settings": {
-            "value": "79",
-            "unit": "cm",
-            "label": "Compact width"
-          }
-        }
-      },
-      "block_order": [
-        "stat_74",
-        "stat_75",
-        "stat_76",
-        "stat_77"
-      ]
-    },
-    "benefits": {
-      "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "style": "minimal",
-        "columns": 3,
-        "row_mobile": true,
-        "center": true,
-        "tight": false,
-        "eyebrow": "Main benefits",
-        "heading": "Load more. Carry less.",
-        "text": "",
-        "note": ""
-      },
-      "blocks": {
-        "feature_78": {
-          "type": "feature",
-          "settings": {
-            "icon": "bolt",
-            "title": "Powered transportation",
-            "text": "<p>Electric drive does the pushing for you, round the property and the work site.</p>"
-          }
-        },
-        "feature_79": {
-          "type": "feature",
-          "settings": {
-            "icon": "weight",
-            "title": "High carrying capacity",
-            "text": "<p>A stated maximum load of 450 kg, so firewood, stone, soil and tools can go in one trip.</p>"
-          }
-        },
-        "feature_80": {
-          "type": "feature",
-          "settings": {
-            "icon": "motor",
-            "title": "Brushless motor",
-            "text": "<p>A 1000 W brushless electric motor with two-wheel drive.</p>"
-          }
-        },
-        "feature_81": {
-          "type": "feature",
-          "settings": {
-            "icon": "battery",
-            "title": "Battery-powered convenience",
-            "text": "<p>A sealed 48 V battery system with a battery indicator that always shows the charge left.</p>"
-          }
-        },
-        "feature_82": {
-          "type": "feature",
-          "settings": {
-            "icon": "gauge",
-            "title": "Manoeuvrability",
-            "text": "<p>Stepless twist throttle, two speed modes and reverse for precise driving in tight spaces.</p>"
-          }
-        },
-        "feature_83": {
-          "type": "feature",
-          "settings": {
-            "icon": "box",
-            "title": "Fold-down side walls",
-            "text": "<p>Fold the side walls down or remove them completely to load from any side.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "feature_78",
-        "feature_79",
-        "feature_80",
-        "feature_81",
-        "feature_82",
-        "feature_83"
-      ]
-    },
-    "motor": {
-      "type": "ind-image-text",
-      "settings": {
-        "scheme": "dark",
-        "accent": "#9cc25a",
-        "reverse": false,
-        "wide_media": true,
-        "ratio": "landscape",
-        "placeholder_label": "Motor and drive close-up",
-        "badge_value": "1000 W",
-        "badge_label": "Brushless",
-        "eyebrow": "Motor performance",
-        "heading": "Full control on every surface",
-        "text": "<p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. With the stepless twist throttle, two speed modes and reverse, you can drive slowly and precisely in tight spaces, or faster, up to about 24 km/h, on open stretches.</p>",
-        "checks": "Brushless 1000 W electric motor\nTwo-wheel drive\nStepless twist-grip throttle\nTwo speed modes, forward and reverse\nLED headlight and horn",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "accent",
-        "note": "",
-        "diagram": "none"
+        "rating_text": "4.8 out of 5.0 stars (1317 reviews)",
+        "reviews_anchor": "reviews",
+        "title": "",
+        "subtitle": "Settle in, stop rearranging pillows, and wake up feeling rested.",
+        "show_badge": true,
+        "badge_text": "30-Day Returns · Free Shipping ·",
+        "bundle_heading": "Buy More · Save More",
+        "free_label": "FREE",
+        "add_gifts_to_cart": true,
+        "show_ship_by": true,
+        "ship_by_label": "Order Today, Ships By:",
+        "ship_by_days": 2,
+        "ship_skip_weekends": false,
+        "atc_label": "Add to cart",
+        "error_text": "Something went wrong. Please try again.",
+        "mini_reviews_heading": "Loved by Side & Back Sleepers",
+        "show_payment_icons": true,
+        "trust_1": "Free Shipping",
+        "trust_2": "30-Day Returns",
+        "covered_pill": "Sold & Shipped by [shop]",
+        "covered_title": "We've Got You Covered",
+        "covered_text": "<p>Every Amity ships <strong>free</strong> from [shop], with <strong>30-day returns</strong> on unopened pillows and a real support team.</p>",
+        "covered_note": "Damaged, defective or not as described? We replace it or refund you.",
+        "padding_top": 56,
+        "padding_bottom": 36
       }
     },
-    "battery": {
-      "type": "ind-image-text",
+    "video_reels": {
+      "type": "amity-video-reels",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/a0847dcf70854493b0c38c72fc71fbb9.HD-720p-1.6Mbps-95757018.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        },
+        "video_emztD3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/248c00ba8c234d0d825a89e1c4531f93.HD-720p-1.6Mbps-95757022.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        },
+        "video_wqUXnz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/2f0e9fddb2f24d209b092f02ec26c0be.HD-720p-1.6Mbps-95757028.mp4",
+            "poster": "shopify://shop_images/calmeden-ugc-head-neck.webp"
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_emztD3",
+        "video_wqUXnz"
+      ],
       "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "reverse": true,
-        "wide_media": false,
-        "ratio": "square",
-        "placeholder_label": "Battery compartment opened for charging",
-        "badge_value": "4–5 h",
-        "badge_label": "Full charge",
-        "eyebrow": "Battery technology",
-        "heading": "Power and range for the whole working day",
-        "text": "<p>The brushless motor is powered by a sealed 48 V lead-acid battery system. One charge gives about 24–27 km, depending on load and surface, enough for many work sessions around the property. A full charge takes about 4–5 hours.</p>",
-        "checks": "Sealed 48 V lead-acid battery system\nApprox. 24–27 km per charge*\nApprox. 4–5 hours charging time\nBattery indicator shows remaining charge\nBattery compartment for charging and maintenance",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "dark",
-        "note": "* Depends on load, surface, gradient and battery condition.",
-        "diagram": "none"
+        "heading": "See Amity in Action",
+        "subheading": "Tap a clip to watch with sound.",
+        "background": "gray",
+        "padding_top": 24,
+        "padding_bottom": 80
       }
     },
-    "capacity": {
-      "type": "ind-tiles",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "columns": 5,
-        "wide": false,
-        "center": true,
-        "eyebrow": "Carrying capacity",
-        "heading": "Up to 450 kg, one trip",
-        "text": "<p>The cargo platform sits at about 50 cm, a comfortable working height for loading.</p>"
-      },
+    "sleep_toggle": {
+      "type": "amity-sleep-toggle",
       "blocks": {
-        "tile_84": {
-          "type": "tile",
+        "position_1": {
+          "type": "position",
           "settings": {
-            "icon": "wood",
-            "title": "Firewood",
-            "text": ""
+            "tab_label": "Back Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-back.webp",
+            "title": "Use the Lower Face",
+            "text": "Lay it lower side up with the raised edge under your neck, and let your head settle into the center cradle."
           }
         },
-        "tile_85": {
-          "type": "tile",
+        "position_2": {
+          "type": "position",
           "settings": {
-            "icon": "brick",
-            "title": "Stone",
-            "text": ""
-          }
-        },
-        "tile_86": {
-          "type": "tile",
-          "settings": {
-            "icon": "layers",
-            "title": "Building materials",
-            "text": ""
-          }
-        },
-        "tile_87": {
-          "type": "tile",
-          "settings": {
-            "icon": "leaf",
-            "title": "Garden supplies & waste",
-            "text": ""
-          }
-        },
-        "tile_88": {
-          "type": "tile",
-          "settings": {
-            "icon": "tools",
-            "title": "Tools & equipment",
-            "text": ""
+            "tab_label": "Side Sleeper",
+            "image": "shopify://shop_images/calmeden-amity-fit-side.webp",
+            "title": "Use the Higher Face",
+            "text": "Flip it higher side up so the taller edge fills the space above your shoulder, with room for your arm underneath."
           }
         }
       },
       "block_order": [
-        "tile_84",
-        "tile_85",
-        "tile_86",
-        "tile_87",
-        "tile_88"
-      ]
-    },
-    "manoeuvre": {
-      "type": "ind-image-text",
+        "position_1",
+        "position_2"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "reverse": false,
-        "wide_media": false,
-        "ratio": "square",
-        "placeholder_label": "",
-        "badge_value": "",
-        "badge_label": "",
-        "eyebrow": "Manoeuvrability",
-        "heading": "Compact where it counts",
-        "text": "<p>At about 165 cm long and 79 cm wide, Abrelune fits through gates, between flower beds and along narrow paths where a tractor or larger work vehicle won't fit. We recommend a passage at least 84 cm wide.</p>",
-        "checks": "79 cm overall width\nFits through passages from 84 cm\nApprox. 165 cm long",
-        "btn_label": "",
-        "btn_link": "",
-        "btn_style": "dark",
-        "note": "Schematic illustration. Not to scale.",
-        "diagram": "gate",
-        "d_v1": "79 cm",
-        "d_l1": "vehicle width",
-        "d_v2": "84 cm",
-        "d_l2": "min. passage",
-        "d_caption": ""
+        "heading": "Which Side Is for You?",
+        "subheading": "Tap how you sleep. Flip the pillow to that face.",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "specs": {
-      "type": "ind-specs",
+    "versus": {
+      "type": "amity-versus",
       "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "use_metafield": true,
-        "eyebrow": "Technical data",
-        "heading": "Abrelune specifications",
-        "text": "",
-        "visible_rows": 9,
-        "note": "* Depends on load, surface, gradient and conditions of use.",
-        "media": "transporter",
-        "d_v1": "≈ 165 cm",
-        "d_l1": "length",
-        "d_v2": "≈ 50 cm",
-        "d_l2": "platform height",
-        "d_v3": "450 kg",
-        "d_l3": "max. load",
-        "d_v4": "150 × 80 cm",
-        "d_l4": "Cargo platform",
-        "d_caption": "Schematic illustration. Not to scale."
-      },
+        "heading": "Imagine Waking Up Rested, Not Restless.",
+        "image_left": "shopify://shop_images/calmeden-amity-lifestyle-lap.webp",
+        "image_right": "shopify://shop_images/calmeden-amity-pdp-vs-stiff.webp",
+        "badge": "VS",
+        "card_title": "Shaped for Settled, Restful Sleep",
+        "card_text": "Flat pillows leave your neck hanging, so you keep shifting. Amity cradles your head and supports your neck.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "features": {
+      "type": "amity-features",
       "blocks": {
-        "row_89": {
-          "type": "row",
+        "feature_1": {
+          "type": "feature",
           "settings": {
-            "label": "Model",
-            "value": "Abrelune"
+            "icon": "flip",
+            "title": "Flip It to Fit How You Sleep",
+            "text": "A lower face for your back, a higher one for your side. Keep whichever feels natural."
           }
         },
-        "row_90": {
-          "type": "row",
+        "feature_2": {
+          "type": "feature",
           "settings": {
-            "label": "Motor",
-            "value": "Brushless electric motor, 1000 W"
+            "icon": "neck",
+            "title": "Neck Edge, Head Cradle",
+            "text": "The raised edge supports your neck while the center cradle lets your head settle."
           }
         },
-        "row_91": {
-          "type": "row",
+        "feature_3": {
+          "type": "feature",
           "settings": {
-            "label": "Drive",
-            "value": "Two-wheel drive"
-          }
-        },
-        "row_92": {
-          "type": "row",
-          "settings": {
-            "label": "Battery",
-            "value": "Sealed 48 V lead-acid battery"
-          }
-        },
-        "row_93": {
-          "type": "row",
-          "settings": {
-            "label": "Range",
-            "value": "Approx. 24–27 km*"
-          }
-        },
-        "row_94": {
-          "type": "row",
-          "settings": {
-            "label": "Charging time",
-            "value": "Approx. 4–5 hours"
-          }
-        },
-        "row_95": {
-          "type": "row",
-          "settings": {
-            "label": "Top speed",
-            "value": "Approx. 24 km/h"
-          }
-        },
-        "row_96": {
-          "type": "row",
-          "settings": {
-            "label": "Maximum load",
-            "value": "Up to 450 kg"
-          }
-        },
-        "row_97": {
-          "type": "row",
-          "settings": {
-            "label": "Cargo platform",
-            "value": "150 × 80 cm"
-          }
-        },
-        "row_98": {
-          "type": "row",
-          "settings": {
-            "label": "Platform height",
-            "value": "Approx. 50 cm"
-          }
-        },
-        "row_99": {
-          "type": "row",
-          "settings": {
-            "label": "Length × width",
-            "value": "Approx. 165 × 79 cm"
-          }
-        },
-        "row_100": {
-          "type": "row",
-          "settings": {
-            "label": "Recommended passage width",
-            "value": "At least 84 cm"
-          }
-        },
-        "row_101": {
-          "type": "row",
-          "settings": {
-            "label": "Weight",
-            "value": "Approx. 150 kg"
-          }
-        },
-        "row_102": {
-          "type": "row",
-          "settings": {
-            "label": "Controls",
-            "value": "Stepless twist-grip throttle, 2 speed modes, forward/reverse"
-          }
-        },
-        "row_103": {
-          "type": "row",
-          "settings": {
-            "label": "Equipment",
-            "value": "Battery indicator, LED headlight, horn"
-          }
-        },
-        "row_104": {
-          "type": "row",
-          "settings": {
-            "label": "Side walls",
-            "value": "Folding and removable"
-          }
-        },
-        "row_105": {
-          "type": "row",
-          "settings": {
-            "label": "Construction",
-            "value": "Steel"
+            "icon": "arm",
+            "title": "Room for Your Arm",
+            "text": "The side face leaves space for your arm and shoulder, so you can curl in comfortably."
           }
         }
       },
       "block_order": [
-        "row_89",
-        "row_90",
-        "row_91",
-        "row_92",
-        "row_93",
-        "row_94",
-        "row_95",
-        "row_96",
-        "row_97",
-        "row_98",
-        "row_99",
-        "row_100",
-        "row_101",
-        "row_102",
-        "row_103",
-        "row_104",
-        "row_105"
-      ]
-    },
-    "included": {
-      "type": "ind-included",
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "eyebrow": "In the box",
-        "heading": "What's included",
-        "text": "",
-        "note": "The supplier lists a 110 V charger. [Confirm the charger voltage and plug type for your market before selling.]"
-      },
+        "image": "shopify://shop_images/ezgif-26de162222702730.gif",
+        "heading": "3 Ways Amity Changes How You Rest",
+        "background": "gray",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "problems": {
+      "type": "amity-problems",
       "blocks": {
-        "item_106": {
-          "type": "item",
+        "card_1": {
+          "type": "card",
           "settings": {
-            "icon": "truck",
-            "qty": "1×",
-            "title": "Abrelune electric transporter",
-            "text": ""
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-neck.webp",
+            "title": "Tossing and Turning?",
+            "text": "No neck support, so you shift all night."
           }
         },
-        "item_107": {
-          "type": "item",
+        "card_2": {
+          "type": "card",
           "settings": {
-            "icon": "battery",
-            "qty": "1×",
-            "title": "48 V battery system",
-            "text": ""
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-heat.webp",
+            "title": "Hot and Flat by 3 a.m.?",
+            "text": "Loose fill packs down and traps warmth."
           }
         },
-        "item_108": {
-          "type": "item",
+        "card_3": {
+          "type": "card",
           "settings": {
-            "icon": "plug",
-            "qty": "1×",
-            "title": "Charger",
-            "text": "110 V per supplier listing"
-          }
-        },
-        "item_109": {
-          "type": "item",
-          "settings": {
-            "icon": "box",
-            "qty": "1×",
-            "title": "User manual",
-            "text": "Including safety instructions"
+            "image": "shopify://shop_images/calmeden-amity-pdp-problem-fog.webp",
+            "title": "Groggy Mornings?",
+            "text": "Every wake-up to readjust cuts into your rest."
           }
         }
       },
       "block_order": [
-        "item_106",
-        "item_107",
-        "item_108",
-        "item_109"
-      ]
-    },
-    "compare": {
-      "type": "ind-comparison",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
-        "mode": "versus",
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "eyebrow": "Comparison",
-        "heading": "Abrelune vs. manual transport",
-        "text": "",
-        "label_col": "",
-        "col_a": "Wheelbarrow / hand cart",
-        "col_b": "Abrelune",
-        "note": ""
-      },
+        "image": "shopify://shop_images/calmeden-amity-lifestyle-hug.webp",
+        "heading": "Why Your Pillow Matters More Than You Think",
+        "text": "A flat pillow leaves your neck hanging and keeps you tossing. The right shape lets you settle.",
+        "background": "cream",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cta": {
+      "type": "amity-cta-banner",
+      "settings": {
+        "heading": "Upgrade Your Family's Sleep",
+        "text": "Make the switch and retire that flat old pillow.",
+        "button_label": "Try It Risk-Free",
+        "button_link": "",
+        "note": "Free shipping · 30-day returns on unopened pillows",
+        "background": "gray",
+        "padding_top": 48,
+        "padding_bottom": 80
+      }
+    },
+    "experts": {
+      "type": "amity-experts",
       "blocks": {
-        "row_110": {
-          "type": "row",
+        "expert_1": {
+          "type": "expert",
           "settings": {
-            "label": "Load per trip",
-            "a_mark": "none",
-            "a": "What you can push",
-            "b_mark": "yes",
-            "b": "Up to 450 kg"
+            "image": "shopify://shop_images/calmeden-expert-brown.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         },
-        "row_111": {
-          "type": "row",
+        "expert_2": {
+          "type": "expert",
           "settings": {
-            "label": "Drive",
-            "a_mark": "no",
-            "a": "Muscle power",
-            "b_mark": "yes",
-            "b": "1000 W brushless electric motor"
+            "image": "shopify://shop_images/calmeden-expert-weinstein.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         },
-        "row_112": {
-          "type": "row",
+        "expert_3": {
+          "type": "expert",
           "settings": {
-            "label": "Grass, gravel, uneven ground",
-            "a_mark": "none",
-            "a": "Hard going under load",
-            "b_mark": "yes",
-            "b": "Two-wheel drive for traction"
-          }
-        },
-        "row_113": {
-          "type": "row",
-          "settings": {
-            "label": "Loading and unloading",
-            "a_mark": "none",
-            "a": "Lift or tip by hand",
-            "b_mark": "yes",
-            "b": "Fold-down, removable side walls"
-          }
-        },
-        "row_114": {
-          "type": "row",
-          "settings": {
-            "label": "Reversing",
-            "a_mark": "none",
-            "a": "By hand",
-            "b_mark": "yes",
-            "b": "Forward and reverse gear"
-          }
-        },
-        "row_115": {
-          "type": "row",
-          "settings": {
-            "label": "Narrow passages",
-            "a_mark": "yes",
-            "a": "Yes",
-            "b_mark": "yes",
-            "b": "79 cm wide; passages from 84 cm"
+            "image": "shopify://shop_images/calmeden-expert-greeney.webp",
+            "quote": "Add a genuine quote from a professional who has tried Amity.",
+            "name": "Expert name",
+            "role": "Specialty, City"
           }
         }
       },
       "block_order": [
-        "row_110",
-        "row_111",
-        "row_112",
-        "row_113",
-        "row_114",
-        "row_115"
-      ]
-    },
-    "reviews": {
-      "type": "ind-reviews",
+        "expert_1",
+        "expert_2",
+        "expert_3"
+      ],
       "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "eyebrow": "Customer reviews",
-        "heading": "What customers say"
+        "heading": "What the Experts Say",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "comparison": {
+      "type": "amity-comparison",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Contoured Neck Support Edge",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Cushioned Center Head Cradle",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Two Heights: Flip for Back or Side",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Arm Room on the Side-Sleeping Face",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Memory Foam That Holds Its Shape",
+            "ours": true,
+            "theirs": false
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Removable Zip Cover",
+            "ours": true,
+            "theirs": false
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ],
+      "settings": {
+        "heading": "The Difference Is Clear",
+        "brand_label": "",
+        "other_label": "Ordinary Pillow",
+        "background": "gray",
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "faq": {
-      "type": "ind-faq",
-      "settings": {
-        "scheme": "paper",
-        "accent": "#4f6b2a",
-        "layout": "stacked",
-        "single": true,
-        "open_first": true,
-        "schema": true,
-        "eyebrow": "FAQ",
-        "heading": "Questions about Abrelune",
-        "text": "",
-        "btn_label": "",
-        "btn_link": ""
-      },
+      "type": "amity-faq",
       "blocks": {
-        "qa_116": {
-          "type": "qa",
+        "question_1": {
+          "type": "question",
           "settings": {
-            "q": "How much can Abrelune carry?",
-            "a": "<p>Up to 450 kg. On steep slopes and soft ground, reduce the load for safe driving.</p>"
+            "question": "How Easy Is It to Set Up?",
+            "answer": "<p>Take it out of the packaging and give it a few hours to fully expand. The cover is already on, so it's ready for bed the same night.</p>"
           }
         },
-        "qa_117": {
-          "type": "qa",
+        "question_2": {
+          "type": "question",
           "settings": {
-            "q": "What motor does it have?",
-            "a": "<p>A brushless 1000 W electric motor with two-wheel drive.</p>"
+            "question": "Which Sleep Positions Does Amity Suit?",
+            "answer": "<p>Amity is made for back and side sleepers. Each has its own face: lower for your back, higher for your side. Many people who switch positions during the night like having both in one pillow.</p>"
           }
         },
-        "qa_118": {
-          "type": "qa",
+        "question_3": {
+          "type": "question",
           "settings": {
-            "q": "What battery does it use?",
-            "a": "<p>A sealed 48 V lead-acid battery system with a battery indicator.</p>"
+            "question": "How Do I Flip It, and Which Side Is Which?",
+            "answer": "<p>The lower face is for back sleeping and the higher face is for side sleeping. Keep the raised edge under your neck and turn the pillow over to switch heights. No stacking needed.</p>"
           }
         },
-        "qa_119": {
-          "type": "qa",
+        "question_4": {
+          "type": "question",
           "settings": {
-            "q": "How far can I drive on one charge?",
-            "a": "<p>About 24–27 km, depending on load, surface, gradient and battery condition.</p>"
+            "question": "How Do I Clean the Cover?",
+            "answer": "<p>Unzip the cover, hand wash it in cold water with a mild detergent and let it air dry. Don't wash the foam core. Spot clean it if needed.</p>"
           }
         },
-        "qa_120": {
-          "type": "qa",
+        "question_5": {
+          "type": "question",
           "settings": {
-            "q": "How long does charging take?",
-            "a": "<p>A full charge takes about 4–5 hours.</p>"
+            "question": "What If It Is Not for Me?",
+            "answer": "<p>You have 30 days to return unopened pillows. If yours arrives damaged, defective or not as described, we'll replace it or refund you. Just reach out to our support team.</p>"
           }
         },
-        "qa_121": {
-          "type": "qa",
+        "question_6": {
+          "type": "question",
           "settings": {
-            "q": "What terrain can it handle?",
-            "a": "<p>Two-wheel drive gives traction on grass, gravel, paths and uneven ground. Reduce the load on steep slopes and soft ground.</p>"
-          }
-        },
-        "qa_122": {
-          "type": "qa",
-          "settings": {
-            "q": "Will it fit through my gate?",
-            "a": "<p>Abrelune is about 79 cm wide. We recommend a passage at least 84 cm wide.</p>"
-          }
-        },
-        "qa_123": {
-          "type": "qa",
-          "settings": {
-            "q": "Can I drive it on public roads?",
-            "a": "<p>Abrelune is intended for private land such as plots, farms and work areas. With a top speed of about 24 km/h, vehicle classification rules may apply. Always check local rules before driving outside private property.</p>"
-          }
-        },
-        "qa_124": {
-          "type": "qa",
-          "settings": {
-            "q": "What maintenance does it need?",
-            "a": "<p>Follow the user manual and safety instructions. [Add battery care and tyre and brake check guidance from the manual.]</p>"
-          }
-        },
-        "qa_125": {
-          "type": "qa",
-          "settings": {
-            "q": "What accessories are included?",
-            "a": "<p>The transporter, a 48 V battery system, a charger and the user manual with safety instructions.</p>"
-          }
-        },
-        "qa_126": {
-          "type": "qa",
-          "settings": {
-            "q": "How long does delivery take?",
-            "a": "<p>[Add your confirmed delivery times. This is a bulky item of approx. 150 kg.]</p>"
-          }
-        },
-        "qa_127": {
-          "type": "qa",
-          "settings": {
-            "q": "Is there a warranty?",
-            "a": "<p>[Confirm warranty terms with your supplier.]</p>"
+            "question": "How Long Does Shipping Take?",
+            "answer": "<p>Shipping is free. You'll see the ship-by date just above the Add to cart button, and we email a tracking link as soon as your order is on its way.</p>"
           }
         }
       },
       "block_order": [
-        "qa_116",
-        "qa_117",
-        "qa_118",
-        "qa_119",
-        "qa_120",
-        "qa_121",
-        "qa_122",
-        "qa_123",
-        "qa_124",
-        "qa_125",
-        "qa_126",
-        "qa_127"
-      ]
-    },
-    "cta": {
-      "type": "ind-final-cta",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6"
+      ],
       "settings": {
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "eyebrow": "Abrelune",
-        "heading": "Heavy becomes light",
-        "text": "<p>1000 W brushless power, up to 450 kg per trip, and a compact 79 cm body that goes where larger vehicles can't.</p>",
-        "checks": "Up to 450 kg load capacity\nApprox. 24–27 km per charge*\nFolding and removable side walls",
-        "mode": "scroll",
-        "btn_label": "Choose your package",
-        "small": "* Depends on load, surface, gradient and battery condition."
+        "heading": "Questions, Answered",
+        "subheading": "Everything you need to choose with confidence.",
+        "image_1": "shopify://shop_images/calmeden-happy-1.webp",
+        "image_2": "shopify://shop_images/calmeden-happy-2.webp",
+        "image_3": "shopify://shop_images/calmeden-happy-3.webp",
+        "image_4": "shopify://shop_images/calmeden-happy-4.webp",
+        "stat_rating": "4.8/5",
+        "stat_number": "1,500+",
+        "stat_label": "Happy Customers",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reviews": {
+      "type": "amity-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Kami C.",
+            "rating": 5,
+            "text": "The pillow is fantastic. It provides good support, especially for back sleepers. The material feels high-quality, and it holds its shape well. Would definitely recommend!"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "W R.",
+            "rating": 5,
+            "text": "It took a long while for it to decompress and fill out to full size. I was pretty worried when I first opened it, but it ended up nice and full. It looks just like the photos, seems good quality. It is solid memory foam. I'm pleased to be able to try it out at a low price point. Definitely good value for money."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "A O.",
+            "rating": 5,
+            "text": "great pillow. very good support on the neck"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "anchor": "reviews",
+        "heading": "Customer Reviews",
+        "average": "4.8",
+        "count_text": "1,317 reviews",
+        "write_label": "Write a review",
+        "write_link": "",
+        "per_page": 5,
+        "background": "gray",
+        "padding_top": 56,
+        "padding_bottom": 40
       }
     },
     "related": {
-      "type": "ind-recommendations",
+      "type": "amity-related",
       "settings": {
-        "scheme": "paper",
-        "show_related": true,
-        "heading_related": "Complete your equipment",
-        "limit": 3,
-        "show_recent": true,
-        "heading_recent": "Recently viewed"
+        "heading": "You May Also Like",
+        "products": [],
+        "limit": 4,
+        "show_secondary": true,
+        "sale_label": "Sale",
+        "background": "gray",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "journal": {
+      "type": "amity-journal",
+      "settings": {
+        "blog": "news",
+        "eyebrow": "From the Journal",
+        "heading": "The Sleep Journal",
+        "subheading": "Useful guides to choosing and caring for your sleep essentials.",
+        "button_label": "Explore all guides",
+        "read_label": "Read the guide",
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "main",
-    "figures",
-    "benefits",
-    "motor",
-    "battery",
-    "capacity",
-    "manoeuvre",
-    "specs",
-    "included",
-    "compare",
-    "reviews",
-    "faq",
+    "video_reels",
+    "sleep_toggle",
+    "versus",
+    "features",
+    "problems",
     "cta",
-    "related"
+    "experts",
+    "comparison",
+    "faq",
+    "reviews",
+    "related",
+    "journal"
   ]
 }
