@@ -11,18 +11,6 @@
   "sections": {
     "hero": {
       "type": "ind-hero",
-      "settings": {
-        "shade": 70,
-        "height": 85,
-        "height_mobile": 85,
-        "eyebrow": "Professional lifting & transport equipment",
-        "heading": "Lift higher. <em>Carry more.</em> Work smarter.",
-        "text": "<p>Two electric machines that take the heavy lifting out of everyday work: Selo raises material to height, Abrelune moves heavy loads across the ground.</p>",
-        "btn1_label": "Shop Selo",
-        "btn1_link": "shopify://products/selo",
-        "btn2_label": "Shop Abrelune",
-        "btn2_link": "shopify://products/abrelune"
-      },
       "blocks": {
         "stat_129": {
           "type": "stat",
@@ -50,7 +38,20 @@
         "stat_129",
         "stat_130",
         "stat_131"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_46.webp",
+        "shade": 70,
+        "height": 85,
+        "height_mobile": 85,
+        "eyebrow": "Professional lifting & transport equipment",
+        "heading": "Lift higher. Carry more. Work smarter.",
+        "text": "<p>Two electric machines that take the heavy lifting out of everyday work: Selo raises material to height, Abrelune moves heavy loads across the ground.</p>",
+        "btn1_label": "Shop Selo",
+        "btn1_link": "shopify://products/selo",
+        "btn2_label": "Shop Abrelune",
+        "btn2_link": "shopify://products/abrelune"
+      }
     },
     "bf": {
       "type": "ind-bf-banner",
@@ -70,15 +71,6 @@
     },
     "intro": {
       "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "paper",
-        "style": "minimal",
-        "columns": 3,
-        "row_mobile": true,
-        "eyebrow": "Our range",
-        "heading": "Two machines. One goal: less strain, more done.",
-        "text": "<p>We focus on equipment that takes heavy loads off people, both vertically at the scaffold and across the ground around your property.</p>"
-      },
       "blocks": {
         "feature_132": {
           "type": "feature",
@@ -109,22 +101,23 @@
         "feature_132",
         "feature_133",
         "feature_134"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "",
+        "style": "minimal",
+        "columns": 3,
+        "row_mobile": true,
+        "center": false,
+        "tight": false,
+        "eyebrow": "Our range",
+        "heading": "Two machines. One goal: less strain, more done.",
+        "text": "<p>We focus on equipment that takes heavy loads off people, both vertically at the scaffold and across the ground around your property.</p>",
+        "note": ""
+      }
     },
     "selo": {
       "type": "ind-featured-product",
-      "settings": {
-        "fallback_handle": "selo",
-        "anchor": "selo",
-        "scheme": "dark",
-        "accent": "#d9531e",
-        "reverse": false,
-        "eyebrow": "Scaffold material lift",
-        "heading": "Selo",
-        "text": "<p>Stop hauling material up ladders. Selo lifts up to 500 kg to 6 metres at the push of a button, then stops automatically at the top.</p>",
-        "btn_label": "Discover Selo",
-        "show_atc": true
-      },
       "blocks": {
         "spec_135": {
           "type": "spec",
@@ -160,22 +153,24 @@
         "spec_136",
         "spec_137",
         "spec_138"
-      ]
+      ],
+      "settings": {
+        "product": "",
+        "fallback_handle": "selo",
+        "anchor": "selo",
+        "scheme": "dark",
+        "accent": "#d9531e",
+        "reverse": false,
+        "eyebrow": "Scaffold material lift",
+        "heading": "Selo",
+        "text": "<p>Stop hauling material up ladders. Selo lifts up to 500 kg to 6 metres at the push of a button, then stops automatically at the top.</p>",
+        "badge": "",
+        "btn_label": "Discover Selo",
+        "show_atc": true
+      }
     },
     "abrelune": {
       "type": "ind-featured-product",
-      "settings": {
-        "fallback_handle": "abrelune",
-        "anchor": "abrelune",
-        "scheme": "sand",
-        "accent": "#4f6b2a",
-        "reverse": true,
-        "eyebrow": "Electric compact transporter",
-        "heading": "Abrelune",
-        "text": "<p>Move firewood, stone and tools without pushing a thing. 1000 W of brushless power, up to 450 kg per trip, and a 79 cm body that fits through the gate.</p>",
-        "btn_label": "Discover Abrelune",
-        "show_atc": true
-      },
       "blocks": {
         "spec_139": {
           "type": "spec",
@@ -211,15 +206,24 @@
         "spec_140",
         "spec_141",
         "spec_142"
-      ]
+      ],
+      "settings": {
+        "product": "",
+        "fallback_handle": "abrelune",
+        "anchor": "abrelune",
+        "scheme": "sand",
+        "accent": "#4f6b2a",
+        "reverse": true,
+        "eyebrow": "Electric compact transporter",
+        "heading": "Abrelune",
+        "text": "<p>Move firewood, stone and tools without pushing a thing. 1000 W of brushless power, up to 450 kg per trip, and a 79 cm body that fits through the gate.</p>",
+        "badge": "",
+        "btn_label": "Discover Abrelune",
+        "show_atc": true
+      }
     },
     "benefits": {
       "type": "ind-stat-band",
-      "settings": {
-        "scheme": "ink",
-        "heading": "Main benefits",
-        "note": "* Abrelune range depends on load, surface, gradient and battery condition."
-      },
       "blocks": {
         "stat_143": {
           "type": "stat",
@@ -259,23 +263,24 @@
         "stat_144",
         "stat_145",
         "stat_146"
-      ]
+      ],
+      "settings": {
+        "scheme": "ink",
+        "accent": "",
+        "heading": "Main benefits",
+        "note": "* Abrelune range depends on load, surface, gradient and battery condition."
+      }
     },
     "compare": {
       "type": "ind-comparison",
-      "settings": {
-        "mode": "products",
-        "scheme": "paper",
-        "eyebrow": "Product comparison",
-        "heading": "Which machine fits your work?",
-        "text": "<p>Selo moves material up. Abrelune moves material along.</p>"
-      },
       "blocks": {
         "row_147": {
           "type": "row",
           "settings": {
             "label": "Main task",
+            "a_mark": "none",
             "a": "Lifting material to height",
+            "b_mark": "none",
             "b": "Transporting loads on the ground"
           }
         },
@@ -283,7 +288,9 @@
           "type": "row",
           "settings": {
             "label": "Capacity",
+            "a_mark": "none",
             "a": "Up to 500 kg",
+            "b_mark": "none",
             "b": "Up to 450 kg"
           }
         },
@@ -291,7 +298,9 @@
           "type": "row",
           "settings": {
             "label": "Reach",
+            "a_mark": "none",
             "a": "Up to 6 m lifting height",
+            "b_mark": "none",
             "b": "Approx. 24–27 km per charge"
           }
         },
@@ -299,7 +308,9 @@
           "type": "row",
           "settings": {
             "label": "Drive",
+            "a_mark": "none",
             "a": "High-torque electric motor",
+            "b_mark": "none",
             "b": "Brushless 1000 W, two-wheel drive"
           }
         },
@@ -307,7 +318,9 @@
           "type": "row",
           "settings": {
             "label": "Control",
+            "a_mark": "none",
             "a": "Ergonomic remote control",
+            "b_mark": "none",
             "b": "Twist throttle, 2 speeds, reverse"
           }
         },
@@ -315,7 +328,9 @@
           "type": "row",
           "settings": {
             "label": "Mobility",
+            "a_mark": "none",
             "a": "360° swivel castors",
+            "b_mark": "none",
             "b": "79 cm wide, passages from 84 cm"
           }
         },
@@ -323,7 +338,9 @@
           "type": "row",
           "settings": {
             "label": "Ideal for",
+            "a_mark": "none",
             "a": "Scaffolds, renovation, installations",
+            "b_mark": "none",
             "b": "Firewood, stone, garden, construction"
           }
         }
@@ -336,18 +353,24 @@
         "row_151",
         "row_152",
         "row_153"
-      ]
+      ],
+      "settings": {
+        "mode": "products",
+        "scheme": "paper",
+        "accent": "",
+        "eyebrow": "Product comparison",
+        "heading": "Which machine fits your work?",
+        "text": "<p>Selo moves material up. Abrelune moves material along.</p>",
+        "label_col": "",
+        "col_a": "Manual method",
+        "col_b": "With our equipment",
+        "product_a": "",
+        "product_b": "",
+        "note": ""
+      }
     },
     "why": {
       "type": "ind-feature-grid",
-      "settings": {
-        "scheme": "sand",
-        "style": "numbered",
-        "columns": 4,
-        "center": true,
-        "eyebrow": "Why choose our equipment",
-        "heading": "Made to take the load"
-      },
       "blocks": {
         "feature_154": {
           "type": "feature",
@@ -387,16 +410,23 @@
         "feature_155",
         "feature_156",
         "feature_157"
-      ]
+      ],
+      "settings": {
+        "scheme": "sand",
+        "accent": "",
+        "style": "numbered",
+        "columns": 4,
+        "row_mobile": true,
+        "center": true,
+        "tight": false,
+        "eyebrow": "Why choose our equipment",
+        "heading": "Made to take the load",
+        "text": "",
+        "note": ""
+      }
     },
     "applications": {
       "type": "ind-tiles",
-      "settings": {
-        "scheme": "paper",
-        "columns": 4,
-        "eyebrow": "Real-world applications",
-        "heading": "Where our machines work"
-      },
       "blocks": {
         "tile_158": {
           "type": "tile",
@@ -440,45 +470,64 @@
         "tile_159",
         "tile_160",
         "tile_161"
-      ]
+      ],
+      "settings": {
+        "scheme": "paper",
+        "accent": "",
+        "columns": 4,
+        "wide": false,
+        "square": false,
+        "center": false,
+        "eyebrow": "Real-world applications",
+        "heading": "Where our machines work",
+        "text": ""
+      }
     },
     "quality": {
       "type": "ind-image-text",
       "settings": {
         "scheme": "dark",
+        "accent": "",
+        "anchor": "",
         "reverse": true,
         "wide_media": true,
         "ratio": "adapt",
+        "image": "shopify://shop_images/pexels-cottonbro-5081971.webp",
         "placeholder_label": "Photo: detail of steel frame or workshop",
+        "badge_value": "",
+        "badge_label": "",
         "eyebrow": "Quality & reliability",
         "heading": "Robust where it matters",
         "text": "<p>Selo uses a reinforced steel frame and a high-strength galvanised steel cable for a long service life. Abrelune is built from steel, with folding, removable side walls and a sealed 48 V battery system.</p>",
         "checks": "Reinforced steel construction\nGalvanised steel lifting cable (Selo)\nSealed 48 V battery system (Abrelune)",
+        "btn_label": "",
+        "btn_link": "",
         "btn_style": "accent",
-        "diagram": "none"
+        "note": "",
+        "diagram": "none",
+        "d_v1": "",
+        "d_l1": "",
+        "d_v2": "",
+        "d_l2": "",
+        "d_v3": "",
+        "d_l3": "",
+        "d_v4": "",
+        "d_l4": "",
+        "d_caption": ""
       }
     },
     "reviews": {
       "type": "ind-reviews",
       "settings": {
         "scheme": "paper",
+        "accent": "",
+        "product": "",
         "eyebrow": "Customer reviews",
         "heading": "What customers say"
       }
     },
     "faq": {
       "type": "ind-faq",
-      "settings": {
-        "scheme": "sand",
-        "layout": "aside",
-        "single": true,
-        "open_first": false,
-        "schema": true,
-        "eyebrow": "FAQ",
-        "heading": "Frequently asked questions",
-        "btn_label": "Contact us",
-        "btn_link": "shopify://pages/contact"
-      },
       "blocks": {
         "qa_162": {
           "type": "qa",
@@ -530,7 +579,20 @@
         "qa_165",
         "qa_166",
         "qa_167"
-      ]
+      ],
+      "settings": {
+        "scheme": "sand",
+        "accent": "",
+        "layout": "aside",
+        "single": true,
+        "open_first": false,
+        "schema": true,
+        "eyebrow": "FAQ",
+        "heading": "Frequently asked questions",
+        "text": "",
+        "btn_label": "Contact us",
+        "btn_link": "shopify://pages/contact"
+      }
     },
     "newsletter": {
       "type": "ind-newsletter",
