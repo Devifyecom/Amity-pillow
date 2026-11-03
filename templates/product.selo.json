@@ -457,6 +457,7 @@
         "reverse": false,
         "wide_media": true,
         "ratio": "adapt",
+        "image": "shopify://shop_images/Materials_Einfachnachoben.png",
         "placeholder_label": "Close-up: platform, guard rails, limit switch, remote",
         "badge_value": "2×",
         "badge_label": "Auto limit stops",
@@ -678,6 +679,7 @@
         "item_47": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Hoherheben_besserarbeiten.png",
             "icon": "layers",
             "qty": "1×",
             "title": "Selo material lift",
@@ -687,8 +689,9 @@
         "item_48": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Hoherheben_besserarbeiten.png",
             "icon": "remote",
-            "qty": "1×",
+            "qty": "2×",
             "title": "Remote control",
             "text": "Ergonomic hand-held control"
           }
@@ -696,8 +699,9 @@
         "item_49": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Hoherheben_besserarbeiten.png",
             "icon": "box",
-            "qty": "1×",
+            "qty": "3×",
             "title": "Operating manual",
             "text": "Including safety instructions"
           }
