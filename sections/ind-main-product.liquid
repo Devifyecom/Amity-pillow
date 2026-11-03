@@ -73,13 +73,19 @@
                 <div class="ind-gallery__slide" data-slide data-media-id="{{ media.id }}" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ media_count }}">
                   {%- case media.media_type -%}
                     {%- when 'image' -%}
-                      <button type="button" class="ind-gallery__zoom" data-index="{{ forloop.index0 }}" data-full="{{ media | image_url: width: 2400 }}" data-alt="{{ media.alt | default: product.title | escape }}" aria-label="{{ 'ind.product.open_zoom' | t: index: forloop.index }}">
+                      {%- assign img_alt = media.alt | default: product.title -%}
+                      {%- capture slide_img -%}
                         {%- if forloop.first -%}
-                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: media.alt | default: product.title, loading: 'eager', fetchpriority: 'high' }}
+                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: img_alt, loading: 'eager', fetchpriority: 'high' }}
                         {%- else -%}
-                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: media.alt | default: product.title, loading: 'lazy' }}
+                          {{ media | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1000, 1200, 1400, 1600', sizes: '(min-width: 1320px) 680px, (min-width: 990px) 52vw, 100vw', alt: img_alt, loading: 'lazy' }}
                         {%- endif -%}
-                      </button>
+                      {%- endcapture -%}
+                      {%- if section.settings.enable_zoom -%}
+                        <button type="button" class="ind-gallery__zoom" data-index="{{ forloop.index0 }}" data-full="{{ media | image_url: width: 2400 }}" data-alt="{{ img_alt | escape }}" aria-label="{{ 'ind.product.open_zoom' | t: index: forloop.index }}">{{ slide_img }}</button>
+                      {%- else -%}
+                        {{ slide_img }}
+                      {%- endif -%}
                     {%- when 'video' -%}
                       {{ media | video_tag: controls: true, playsinline: true, preload: 'metadata', image_size: '1200x' }}
                     {%- when 'external_video' -%}
@@ -109,12 +115,14 @@
             </div>
           {%- endif -%}
 
+          {%- if section.settings.enable_zoom -%}
           <dialog class="ind ind-dialog ind-lightbox" data-lightbox aria-label="{{ 'ind.product.gallery' | t }}">
             <button type="button" class="ind-round-btn ind-lightbox__close" data-lb-close aria-label="{{ 'ind.product.close' | t }}">{% render 'ind-icon', name: 'x' %}</button>
             <button type="button" class="ind-round-btn ind-lightbox__nav ind-lightbox__nav--prev" data-lb-prev aria-label="{{ 'ind.product.previous' | t }}">{% render 'ind-icon', name: 'chevron-left' %}</button>
             <div class="ind-lightbox__stage" data-lb-stage><img alt="" width="1600" height="1600" draggable="false"></div>
             <button type="button" class="ind-round-btn ind-lightbox__nav ind-lightbox__nav--next" data-lb-next aria-label="{{ 'ind.product.next' | t }}">{% render 'ind-icon', name: 'chevron-right' %}</button>
           </dialog>
+          {%- endif -%}
         </ind-gallery>
       </div>
 
@@ -342,6 +350,7 @@
     { "type": "color", "id": "accent", "label": "Product accent colour" },
     { "type": "checkbox", "id": "show_breadcrumbs", "label": "Show breadcrumbs", "default": true },
     { "type": "text", "id": "media_badge", "label": "Image badge" },
+    { "type": "checkbox", "id": "enable_zoom", "label": "Enable image zoom", "info": "Hover zoom on desktop and a full-screen zoom view on click.", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Category badge", "default": "Professional equipment" },
     { "type": "text", "id": "headline", "label": "Headline under the title" },
     { "type": "richtext", "id": "short_desc", "label": "Short description", "info": "Defaults to the first 40 words of the product description." },
